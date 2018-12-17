@@ -1,0 +1,25 @@
+
+<div class="overlay _browse">
+  <div class="container">
+    <div class="exit"></div>
+    <div class="wrap">
+
+        <h6 class="title _ul">Browse</h6>
+
+        <ul class="browse-root cf">
+          {% assign loop = site.collections | sort: 'weight' %}
+          {% for collection in loop %}
+          {% unless collection.label == 'posts' or collection.label == 'uploads' %}
+          <div class="btn-browse {{ collection.label | prepend: '_' }}">{{ collection.weight | slice: 0,1 }}
+            <span class="btn-browse-title">{{ collection.label }}</span></div>
+          {% endunless %}
+          {% endfor %}
+        </ul>
+
+        {% include html/loop-browse.html book="system" weight="1" %}
+        {% include html/loop-browse.html book="brand" weight="2" %}
+        {% include html/loop-browse.html book="supply" weight="3" %}
+        {% include html/loop-browse.html book="demo" weight="4" %}
+    </div>
+  </div>
+</div>

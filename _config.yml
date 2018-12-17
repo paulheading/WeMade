@@ -1,0 +1,24 @@
+title: WeMade Portfolio
+description: WeMade Portfolio
+email: hello@wemade.design
+url: https://wemade.design
+github_username: pauheading
+
+# Server config
+livereload : true
+
+# Build settings
+markdown : kramdown
+theme    : barbs
+
+collections :
+  system    :
+    title   : System
+    output  : true
+    weight  : 1.0.0
+
+defaults    :
+- scope     :
+    path    : ''
+  values    :
+    layout  : page

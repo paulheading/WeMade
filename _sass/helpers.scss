@@ -1,0 +1,26 @@
+
+$purple: rgb(110,70,160);
+$gold:   rgb(255,130,0);
+$red:    rgb(240,10,10);
+$blue:   rgb(0,90,155);
+$smoke:  darken(white,7%);
+$gray:   darken(white,25%);
+$gun:    darken(white,60%);
+
+$NYOblue: #3eb4e5;
+$NYOred: #e70d34;
+$NYOgold: #fabc49;
+$NYOgreen: #24aba6;
+
+$max499w:  'only screen and (max-width: 499px)';
+$min500w: 'only screen and (min-width: 500px)';
+$min1112w: 'only screen and (min-width: 1112px)';
+$min1224w: 'only screen and (min-width: 1224px)';
+
+$click: scale(0.95);
+
+%cf:after {
+  display: table;
+  content: "";
+  clear: both;
+}

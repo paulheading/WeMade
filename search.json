@@ -1,0 +1,143 @@
+---
+layout: null
+---
+[
+  {% for page in site.pages %}
+  {% if page.url == '/' or
+        page.url contains 'sitemap' or
+        page.url contains 'robots' or
+        page.url contains 'search' or
+        page.url contains 'cart' or
+        page.url contains '404' or
+        page.url contains '.css' or
+        page.url contains '.json' %} {}
+
+  {% else %}
+
+    {
+      "marker"   : "{{ page.title | prepend: '_' }}",
+      "name"     : "{{ page.title }}",
+      "path"     : "{{ page.url | slice: 1,9999 }}",
+      "url"      : "{{ page.url | replace: '.html','' }}"
+    }
+
+  {% endif %}
+  {% unless forloop.last %},{% endunless %}
+  {% endfor %},
+
+  {% for page in site.system %}
+
+  {% if    page.url contains 'cover' %} {}
+  {% elsif page.url contains 'info' %} {}
+  {% elsif page.url contains 'index' %}
+
+  {
+    "marker"   : "{{ page.collection | prepend: '_' }}",
+    "name"     : "{{ page.title }}",
+    "url"      : "{{ page.url | replace: 'index.html','' }}",
+    "path"     : "{{ page.url | replace: 'index.html','' | slice: 1,9999 }}",
+    "content"  : "Visit {{ page.title }} chapter"
+  }
+
+  {% else %}
+
+  {
+    "marker"   : "{{ page.collection | prepend: '_' }}",
+    "name"     : "{{ page.title }}",
+    "url"      : "{{ page.url | replace: '.html','' }}",
+    "path"     : "{{ page.url | replace: '.html','' | slice: 1,9999 }}",
+    "content"  : "{{ page.excerpt | strip_html | strip_newlines }}",
+    "data"     : "{{ page.content | strip_html | strip_newlines }}"
+  }
+
+  {% endif %}
+  {% unless forloop.last %},{% endunless %}
+  {% endfor %},
+
+  {% for page in site.brand %}
+
+  {% if    page.url contains 'cover' %} {}
+  {% elsif page.url contains 'info' %} {}
+  {% elsif page.url contains 'index' %}
+
+  {
+    "marker"   : "{{ page.collection | prepend: '_' }}",
+    "name"     : "{{ page.title }}",
+    "url"      : "{{ page.url | replace: 'index.html','' }}",
+    "path"     : "{{ page.url | replace: 'index.html','' | slice: 1,9999 }}",
+    "content"  : "Visit {{ page.title }} chapter"
+  }
+
+  {% else %}
+
+  {
+    "marker"   : "{{ page.collection | prepend: '_' }}",
+    "name"     : "{{ page.title }}",
+    "url"      : "{{ page.url | replace: '.html','' }}",
+    "path"     : "{{ page.url | replace: '.html','' | slice: 1,9999 }}",
+    "content"  : "{{ page.excerpt | strip_html | strip_newlines }}",
+    "data"     : "{{ page.content | strip_html | strip_newlines }}"
+  }
+
+  {% endif %}
+  {% unless forloop.last %},{% endunless %}
+  {% endfor %},
+
+  {% for page in site.supply %}
+
+  {% if    page.url contains 'cover' %} {}
+  {% elsif page.url contains 'info' %} {}
+  {% elsif page.url contains 'index' %}
+
+  {
+    "marker"   : "{{ page.collection | prepend: '_' }}",
+    "name"     : "{{ page.title }}",
+    "url"      : "{{ page.url | replace: 'index.html','' }}",
+    "path"     : "{{ page.url | replace: 'index.html','' | slice: 1,9999 }}",
+    "content"  : "Visit {{ page.title }} chapter"
+  }
+
+  {% else %}
+
+  {
+    "marker"   : "{{ page.collection | prepend: '_' }}",
+    "name"     : "{{ page.title }}",
+    "url"      : "{{ page.url | replace: '.html','' }}",
+    "path"     : "{{ page.url | replace: '.html','' | slice: 1,9999 }}",
+    "content"  : "{{ page.excerpt | strip_html | strip_newlines }}",
+    "data"     : "{{ page.content | strip_html | strip_newlines }}"
+  }
+
+  {% endif %}
+  {% unless forloop.last %},{% endunless %}
+  {% endfor %},
+
+  {% for page in site.demo %}
+
+  {% if    page.url contains 'cover' %} {}
+  {% elsif page.url contains 'info' %} {}
+  {% elsif page.url contains 'index' %}
+
+  {
+    "marker"   : "{{ page.collection | prepend: '_' }}",
+    "name"     : "{{ page.title }}",
+    "url"      : "{{ page.url | replace: 'index.html','' }}",
+    "path"     : "{{ page.url | replace: 'index.html','' | slice: 1,9999 }}",
+    "content"  : "Visit {{ page.title }} chapter"
+  }
+
+  {% else %}
+
+  {
+    "marker"   : "{{ page.collection | prepend: '_' }}",
+    "name"     : "{{ page.title }}",
+    "url"      : "{{ page.url | replace: '.html','' }}",
+    "path"     : "{{ page.url | replace: '.html','' | slice: 1,9999 }}",
+    "content"  : "{{ page.excerpt | strip_html | strip_newlines }}",
+    "data"     : "{{ page.content | strip_html | strip_newlines }}"
+  }
+
+  {% endif %}
+  {% unless forloop.last %},{% endunless %}
+  {% endfor %}
+]
