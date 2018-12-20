@@ -19,7 +19,6 @@
 }
 
 .area {
-  overflow: hidden;
 
   &._header {
     padding-right: 40px;
@@ -35,6 +34,7 @@
     display: grid;
     height: 100%;
     font-size: 26px;
+    overflow: hidden;
   }
 
   &._menu {
@@ -79,6 +79,7 @@
 
   &._desktop {
     background-color: #00BEAA;
+    overflow: hidden;
   }
 
   &._email {
