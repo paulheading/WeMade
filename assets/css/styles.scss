@@ -322,6 +322,14 @@
 .copy {
   position: relative;
 
+  &._hero {
+    height: 138px;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    grid-template: 1fr / 1fr;
+  }
+
   &._input {
     grid-auto-flow: column;
     padding-bottom: 10px;
@@ -349,14 +357,19 @@
 }
 
 .words {
-  place-items: center;
-  position: absolute;
-  text-align: center;
+  // place-items: center;
+  // position: absolute;
+  // text-align: center;
   max-width: 260px;
-  @include zero();
-  display: grid;
-  margin: auto;
-  width: 100%;
+  grid-area: 1 / 1;
+  // @include zero();
+  // display: grid;
+  // margin: auto;
+  // width: 100%;
+}
+
+.svg {
+  grid-area: 1 / 1;
 }
 
 .tag {
