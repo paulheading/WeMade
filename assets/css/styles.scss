@@ -19,6 +19,7 @@
 }
 
 .area {
+  overflow: hidden;
 
   &._header {
     padding-right: 40px;
@@ -46,7 +47,6 @@
     z-index: 5;
     right: 0;
     left: 0;
-
   }
 
   &._example {
@@ -79,7 +79,6 @@
 
   &._desktop {
     background-color: #00BEAA;
-    overflow: hidden;
   }
 
   &._email {
