@@ -24,7 +24,7 @@
     padding-right: 40px;
     padding-left: 40px;
     position: absolute;
-    font-size: 24px;
+    font-size: 26px;
     z-index: 10;
     width: 100%;
   }
@@ -33,7 +33,7 @@
     justify-content: center;
     display: grid;
     height: 100%;
-    font-size: 24px;
+    font-size: 26px;
   }
 
   &._menu {
@@ -357,15 +357,8 @@
 }
 
 .words {
-  // place-items: center;
-  // position: absolute;
-  // text-align: center;
-  max-width: 260px;
+  max-width: 280px;
   grid-area: 1 / 1;
-  // @include zero();
-  // display: grid;
-  // margin: auto;
-  // width: 100%;
 }
 
 .svg {
