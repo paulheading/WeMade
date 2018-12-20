@@ -63,8 +63,8 @@ function heroBlob() {
   .set('#one',{morphSVG:'#five'},'+=0.2')
   .set('#one',{morphSVG:'#six'},'+=0.6')
   .set('#one',{morphSVG:'#seven'},'+=0.2')
-  .to('#one',0.6,{morphSVG:'#one',ease:SteppedEase.config(6)},'+=1.6')
-  .set('#one',{opacity:0})
+  // .to('#one',0.6,{morphSVG:'#one',ease:SteppedEase.config(6)},'+=1.6')
+  // .set('#one',{opacity:0})
   ;
 
   return heroBlob;
@@ -82,7 +82,7 @@ function heroCopy() {
   .set(write4,{text:'world'},'+=0.2')
   .set(write5,{text:'for'},'+=0.6')
   .set(write6,{text:'PLAY!',fontWeight:'bold'},'+=0.2')
-  .set(write,{text:'',clearProps:'all'},'+=1.6')
+  // .set(write,{text:'',clearProps:'all'},'+=1.6')
   ;
 
   return heroCopy;

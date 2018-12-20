@@ -179,6 +179,10 @@
     max-width: 640px;
     overflow: hidden;
     height: 460px;
+
+    @media#{$min500w} {
+      height: 520px;
+    }
   }
 }
 
