@@ -1,19 +1,16 @@
 
-$purple: rgb(110,70,160);
-$gold:   rgb(255,130,0);
-$red:    rgb(240,10,10);
-$blue:   rgb(0,90,155);
-$smoke:  darken(white,7%);
-$gray:   darken(white,25%);
-$gun:    darken(white,60%);
+$smoke:  darken(white,8%);
+$gray:   darken(white,12%);
+$carbon: lighten(black,10%);
+$coal:   lighten(black,6%);
 
 $NYOblue: #3eb4e5;
 $NYOred: #e70d34;
 $NYOgold: #fabc49;
 $NYOgreen: #24aba6;
 
-$max499w:  'only screen and (max-width: 499px)';
-$min500w: 'only screen and (min-width: 500px)';
+$max639w:  'only screen and (max-width: 639px)';
+$min640w:  'only screen and (min-width: 640px)';
 $min1112w: 'only screen and (min-width: 1112px)';
 $min1224w: 'only screen and (min-width: 1224px)';
 

@@ -1,0 +1,25 @@
+
+body._nyo {
+
+  ._header {
+    color: white;
+
+    .burger {
+      background-color: white;
+    }
+  }
+
+  .area._hero {
+    background-color: $carbon;
+    color: white;
+  }
+
+  .area._jobs {
+    background-color: $coal;
+    color: white;
+  }
+
+  #hero {
+    fill: black;
+  }
+}

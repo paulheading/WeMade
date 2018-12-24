@@ -1,0 +1,13 @@
+
+.window {
+
+  &._popup {
+    background-color: #eee;
+    height: 240px;
+    width: 320px;
+  }
+
+  &._email {
+    padding-left: 30px;
+  }
+}

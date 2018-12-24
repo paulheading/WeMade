@@ -1,0 +1,82 @@
+
+.visual {
+  background-color: rgba(0,0,0,.05);
+  height: 400px;
+  width: 100%;
+
+  @media#{$min640w} {
+    height: 600px;
+  }
+
+  &._laptop {
+    background: url('/assets/img/laptopBW.jpg');
+    background-size: cover;
+  }
+
+  &._laptopV2 {
+    background: url('/assets/img/laptopV2BW.jpg');
+    background-size: cover;
+  }
+
+  &._demo {
+    background-color: rgba(0,0,0,.05);
+
+    @media#{$min640w} {
+      height: 540px;
+    }
+
+    &._black {
+      background-color: black;
+    }
+
+    &._gold {
+      background-color: $NYOgold;
+    }
+
+    &._red {
+      background-color: $NYOred;
+    }
+
+    &._green {
+      background-color: $NYOgreen;
+    }
+
+    &._blue {
+      background-color: $NYOblue;
+    }
+  }
+
+  &._switch {
+    background-color: transparent;
+    margin-top: 20px;
+    height: 40px;
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    grid-column-gap: 20px;
+    grid-auto-flow: column;
+
+    .color {
+      cursor: pointer;
+
+      &._black {
+        background-color: black;
+      }
+
+      &._gold {
+        background-color: $NYOgold;
+      }
+
+      &._red {
+        background-color: $NYOred;
+      }
+
+      &._green {
+        background-color: $NYOgreen;
+      }
+
+      &._blue {
+        background-color: $NYOblue;
+      }
+    }
+  }
+}

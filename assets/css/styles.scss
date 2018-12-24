@@ -6,7 +6,16 @@
   "barbs",
   "helpers",
   "base",
-  "layout",
+  "area",
+  "btn",
+  "copy",
+  "nyo",
+  "play",
+  "popup",
+  "topbar",
+  "visual",
+  "window",
+  "wrap",
   "svg"
 ;
 
@@ -18,236 +27,10 @@
   }
 }
 
-.area {
-
-  &._header {
-    padding-right: 40px;
-    padding-left: 40px;
-    position: absolute;
-    font-size: 26px;
-    z-index: 10;
-    width: 100%;
-  }
-
-  &._hero {
-    justify-content: center;
-    display: grid;
-    height: 100%;
-    font-size: 26px;
-    overflow: hidden;
-  }
-
-  &._menu {
-    justify-content: center;
-    background-color: red;
-    font-size: 30px;
-    position: fixed;
-    display: none;
-    height: 100%;
-    z-index: 5;
-    right: 0;
-    left: 0;
-  }
-
-  &._example {
-    padding-right: 40px;
-    padding-left: 40px;
-
-    + ._example {
-      margin-top: 40px;
-    }
-
-    @media#{$min500w} {
-      + ._example {
-        margin-top: 20px;
-      }
-    }
-  }
-
-  &._notes {
-    font-size: 21px;
-  }
-
-  &._jobs {
-    background-color: rgba(0,0,0,.05);
-    justify-content: center;
-    padding-bottom: 100px;
-    padding-top: 100px;
-    font-size: 21px;
-    display: grid;
-  }
-
-  &._desktop {
-    background-color: #00BEAA;
-    overflow: hidden;
-  }
-
-  &._email {
-    padding-right: 30px;
-    padding-left: 30px;
-    padding-top: 100px;
-  }
-
-  &._pages {
-    padding-bottom: 40px;
-    text-align: center;
-    padding-top: 40px;
-    font-size: 21px;
-    width: 100%;
-
-    @media#{$min500w} {
-      padding-bottom: 80px;
-      padding-top: 80px;
-    }
-  }
-
-  &._footer {
-    background-color: black;
-    text-align: center;
-    padding: 20px;
-    color: white;
-  }
-}
-
 .drag {
-  @media#{$max499w} {
+  @media#{$max639w} {
     margin-right: -40px;
     margin-left: -40px;
-  }
-}
-
-.wrap {
-  position: relative;
-  max-width: 1000px;
-
-  &._hero {
-    place-items: center;
-    display: grid;
-  }
-
-  &._menu {
-    place-items: center;
-    display: grid;
-  }
-
-  &._split {
-    grid-column-gap: 20px;
-    grid-row-gap: 40px;
-    display: grid;
-    width: 100%;
-
-    @media#{$min500w} {
-      grid-template-columns: repeat(2,1fr);
-    }
-  }
-
-  &._single {
-    display: grid;
-    width: 100%;
-  }
-
-  &._jobs {
-    place-items: center;
-    display: grid;
-  }
-
-  &._desktop {
-    max-width: 640px;
-    height: 600px;
-  }
-
-  &._pages {
-    grid-template-columns: repeat(3,1fr);
-    grid-auto-flow: column;
-    display: grid;
-  }
-
-  &._notes {
-    max-width: 920px;
-    padding: 40px;
-
-    @media#{$min500w} {
-      padding-bottom: 80px;
-      padding-top: 80px;
-    }
-  }
-
-  &._email {
-    border-top-right-radius: 3px;
-    border-top-left-radius: 3px;
-    background-color: white;
-    max-width: 640px;
-    overflow: hidden;
-    height: 460px;
-
-    @media#{$min500w} {
-      height: 520px;
-    }
-  }
-}
-
-.topbar {
-  height: 40px;
-
-  &._desktop {
-    background-color: rgba(0,0,0,.05);
-  }
-
-  &._email {
-    justify-content: flex-start;
-    background-color: #AAA;
-    grid-auto-flow: column;
-    grid-column-gap: 10px;
-    align-content: center;
-    padding-right: 10px;
-    padding-left: 10px;
-    display: grid;
-  }
-
-  &._popup {
-    justify-content: flex-start;
-    background-color: #AAA;
-    grid-auto-flow: column;
-    grid-column-gap: 10px;
-    align-content: center;
-    padding-right: 10px;
-    padding-left: 10px;
-    display: grid;
-  }
-}
-
-.window {
-
-  &._popup {
-    background-color: #eee;
-    height: 240px;
-    width: 300px;
-  }
-
-  &._email {
-    padding-left: 30px;
-  }
-}
-
-.popup {
-  box-shadow: 0 3px 9px 3px rgba(0,0,0,0.03);
-  position: absolute;
-  border-radius: 3px;
-  overflow: hidden;
-
-  &._tim {
-    top: 80px;
-    left: -140px;
-  }
-
-  &._steve {
-    top: 100px;
-    left: -120px;
-  }
-
-  &._eric {
-    top: 120px;
-    left: -100px;
   }
 }
 
@@ -298,18 +81,18 @@
 }
 
 .row {
-  grid-template-columns: 3fr 3fr 4fr 4fr;
+  grid-template-columns: 3fr 3fr 4fr;
   grid-column-gap: 10px;
   padding: 10px;
   display: grid;
 
-  @media#{$max499w} {
-    grid-template-columns: 3fr 3fr 4fr;
+  @media#{$min640w} {
+    grid-template-columns: 3fr 3fr 4fr 4fr;
   }
 }
 
 .desc {
-  @media#{$max499w} {
+  @media#{$max639w} {
     display: none;
   }
 }
@@ -317,47 +100,6 @@
 .input {
   border-bottom: 1px #ddd solid;
   color: #aaa;
-}
-
-.copy {
-  position: relative;
-
-  &._hero {
-    display: grid;
-    place-items: center;
-    text-align: center;
-    grid-template: 1fr / 1fr;
-  }
-
-  &._input {
-    grid-auto-flow: column;
-    padding-bottom: 10px;
-    display: inline-grid;
-    align-items: center;
-    padding-top: 10px;
-  }
-
-  &._email {
-    padding-bottom: 20px;
-    padding-right: 20px;
-    padding-top: 20px;
-  }
-
-  &._footer {
-    justify-content: center;
-    grid-column-gap: 20px;
-    grid-row-gap: 4px;
-    display: grid;
-
-    @media#{$min500w} {
-      grid-auto-flow: column;
-    }
-  }
-}
-
-.words {
-  max-width: 280px;
-  grid-area: 1 / 1;
 }
 
 .svg {
@@ -375,26 +117,11 @@
   padding-right: 10px;
 }
 
-.btn {
-  background-color: #666;
-  border-radius: 50%;
-  height: 20px;
-  width: 20px;
-
-  &._close {
-    background-color: red;
-  }
-
-  &._min {
-    background-color: orange;
-  }
-}
-
 .logo {
   background-color: rgba(0,0,0,.05);
   height: 320px;
 
-  @media#{$min500w} {
+  @media#{$min640w} {
     height: 600px;
   }
 
@@ -402,88 +129,6 @@
     border: 2px black solid;
     background: url('/assets/img/static-logoGRAY.png') center no-repeat;
     background-size: cover;
-  }
-}
-
-.visual {
-  background-color: rgba(0,0,0,.05);
-  height: 400px;
-  width: 100%;
-
-  @media#{$min500w} {
-    height: 600px;
-  }
-
-  &._laptop {
-    background: url('/assets/img/laptopBW.jpg');
-    background-size: cover;
-  }
-
-  &._laptopV2 {
-    background: url('/assets/img/laptopV2BW.jpg');
-    background-size: cover;
-  }
-
-  &._demo {
-    background-color: rgba(0,0,0,.05);
-
-    @media#{$min500w} {
-      height: 540px;
-    }
-
-    &._black {
-      background-color: black;
-    }
-
-    &._gold {
-      background-color: $NYOgold;
-    }
-
-    &._red {
-      background-color: $NYOred;
-    }
-
-    &._green {
-      background-color: $NYOgreen;
-    }
-
-    &._blue {
-      background-color: $NYOblue;
-    }
-  }
-
-  &._switch {
-    background-color: transparent;
-    margin-top: 20px;
-    height: 40px;
-    display: grid;
-    grid-template-columns: repeat(5,1fr);
-    grid-column-gap: 20px;
-    grid-auto-flow: column;
-
-    .color {
-      cursor: pointer;
-
-      &._black {
-        background-color: black;
-      }
-
-      &._gold {
-        background-color: $NYOgold;
-      }
-
-      &._red {
-        background-color: $NYOred;
-      }
-
-      &._green {
-        background-color: $NYOgreen;
-      }
-
-      &._blue {
-        background-color: $NYOblue;
-      }
-    }
   }
 }
 

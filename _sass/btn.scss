@@ -1,0 +1,15 @@
+
+.btn {
+  background-color: #666;
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+
+  &._close {
+    background-color: red;
+  }
+
+  &._min {
+    background-color: orange;
+  }
+}

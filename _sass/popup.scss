@@ -1,0 +1,37 @@
+
+.popup {
+  box-shadow: 0 3px 9px 3px rgba(0,0,0,0.03);
+  position: absolute;
+  border-radius: 3px;
+  overflow: hidden;
+  transition: left 400ms;
+
+  &._tim {
+    top: 80px;
+    left: -200px;
+  }
+
+  &._steve {
+    top: 100px;
+    left: -180px;
+  }
+
+  &._eric {
+    top: 120px;
+    left: -160px;
+  }
+
+  @media#{$min640w} {
+    &._tim {
+      left: -120px;
+    }
+
+    &._steve {
+      left: -100px;
+    }
+
+    &._eric {
+      left: -80px;
+    }
+  }
+}

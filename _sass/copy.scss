@@ -1,0 +1,35 @@
+
+.copy {
+  position: relative;
+
+  &._hero {
+    max-width: 280px;
+    grid-area: 1 / 1;
+    text-align: center;
+  }
+
+  &._input {
+    grid-auto-flow: column;
+    padding-bottom: 10px;
+    display: inline-grid;
+    align-items: center;
+    padding-top: 10px;
+  }
+
+  &._email {
+    padding-bottom: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+  }
+
+  &._footer {
+    justify-content: center;
+    grid-column-gap: 20px;
+    grid-row-gap: 4px;
+    display: grid;
+
+    @media#{$min640w} {
+      grid-auto-flow: column;
+    }
+  }
+}
