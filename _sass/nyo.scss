@@ -4,6 +4,10 @@ body._nyo {
   ._header {
     color: white;
 
+    #logo {
+      fill: white;
+    }
+
     .burger {
       background-color: white;
     }
@@ -19,7 +23,10 @@ body._nyo {
     color: white;
   }
 
-  #hero {
-    fill: black;
+  #left {
+    fill:#EA002D;
+  }
+  #right {
+    fill:#FDBC3B;
   }
 }

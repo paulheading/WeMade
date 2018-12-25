@@ -4,8 +4,10 @@
   max-width: 1000px;
 
   &._hero {
+    grid-template: 1fr / 1fr;
     place-items: center;
     display: grid;
+    width: 1000px;
   }
 
   &._menu {

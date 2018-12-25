@@ -1,12 +1,31 @@
 
-._play {
-  #blob path {
-    fill: white;
+#blob {
+  position: relative;
+  grid-area: 1 / 1;
+  z-index: 3;
+}
+
+#left {
+  transition: left 200ms;
+  position: relative;
+  grid-area: 1 / 1;
+  left: -160px;
+  z-index: 2;
+  top: -60px;
+
+  @media#{$min640w} {
+    left: -360px;
   }
 }
 
-._nyo {
-  #blob path {
-    fill: black;
+#right {
+  transition: right 200ms;
+  position: relative;
+  grid-area: 1 / 1;
+  right: -220px;
+  z-index: 1;
+
+  @media#{$min640w} {
+    right: -360px;
   }
 }
