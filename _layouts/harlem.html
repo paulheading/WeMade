@@ -3,7 +3,7 @@
 
   {% include html/head.html %}
 
-  <body class="layout-project">
+  <body class="layout-harlem">
 
     {% include html/load.html %}
 
@@ -21,9 +21,11 @@
       <div class="area _example">
         <div class="wrap _split">
           <div class="canvas" style="padding-top:0;">
-            <img class="_flex _border--mob" src="/assets/img/nyo/static-logoGRAY.png" alt="">
+            <div class="_border--mob">
+              {% include svg/wordmark.svg %}
+            </div>
           </div>
-          <img class="_flex" src="/assets/img/nyo/laptopBW.jpg" alt="">
+          <img class="_flex" src="/assets/img/harlem/visual.jpg" alt="">
         </div>
       </div>
 
@@ -37,22 +39,7 @@
 
       <div class="area _example">
         <div class="wrap">
-          <img class="_flex" src="/assets/img/nyo/laptopV2BW.jpg" alt="">
-        </div>
-      </div>
-
-      <div class="area _example">
-        <div class="wrap _single">
-
-            <div class="visual _demo _gold"></div>
-            <div class="visual _switch">
-              <div class="color _black"></div>
-              <div class="color _gold"></div>
-              <div class="color _red"></div>
-              <div class="color _green"></div>
-              <div class="color _blue"></div>
-            </div>
-
+          <img class="_flex" src="/assets/img/harlem/full-width.jpg" alt="">
         </div>
       </div>
 
@@ -61,21 +48,9 @@
           <div class="visual">
             <img src="/assets/img/nyo/scroll.jpg" alt="">
           </div>
-
-            <div class="visual">
-              <img src="/assets/img/nyo/laptopBW.jpg" alt="">
-            </div>
-
-        </div>
-      </div>
-
-      <div class="area _example">
-        <div class="wrap _single">
-
-            <video autoplay muted loop>
-              <source src="/assets/vid/nyo.mp4" type="video/mp4">
-            </video>
-
+          <div class="visual">
+            <img src="/assets/img/nyo/laptopBW.jpg" alt="">
+          </div>
         </div>
       </div>
 

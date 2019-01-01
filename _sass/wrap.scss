@@ -99,7 +99,11 @@
     border-top-right-radius: 3px;
     border-top-left-radius: 3px;
     background-color: white;
-    max-width: 640px;
+    max-width: 320px;
     overflow: hidden;
+
+    @media#{$min640w} {
+      max-width: 640px;
+    }
   }
 }

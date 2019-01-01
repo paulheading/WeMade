@@ -1,9 +1,9 @@
 ---
-title  : NYO Page
-layout : nyo
+title  : Harlem Page
+layout : harlem
 ---
 
-**The Client:** The National Youth Orchestra is a collection of 164 teenage musicians, originating from all over the UK.
+**The Client:** Barbican / Serious
 
 **The Project:** We worked with them to re-imagine their print identity for digital use. They wanted the identity to better reflect their music. It needed to be more fluid and engaging. During the process, we recognized 3 NYO mission principles:
 
