@@ -20,12 +20,19 @@
 
   &._split {
     grid-column-gap: 20px;
-    grid-row-gap: 40px;
     display: grid;
     width: 100%;
 
     @media#{$min640w} {
       grid-template-columns: repeat(2,1fr);
+    }
+  }
+
+  &._gap {
+    &--mob {
+      @media#{$max639w} {
+        grid-row-gap: 10px;
+      }
     }
   }
 
@@ -77,8 +84,8 @@
     padding: 40px;
 
     @media#{$min640w} {
-      padding-bottom: 80px;
-      padding-top: 80px;
+      padding-bottom: 60px;
+      padding-top: 60px;
     }
   }
 

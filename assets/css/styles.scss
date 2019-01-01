@@ -26,6 +26,26 @@
   "wrap"
 ;
 
+.canvas {
+  @media#{$max639w} {
+    padding: 40px;
+  }
+
+  @media#{$min640w} {
+    border: 2px solid black;
+    align-items: center;
+    display: grid;
+  }
+}
+
+._border {
+  &--mob {
+    @media#{$max639w} {
+      border: 2px solid black;
+    }
+  }
+}
+
 .strike {
   position: relative;
   z-index: -1;
@@ -39,15 +59,6 @@
 
   &._full {
     height: 100%;
-  }
-}
-
-.drag {
-  display: grid;
-  
-  @media#{$max639w} {
-    margin-right: -40px;
-    margin-left: -40px;
   }
 }
 
@@ -71,11 +82,6 @@
 
 .title {
   padding-right: 10px;
-}
-
-video {
-  background-color: rgba(0,0,0,.05);
-  width: 100%;
 }
 
 .project {

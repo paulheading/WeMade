@@ -39,15 +39,20 @@
   }
 
   &._example {
-    padding-right: 40px;
-    padding-left: 40px;
+
+    @media#{$min640w} {
+      padding-right: 40px;
+      padding-left: 40px;
+    }
 
     + ._example {
-      margin-top: 20px;
+      margin-top: 10px;
+
+      @media#{$min640w} {
+        margin-top: 20px;
+      }
 
       &.--split {
-        margin-top: 40px;
-
         @media#{$min640w} {
           margin-top: 20px;
         }

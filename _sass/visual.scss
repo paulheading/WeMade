@@ -8,8 +8,23 @@
     max-width: 100%;
   }
 
-  &._logo {
+  &._push {
+
+    &--mob {
+      @media#{$max639w} {
+        padding: 0 30px 30px 30px;
+      }
+    }
+  }
+
+  .frame {
     border: 2px black solid;
+
+    @media#{$min640w} {
+      align-items: center;
+      display: grid;
+      height: 100%;
+    }
   }
 
   &._demo {

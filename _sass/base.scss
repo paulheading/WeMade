@@ -83,3 +83,16 @@ button {
   width: auto;
   padding: 0;
 }
+
+img {
+  display: block;
+  
+  &._flex {
+    max-width: 100%;
+  }
+}
+
+video {
+  background-color: rgba(0,0,0,.05);
+  width: 100%;
+}
