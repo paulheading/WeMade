@@ -13,3 +13,5 @@ Title: NYO Page
 These guided us in our response. We developed several concept routes, ultimately producing 1 animated identity which is displayed before NYO video content.
 
 **The Result:** Concept work, animations
+
+<img src="laptopBW.jpg" alt="" style="max-width:100%;">
