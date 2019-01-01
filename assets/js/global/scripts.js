@@ -2,23 +2,6 @@
 TweenLite.defaultEase = Linear.easeNone;
 Draggable.create('.popup',{bounds:'.area._desktop',cursor:'pointer'});
 
-// $('.menu-lnk').click(function(){
-//   var menuOpenTl = new TimelineMax();
-//   var menuCloseTl = new TimelineMax();
-//
-//   if($('html').hasClass('_menu')) {
-//     menuCloseTl
-//     .set('html',{className:'-= _menu'})
-//     .set('.lnk._menu',{clearProps:'all'})
-//     ;
-//   } else {
-//     menuOpenTl
-//     .set('html',{className:'+= _menu'})
-//     .staggerTo('.lnk._menu',0.1,{opacity:1},'0.1','+=0.1')
-//     ;
-//   }
-// });
-
 function changeMenu() {
 
   var menuOpenTl = new TimelineMax();
@@ -35,26 +18,6 @@ function changeMenu() {
     .staggerTo('.lnk._menu',0.1,{opacity:1},'0.1','+=0.1')
     ;
   }
-}
-
-function changeVisual() {
-  color = $(this)[0].classList[1];
-  $('._demo').removeClass().addClass('visual _demo ' + color);
-}
-
-function colorSwitch() {
-
-  var colorSwitchTl = new TimelineMax({repeat:-1});
-
-  colorSwitchTl
-  .set('._demo',{className:'visual _demo _red'},'+=1')
-  .set('._demo',{className:'visual _demo _green'},'+=1')
-  .set('._demo',{className:'visual _demo _blue'},'+=1')
-  .set('._demo',{className:'visual _demo _black'},'+=1')
-  .set('._demo',{className:'visual _demo _gold'},'+=1')
-  ;
-
-  return colorSwitch;
 }
 
 function changeFolder() {
@@ -112,15 +75,9 @@ function changeMin() {
   });
 }
 
-$(document)
-// .ready(colorSwitch)
-.ready(siteFunc)
-// .on('click','.color',changeVisual)
-// .on('click','.menu-lnk',changeMenu)
-.on('click','.folder',changeFolder)
-.on('click','.min',changeMin)
-.on('click','.btn._close',closeBtn)
-.on('click','.btn._min',minBtn)
-;
-
+$(document).ready(siteFunc);
 $('.menu-lnk').click(changeMenu);
+$('.folder').click(changeFolder);
+$('.min').click(changeMin);
+$('.btn._close').click(closeBtn);
+$('.btn._min').click(minBtn);
