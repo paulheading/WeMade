@@ -5,6 +5,7 @@
       <div class="btn _close"></div>
       <div class="btn _min"></div>
     </div>
+    <form name="contact" method="POST" netlify></form>
     <div class="window _email">
       <div class="input">
         <div class="copy _input">
@@ -15,13 +16,22 @@
         </div>
       </div>
       <div class="input">
-        <div class="copy _input"><span class="title">Subject:</span>Online Enquiry</div>
+        <div class="copy _input">
+          <span class="title">Subject:</span>
+          <input name="subject" type="text" value="Online Enquiry"/></div>
       </div>
       <div class="input">
-        <div class="copy _input"><span class="title">From:</span>paulheading@me.com</div>
+        <div class="copy _input"><span class="title">From:</span>
+        <input name="email" type="email" placeholder="paulheading@me.com"/>
+      </div>
       </div>
       <div class="copy _email">
-        test copy
+        <textarea name="message"></textarea>
+      </div>
+      <div class="submit _email">
+        <button type="submit">
+          {% include svg/submit.svg %}
+        </button>
       </div>
     </div>
   </div>

@@ -3,10 +3,16 @@
   position: relative;
 
   &._hero {
+    text-align: center;
+    min-height: 72px;
     max-width: 280px;
     grid-area: 1 / 1;
-    text-align: center;
+    font-size: 28px;
     z-index: 4;
+  }
+
+  &._menu {
+    text-align: center;
   }
 
   &._input {
@@ -15,12 +21,25 @@
     display: inline-grid;
     align-items: center;
     padding-top: 10px;
+
+    input {
+      padding: 0;
+    }
   }
 
   &._email {
     padding-bottom: 20px;
     padding-right: 20px;
     padding-top: 20px;
+
+    textarea {
+      height: 196px;
+      padding: 0;
+
+      @media#{$min640w} {
+        height: 236px;
+      }
+    }
   }
 
   &._footer {

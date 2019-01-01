@@ -1,0 +1,27 @@
+
+.row {
+
+  &._job {
+    grid-template-columns: 3fr 3fr 4fr;
+    grid-column-gap: 8px;
+    font-size: 21px;
+    display: grid;
+    padding: 8px;
+
+    @media#{$min640w} {
+      grid-template-columns: 3fr 3fr 4fr 4fr;
+    }
+  }
+
+  &._cv {
+    grid-template-columns: repeat(3,1fr);
+    padding-bottom: 20px;
+    grid-row-gap: 10px;
+    padding-top: 20px;
+    display: grid;
+
+    + ._cv {
+      border-top: 1px solid black;
+    }
+  }
+}

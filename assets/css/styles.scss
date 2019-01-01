@@ -7,17 +7,32 @@
   "helpers",
   "base",
   "area",
+  "body",
   "btn",
   "copy",
-  "nyo",
-  "play",
+  "entry",
+  "folder",
+  "html",
+  "left",
+  "lnk",
+  "min",
   "popup",
+  "right",
+  "row",
+  "svg",
   "topbar",
   "visual",
   "window",
-  "wrap",
-  "svg"
+  "wrap"
 ;
+
+.strike {
+  position: relative;
+  z-index: -1;
+  background-color: black;
+  height: 3px;
+  width: 100%;
+}
 
 .site {
   min-height: 600px;
@@ -28,66 +43,11 @@
 }
 
 .drag {
+  display: grid;
+  
   @media#{$max639w} {
     margin-right: -40px;
     margin-left: -40px;
-  }
-}
-
-.folder {
-  background-color: #B4E1FF;
-  border-radius: 3px;
-  padding: 20px;
-  height: 60px;
-  width: 80px;
-}
-
-.left {
-  position: absolute;
-  left: 0;
-  top: 0;
-
-  &._header {
-    grid-auto-flow: column;
-    align-content: center;
-    grid-gap: 20px;
-    display: grid;
-    height: 120px;
-  }
-}
-
-.right {
-  position: absolute;
-  right: 0;
-  top: 0;
-
-  &._header {
-    grid-auto-flow: column;
-    align-content: center;
-    grid-gap: 30px;
-    display: grid;
-    height: 120px;
-  }
-
-  &._desktop {
-    grid-template: repeat(2,auto) / auto;
-    grid-auto-flow: column;
-    padding-top: 40px;
-    direction: rtl;
-    grid-gap: 20px;
-    display: grid;
-    right: -20px;
-  }
-}
-
-.row {
-  grid-template-columns: 3fr 3fr 4fr;
-  grid-column-gap: 10px;
-  padding: 10px;
-  display: grid;
-
-  @media#{$min640w} {
-    grid-template-columns: 3fr 3fr 4fr 4fr;
   }
 }
 
@@ -103,7 +63,7 @@
 }
 
 .tag {
-  background-color: #B4E1FF;
+  background-color: $sky;
   border-radius: 3px;
   padding: 5px 10px;
   color: black;
@@ -111,21 +71,6 @@
 
 .title {
   padding-right: 10px;
-}
-
-.logo {
-  background-color: rgba(0,0,0,.05);
-  height: 320px;
-
-  @media#{$min640w} {
-    height: 600px;
-  }
-
-  &._static {
-    border: 2px black solid;
-    background: url('/assets/img/static-logoGRAY.png') center no-repeat;
-    background-size: cover;
-  }
 }
 
 video {
@@ -137,37 +82,14 @@ video {
   padding-top: 120px;
 }
 
-.lnk {
-  cursor: pointer;
-  align-content: center;
-  display: grid;
+.submit {
 
-  &._index {
-    padding: 10px;
-    border: 2px solid black;
+  &._email {
+    padding-bottom: 20px;
+    padding-right: 20px;
+    direction: rtl;
+    display: grid;
   }
-}
-
-.menu {
-  cursor: pointer;
-
-  .burger {
-    background-color: black;
-    height: 5px;
-    width: 35px;
-
-    + .burger {
-      margin-top: 7px;
-    }
-  }
-}
-
-.home_link {
-  text-decoration: none;
-}
-
-.text_jump {
-  text-decoration: none;
 }
 
 // THEME UPDATES

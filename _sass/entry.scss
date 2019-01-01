@@ -1,0 +1,59 @@
+
+.entry {
+
+  small {
+    font-size: 15px;
+  }
+
+  &._name {
+    grid-column: span 2;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 1.15;
+  }
+
+  &._address, &._social {
+    line-height: 1.2;
+  }
+
+  &._job {
+
+    .role, .agency {
+      font-weight: bold;
+    }
+  }
+
+  &._education {
+
+    .school {
+      font-weight: bold;
+    }
+    .quali {
+      line-height: 1.2;
+    }
+  }
+
+  &._bio {
+    padding-right: 30px;
+    grid-column: span 2;
+    grid-row-gap: 10px;
+    display: grid;
+
+    .title {
+      font-weight: bold;
+      font-size: 21px;
+    }
+  }
+
+  &._title {
+    grid-column: span 3;
+    font-weight: bold;
+    font-size: 21px;
+
+    small {
+      font-weight: normal;
+      margin-left: 5px;
+      color: $gray;
+    }
+  }
+}

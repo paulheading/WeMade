@@ -1,0 +1,9 @@
+
+.left {
+  position: relative;
+  display: grid;
+
+  &._desktop {
+    z-index: 2;
+  }
+}

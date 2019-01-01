@@ -1,23 +1,28 @@
 
 TweenLite.defaultEase = Linear.easeNone;
-
-var controller = new ScrollMagic.Controller();
-
-function changeVisual() {
-  color = $(this)[0].classList[1]; console.log(color);
-  $('._demo').removeClass().addClass('visual _demo ' + color);
-}
+Draggable.create('.popup',{bounds:'.area._desktop',cursor:'pointer'});
 
 function changeMenu() {
-  if($(this).hasClass('_open')) {
-    $('._menu').css('display','none');
-    $('body').removeClass('_menu');
-    $(this).removeClass('_open');
+
+  var menuOpenTl = new TimelineMax();
+  var menuCloseTl = new TimelineMax();
+
+  if($('html').hasClass('_menu')) {
+    menuCloseTl
+    .set('html',{className:'-= _menu'})
+    .set('.lnk._menu',{clearProps:'all'})
+    ;
   } else {
-    $('._menu').css('display','grid');
-    $('body').addClass('_menu');
-    $(this).addClass('_open');
+    menuOpenTl
+    .set('html',{className:'+= _menu'})
+    .staggerTo('.lnk._menu',0.1,{opacity:1},'0.1','+=0.1')
+    ;
   }
+}
+
+function changeVisual() {
+  color = $(this)[0].classList[1];
+  $('._demo').removeClass().addClass('visual _demo ' + color);
 }
 
 function colorSwitch() {
@@ -35,9 +40,68 @@ function colorSwitch() {
   return colorSwitch;
 }
 
+function changeFolder() {
+  var label = $(this)[0].classList[1];
+
+  if($(this).hasClass('_open')) {
+    $(this).removeClass('_open').addClass('_closed');
+    $('.popup').each(function(){
+      if($(this).hasClass(label)) {
+        $(this).hide();
+      }
+    });
+  } else {
+    $(this).removeClass('_closed').addClass('_open');
+    $('.popup').each(function(){
+      if($(this).hasClass(label)) {
+        $(this).show();
+      }
+    });
+  }
+}
+
+function closeBtn() {
+  var label = $(this).parents('.popup')[0].classList[1];
+  var popup = $(this).parents('.popup'); $(popup).hide();
+
+  $('.folder').each(function(){
+    if($(this).hasClass(label)) {
+      $(this).removeClass('_open').addClass('_closed');
+    }
+  });
+}
+
+function minBtn() {
+  var label = $(this).parents('.popup')[0].classList[1];
+  var popup = $(this).parents('.popup');
+
+  TweenMax.to(popup,0.3,{scale:0,ease:SteppedEase.config(4)});
+
+  $('.min').each(function(){
+    if($(this).hasClass(label)) {
+      $(this).addClass('_on');
+    }
+  });
+}
+
+function changeMin() {
+  var label = $(this)[0].classList[1];
+
+  $(this).removeClass('_on');
+  $('.popup').each(function(){
+    if($(this).hasClass(label)) {
+      TweenMax.to($(this),0.3,{scale:1,ease:SteppedEase.config(4)});
+    }
+  });
+}
+
 $(document)
 // .ready(colorSwitch)
 .ready(siteFunc)
 .on('click','.color',changeVisual)
-.on('click','.menu',changeMenu)
+.on('click','#menu',changeMenu)
+.on('click','.folder',changeFolder)
+.on('click','.min',changeMin)
+.on('click','.btn._close',closeBtn)
+.on('click','.btn._min',minBtn)
 ;

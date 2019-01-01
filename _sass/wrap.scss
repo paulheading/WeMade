@@ -4,10 +4,13 @@
   max-width: 1000px;
 
   &._hero {
-    grid-template: 1fr / 1fr;
     place-items: center;
     display: grid;
-    // width: 1000px;
+  }
+
+  &._theme {
+    place-items: center;
+    display: grid;
   }
 
   &._menu {
@@ -36,9 +39,31 @@
     display: grid;
   }
 
+  &._header {
+    grid-template-columns: repeat(2,1fr);
+    align-content: center;
+    display: grid;
+    height: 120px;
+  }
+
   &._desktop {
-    max-width: 640px;
-    height: 600px;
+    grid-template-columns: repeat(2,1fr);
+    padding-top: 40px;
+    display: grid;
+
+    @media#{$min640w} {
+      padding-right: 40px;
+      padding-left: 40px;
+    }
+  }
+
+  &._topbar {
+    justify-content: flex-start;
+    grid-auto-flow: column;
+    grid-column-gap: 10px;
+    align-content: center;
+    display: grid;
+    width: 100%;
   }
 
   &._pages {
@@ -57,16 +82,17 @@
     }
   }
 
+  &._cv {
+    background-color: white;
+    max-width: 720px;
+    padding: 20px 40px;
+  }
+
   &._email {
     border-top-right-radius: 3px;
     border-top-left-radius: 3px;
     background-color: white;
     max-width: 640px;
     overflow: hidden;
-    height: 460px;
-
-    @media#{$min640w} {
-      height: 520px;
-    }
   }
 }

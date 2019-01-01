@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}" class="no-js">
+
+  {% include html/head.html %}
+
+  <body class="layout-project">
+
+    {% include html/load.html %}
+
+    <div class="site _full" style="opacity:0;">
+
+      {% if site.header %}
+      <header>
+        {{ site.header }}
+      </header>
+      {% endif %}
+
+      {% include html/header.html %}
+      {% include html/menu.html %}
+
+      <div class="area _example">
+        <div class="wrap _split">
+          <div class="visual _logo">
+            <img src="static-logoGRAY.png" alt="">
+          </div>
+          <div class="drag">
+            <div class="visual">
+              <img src="laptopBW.jpg" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="area _notes" id="notes">
+        <div class="wrap _notes">
+          <div class="copy">
+            {{ page.content }}
+          </div>
+        </div>
+      </div>
+
+      <div class="area _example">
+        <div class="wrap _single">
+          <div class="drag">
+            <div class="visual">
+              <img src="laptopV2BW.jpg" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="area _example">
+        <div class="wrap _single">
+          <div class="drag">
+            <div class="visual _demo _gold"></div>
+            <div class="visual _switch">
+              <div class="color _black"></div>
+              <div class="color _gold"></div>
+              <div class="color _red"></div>
+              <div class="color _green"></div>
+              <div class="color _blue"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="area _example --split">
+        <div class="wrap _split">
+          <div class="visual">
+            <img src="laptopBW.jpg" alt="">
+          </div>
+          <div class="drag">
+            <div class="visual">
+              <img src="laptopBW.jpg" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="area _example">
+        <div class="wrap _single">
+          <div class="drag">
+            <video autoplay muted loop>
+              <source src="/assets/vid/nyo.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+
+      <div class="area _pages">
+        <div class="wrap _pages">
+          <span class="lnk _prev">Prev</span>
+          <a href="/projects/" class="lnk _index">Project Index</a>
+          <span class="lnk _next">Next</span>
+        </div>
+      </div>
+
+      {% include html/desktop.html %}
+      {% include html/email.html %}
+      {% include html/footer.html %}
+
+      {% if site.footer %}
+      <footer>
+        {{site.footer}}
+      </footer>
+      {% endif %}
+
+    </div>
+
+  </body>
+
+  {% include html/scripts.html %}
+
+</html>

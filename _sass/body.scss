@@ -1,0 +1,68 @@
+
+body {
+  // transition: background-color 300ms;
+
+  &.layout-home {
+
+    .area._header {
+      position: absolute;
+      width: 100%;
+    }
+  }
+
+  &._play {
+    background-color: $smoke;
+
+    .area {
+      &._jobs {
+        background-color: rgba(0,0,0,.05);
+      }
+    }
+
+    #blob {
+      // fill: white;
+    }
+    #left {
+      // fill:#89BCF6;
+    }
+    #right {
+      // fill:#FFA24C;
+    }
+    #wave {
+      // display: block;
+    }
+  }
+
+  &._nyo {
+    background-color: $carbon;
+
+    .area {
+
+      &._hero {
+        color: white;
+      }
+
+      &._jobs {
+        background-color: rgba(0,0,0,.25);
+        color: white;
+      }
+    }
+
+    .strike {
+      background-color: white;
+    }
+
+    #logo, #menu {
+      fill: white;
+    }
+    #left {
+      // fill:#EA002D;
+    }
+    #right {
+      // fill:#FDBC3B;
+    }
+    #ball {
+      // display: block;
+    }
+  }
+}

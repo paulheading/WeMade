@@ -4,11 +4,12 @@
 
   &._desktop {
     background-color: rgba(0,0,0,.05);
+    display: grid;
   }
 
   &._email {
     justify-content: flex-start;
-    background-color: #AAA;
+    background-color: $gray;
     grid-auto-flow: column;
     grid-column-gap: 10px;
     align-content: center;
@@ -19,12 +20,20 @@
 
   &._popup {
     justify-content: flex-start;
-    background-color: #AAA;
+    background-color: $gray;
     grid-auto-flow: column;
     grid-column-gap: 10px;
     align-content: center;
     padding-right: 10px;
     padding-left: 10px;
     display: grid;
+
+    &._tim {
+      background-color: $dodger;
+    }
+
+    &._eric {
+      background-color: $pink;
+    }
   }
 }

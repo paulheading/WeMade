@@ -1,20 +1,17 @@
 
 <div class="area _header">
-  <div class="wrap">
+  <div class="wrap _header">
     <div class="left _header">
       <a class="home_link" href="/">
         {% include svg/logo.svg %}
       </a>
     </div>
     <div class="right _header">
-      {% if page.layout == 'page' %}
+      {% if page.layout == 'project' %}
       <a class="text_jump" href="#notes">Text</a>
+      {% else %}
       {% endif %}
-      <div class="menu">
-        <div class="burger"></div>
-        <div class="burger"></div>
-        <div class="burger"></div>
-      </div>
+      {% include svg/menu.svg %}
     </div>
   </div>
 </div>

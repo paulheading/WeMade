@@ -1,0 +1,13 @@
+
+.folder {
+  background-color: $sky;
+  border-radius: 3px;
+  cursor: pointer;
+  padding: 20px;
+  height: 60px;
+  width: 80px;
+
+  &._closed {
+    background-color: $coral;
+  }
+}

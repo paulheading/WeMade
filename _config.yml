@@ -12,13 +12,23 @@ markdown : kramdown
 theme    : barbs
 
 collections :
-  system    :
-    title   : System
+  about     :
+    title   : About
     output  : true
-    weight  : 1.0.0
+  projects  :
+    title   : Projects
+    output  : true
 
 defaults    :
 - scope     :
     path    : ''
   values    :
-    layout  : page
+    layout  : project
+- scope     :
+    path    : _about/chloe
+  values    :
+    chapter : Chloe
+- scope     :
+    path    : _about/paul
+  values    :
+    chapter : Paul

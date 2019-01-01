@@ -1,0 +1,27 @@
+
+.right {
+  justify-content: right;
+  position: relative;
+  display: grid;
+
+  &._header {
+    grid-auto-flow: column;
+    align-items: center;
+    grid-gap: 20px;
+    display: grid;
+  }
+
+  &._desktop {
+    grid-template: 60px / repeat(2,80px);
+    align-content: flex-start;
+    direction: rtl;
+    grid-gap: 20px;
+    display: grid;
+    z-index: 1;
+
+    @media#{$max639w} {
+      position: relative;
+      right: -40px;
+    }
+  }
+}

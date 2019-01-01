@@ -1,4 +1,10 @@
 
+#logo, #menu {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
 #blob {
   position: relative;
   grid-area: 1 / 1;
@@ -28,4 +34,19 @@
   @media#{$min640w} {
     right: -360px;
   }
+}
+
+#submit {
+  width: 54px;
+  fill: $carbon;
+}
+
+#wave {
+  display: none;
+  fill: rgba(black,0.05);
+}
+
+#ball {
+  display: none;
+  fill: rgba(black,0.25);
 }
