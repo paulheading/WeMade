@@ -14,4 +14,4 @@ These guided us in our response. We developed several concept routes, ultimately
 
 **The Result:** Concept work, animations
 
-<img src="laptopBW.jpg" alt="" style="max-width:100%;">
+<img src="/assets/img/nyo/laptopBW.jpg" alt="" style="max-width:100%;">
