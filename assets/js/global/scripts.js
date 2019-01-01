@@ -116,9 +116,11 @@ $(document)
 // .ready(colorSwitch)
 .ready(siteFunc)
 // .on('click','.color',changeVisual)
-.on('click','.menu-lnk',changeMenu)
+// .on('click','.menu-lnk',changeMenu)
 .on('click','.folder',changeFolder)
 .on('click','.min',changeMin)
 .on('click','.btn._close',closeBtn)
 .on('click','.btn._min',minBtn)
 ;
+
+$('.menu-lnk').click(changeMenu);
