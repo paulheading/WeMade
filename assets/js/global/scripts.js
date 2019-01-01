@@ -2,8 +2,7 @@
 TweenLite.defaultEase = Linear.easeNone;
 Draggable.create('.popup',{bounds:'.area._desktop',cursor:'pointer'});
 
-function changeMenu() {
-
+$('.menu-lnk').click(function(){
   var menuOpenTl = new TimelineMax();
   var menuCloseTl = new TimelineMax();
 
@@ -18,7 +17,25 @@ function changeMenu() {
     .staggerTo('.lnk._menu',0.1,{opacity:1},'0.1','+=0.1')
     ;
   }
-}
+});
+
+// function changeMenu() {
+//
+//   var menuOpenTl = new TimelineMax();
+//   var menuCloseTl = new TimelineMax();
+//
+//   if($('html').hasClass('_menu')) {
+//     menuCloseTl
+//     .set('html',{className:'-= _menu'})
+//     .set('.lnk._menu',{clearProps:'all'})
+//     ;
+//   } else {
+//     menuOpenTl
+//     .set('html',{className:'+= _menu'})
+//     .staggerTo('.lnk._menu',0.1,{opacity:1},'0.1','+=0.1')
+//     ;
+//   }
+// }
 
 function changeVisual() {
   color = $(this)[0].classList[1];
@@ -99,7 +116,7 @@ $(document)
 // .ready(colorSwitch)
 .ready(siteFunc)
 .on('click','.color',changeVisual)
-.on('click','.menu-lnk',changeMenu)
+// .on('click','.menu-lnk',changeMenu)
 .on('click','.folder',changeFolder)
 .on('click','.min',changeMin)
 .on('click','.btn._close',closeBtn)
