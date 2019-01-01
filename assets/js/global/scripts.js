@@ -1,6 +1,6 @@
 
 TweenLite.defaultEase = Linear.easeNone;
-Draggable.create('.popup',{bounds:'.area._desktop',cursor:'pointer'});
+Draggable.create('.popup',{cursor:'pointer'});
 
 function changeMenu() {
 
