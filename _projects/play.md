@@ -1,6 +1,6 @@
 ---
-title: PLAY Page
-layout: play
+title  : PLAY! Animation
+layout : play
 ---
 
 **The Client:** PLAY!

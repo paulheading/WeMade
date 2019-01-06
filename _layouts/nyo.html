@@ -5,7 +5,7 @@
 
   <body class="layout-nyo">
 
-    {% include html/load.html %}
+    {% include html/overlay-load.html %}
 
     <div class="site _full" style="opacity:0;">
 
@@ -15,23 +15,23 @@
       </header>
       {% endif %}
 
-      {% include html/header.html %}
-      {% include html/menu.html %}
+      {% include html/area-header.html %}
+      {% include html/overlay-menu.html %}
 
       <div class="area _example">
         <div class="wrap _split">
           <div class="canvas" style="padding-top:0;">
-            <img class="_flex _border--mob" src="/assets/img/nyo/static-logoGRAY.png" alt="">
+            <div class="_border--mob">
+              {% include svg/nyo/logo.svg %}
+            </div>
           </div>
           <img class="_flex" src="/assets/img/nyo/laptopBW.jpg" alt="">
         </div>
       </div>
 
-      <div class="area _notes" id="notes">
+      <div class="area _notes" id="skip">
         <div class="wrap _notes">
-          <div class="copy">
-            {{ page.content }}
-          </div>
+          {{ page.content }}
         </div>
       </div>
 
@@ -43,16 +43,12 @@
 
       <div class="area _example">
         <div class="wrap _single">
-
-            <div class="visual _demo _gold"></div>
-            <div class="visual _switch">
-              <div class="color _black"></div>
-              <div class="color _gold"></div>
-              <div class="color _red"></div>
-              <div class="color _green"></div>
-              <div class="color _blue"></div>
-            </div>
-
+          <video class="video _dtp" autoplay playsinline muted loop poster="">
+            <source src="/assets/vid/nyo/explode/DESKTOP.mp4" type="video/mp4">
+          </video>
+          <video class="video _mob" autoplay playsinline muted loop poster="">
+            <source src="/assets/vid/nyo/explode/MOBILE.mp4" type="video/mp4">
+          </video>
         </div>
       </div>
 
@@ -61,21 +57,20 @@
           <div class="visual">
             <img src="/assets/img/nyo/scroll.jpg" alt="">
           </div>
-
-            <div class="visual">
-              <img src="/assets/img/nyo/laptopBW.jpg" alt="">
-            </div>
-
+          <div class="visual">
+            <img src="/assets/img/nyo/laptopBW.jpg" alt="">
+          </div>
         </div>
       </div>
 
       <div class="area _example">
         <div class="wrap _single">
-
-            <video autoplay muted loop>
-              <source src="/assets/vid/nyo.mp4" type="video/mp4">
-            </video>
-
+          <video class="video _dtp" autoplay playsinline muted loop poster="">
+            <source src="/assets/vid/nyo/main/DESKTOP.mp4" type="video/mp4">
+          </video>
+          <video class="video _mob" autoplay playsinline muted loop poster="">
+            <source src="/assets/vid/nyo/main/MOBILE.mp4" type="video/mp4">
+          </video>
         </div>
       </div>
 
@@ -87,8 +82,8 @@
         </div>
       </div>
 
-      {% include html/desktop.html %}
-      {% include html/email.html %}
+      {% include html/area-desktop.html %}
+      {% include html/area-email.html %}
       {% include html/footer.html %}
 
       {% if site.footer %}

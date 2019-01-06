@@ -6,6 +6,7 @@
 
   img {
     max-width: 100%;
+    grid-area: 1 / 1;
   }
 
   &._push {
@@ -28,11 +29,6 @@
   }
 
   &._demo {
-    height: 266px;
-
-    @media#{$min640w} {
-      height: 540px;
-    }
 
     &._black {
       background-color: black;

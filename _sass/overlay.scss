@@ -1,0 +1,57 @@
+
+.overlay {
+  overflow: scroll;
+  @include zero();
+  position: fixed;
+  display: none;
+  height: 100%;
+  color: $gray;
+
+  &._open {
+    display: grid;
+  }
+
+  &._load {
+    background-color: $smoke;
+    padding: 30px;
+    z-index: 3;
+  }
+
+  &._menu {
+    background-color: $coral;
+    justify-content: center;
+    font-size: 30px;
+    color: white;
+    z-index: 3;
+  }
+
+  &._about {
+    background-color: rgba($smoke,0.95);
+    padding-bottom: 100px;
+    padding-top: 100px;
+    min-height: 600px;
+    z-index: 3;
+  }
+
+  &._browse {
+    background-color: rgba($smoke,0.95);
+    padding-bottom: 100px;
+    padding-top: 100px;
+    min-height: 600px;
+    z-index: 3;
+  }
+
+  &._search {
+    background-color: rgba($smoke,0.95);
+    padding-bottom: 100px;
+    padding-top: 100px;
+    min-height: 600px;
+    z-index: 3;
+  }
+
+  &._mobile {
+    background-color: $smoke;
+    padding: 30px;
+    z-index: 4;
+  }
+}

@@ -5,7 +5,8 @@
 
   <body class="layout-home">
 
-    {% include html/load.html %}
+    {% include html/overlay-load.html %}
+    {% include html/overlay-menu.html %}
 
     <div class="site _full" style="opacity:0;">
 
@@ -15,13 +16,12 @@
       </header>
       {% endif %}
 
-      {% include html/header.html %}
-      {% include html/menu.html %}
-      {% include html/theme.html %}
-      {% include html/hero.html %}
-      {% include html/jobs.html %}
-      {% include html/desktop.html %}
-      {% include html/email.html %}
+      {% include html/area-header.html %}
+      {% include html/area-theme.html %}
+      {% include html/area-hero.html %}
+      {% include html/area-jobs.html %}
+      {% include html/area-desktop.html %}
+      {% include html/area-email.html %}
       {% include html/footer.html %}
 
       {% if site.footer %}

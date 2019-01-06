@@ -1,5 +1,5 @@
 ---
-title  : Harlem Page
+title  : Harlem Hellfighters
 layout : harlem
 ---
 

@@ -1,5 +1,5 @@
 ---
-title  : NYO Page
+title  : NYO Identity
 layout : nyo
 ---
 

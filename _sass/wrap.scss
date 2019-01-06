@@ -3,8 +3,16 @@
   position: relative;
   max-width: 1000px;
 
+  &._load {
+    place-self: center;
+    text-align: center;
+    max-width: 280px;
+    width: 100%;
+    z-index: 2;
+  }
+
   &._hero {
-    place-items: center;
+    place-self: center;
     display: grid;
   }
 
@@ -14,7 +22,9 @@
   }
 
   &._menu {
-    place-items: center;
+    text-align: center;
+    place-self: center;
+    grid-row-gap: 5px;
     display: grid;
   }
 

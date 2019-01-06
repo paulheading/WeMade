@@ -1,0 +1,16 @@
+
+.video {
+  display: none;
+
+  &._mob {
+    @media#{$max639w} {
+      display: block;
+    }
+  }
+
+  &._dtp {
+    @media#{$min640w} {
+      display: block;
+    }
+  }
+}

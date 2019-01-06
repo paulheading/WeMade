@@ -1,0 +1,21 @@
+
+.bar {
+
+  &._box {
+    border: 3px solid $gray;
+    display: grid;
+    width: 100%;
+  }
+
+  &._progress {
+    background-color: $gray;
+
+    display: grid;
+    height: 20px;
+    width: 10%;
+
+    &.--mobile {
+      justify-self: center;
+    }
+  }
+}

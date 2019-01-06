@@ -9,13 +9,17 @@
   "area",
   "body",
   "btn",
+  "bar",
   "copy",
+  "title",
   "entry",
   "folder",
+  "overlay",
   "html",
   "left",
   "lnk",
   "min",
+  "pop",
   "popup",
   "right",
   "row",
@@ -23,8 +27,13 @@
   "topbar",
   "visual",
   "window",
-  "wrap"
+  "wrap",
+  "video"
 ;
+
+.test {
+  opacity: 0;
+}
 
 .canvas {
   @media#{$max639w} {

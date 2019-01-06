@@ -5,7 +5,8 @@
 
   <body class="layout-about">
 
-    {% include html/load.html %}
+    {% include html/overlay-load.html %}
+    {% include html/overlay-menu.html %}
 
     <div class="site _full" style="opacity:0;">
 
@@ -15,19 +16,16 @@
       </header>
       {% endif %}
 
-      {% include html/header.html %}
-      {% include html/menu.html %}
+      {% include html/area-header.html %}
 
-      <div class="area _notes" id="notes">
+      <div class="area _notes">
         <div class="wrap _notes">
-          <div class="copy">
-            {{ page.content }}
-          </div>
+          {{ page.content }}
         </div>
       </div>
 
-      {% include html/desktop.html %}
-      {% include html/email.html %}
+      {% include html/area-desktop.html %}
+      {% include html/area-email.html %}
       {% include html/footer.html %}
 
       {% if site.footer %}
