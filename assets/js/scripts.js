@@ -2,6 +2,10 @@
 TweenLite.defaultEase = Linear.easeNone;
 Draggable.create('.popup',{cursor:'pointer'});
 
+function setupScripts() {
+  TweenMax.set('.lnk._menu',{opacity:0});
+}
+
 function changeMenu() {
 
   var menuOpenTl = new TimelineMax();
@@ -10,11 +14,13 @@ function changeMenu() {
   if($('html').hasClass('_menu')) {
     menuCloseTl
     .set('html',{className:'-= _menu'})
-    .set('.lnk._menu',{clearProps:'all'})
+    .set('.overlay._menu',{className:'-= _open'})
+    .set('.lnk._menu',{opacity:0})
     ;
   } else {
     menuOpenTl
     .set('html',{className:'+= _menu'})
+    .set('.overlay._menu',{className:'+= _open'})
     .staggerTo('.lnk._menu',0.1,{opacity:1},'0.1','+=0.1')
     ;
   }
@@ -75,7 +81,7 @@ function changeMin() {
   });
 }
 
-$(document).ready(siteFunc);
+$(document).ready(setupScripts);
 $('.menu-lnk').click(changeMenu);
 $('.folder').click(changeFolder);
 $('.min').click(changeMin);

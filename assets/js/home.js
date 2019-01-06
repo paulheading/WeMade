@@ -99,18 +99,18 @@ function heroSetup() {
   var heroSetupTl = new TimelineMax({repeat:-1});
 
   heroSetupTl
-  .set('body',{className:'+= _paul'})
+  .set('body',{className:'+=_paul'})
   .add(paul())
-  .set('body',{className:'-= _paul'})
-  .set('body',{className:'+= _chloe'})
+  .set('body',{className:'-=_paul'})
+  .set('body',{className:'+=_chloe'})
   .add(chloe())
-  .set('body',{className:'-= _chloe'})
-  .set('body',{className:'+= _play'})
+  .set('body',{className:'-=_chloe'})
+  .set('body',{className:'+=_play'})
   .add(play())
-  .set('body',{className:'-= _play'})
-  .set('body',{className:'+= _nyo'})
+  .set('body',{className:'-=_play'})
+  .set('body',{className:'+=_nyo'})
   .add(nyo())
-  .set('body',{className:'-= _nyo'})
+  .set('body',{className:'-=_nyo'})
   ;
 
 }

@@ -12,8 +12,8 @@ function siteFunc() {
   var siteTl = new TimelineMax({delay:0.6});
 
   siteTl
-  .to('.overlay._load',0.1,{display:'none'},'start')
-  .to('.site',0.1,{opacity:1,onComplete:function(){loadTl.stop();}},'start')
+  .set('.overlay._load',{className:'-=_open'},'0.1')
+  .set('.site',{className:'+=_open',onComplete:function(){loadTl.stop();}},'0.1')
   ;
 }
 

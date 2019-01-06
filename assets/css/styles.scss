@@ -31,6 +31,14 @@
   "video"
 ;
 
+.site {
+  display: none;
+
+  &._open {
+    display: block;
+  }
+}
+
 .test {
   opacity: 0;
 }

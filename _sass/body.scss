@@ -1,12 +1,12 @@
 
 body {
-  // transition: background-color 300ms;
 
   &.layout-home {
 
-    .area._header {
-      position: fixed;
-      width: 100%;
+    .area {
+      &._header {
+        position: absolute;
+      }
     }
   }
 
@@ -17,19 +17,6 @@ body {
       &._jobs {
         background-color: rgba(0,0,0,.05);
       }
-    }
-
-    #blob {
-      // fill: white;
-    }
-    #left {
-      // fill:#89BCF6;
-    }
-    #right {
-      // fill:#FFA24C;
-    }
-    #wave {
-      // display: block;
     }
   }
 
@@ -54,15 +41,6 @@ body {
 
     #logo, #menu {
       fill: white;
-    }
-    #left {
-      // fill:#EA002D;
-    }
-    #right {
-      // fill:#FDBC3B;
-    }
-    #ball {
-      // display: block;
     }
   }
 }
