@@ -4,6 +4,10 @@ html {
   &._menu {
     overflow: hidden;
 
+    body {
+      overflow: hidden;
+    }
+
     .area {
       &._header {
         position: fixed;
