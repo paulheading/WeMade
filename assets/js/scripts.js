@@ -60,30 +60,31 @@ function closeBtn() {
 function minBtn() {
   var label = $(this).parents('.popup')[0].classList[1];
   var popup = $(this).parents('.popup');
+  var newBtn = '<div class="min '+ label +' _on"></div>';
+  var pos = $(this).offset();
+  var newPos = $('.wrap._topbar').last().offset();
+  var posLeft = newPos.left - pos.left;
+  var posTop = newPos.top - pos.top;
 
-  TweenMax.to(popup,0.3,{scale:0,ease:SteppedEase.config(4)});
-
-  $('.min').each(function(){
-    if($(this).hasClass(label)) {
-      $(this).addClass('_on');
-    }
-  });
+  TweenMax.to(popup,0.3,{scale:0,x:posLeft,y:posTop,ease:SteppedEase.config(4)});
+  $('.wrap._topbar').append(newBtn);
 }
 
 function changeMin() {
   var label = $(this)[0].classList[1];
 
   $(this).removeClass('_on');
+
   $('.popup').each(function(){
     if($(this).hasClass(label)) {
-      TweenMax.to($(this),0.3,{scale:1,ease:SteppedEase.config(4)});
+      TweenMax.to($(this),0.3,{scale:1,x:0,y:0,ease:SteppedEase.config(4)});
     }
   });
 }
 
 $(document).ready(setupScripts);
+$('.wrap._topbar').on('click','.min',changeMin);
 $('.menu-lnk').click(changeMenu);
 $('.folder').click(changeFolder);
-$('.min').click(changeMin);
 $('.btn._close').click(closeBtn);
 $('.btn._min').click(minBtn);
