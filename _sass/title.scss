@@ -5,6 +5,59 @@
     padding-bottom: 20px;
   }
 
+  &._bio {
+    font-weight: bold;
+    font-size: 21px;
+
+    @media#{$max719w} {
+      display: none;
+    }
+  }
+
+  &._name {
+    font-weight: bold;
+    font-size: 36px;
+  }
+
+  &._projects {
+    grid-column: span 3;
+    font-weight: bold;
+    font-size: 21px;
+  }
+
+  &._skills {
+    grid-column: span 3;
+    font-weight: bold;
+    font-size: 21px;
+  }
+
+  &._jobs {
+    grid-column: span 3;
+    font-weight: bold;
+    font-size: 21px;
+  }
+
+  &._role {
+    font-weight: bold;
+  }
+
+  &._client {
+    font-weight: bold;
+  }
+
+  &._school {
+    grid-column: span 3;
+    font-weight: bold;
+    font-size: 21px;
+  }
+
+  &._sub {
+    font-weight: normal;
+    margin-left: 5px;
+    font-size: 16px;
+    color: $gray;
+  }
+
   + p {
     margin-top: 20px;
   }

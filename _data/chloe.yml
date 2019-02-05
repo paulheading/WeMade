@@ -1,0 +1,71 @@
+
+- name :
+    - first  : Chloe
+      second : Ings
+
+  addr :
+    - area : Hackney
+      city : Toronto
+
+  phone  : +44 7873 156 538
+  bio    : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ut ultrices ante.
+
+  social :
+    - github : paulheading
+    - insta  : folloapollo
+    - other  : adventures
+
+  projects :
+    - date   : Jun – Oct 18
+      client : Barbs Shop
+      url    : https://shop.barbican.org.uk
+    - date   : Jun 18 – Now
+      client : Barbs Guidelines
+      url    : https://guidelines.barbican.org.uk
+    - date   : – Now
+      client : 36 Bourne St
+      url    : https://36bournestreet.com
+    - date   : –
+      client : OpenFest
+    - date   : –
+      client : Montagu.es
+      url    : https://montagu.es
+    - date   : –
+      client : NYO Logo
+
+  jobs :
+    - date   : Mar 13 – Now
+      role   : Designer
+      client : Barbican
+      url    : https://www.barbican.org.uk
+    - date   : Apr 10 – Mar 13
+      role   : Designer
+      client : Skye Creative
+      url    : http://www.skyecreative.co.uk
+    - date   : Apr 10 – Nov 10
+      role   : Designer
+      client : Brandwave
+      url    : https://brandwavemarketing.com
+
+  skills :
+    - subtitle : Inc. Photoshop, InDesign, Illustrator, After Effects, Premiere Pro
+    - type : SCSS
+    - type : Liquid
+    - type : PHP
+    - type : Markdown
+    - type : Javascript
+    - type : Jekyll
+    - type : Shopify
+    - type : Wordpress
+    - type : Netlify
+
+  education :
+    - client : Teamtreehouse
+      url    : https://teamtreehouse.com
+      type   : Full Stack Javascript Degree
+    - client : Goldsmiths Uni
+      url    : https://www.gold.ac.uk
+      type   : BA History with Spanish Language
+    - client : T Wells Grammar
+      url    : https://www.twgsb.org.uk
+      type   : 3 A Levels [History, English Lit, General Studies]

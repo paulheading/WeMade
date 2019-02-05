@@ -3,7 +3,7 @@
 
   {% include html/head.html %}
 
-  <body class="layout-about">
+  <body class="layout {{ page.layout | downcase | prepend: '_' }}">
 
     {% include html/overlay-load.html %}
 
@@ -17,12 +17,10 @@
 
       {% include html/area-header.html %}
       {% include html/overlay-menu.html %}
-
       {{ page.content }}
-
       {% include html/area-desktop.html %}
       {% include html/area-email.html %}
-      {% include html/footer.html %}
+      {% include html/area-footer.html %}
 
       {% if site.footer %}
       <footer>

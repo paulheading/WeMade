@@ -87,7 +87,16 @@
   }
 
   &._cv {
-    padding-bottom: 80px;
+    line-height: 1.5;
+    
+    @media#{$max719w} {
+      padding-bottom: 40px;
+      text-align: center;
+    }
+
+    @media#{$min720w} {
+      padding-bottom: 80px;
+    }
   }
 
   &._footer {

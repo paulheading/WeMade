@@ -39,10 +39,6 @@
   }
 }
 
-.test {
-  opacity: 0;
-}
-
 .canvas {
   @media#{$max639w} {
     padding: 40px;
@@ -85,11 +81,6 @@
   }
 }
 
-.input {
-  border-bottom: 1px #ddd solid;
-  color: #aaa;
-}
-
 .tag {
   background-color: $sky;
   border-radius: 3px;
@@ -97,22 +88,8 @@
   color: black;
 }
 
-.title {
-  padding-right: 10px;
-}
-
 .project {
   padding-top: 120px;
-}
-
-.submit {
-
-  &._email {
-    padding-bottom: 20px;
-    padding-right: 20px;
-    direction: rtl;
-    display: grid;
-  }
 }
 
 // THEME UPDATES

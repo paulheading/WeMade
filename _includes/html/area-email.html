@@ -2,33 +2,33 @@
 <div class="area _email">
   <div class="wrap _email">
     <div class="topbar _email">
-      <div class="btn _close"></div>
-      <div class="btn _min"></div>
+      <div class="btn _topbar _close"></div>
+      <div class="btn _topbar _min"></div>
     </div>
     <form name="contact" method="POST" netlify>
     <div class="window _email">
-      <div class="input">
-        <div class="copy _input">
+      <div class="row _input">
+        <div class="wrap _input">
           <div class="title">To:</div>
           <div class="tag">
             hello@wemade.design
           </div>
         </div>
       </div>
-      <div class="input">
-        <div class="copy _input">
+      <div class="row _input">
+        <div class="wrap _input">
           <span class="title">Subject:</span>
           <input name="subject" type="text" value="Online Enquiry"/></div>
       </div>
-      <div class="input">
-        <div class="copy _input"><span class="title">From:</span>
+      <div class="row _input">
+        <div class="wrap _input"><span class="title">From:</span>
         <input name="email" type="email" placeholder="paulheading@me.com"/>
       </div>
       </div>
-      <div class="copy _email">
+      <div class="row _textarea">
         <textarea name="message"></textarea>
       </div>
-      <div class="submit _email">
+      <div class="row _submit">
         <button type="submit">
           {% include svg/submit.svg %}
         </button>

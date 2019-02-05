@@ -1,10 +1,13 @@
 
 .btn {
-  background-color: $gray;
-  border-radius: 50%;
   cursor: pointer;
-  height: 20px;
-  width: 20px;
+
+  &._topbar {
+    background-color: $gray;
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+  }
 
   &._close {
     background-color: red;
@@ -12,5 +15,9 @@
 
   &._min {
     background-color: orange;
+  }
+
+  &._download {
+    width: 60px;
   }
 }

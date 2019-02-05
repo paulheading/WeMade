@@ -1,6 +1,11 @@
 
 .copy {
-  position: relative;
+
+  &._hello {
+    @media#{$max639w} {
+      display: none;
+    }
+  }
 
   &._hero {
     text-align: center;
@@ -9,34 +14,6 @@
     grid-area: 1 / 1;
     font-size: 28px;
     z-index: 4;
-  }
-
-  &._input {
-    grid-auto-flow: column;
-    padding-bottom: 10px;
-    display: inline-grid;
-    align-items: center;
-    padding-top: 10px;
-
-    input {
-      min-width: 200px;
-      padding: 0;
-    }
-  }
-
-  &._email {
-    padding-bottom: 20px;
-    padding-right: 20px;
-    padding-top: 20px;
-
-    textarea {
-      height: 196px;
-      padding: 0;
-
-      @media#{$min640w} {
-        height: 236px;
-      }
-    }
   }
 
   &._footer {

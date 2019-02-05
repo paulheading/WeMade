@@ -1,5 +1,5 @@
 ---
-title  : Paul Page
+title  : Paul Heading
 layout : about
 ---
 

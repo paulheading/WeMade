@@ -1,5 +1,5 @@
 ---
-title  : Chloe Page
+title  : Chloe Ings
 layout : about
 ---
 

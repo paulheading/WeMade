@@ -1,59 +1,39 @@
 
 .entry {
+  align-self: center;
 
-  small {
-    font-size: 15px;
+  @media#{$max719w} {
+    padding-bottom: 10px;
+    padding-top: 10px;
+
+    + .entry {
+      border-top: 1px solid black;
+    }
   }
 
   &._name {
-    grid-column: span 2;
-    font-weight: bold;
-    font-size: 36px;
-    line-height: 1.15;
-  }
+    line-height: 1.1;
 
-  &._address, &._social {
-    line-height: 1.2;
-  }
-
-  &._job {
-
-    .role, .agency {
-      font-weight: bold;
+    @media#{$max719w} {
+      justify-content: center;
+      grid-auto-flow: column;
+      grid-column-gap: 10px;
+      display: inline-grid;
     }
   }
 
-  &._education {
-
-    .school {
-      font-weight: bold;
-    }
-    .quali {
-      line-height: 1.2;
+  &._address {
+    @media#{$min720w} {
+      align-self: center;
+      grid-column: 3;
     }
   }
 
   &._bio {
-    padding-right: 30px;
-    grid-column: span 2;
-    grid-row-gap: 10px;
-    display: grid;
-
-    .title {
-      font-weight: bold;
-      font-size: 21px;
-    }
-  }
-
-  &._title {
-    grid-column: span 3;
-    font-weight: bold;
-    font-size: 21px;
-
-    small {
-      font-weight: normal;
-      margin-left: 5px;
-      color: $gray;
+    @media#{$min720w} {
+      padding-right: 30px;
+      grid-column: span 2;
+      display: grid;
     }
   }
 }

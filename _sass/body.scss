@@ -1,7 +1,7 @@
 
-body {
+.layout {
 
-  &.layout-home {
+  &._home {
 
     .area {
       &._header {
@@ -41,6 +41,12 @@ body {
 
     #logo, #menu {
       fill: white;
+    }
+  }
+
+  &._cv {
+    @media#{$max719w} {
+      background-color: white;
     }
   }
 }

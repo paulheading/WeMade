@@ -13,15 +13,71 @@
     }
   }
 
+  &._input {
+    border-bottom: 1px #ddd solid;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    color: #aaa;
+  }
+
+  &._textarea {
+    padding-bottom: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+
+    textarea {
+      height: 196px;
+      padding: 0;
+
+      @media#{$min640w} {
+        height: 236px;
+      }
+    }
+  }
+
+  &._submit {
+    padding-bottom: 20px;
+    padding-right: 20px;
+    direction: rtl;
+    display: grid;
+  }
+
   &._cv {
-    grid-template-columns: repeat(3,1fr);
+    display: grid;
+
+    @media#{$max719w} {
+      border-bottom: 1px solid black;
+    }
+
+    @media#{$min720w} {
+      grid-template-columns: repeat(3,1fr);
+      padding-bottom: 20px;
+      grid-row-gap: 10px;
+      padding-top: 20px;
+
+      + ._cv {
+        border-top: 1px solid black;
+      }
+    }
+  }
+
+  &._projects, &._jobs, &._skills, &._school {
+    @media#{$max719w} {
+      display: none;
+    }
+  }
+
+  &._download {
+    justify-content: center;
     padding-bottom: 20px;
     grid-row-gap: 10px;
     padding-top: 20px;
-    display: grid;
 
-    + ._cv {
-      border-top: 1px solid black;
+    @media#{$max719w} {
+      border-bottom: none;
+    }
+    @media#{$min720w} {
+      display: none;
     }
   }
 }
