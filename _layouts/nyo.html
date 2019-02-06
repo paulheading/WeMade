@@ -3,7 +3,7 @@
 
   {% include html/head.html %}
 
-  <body class="layout _nyo">
+  <body class="layout {{ page.collection | prepend: '_' }} {{ page.layout | downcase | prepend: '_' }}">
 
     {% include html/overlay-load.html %}
 
@@ -18,42 +18,34 @@
       {% include html/area-header.html %}
       {% include html/overlay-menu.html %}
 
-      <div class="area _example">
-        <div class="wrap _split">
-          <div class="canvas" style="padding-top:0;">
+      <div class="area _project">
+        <div class="wrap _project">
+
+        <div class="row _project _split">
+          <div class="canvas">
             <div class="_border--mob">
               {% include svg/nyo/logo.svg %}
             </div>
           </div>
           <img class="_flex" src="/assets/img/nyo/laptopBW.jpg" alt="">
         </div>
-      </div>
 
-      <div class="area _notes" id="skip">
-        <div class="wrap _notes">
+        <div class="row _project _notes" id="skip">
           {{ page.content }}
         </div>
-      </div>
 
-      <div class="area _example">
-        <div class="wrap">
-          <img class="_flex" src="/assets/img/nyo/laptopV2BW.jpg" alt="">
+        <div class="row _project">
+          <div class="wrap">
+            <img class="_flex" src="/assets/img/nyo/laptopV2BW.jpg" alt="">
+          </div>
         </div>
-      </div>
 
-      <div class="area _example">
-        <div class="wrap _single">
-          <video class="video _dtp" autoplay playsinline muted loop poster="">
-            <source src="/assets/vid/nyo/explode/DESKTOP.mp4" type="video/mp4">
-          </video>
-          <video class="video _mob" autoplay playsinline muted loop poster="">
-            <source src="/assets/vid/nyo/explode/MOBILE.mp4" type="video/mp4">
-          </video>
+        <div class="row _project">
+          {% include html/block-video.html classes="video _dtp" source="/assets/vid/nyo/explode/DESKTOP.mp4" poster="/assets/vid/nyo/explode/DESKTOP.png" %}
+          {% include html/block-video.html classes="video _mob" source="/assets/vid/nyo/explode/MOBILE.mp4" poster="/assets/vid/nyo/explode/MOBILE.png" %}
         </div>
-      </div>
 
-      <div class="area _example">
-        <div class="wrap _split _gap--mob">
+        <div class="row _project _split">
           <div class="visual">
             <img src="/assets/img/nyo/scroll.jpg" alt="">
           </div>
@@ -61,24 +53,18 @@
             <img src="/assets/img/nyo/laptopBW.jpg" alt="">
           </div>
         </div>
-      </div>
 
-      <div class="area _example">
-        <div class="wrap _single">
-          <video class="video _dtp" autoplay playsinline muted loop poster="">
-            <source src="/assets/vid/nyo/main/DESKTOP.mp4" type="video/mp4">
-          </video>
-          <video class="video _mob" autoplay playsinline muted loop poster="">
-            <source src="/assets/vid/nyo/main/MOBILE.mp4" type="video/mp4">
-          </video>
+        <div class="row _project">
+          {% include html/block-video.html classes="video _dtp" source="/assets/vid/nyo/main/DESKTOP.mp4" poster="/assets/vid/nyo/main/DESKTOP.png" %}
+          {% include html/block-video.html classes="video _mob" source="/assets/vid/nyo/main/MOBILE.mp4" poster="/assets/vid/nyo/main/MOBILE.png" %}
         </div>
-      </div>
 
-      <div class="area _pages">
-        <div class="wrap _pages">
+        <div class="row _project _paginate">
           <span class="lnk _prev">Prev</span>
           <a href="/projects/" class="lnk _index">Project Index</a>
           <span class="lnk _next">Next</span>
+        </div>
+
         </div>
       </div>
 

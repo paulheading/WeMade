@@ -3,7 +3,7 @@
 
   {% include html/head.html %}
 
-  <body class="layout _about">
+  <body class="layout {{ page.collection | prepend: '_' }} {{ page.layout | downcase | prepend: '_' }}">
 
     {% include html/overlay-load.html %}
 
@@ -17,13 +17,7 @@
 
       {% include html/area-header.html %}
       {% include html/overlay-menu.html %}
-
-      <div class="area _notes">
-        <div class="wrap _notes">
-          {{ page.content }}
-        </div>
-      </div>
-
+      {{ page.content }}
       {% include html/area-desktop.html %}
       {% include html/area-email.html %}
       {% include html/area-footer.html %}

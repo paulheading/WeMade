@@ -9,17 +9,9 @@
     padding-left: 40px;
     position: relative;
     overflow: visible;
-    font-size: 28px;
+    font-size: 24px;
     z-index: 10;
     width: 100%;
-  }
-
-  &._theme {
-    position: fixed;
-    display: grid;
-    height: 100%;
-    width: 100%;
-    z-index: 1;
   }
 
   &._hero {
@@ -27,7 +19,68 @@
     height: 90%;
   }
 
-  &._example {
+  &._ticker {
+    background-color: rgba(0,0,0,.05);
+    justify-content: center;
+    padding-bottom: 100px;
+    padding-top: 100px;
+    font-size: 21px;
+    display: grid;
+  }
+
+  &._desktop {
+    background-color: $teal;
+    height: 640px;
+  }
+
+  &._email {
+    background-color: $smoke;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-top: 100px;
+  }
+
+  &._cv {
+    line-height: 1.5;
+
+    @media#{$max719w} {
+      padding-bottom: 40px;
+      text-align: center;
+    }
+
+    @media#{$min720w} {
+      padding-bottom: 80px;
+    }
+  }
+
+  &._footer {
+    background-color: black;
+    text-align: center;
+    padding: 20px;
+    color: white;
+  }
+
+  &._index {
+
+    @media#{$max719w} {
+      padding-bottom: 40px;
+    }
+
+    @media#{$min720w} {
+      padding-bottom: 80px;
+    }
+  }
+
+  // &._theme {
+  //   position: fixed;
+  //   display: grid;
+  //   height: 100%;
+  //   width: 100%;
+  //   z-index: 1;
+  // }
+
+  &._project {
+    padding-bottom: 20px;
 
     @media#{$min640w} {
       padding-right: 40px;
@@ -49,60 +102,20 @@
     }
   }
 
-  &._notes {
-    font-size: 21px;
-  }
+  // &._notes {
+  //   font-size: 21px;
+  // }
 
-  &._jobs {
-    background-color: rgba(0,0,0,.05);
-    justify-content: center;
-    padding-bottom: 100px;
-    padding-top: 100px;
-    display: grid;
-  }
-
-  &._desktop {
-    background-color: $teal;
-    height: 640px;
-  }
-
-  &._email {
-    background-color: $smoke;
-    padding-right: 10px;
-    padding-left: 10px;
-    padding-top: 100px;
-  }
-
-  &._pages {
-    padding-bottom: 40px;
-    text-align: center;
-    padding-top: 40px;
-    font-size: 21px;
-    width: 100%;
-
-    @media#{$min640w} {
-      padding-bottom: 80px;
-      padding-top: 80px;
-    }
-  }
-
-  &._cv {
-    line-height: 1.5;
-    
-    @media#{$max719w} {
-      padding-bottom: 40px;
-      text-align: center;
-    }
-
-    @media#{$min720w} {
-      padding-bottom: 80px;
-    }
-  }
-
-  &._footer {
-    background-color: black;
-    text-align: center;
-    padding: 20px;
-    color: white;
-  }
+  // &._pages {
+  //   padding-bottom: 40px;
+  //   text-align: center;
+  //   padding-top: 40px;
+  //   font-size: 21px;
+  //   width: 100%;
+  //
+  //   @media#{$min640w} {
+  //     padding-bottom: 80px;
+  //     padding-top: 80px;
+  //   }
+  // }
 }

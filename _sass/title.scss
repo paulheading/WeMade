@@ -14,6 +14,25 @@
     }
   }
 
+  &._desc {
+    align-self: center;
+    display: grid;
+  }
+
+  &._role {
+    font-weight: bold;
+  }
+
+  &._date {
+    align-self: center;
+    display: grid;
+  }
+
+  &._result {
+    align-self: center;
+    display: grid;
+  }
+
   &._name {
     font-weight: bold;
     font-size: 36px;
@@ -23,6 +42,12 @@
     grid-column: span 3;
     font-weight: bold;
     font-size: 21px;
+  }
+
+  &._project {
+    &.--ticker {
+      text-align: center;
+    }
   }
 
   &._skills {
@@ -37,12 +62,20 @@
     font-size: 21px;
   }
 
-  &._role {
-    font-weight: bold;
-  }
-
   &._client {
-    font-weight: bold;
+
+    &.--cv {
+      font-weight: bold;
+    }
+
+    &.--ticker {
+      text-align: right;
+    }
+
+    &.--index {
+      align-self: center;
+      display: grid;
+    }
   }
 
   &._school {

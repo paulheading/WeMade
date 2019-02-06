@@ -1,0 +1,54 @@
+
+.layout {
+
+  &._home {
+
+    .area {
+      &._header {
+        position: absolute;
+      }
+    }
+
+    &._nyo {
+      background-color: $carbon;
+      
+      .area {
+
+        &._hero {
+          color: white;
+        }
+
+        &._ticker {
+          background-color: rgba(0,0,0,.25);
+          color: white;
+        }
+      }
+
+      .row {
+        border-color: white;
+      }
+
+      .strike {
+        background-color: white;
+      }
+
+      #logo, #menu {
+        fill: white;
+      }
+    }
+
+  }
+
+  &._projects {
+
+  }
+
+  &._about {
+
+    &._cv {
+      @media#{$max719w} {
+        background-color: white;
+      }
+    }
+  }
+}

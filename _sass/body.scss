@@ -1,52 +1,10 @@
 
-.layout {
+body {
+  letter-spacing: -0.01rem;
+  font-family: sans-serif;
+  font-size: 18px;
 
-  &._home {
-
-    .area {
-      &._header {
-        position: absolute;
-      }
-    }
-  }
-
-  &._play {
-    background-color: $smoke;
-
-    .area {
-      &._jobs {
-        background-color: rgba(0,0,0,.05);
-      }
-    }
-  }
-
-  &._nyo {
-    background-color: $carbon;
-
-    .area {
-
-      &._hero {
-        color: white;
-      }
-
-      &._jobs {
-        background-color: rgba(0,0,0,.25);
-        color: white;
-      }
-    }
-
-    .strike {
-      background-color: white;
-    }
-
-    #logo, #menu {
-      fill: white;
-    }
-  }
-
-  &._cv {
-    @media#{$max719w} {
-      background-color: white;
-    }
+  &._menu {
+    overflow: hidden;
   }
 }

@@ -4,5 +4,5 @@ layout : cv
 ---
 
 {% for staff in site.data.paul %}
-  {% include html/area-cv.html %}
+  {% include html/loop-cv.html %}
 {% endfor %}

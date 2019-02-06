@@ -62,7 +62,7 @@
         <div class="entry">{{ job.date }}
           <div class="title _role">{{ job.role | append: ',' }}</div>
           <a href="{{ job.url }}" target="_blank">
-            <div class="title _client">{{ job.client }}</div>
+            <div class="title _client --cv">{{ job.client }}</div>
           </a>
         </div>
       {% endfor %}

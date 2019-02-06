@@ -1,15 +1,28 @@
 
 .row {
 
-  &._job {
-    grid-template-columns: 3fr 3fr 4fr;
-    grid-column-gap: 8px;
-    font-size: 21px;
+  &._ticker {
+    grid-template-columns: 100px 200px 100px;
+    grid-column-gap: 16px;
+    padding-bottom: 8px;
+    padding-top: 8px;
     display: grid;
-    padding: 8px;
 
-    @media#{$min640w} {
-      grid-template-columns: 3fr 3fr 4fr 4fr;
+    + .row {
+      border-top: 2px solid black;
+    }
+  }
+
+  &._index {
+    grid-template-columns: 2fr 4fr 8fr 4fr;
+    grid-auto-flow: column;
+    grid-column-gap: 20px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    display: grid;
+
+    + .row {
+      border-top: 2px solid black;
     }
   }
 
@@ -79,5 +92,34 @@
     @media#{$min720w} {
       display: none;
     }
+  }
+
+  &._split {
+    grid-column-gap: 20px;
+    display: grid;
+    width: 100%;
+
+    @media#{$min640w} {
+      grid-template-columns: repeat(2,1fr);
+    }
+  }
+
+  &._notes {
+    max-width: 920px;
+    padding: 40px;
+  }
+
+  &._project {
+    + .row {
+      margin-top: 20px;
+    }
+  }
+
+  &._paginate {
+    grid-template-columns: repeat(3,1fr);
+    padding-bottom: 40px;
+    text-align: center;
+    padding-top: 40px;
+    display: grid;
   }
 }
