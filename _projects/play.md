@@ -1,9 +1,16 @@
 ---
-title   : PLAY!
-layout  : play
+title   : PLAY
+layout  : v2
 date    : 05/05/2018
 project : Animated Trailer
 desc    : Charles Hazlewood (with Army of Generals and the British Paraorchestra).
+
+visual :
+  - svg : barbican/logo
+  - jpg : laptopbw
+  - jpg : laptopv2bw
+  - jpg : scroll
+  - jpg : laptopbw
 
 result :
   - item : Concept work

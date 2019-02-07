@@ -4,10 +4,6 @@
   display: grid;
   width: 100%;
 
-  + .visual {
-    margin-top: 20px;
-  }
-
   img {
     max-width: 100%;
     grid-area: 1 / 1;

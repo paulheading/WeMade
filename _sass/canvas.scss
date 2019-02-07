@@ -1,0 +1,18 @@
+
+.canvas {
+  align-items: center;
+  display: grid;
+
+  @media#{$max639w} {
+    grid-template-columns: 40px auto 40px;
+
+    svg {
+      border: 2px solid black;
+      grid-column: 2;
+    }
+  }
+
+  @media#{$min640w} {
+    border: 2px solid black;
+  }
+}

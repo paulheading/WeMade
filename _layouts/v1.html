@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}" class="no-js">
+
+  {% include html/head.html %}
+
+  <body class="layout {{ page.layout | prepend: '_' }} {{ page.title | downcase | prepend: '_' }}">
+
+    {% include html/overlay-load.html %}
+
+    <div class="site _full">
+
+      {% if site.header %}
+      <header>
+        {{ site.header }}
+      </header>
+      {% endif %}
+
+      {% include html/area-header.html %}
+      {% include html/overlay-menu.html %}
+
+      <div class="area _project">
+        <div class="wrap _project">
+
+        <div class="row _project _split --canvas">
+          {% assign loop = page.visual %}
+          {% for thing in loop %}
+            {% if forloop.index == 1 %}
+              {% include html/loop-visual.html %}
+            {% endif %}
+          {% endfor %}
+          {% assign loop = page.visual %}
+          {% for thing in loop %}
+            {% if forloop.index == 2 %}
+              {% include html/loop-visual.html %}
+            {% endif %}
+          {% endfor %}
+        </div>
+
+        <div class="row _project" id="notes">
+          {{ page.content }}
+        </div>
+
+        <div class="row _project">
+          {% assign loop = page.visual %}
+          {% for thing in loop %}
+            {% if forloop.index == 3 %}
+              {% include html/loop-visual.html %}
+            {% endif %}
+          {% endfor %}
+        </div>
+
+        <div class="row _project">
+          {% assign loop = page.visual %}
+          {% for thing in loop %}
+            {% if forloop.index == 4 %}
+              {% include html/loop-visual.html %}
+            {% endif %}
+          {% endfor %}
+        </div>
+
+        <div class="row _project _split">
+          {% assign loop = page.visual %}
+          {% for thing in loop %}
+            {% if forloop.index == 5 %}
+              {% include html/loop-visual.html %}
+            {% endif %}
+          {% endfor %}
+          {% assign loop = page.visual %}
+          {% for thing in loop %}
+            {% if forloop.index == 6 %}
+              {% include html/loop-visual.html %}
+            {% endif %}
+          {% endfor %}
+        </div>
+
+        <div class="row _project">
+          {% assign loop = page.visual %}
+          {% for thing in loop %}
+            {% if forloop.index == 7 %}
+              {% include html/loop-visual.html %}
+            {% endif %}
+          {% endfor %}
+        </div>
+
+        <div class="row _paginate">
+          <span class="lnk _prev">Prev</span>
+          <a href="/projects/" class="lnk _index">Project Index</a>
+          <span class="lnk _next">Next</span>
+        </div>
+
+        </div>
+      </div>
+
+      {% include html/area-desktop.html %}
+      {% include html/area-email.html %}
+      {% include html/area-footer.html %}
+
+      {% if site.footer %}
+      <footer>
+        {{site.footer}}
+      </footer>
+      {% endif %}
+
+    </div>
+
+  </body>
+
+  {% include html/scripts.html %}
+
+</html>

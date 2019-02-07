@@ -10,6 +10,7 @@
   "body",
   "btn",
   "bar",
+  "canvas",
   "copy",
   "title",
   "entry",
@@ -37,26 +38,6 @@
 
   &._open {
     display: block;
-  }
-}
-
-.canvas {
-  @media#{$max639w} {
-    padding: 40px;
-  }
-
-  @media#{$min640w} {
-    border: 2px solid black;
-    align-items: center;
-    display: grid;
-  }
-}
-
-._border {
-  &--mob {
-    @media#{$max639w} {
-      border: 2px solid black;
-    }
   }
 }
 

@@ -94,24 +94,30 @@
     }
   }
 
+  &._project {
+    + .row._project {
+      padding-top: 20px;
+    }
+  }
+
+  &#notes {
+    padding: 40px 40px 20px 40px;
+    max-width: 920px;
+    font-size: 21px;
+  }
+
   &._split {
-    grid-column-gap: 20px;
+    grid-gap: 20px;
     display: grid;
-    width: 100%;
 
     @media#{$min640w} {
       grid-template-columns: repeat(2,1fr);
     }
-  }
 
-  &._notes {
-    max-width: 920px;
-    padding: 40px;
-  }
-
-  &._project {
-    + .row {
-      margin-top: 20px;
+    &.--canvas {
+      @media#{$max639w} {
+        grid-row-gap: 40px;
+      }
     }
   }
 

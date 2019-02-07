@@ -1,9 +1,16 @@
 ---
-title   : Serious
-layout  : harlem
+title   : Harlem
+layout  : v2
 date    : 08/08/2017
 project : Event Artwork
 desc    : Serious produce events ranging from major concerts, festivals and national and international tours
+
+visual :
+  - svg : barbican/logo
+  - jpg : visual
+  - jpg : full-width
+  - jpg : scroll
+  - jpg : laptopbw
 
 result :
   - item : Concept work

@@ -21,7 +21,7 @@ collections :
 
 defaults    :
 - scope     :
-    path    : ''
+    path    : _projects
   values    :
     layout  : project
 - scope     :
