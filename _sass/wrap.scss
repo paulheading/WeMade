@@ -47,6 +47,10 @@
     }
   }
 
+  &._about {
+    max-width: 800px;
+  }
+
   &._topbar {
     justify-content: flex-start;
     grid-auto-flow: column;

@@ -1,6 +1,5 @@
 ---
-title  : About Index
-layout : about
+title  : About
 ---
 
 About Index

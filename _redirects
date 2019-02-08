@@ -1,0 +1,2 @@
+# Redirect default Netlify subdomain to primary domain
+https://flamboyant-liskov-a776f4.netlify.com/* https://wemade.design/:splat 301!

@@ -17,7 +17,11 @@
 
       {% include html/area-header.html %}
       {% include html/overlay-menu.html %}
-      {{ page.content }}
+      <div class="area _about">
+        <wrap class="_about">
+          {{ page.content }}
+        </wrap>
+      </div>
       {% include html/area-desktop.html %}
       {% include html/area-email.html %}
       {% include html/area-footer.html %}
