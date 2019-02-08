@@ -6,6 +6,7 @@ github_username: pauheading
 
 # Server config
 livereload : true
+include: _redirects
 
 # Build settings
 markdown : kramdown
