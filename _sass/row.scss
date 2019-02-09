@@ -107,11 +107,15 @@
   }
 
   &._split {
-    grid-gap: 20px;
     display: grid;
+
+    @media#{$max639w} {
+      grid-row-gap: 20px;
+    }
 
     @media#{$min640w} {
       grid-template-columns: repeat(2,1fr);
+      grid-column-gap: 20px;
     }
 
     &.--canvas {

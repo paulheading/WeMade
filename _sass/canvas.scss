@@ -4,11 +4,11 @@
   display: grid;
 
   @media#{$max639w} {
-    grid-template-columns: 40px auto 40px;
+    padding-right: 40px;
+    padding-left: 40px;
 
     svg {
       border: 2px solid black;
-      grid-column: 2;
     }
   }
 
