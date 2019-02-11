@@ -22,11 +22,8 @@
 
   &._ticker {
     background-color: rgba(0,0,0,.05);
-    justify-content: center;
-    padding-bottom: 100px;
-    padding-top: 100px;
+    padding: 100px 40px;
     font-size: 21px;
-    display: grid;
   }
 
   &._desktop {
@@ -62,27 +59,12 @@
   }
 
   &._index {
-
-    @media#{$max719w} {
-      padding-bottom: 40px;
-    }
-
-    @media#{$min720w} {
-      padding-bottom: 80px;
-    }
+    padding: 0 40px 40px;
   }
 
   &._about {
     padding: 0 40px 40px;
   }
-
-  // &._theme {
-  //   position: fixed;
-  //   display: grid;
-  //   height: 100%;
-  //   width: 100%;
-  //   z-index: 1;
-  // }
 
   &._project {
     @media#{$min640w} {
@@ -104,21 +86,4 @@
       }
     }
   }
-
-  // &._notes {
-  //   font-size: 21px;
-  // }
-
-  // &._pages {
-  //   padding-bottom: 40px;
-  //   text-align: center;
-  //   padding-top: 40px;
-  //   font-size: 21px;
-  //   width: 100%;
-  //
-  //   @media#{$min640w} {
-  //     padding-bottom: 80px;
-  //     padding-top: 80px;
-  //   }
-  // }
 }

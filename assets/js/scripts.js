@@ -1,28 +1,38 @@
+---
+---
 
 TweenLite.defaultEase = Linear.easeNone;
 Draggable.create('.popup',{cursor:'pointer'});
+
+var closeOverlayTl = new TimelineMax(), openOverlayTl = new TimelineMax();
 
 function setupScripts() {
   TweenMax.set('.lnk._menu',{opacity:0});
 }
 
-function changeMenu() {
+function closeOverlayFunc() {
+  closeOverlayTl
+  .set('html',{className:'-= _menu'})
+  .set('.overlay._menu',{className:'-= _open'})
+  .set('.lnk._menu',{opacity:0})
+  ;
+  return closeOverlayTl
+}
 
-  var menuOpenTl = new TimelineMax();
-  var menuCloseTl = new TimelineMax();
+function openOverlayFunc() {
+  openOverlayTl
+  .set('html',{className:'+= _menu'})
+  .set('.overlay._menu',{className:'+= _open'})
+  .staggerTo('.lnk._menu',0.1,{opacity:1},'0.1','+=0.1')
+  ;
+  return openOverlayTl
+}
 
+function changeOverlay() {
   if($('html').hasClass('_menu')) {
-    menuCloseTl
-    .set('html',{className:'-= _menu'})
-    .set('.overlay._menu',{className:'-= _open'})
-    .set('.lnk._menu',{opacity:0})
-    ;
+    closeOverlayFunc();
   } else {
-    menuOpenTl
-    .set('html',{className:'+= _menu'})
-    .set('.overlay._menu',{className:'+= _open'})
-    .staggerTo('.lnk._menu',0.1,{opacity:1},'0.1','+=0.1')
-    ;
+    openOverlayFunc();
   }
 }
 
@@ -72,9 +82,7 @@ function minBtn() {
 
 function changeMin() {
   var label = $(this)[0].classList[1];
-
   $(this).removeClass('_on');
-
   $('.popup').each(function(){
     if($(this).hasClass(label)) {
       TweenMax.to($(this),0.3,{scale:1,x:0,y:0,ease:SteppedEase.config(4)});
@@ -82,9 +90,17 @@ function changeMin() {
   });
 }
 
+function escOverlay(e){
+  if(e.keyCode === 27) {
+    changeOverlay();
+  }
+}
+
 $(document).ready(setupScripts);
+$(document).keydown(escOverlay);
 $('.wrap._topbar').on('click','.min',changeMin);
-$('.menu-lnk').click(changeMenu);
+$('.exit').click(changeOverlay);
+$('.menu-lnk').click(changeOverlay);
 $('.folder').click(changeFolder);
 $('.btn._close').click(closeBtn);
 $('.btn._min').click(minBtn);

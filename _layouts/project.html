@@ -3,7 +3,7 @@
 
   {% include html/head.html %}
 
-  <body class="layout _home">
+  <body class="layout {{ page.collection | prepend: '_' }} {{ page.layout | downcase | prepend: '_' }}">
 
     {% include html/overlay-load.html %}
 
@@ -17,9 +17,17 @@
 
       {% include html/area-header.html %}
       {% include html/overlay-menu.html %}
-      {% include html/area-theme.html %}
-      {% include html/area-hero.html %}
-      {% include html/area-ticker.html %}
+
+      <div class="area _index">
+        <div class="wrap _index">
+          {{ content }}
+        </div>
+        <div class="wrap _index">
+          {% assign loop = site.projects | sort: 'code' | reverse %}
+          {%- include html/loop-index.html -%}
+        </div>
+      </div>
+
       {% include html/area-desktop.html %}
       {% include html/area-email.html %}
       {% include html/area-footer.html %}

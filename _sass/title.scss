@@ -44,12 +44,6 @@
     font-size: 21px;
   }
 
-  &._project {
-    &.--ticker {
-      text-align: center;
-    }
-  }
-
   &._skills {
     grid-column: span 3;
     font-weight: bold;
@@ -63,19 +57,7 @@
   }
 
   &._client {
-
-    &.--cv {
-      font-weight: bold;
-    }
-
-    &.--ticker {
-      text-align: right;
-    }
-
-    &.--index {
-      align-self: center;
-      display: grid;
-    }
+    font-weight: bold;
   }
 
   &._school {

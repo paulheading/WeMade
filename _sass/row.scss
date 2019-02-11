@@ -2,11 +2,15 @@
 .row {
 
   &._ticker {
-    grid-template-columns: 100px 200px 100px;
+    grid-template-columns: 2fr 3fr 2fr;
     grid-column-gap: 16px;
-    padding-bottom: 8px;
-    padding-top: 8px;
     display: grid;
+    padding: 8px;
+
+    &._active {
+      background-color: black;
+      color: #ddd;
+    }
 
     + .row {
       border-top: 2px solid black;
@@ -126,10 +130,13 @@
   }
 
   &._paginate {
-    grid-template-columns: repeat(3,1fr);
+    font-size: 21px;
+    grid-template-columns: repeat(3,200px);
+    grid-gap: 20px;
     padding-bottom: 40px;
     text-align: center;
     padding-top: 40px;
     display: grid;
+    justify-content: center;
   }
 }

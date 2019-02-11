@@ -1,17 +1,7 @@
-
-<div class="area _ticker">
-  <div class="wrap _ticker">
-    {% assign loop = site.projects | sort: 'date' | reverse | limit:4 %}
-    {% for item in loop %}
-    {% unless item.url contains 'index' %}
-
-    <div class="row _ticker">
-      <div class="title _date">{{ item.date | date: '%b %y' }}</div>
-      <div class="title _project --ticker">{{ item.project }}</div>
-      <div class="title _client --ticker">{{ item.title }}</div>
-    </div>
-
-    {% endunless %}
-    {% endfor %}
-  </div>
-</div>
+{% for item in loop %}
+  <a href="{{ item.id }}" class="row _ticker">
+    <div class="title _date">{{ item.date | date: '%b %y' }}</div>
+    <div class="title _project">{{ item.project }}</div>
+    <div class="title _client">{{ item.title }}</div>
+  </a>
+{% endfor %}

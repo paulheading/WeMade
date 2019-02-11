@@ -1,25 +1,21 @@
 ---
-title   : NYO
+code    : 1
 layout  : v1
+title   : NYO
+project : Animation
 date    : 05/05/2017
-project : Animated Logo
 desc    : The National Youth Orchestra is a collection of 164 teenage musicians,
-          originating from all over the UK.
-visual :
-  - svg : barbican/logo
+          originating from all over the UK.  
+visual  :
+  - svg : nyo/logo
   - jpg : laptopbw
   - jpg : laptopv2bw
   - mp4 : explode
   - jpg : scroll
   - jpg : laptopbw
   - mp4 : main
-
-result :
-  - item : Concept work
-  - item : Animations
-
-include :
-  - staff : paul
+results : [ concepts, animations ]
+staff   : [ paul, chloe ]
 ---
 
 We worked with them to re-imagine their print identity for digital use. They wanted the identity to better reflect their music. It needed to be more fluid and engaging. During the process, we recognized 3 NYO mission principles:

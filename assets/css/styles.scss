@@ -25,6 +25,7 @@
   "popup",
   "right",
   "row",
+  "site",
   "svg",
   "topbar",
   "visual",
@@ -33,12 +34,11 @@
   "video"
 ;
 
-.site {
-  display: none;
-
-  &._open {
-    display: block;
-  }
+.exit {
+  position: fixed;
+  @include zero();
+  cursor: pointer;
+  z-index: 1;
 }
 
 .strike {
@@ -47,14 +47,6 @@
   background-color: black;
   height: 3px;
   width: 100%;
-}
-
-.site {
-  min-height: 600px;
-
-  &._full {
-    height: 100%;
-  }
 }
 
 .desc {

@@ -1,25 +1,13 @@
-
-<div class="area _index">
-  <div class="wrap _index">
-    {% assign loop = site.projects | sort: 'date' | reverse %}
-    {% for item in loop %}
-    {% unless item.url contains 'index' %}
-
-    <div class="row _index">
-      <div class="title _date">{{ item.date | date: '%b %y' }}</div>
-      <div class="entry">
-        <div class="title _project">{{ item.project }}</div>
-        <div class="title _client">{{ item.title }}</div>
-      </div>
-      <div class="title _desc">{{ item.desc | truncate: 65 }}</div>
-      <div class="title _result">
-        {% for thing in item.result %}
-          {{ thing.item }}
-        {% endfor %}
-      </div>
+{% for item in loop %}
+  <a href="{{ item.id }}" class="row _index">
+    <div class="title _date">{{ item.date | date: '%b %y' }}</div>
+    <div class="entry">
+      <div class="title _project">{{ item.project }}</div>
+      <div class="title _client">{{ item.title }}</div>
     </div>
-
-    {% endunless %}
-    {% endfor %}
-  </div>
-</div>
+    <div class="title _desc">{{ item.desc | truncate: 65 }}</div>
+    <div class="title _result">
+      {{ item.results | join: ', ' }}
+    </div>
+  </a>
+{% endfor %}

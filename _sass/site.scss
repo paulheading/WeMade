@@ -1,0 +1,13 @@
+
+.site {
+  min-height: 600px;
+  display: none;
+
+  &._full {
+    height: 100%;
+  }
+
+  &._open {
+    display: block;
+  }
+}

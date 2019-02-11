@@ -24,9 +24,3 @@ $max719w: 'only screen and (max-width: 799px)';
 $min720w: 'only screen and (min-width: 800px)';
 
 $click: scale(0.95);
-
-%cf:after {
-  display: table;
-  content: "";
-  clear: both;
-}

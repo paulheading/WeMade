@@ -7,14 +7,13 @@
       </a>
     </div>
     <div class="right _header">
-      {% if page.layout == 'nyo'
-         or page.layout == 'play'
-         or page.layout == 'harlem' 
+      {% if page.layout == 'v1'
+         or page.layout == 'v2'
       %}
-      <a class="text_jump" href="#skip">Text</a>
+      <a class="text_jump" href="#notes">Text</a>
       {% else %}
       {% endif %}
-      <div class="menu-lnk" style="background-color:transparent;">
+      <div class="menu-lnk">
         {% include svg/menu.svg %}
       </div>
     </div>

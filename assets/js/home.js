@@ -5,21 +5,22 @@ var $body  = $('body'),
     $words = $('.word'),
     data = {{ site.data.homepage | jsonify }},
     heroTl = new TimelineMax({delay:1,repeat:-1}),
-    rowSwitchTl = new TimelineMax({repeat:-1,repeatDelay:1});
+    tickerTl = new TimelineMax({repeat:-1});
 
-function rowSwitch() {
+function tickerFunc() {
 
-  rowSwitchTl
-  .set('.strike',{y:24})
-  .to('.strike',0.1,{y:67,ease:SteppedEase.config(1)},'+=1')
-  .to('.strike',0.1,{y:110,ease:SteppedEase.config(1)},'+=1')
-  .to('.strike',0.1,{y:153,ease:SteppedEase.config(1)},'+=1')
-  ;
+  $('.row._ticker').each(function(i){
+    var count = i++, countPlus = count +1, tickerNo = '.row._ticker:nth-child('+ countPlus +')';
+    tickerTl
+    .add(TweenLite.to(tickerNo,0.1,{className:'+=_active',ease:SteppedEase.config(1)}))
+    .add(TweenLite.set(tickerNo,{className:'-=_active',delay:'1'}))
+    ;
+  });
 
-  return rowSwitch;
+  return tickerTl;
 }
 
-function heroSetup() {
+function heroFunc() {
 
   data.sort(function(){
     return 0.5 - Math.random()
@@ -66,6 +67,6 @@ function heroSetup() {
 }
 
 $(document)
-.ready(rowSwitch)
-.ready(heroSetup)
+.ready(tickerFunc)
+.ready(heroFunc)
 ;

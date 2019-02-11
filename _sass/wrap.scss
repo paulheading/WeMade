@@ -1,6 +1,14 @@
 
 .wrap {
 
+  + .wrap {
+    margin-top: 40px;
+  }
+
+  &._project {
+    max-width: 960px;
+  }
+
   &._load {
     place-self: center;
     text-align: center;
@@ -19,6 +27,7 @@
   &._header {
     grid-template-columns: repeat(2,1fr);
     align-content: center;
+    max-width: 960px;
     display: grid;
     height: 120px;
   }
@@ -29,7 +38,9 @@
   }
 
   &._ticker {
-    max-width: 440px;
+    border: 2px solid black;
+    text-align: center;
+    max-width: 400px;
   }
 
   &._index {
@@ -39,6 +50,7 @@
   &._desktop {
     grid-template-columns: repeat(2,1fr);
     padding-top: 40px;
+    max-width: 960px;
     display: grid;
 
     @media#{$min640w} {
@@ -56,6 +68,7 @@
     grid-auto-flow: column;
     grid-column-gap: 10px;
     align-content: center;
+    max-width: 960px;
     display: grid;
     width: 100%;
   }
@@ -111,43 +124,4 @@
       max-width: 720px;
     }
   }
-  //
-  // &._projects {
-  //   max-width: 920px;
-  //   padding: 40px;
-  //
-  //   @media#{$min640w} {
-  //     padding-bottom: 60px;
-  //     padding-top: 60px;
-  //   }
-  // }
-  //
-  //
-  //
-  // &._theme {
-  //   place-items: center;
-  //   display: grid;
-  // }
-  //
-  //
-  //
-  // &._gap {
-  //   &--mob {
-  //     @media#{$max639w} {
-  //       grid-row-gap: 10px;
-  //     }
-  //   }
-  // }
-  //
-  // &._single {
-  //   display: grid;
-  //   width: 100%;
-  // }
-  //
-  //
-  //
-  //
-
-  //
-  //
 }

@@ -1,23 +1,18 @@
 ---
-title   : Harlem
+code    : 2
 layout  : v2
+title   : Harlem
+project : Artwork
 date    : 08/08/2017
-project : Event Artwork
 desc    : Serious produce events ranging from major concerts, festivals and national and international tours
-
-visual :
+visual  :
   - svg : barbican/logo
   - jpg : visual
   - jpg : full-width
   - jpg : scroll
   - jpg : laptopbw
-
-result :
-  - item : Concept work
-  - item : Animations
-
-include :
-  - staff : chloe
+results : [ concepts, animations ]
+staff   : [ chloe ]
 ---
 
 We worked with them to re-imagine their print identity for digital use. They wanted the identity to better reflect their music. It needed to be more fluid and engaging. During the process, we recognized 3 NYO mission principles:
