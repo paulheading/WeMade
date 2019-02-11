@@ -18,10 +18,12 @@
   }
 
   &._menu {
+    position: relative;
     text-align: center;
     place-self: center;
     grid-row-gap: 5px;
     display: grid;
+    z-index: 2;
   }
 
   &._header {
