@@ -4,18 +4,17 @@
   align-content: center;
   display: grid;
 
-  &._prev {
-    grid-column: 1;
+  &._paginate {
+    width: 200px;
   }
 
   &._index {
     border: 2px solid black;
-    grid-column: 2;
     padding: 10px;
-  }
 
-  &._prev {
-    grid-column: 3;
+    @media#{$min720w} {
+      grid-column: 2;
+    }
   }
 
   &._client {

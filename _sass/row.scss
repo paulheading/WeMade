@@ -128,13 +128,15 @@
   }
 
   &._paginate {
-    font-size: 21px;
-    grid-template-columns: repeat(3,200px);
-    grid-gap: 20px;
-    padding-bottom: 40px;
-    text-align: center;
-    padding-top: 40px;
-    display: grid;
     justify-content: center;
+    text-align: center;
+    font-size: 21px;
+    grid-gap: 20px;
+    padding: 40px;
+    display: grid;
+
+    @media#{$min720w} {
+      grid-template-columns: repeat(3,200px);
+    }
   }
 }

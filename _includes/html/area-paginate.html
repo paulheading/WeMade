@@ -5,11 +5,11 @@
 <div class="row _paginate">
   {% assign loop = site.projects | where: 'code', next %}
   {% for item in loop %}
-    <a href="{{ item.id }}" class="lnk _next {{ item.code | prepend: '_' }}">Next</a>
+    <a href="{{ item.id }}" class="lnk _paginate _next {{ item.code | prepend: '_' }}">Next</a>
   {% endfor %}
-  <a href="/projects/" class="lnk _index">Projects</a>
+  <a href="/projects/" class="lnk _paginate _index">Projects</a>
   {% assign loop = site.projects | where: 'code', prev %}
   {% for item in loop %}
-    <a href="{{ item.id }}" class="lnk _next {{ item.code | prepend: '_' }}">Prev</a>
+    <a href="{{ item.id }}" class="lnk _paginate _prev {{ item.code | prepend: '_' }}">Prev</a>
   {% endfor %}
 </div>
