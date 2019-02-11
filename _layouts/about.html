@@ -24,9 +24,9 @@
         </div>
         <div class="wrap _ticker">
           {%- if page.staff -%}
-            {% assign loop = (site.projects | sort: 'code' | reverse) | where: 'staff', page.staff %}
+            {% assign loop = site.projects | where: 'staff', page.staff | sort: 'code' | reverse %}
           {%- else -%}
-            {% assign loop = (site.projects | sort: 'code' | reverse) %}
+            {% assign loop = site.projects | sort: 'code' | reverse %}
           {%- endif -%}
             {%- include html/loop-ticker.html -%}
         </div>

@@ -6,6 +6,7 @@
     grid-column-gap: 16px;
     display: grid;
     padding: 8px;
+    border: 2px solid black;
 
     &._active {
       background-color: black;
@@ -13,20 +14,23 @@
     }
 
     + .row {
-      border-top: 2px solid black;
+      margin-top: -2px;
     }
   }
 
   &._index {
-    grid-template-columns: 2fr 4fr 8fr 4fr;
-    grid-auto-flow: column;
-    grid-column-gap: 20px;
-    padding-bottom: 10px;
-    padding-top: 10px;
     display: grid;
 
-    + .row {
-      border-top: 2px solid black;
+    @media#{$min640w} {
+      grid-template-columns: 2fr 2fr 8fr 4fr;
+      grid-auto-flow: column;
+      grid-column-gap: 20px;
+      padding-bottom: 10px;
+      padding-top: 10px;
+
+      + .row {
+        border-top: 2px solid black;
+      }
     }
   }
 
@@ -102,12 +106,6 @@
     + .row._project {
       padding-top: 20px;
     }
-  }
-
-  &#notes {
-    padding: 40px 40px 20px 40px;
-    max-width: 920px;
-    font-size: 21px;
   }
 
   &._split {

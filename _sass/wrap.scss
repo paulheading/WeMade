@@ -2,7 +2,17 @@
 .wrap {
 
   + .wrap {
-    margin-top: 40px;
+    margin-top: 20px;
+
+    @media#{$min640w} {
+      margin-top: 40px;
+    }
+  }
+
+  &._notes {
+    max-width: 800px;
+    font-size: 21px;
+    padding: 40px;
   }
 
   &._project {
@@ -21,7 +31,7 @@
     position: relative;
     text-align: center;
     place-self: center;
-    grid-row-gap: 5px;
+    grid-row-gap: 10px;
     display: grid;
     z-index: 2;
   }
@@ -40,13 +50,19 @@
   }
 
   &._ticker {
-    border: 2px solid black;
     text-align: center;
-    max-width: 400px;
+    max-width: 340px;
+
+    &.--home {
+      @media#{$min640w} {
+        max-width: 400px;
+        font-size: 21px;
+      }
+    }
   }
 
   &._index {
-    max-width: 800px;
+    max-width: 760px;
   }
 
   &._desktop {
@@ -62,7 +78,7 @@
   }
 
   &._about {
-    max-width: 800px;
+    max-width: 760px;
   }
 
   &._topbar {
@@ -81,8 +97,6 @@
     background-color: white;
     max-width: 320px;
     overflow: hidden;
-    width: 100%;
-    display: grid;
 
     @media#{$min640w} {
       max-width: 640px;

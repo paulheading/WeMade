@@ -1,6 +1,6 @@
 
 .right {
-  justify-content: right;
+  justify-content: flex-end;
   position: relative;
   display: grid;
 
@@ -8,14 +8,13 @@
     grid-auto-flow: column;
     align-items: center;
     grid-gap: 20px;
-    display: grid;
   }
 
   &._desktop {
-    grid-template: 60px / repeat(2,80px);
+    grid-template: 78px / repeat(2,104px);
+    justify-content: flex-start;
     align-content: flex-start;
     direction: rtl;
-    grid-gap: 20px;
     display: grid;
     z-index: 1;
 
