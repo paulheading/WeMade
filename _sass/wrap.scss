@@ -50,12 +50,20 @@
   }
 
   &._ticker {
-    text-align: center;
-    max-width: 340px;
+    justify-content: center;
+    display: grid;
+
+    .row._ticker {
+      grid-template-columns: 70px 180px 100px;
+    }
 
     &.--home {
+
+      .row._ticker {
+        grid-template-columns: 80px 140px 110px;
+      }
+
       @media#{$min640w} {
-        max-width: 400px;
         font-size: 21px;
       }
     }

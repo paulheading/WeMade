@@ -1,131 +1,162 @@
 
-<div class="area _cv">
-  <div class="wrap _cv">
+{% assign staff = page.title | truncatewords: 1,'' | downcase %}
 
-    <div class="row _cv _address">
-      <div class="entry _name">
-        {% for item in staff.name %}
-          <div class="title _name">{{ item.first }}</div>
-          <div class="title _name">{{ item.second }}</div>
-        {% endfor %}
-      </div>
-      <div class="entry _address">
-        {% for item in staff.addr %}
-          <div class="title">{{ item.area }}{{ item.city | prepend: ', ' }}</div>
-        {% endfor %}
-        <div class="title">{{ staff.phone }}</div>
-      </div>
-    </div>
-    <div class="row _cv _bio">
-      <div class="entry _bio">
-        <div class="title _bio">Biography</div>
-        <div class="copy _bio">{{ staff.bio }}</div>
-      </div>
-      <div class="entry _social">
+  <div class="area _cv">
+    <div class="wrap _cv">
 
-        {% for platform in staff.social %}
-          {% if platform.github %}
-          <a class="lnk _social" href="http://github.com/{{ platform.github }}">
-            {{ platform.github | prepend: '@' }}
-          </a>
-          {% elsif platform.insta %}
-          <a class="lnk _social" href="http://instagram.com/{{ platform.insta }}">
-            {{ platform.insta | prepend: '@' }}
-          </a>
-          {% else %}
-          <a class="lnk _social" href="{{ platform.other | prepend: '/' }}">
-            {{ platform.other }}
-          </a>
-          {% endif %}
-        {% endfor %}
+      {% for staff in site.data[staff] %}
 
-      </div>
-    </div>
+        <div class="row _cv _address">
+          <div class="entry _name">
+            {% for item in staff.name %}
+              <div class="title _cv _name">
+                {{ item.first }}
+              </div>
+              <div class="title _cv _name">
+                {{ item.second }}
+              </div>
+            {% endfor %}
+          </div>
+          <div class="entry _address">
+            {% for item in staff.addr %}
+              <div class="title _cv">
+                {{ item.area }}{{ item.city | prepend: ', ' }}
+              </div>
+            {% endfor %}
+            <div class="title _cv">
+              {{ staff.phone }}
+            </div>
+          </div>
+        </div>
+        <div class="row _cv _bio">
+          <div class="entry _bio">
+            <div class="title _cv _bio">
+              Biography
+            </div>
+            <div class="copy _bio">
+              {{ staff.bio }}
+            </div>
+          </div>
+          <div class="entry _social">
 
-    <div class="row _cv _projects">
-      <div class="title _projects">Projects</div>
+            {% for platform in staff.social %}
+              {% if platform.github %}
+              <a class="lnk _cv _social" href="http://github.com/{{ platform.github }}">
+                {{ platform.github | prepend: '@' }}
+              </a>
+              {% elsif platform.insta %}
+              <a class="lnk _cv _social" href="http://instagram.com/{{ platform.insta }}">
+                {{ platform.insta | prepend: '@' }}
+              </a>
+              {% else %}
+              <a class="lnk _cv _social" href="{{ platform.other | prepend: '/' }}">
+                {{ platform.other }}
+              </a>
+              {% endif %}
+            {% endfor %}
 
-      {% for project in staff.projects %}
+          </div>
+        </div>
+
+      {% endfor %}
+
+      <div class="row _cv _projects">
+        <div class="title _cv _projects">Projects</div>
+
+        {% assign loop = site.projects | where: 'staff', {{ staff }} | sort: 'date' | reverse %}
+
+        {% for item in loop limit:6 %}
         <div class="entry">
-          <div class="title _date">{{ project.date }}</div>
-          <a class="lnk _client" href="{{ project.url }}" target="_blank">
-            {{ project.client }}
+          <div class="title _cv _date">
+            {{ item.date | date: "%b %y" | append: '–' }}{{ item.end | date: "%b %y" }}
+          </div>
+          <a class="lnk" href="{{ item.id }}" target="_blank">
+            <div class="title _cv _title">{{ item.title }}</div>
+            <div class="title _cv _project">{{ item.project }}</div>
           </a>
         </div>
-      {% endfor %}
-
-    </div>
-    <div class="row _cv _jobs">
-      <div class="title _jobs">Jobs</div>
-
-      {% for job in staff.jobs %}
-        <div class="entry">{{ job.date }}
-          <div class="title _role">{{ job.role | append: ',' }}</div>
-          <a href="{{ job.url }}" target="_blank">
-            <div class="title _client --cv">{{ job.client }}</div>
-          </a>
-        </div>
-      {% endfor %}
-
-    </div>
-    <div class="row _cv _skills">
-      <div class="title _skills">
-        Skills
-        {% for item in staff.skills %}
-          {% if item.subtitle %}
-            <span class='title _sub'>
-              {{ item.subtitle }}
-            </span>
-          {% endif %}
         {% endfor %}
+
       </div>
 
-      <div class="entry">
-      {% for item in staff.skills limit:3 offset:1 %}
-        {% if item.type %}
-          <div class="title">
-            {{ item.type }}
-          </div>
-        {% endif %}
-      {% endfor %}
-      </div>
+      {% for staff in site.data[staff] %}
 
-      <div class="entry">
-      {% for item in staff.skills limit:3 offset:4 %}
-        {% if item.type %}
-          <div class="title">
-            {{ item.type }}
-          </div>
-        {% endif %}
-      {% endfor %}
-      </div>
+        <div class="row _cv _jobs">
+          <div class="title _cv _jobs">Jobs</div>
 
-      <div class="entry">
-      {% for item in staff.skills limit:3 offset:7 %}
-        {% if item.type %}
-          <div class="title">
-            {{ item.type }}
-          </div>
-        {% endif %}
-      {% endfor %}
-      </div>
+          {% for job in staff.jobs limit:3 %}
+            <div class="entry">{{ job.date | date: "%b %y" | append: '–' }}{{ job.end | date: "%b %y" }}
+              <a class="lnk" href="{{ job.url }}" target="_blank">
+                <div class="title _cv _boss">{{ job.boss }}</div>
+                <div class="title _cv _role">{{ job.role }}</div>
+              </a>
+            </div>
+          {% endfor %}
 
-    </div>
-    <div class="row _cv _school">
-      <div class="title _school">Education</div>
-
-      {% for quali in staff.education %}
-        <div class="entry">
-          <a href="{{ quali.url }}" target="_blank" class="lnk _client">{{ quali.client }}</a>
-          <div class="title">{{ quali.type }}</div>
         </div>
+        <div class="row _cv _skills">
+          <div class="title _cv _skills">
+            Skills
+            {% for item in staff.skills %}
+              {% if item.subtitle %}
+                <span class='title _sub'>
+                  {{ item.subtitle }}
+                </span>
+              {% endif %}
+            {% endfor %}
+          </div>
+
+          <div class="entry">
+          {% for item in staff.skills limit:3 offset:1 %}
+            {% if item.type %}
+              <div class="title _cv">
+                {{ item.type }}
+              </div>
+            {% endif %}
+          {% endfor %}
+          </div>
+
+          <div class="entry">
+          {% for item in staff.skills limit:3 offset:4 %}
+            {% if item.type %}
+              <div class="title _cv">
+                {{ item.type }}
+              </div>
+            {% endif %}
+          {% endfor %}
+          </div>
+
+          <div class="entry">
+          {% for item in staff.skills limit:3 offset:7 %}
+            {% if item.type %}
+              <div class="title _cv">
+                {{ item.type }}
+              </div>
+            {% endif %}
+          {% endfor %}
+          </div>
+
+        </div>
+        <div class="row _cv _education">
+          <div class="title _cv _education">Education</div>
+
+          {% for quali in staff.education limit:3 %}
+            <div class="entry">
+              <a class="lnk" href="{{ quali.url }}" target="_blank">
+                <div class="title _cv _school">{{ quali.school }}</div>
+                <div class="title _cv _cert">{{ quali.cert }}</div>
+              </a>
+            </div>
+          {% endfor %}
+
+        </div>
+        <div class="row _cv _download">
+          <div class="btn _download">
+            {% include svg/download.svg %}
+          </div>
+        </div>
+
       {% endfor %}
 
-    </div>
-    <div class="row _cv _download">
-      <div class="btn _download">
-        {% include svg/download.svg %}
-      </div>
     </div>
   </div>
-</div>

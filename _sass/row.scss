@@ -2,8 +2,7 @@
 .row {
 
   &._ticker {
-    grid-template-columns: 2fr 3fr 2fr;
-    grid-column-gap: 16px;
+    grid-column-gap: 20px;
     display: grid;
     padding: 8px;
     border: 2px solid black;
@@ -22,7 +21,7 @@
     display: grid;
 
     @media#{$min640w} {
-      grid-template-columns: 2fr 2fr 8fr 4fr;
+      grid-template-columns: 80px 180px 330px 80px;
       grid-auto-flow: column;
       grid-column-gap: 20px;
       padding-bottom: 10px;

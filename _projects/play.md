@@ -1,9 +1,11 @@
 ---
-code    : 3
+ref     : 3
 layout  : v2
-title   : PLAY
+title   : Play
 project : Animation
-date    : 05/05/2018
+date    : 05/2018
+end     : 07/2018
+url     : https://www.barbican.org.uk/whats-on/2018/event/play
 desc    : Charles Hazlewood (with Army of Generals and the British Paraorchestra).
 visual  :
   - svg : barbican/logo

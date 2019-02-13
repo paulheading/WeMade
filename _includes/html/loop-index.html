@@ -1,12 +1,20 @@
 {% for item in loop %}
   <a href="{{ item.id }}" class="row _index">
-    <div class="title _date">{{ item.date | date: '%b %y' }}</div>
-    <div class="entry">
-      <div class="title _project">{{ item.project }}</div>
-      <div class="title _client">{{ item.title }}</div>
+    <div class="title _index _date">
+      {{ item.date | date: "%b %y" | append: '–' }}{{ item.end | date: "%b %y" }}
     </div>
-    <div class="title _desc">{{ item.desc | truncate: 65 }}</div>
-    <div class="title _result">
+    <div class="entry">
+      <div class="title _index _title">
+        {{ item.title }}
+      </div>
+      <div class="title _index _project">
+        {{ item.project }}
+      </div>
+    </div>
+    <div class="title _index _desc">
+      {{ item.desc | truncate: 65 }}
+    </div>
+    <div class="title _index _result">
       {{ item.results | join: ', ' }}
     </div>
   </a>

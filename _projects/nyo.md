@@ -1,11 +1,13 @@
 ---
-code    : 1
+ref     : 1
 layout  : v1
 title   : NYO
 project : Animation
-date    : 05/05/2017
+date    : 05/2017
+end     : 07/2017
+url     :
 desc    : The National Youth Orchestra is a collection of 164 teenage musicians,
-          originating from all over the UK.  
+          originating from all over the UK.
 visual  :
   - svg : nyo/logo
   - jpg : laptopbw

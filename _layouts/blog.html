@@ -18,13 +18,9 @@
       {% include html/area-header.html %}
       {% include html/overlay-menu.html %}
 
-      <div class="area _index">
-        <div class="wrap _index">
+      <div class="area _about">
+        <div class="wrap _about">
           {{ content }}
-        </div>
-        <div class="wrap _index">
-          {% assign loop = site.projects | sort: 'date' | reverse %}
-          {%- include html/loop-index.html -%}
         </div>
       </div>
 

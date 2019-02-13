@@ -15,36 +15,26 @@
     - insta  : folloapollo
     - other  : adventures
 
-  projects :
-    - date   : Jun – Oct 18
-      client : Barbs Shop
-      url    : https://shop.barbican.org.uk
-    - date   : Jun 18 – Now
-      client : Barbs Guidelines
-      url    : https://guidelines.barbican.org.uk
-    - date   : – Now
-      client : 36 Bourne St
-      url    : https://36bournestreet.com
-    - date   : –
-      client : OpenFest
-    - date   : –
-      client : Montagu.es
-      url    : https://montagu.es
-    - date   : –
-      client : NYO Logo
-
   jobs :
-    - date   : Mar 13 – Now
+    - date   : 03/2013
+      end    : Now
       role   : Designer
-      client : Barbican
+      boss   : Barbican
       url    : https://www.barbican.org.uk
-    - date   : Apr 10 – Mar 13
+    - date   : 04/2013
+      end    : 03/2013
       role   : Designer
-      client : Skye Creative
+      boss   : Skye Creative
       url    : http://www.skyecreative.co.uk
-    - date   : Apr 10 – Nov 10
+    - date   : 04/2010
+      end    : 11/2010
       role   : Designer
-      client : Brandwave
+      boss   : Brandwave
+      url    : https://brandwavemarketing.com
+    - date   : 04/2010
+      end    : 11/2010
+      role   : Designer
+      boss   : Brandwave
       url    : https://brandwavemarketing.com
 
   skills :
@@ -60,12 +50,12 @@
     - type : Netlify
 
   education :
-    - client : Teamtreehouse
+    - school : Teamtreehouse
       url    : https://teamtreehouse.com
-      type   : Full Stack Javascript Degree
-    - client : Goldsmiths Uni
+      cert   : Full Stack Javascript Degree
+    - school : Goldsmiths Uni
       url    : https://www.gold.ac.uk
-      type   : BA History with Spanish Language
-    - client : T Wells Grammar
+      cert   : BA History with Spanish Language
+    - school : T Wells Grammar
       url    : https://www.twgsb.org.uk
-      type   : 3 A Levels [History, English Lit, General Studies]
+      cert   : 3 A Levels [History, English Lit, General Studies]

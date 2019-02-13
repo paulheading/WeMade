@@ -4,14 +4,14 @@
     {% include {{ thing.svg | downcase | prepend: 'svg/' | append: '.svg' }} %}
   </div>
 {% elsif thing.jpg %}
-  <img class="_flex" src="{{ page.title | prepend: '/assets/img/' }}{{ thing.jpg | prepend: '/' | append: '.jpg'}}" alt="{{ thing.jpg }}">
+  <img class="_flex" src="{{ page.id | replace: 'projects/' | prepend: '/assets/img' }}{{ thing.jpg | prepend: '/' | append: '.jpg'}}" alt="{{ thing.jpg }}">
 {% elsif thing.png %}
-  <img class="_flex" src="{{ page.title | prepend: '/assets/img/' }}{{ thing.png | prepend: '/' | append: '.png'}}" alt="{{ thing.png }}">
+  <img class="_flex" src="{{ page.id | replace: 'projects/' | prepend: '/assets/img' }}{{ thing.png | prepend: '/' | append: '.png'}}" alt="{{ thing.png }}">
 {% elsif thing.mp4 %}
-  <video class="video _dtp" autoplay playsinline muted loop poster="{{ page.title | prepend: '/assets/vid/' }}{{ thing.mp4 | prepend: '/' | append: '.png' }}">
-    <source src="{{ page.title | prepend: '/assets/vid/' }}{{ thing.mp4 | prepend: '/' | append: '.mp4' }}" type="video/mp4">
+  <video class="video _dtp" autoplay playsinline muted loop poster="{{ page.id | replace: 'projects/' | prepend: '/assets/vid' }}{{ thing.mp4 | prepend: '/' | append: '.png' }}">
+    <source src="{{ page.id | replace: 'projects/' | prepend: '/assets/vid' }}{{ thing.mp4 | prepend: '/' | append: '.mp4' }}" type="video/mp4">
   </video>
-  <video class="video _mob" autoplay playsinline muted loop poster="{{ page.title | prepend: '/assets/vid/' }}{{ thing.mp4 | prepend: '/' | append: 'MOB.png' }}">
-    <source src="{{ page.title | prepend: '/assets/vid/' }}{{ thing.mp4 | prepend: '/' | append: 'MOB.mp4' }}" type="video/mp4">
+  <video class="video _mob" autoplay playsinline muted loop poster="{{ page.id | replace: 'projects/' | prepend: '/assets/vid' }}{{ thing.mp4 | prepend: '/' | append: 'MOB.png' }}">
+    <source src="{{ page.id | replace: 'projects/' | prepend: '/assets/vid' }}{{ thing.mp4 | prepend: '/' | append: 'MOB.mp4' }}" type="video/mp4">
   </video>
 {% endif %}

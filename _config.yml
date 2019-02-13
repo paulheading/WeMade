@@ -20,6 +20,9 @@ collections :
   projects  :
     title   : Projects
     output  : true
+  blog      :
+    title   : Blog
+    output  : true
 
 defaults    :
 - scope     :

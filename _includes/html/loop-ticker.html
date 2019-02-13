@@ -1,7 +1,13 @@
-{% for item in loop %}
+{% for item in loop limit:3 %}
   <a href="{{ item.id }}" class="row _ticker">
-    <div class="title _date">{{ item.date | date: '%b %y' }}</div>
-    <div class="title _project">{{ item.project }}</div>
-    <div class="title _client">{{ item.title }}</div>
+    <div class="title _ticker _date">
+      {{ item.date | date: "%b %y" }}
+    </div>
+    <div class="title _ticker _title">
+      {{ item.title }}
+    </div>
+    <div class="title _ticker _project">
+      {{ item.project }}
+    </div>
   </a>
 {% endfor %}
