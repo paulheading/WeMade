@@ -81,7 +81,7 @@
     }
   }
 
-  &._projects, &._jobs, &._skills, &._school {
+  &._projects, &._jobs, &._skills, &._education {
     @media#{$max719w} {
       display: none;
     }
