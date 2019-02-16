@@ -1,7 +1,7 @@
 
 html {
 
-  &._menu {
+  &.menu {
     overflow: hidden;
 
     body {
@@ -19,7 +19,7 @@ html {
     }
 
     #logo, #menu {
-      fill: white;
+      fill: white !important;
     }
   }
 }

@@ -12,7 +12,7 @@ function setupScripts() {
 
 function closeOverlayFunc() {
   closeOverlayTl
-  .set('html',{className:'-= _menu'})
+  .set('html',{className:'-=menu'})
   .set('.overlay._menu',{className:'-= _open'})
   .set('.lnk._menu',{opacity:0})
   ;
@@ -21,7 +21,7 @@ function closeOverlayFunc() {
 
 function openOverlayFunc() {
   openOverlayTl
-  .set('html',{className:'+= _menu'})
+  .set('html',{className:'+=menu'})
   .set('.overlay._menu',{className:'+= _open'})
   .staggerTo('.lnk._menu',0.1,{opacity:1},'0.1','+=0.1')
   ;
@@ -29,7 +29,7 @@ function openOverlayFunc() {
 }
 
 function changeOverlay() {
-  if($('html').hasClass('_menu')) {
+  if($('html').hasClass('menu')) {
     closeOverlayFunc();
   } else {
     openOverlayFunc();
