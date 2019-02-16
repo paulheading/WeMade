@@ -14,8 +14,11 @@ markdown : kramdown
 theme    : barbs
 
 collections :
-  about     :
-    title   : About
+  paul      :
+    title   : Paul
+    output  : true
+  chloe     :
+    title   : Chloe
     output  : true
   projects  :
     title   : Projects
@@ -33,11 +36,3 @@ defaults    :
     path    : _projects
   values    :
     layout  : project
-- scope     :
-    path    : _about/chloe
-  values    :
-    chapter : Chloe
-- scope     :
-    path    : _about/paul
-  values    :
-    chapter : Paul

@@ -19,8 +19,7 @@ layout: null
   {% endif %}
   {% unless forloop.last %},{% endunless %}
   {% endfor %},
-
-  {% for page in site.about %}
+  {% for page in site.paul %}
 
     {
       "name"     : "{{ page.title }}",
@@ -29,8 +28,25 @@ layout: null
 
   {% unless forloop.last %},{% endunless %}
   {% endfor %},
+  {% for page in site.chloe %}
 
+    {
+      "name"     : "{{ page.title }}",
+      "url"      : "{{ page.url | replace: '.html','' | replace: 'index','' }}"
+    }
+
+  {% unless forloop.last %},{% endunless %}
+  {% endfor %},
   {% for page in site.projects %}
+
+    {
+      "name"     : "{{ page.title }}",
+      "url"      : "{{ page.url | replace: '.html','' | replace: 'index','' }}"
+    }
+
+  {% unless forloop.last %},{% endunless %}
+  {% endfor %},
+  {% for page in site.blog %}
 
     {
       "name"     : "{{ page.title }}",

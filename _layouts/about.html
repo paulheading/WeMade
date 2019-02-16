@@ -3,7 +3,7 @@
 
   {% include html/head.html %}
 
-  <body class="layout {{ page.collection | prepend: '_' }} {{ page.layout | downcase | prepend: '_' }}">
+  <body class="layout {{ page.title | downcase | prepend: '_' }}">
 
     {% include html/overlay-load.html %}
 
@@ -23,13 +23,13 @@
           {{ content }}
         </div>
         <div class="wrap _ticker">
-          {%- if page.chapter -%}
-            {% assign staff = page.chapter | downcase %}
-            {% assign loop = site.projects | where: 'staff', staff | sort: 'date' | reverse %}
-          {%- else -%}
+          {%- if page.title == 'About' -%}
             {% assign loop = site.projects | sort: 'date' | reverse %}
-          {%- endif -%}
-            {%- include html/loop-ticker.html -%}
+          {%- else -%}
+            {% assign staff = page.title | downcase %}
+            {% assign loop = site.projects | where: 'staff', staff | sort: 'date' | reverse %}
+          {% endif %}
+          {%- include html/loop-ticker.html -%}
         </div>
       </div>
 

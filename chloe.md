@@ -1,5 +1,5 @@
 ---
-title  : About Chloe
+title  : Chloe
 layout : about
 ---
 

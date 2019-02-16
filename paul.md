@@ -1,5 +1,5 @@
 ---
-title  : About Paul
+title  : Paul
 layout : about
 ---
 
