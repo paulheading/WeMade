@@ -3,7 +3,7 @@
 
   {% include html/head.html %}
 
-  <body class="layout {{ page.collection | prepend: '_' }} {{ page.layout | downcase | prepend: '_' }}">
+  <body class="layout {{ page.collection | prepend: '_' }} {{ page.title | downcase | prepend: '_' }}">
 
     {% include html/overlay-load.html %}
 
