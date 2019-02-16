@@ -1,5 +1,5 @@
 ---
-title  : Canada Page
+title  : Canada 2018
 layout : about
 ---
 

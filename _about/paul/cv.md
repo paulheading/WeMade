@@ -1,5 +1,5 @@
 ---
-title  : Paul Heading
+title  : Paul's CV
 layout : cv
 ---
 

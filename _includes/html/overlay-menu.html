@@ -1,6 +1,7 @@
-
 <div class="overlay _menu">
-  <div class="exit"></div>
+  {% unless page.layout == 'menu' %}
+    <div class="exit"></div>
+  {% endunless %}
   <div class="wrap _menu">
     <a href="/about" class="lnk _menu">about</a>
     <a href="/projects" class="lnk _menu">projects</a>

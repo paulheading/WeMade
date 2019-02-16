@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}" class="no-js">
+
+  {% include html/head.html %}
+
+  <body class="layout {{ page.layout | downcase | prepend: '_' }}">
+
+    {% include html/overlay-load.html %}
+
+    <div class="site _full">
+
+      {% if site.header %}
+      <header>
+        {{ site.header }}
+      </header>
+      {% endif %}
+
+      {{ content }}
+
+      {% if site.footer %}
+      <footer>
+        {{site.footer}}
+      </footer>
+      {% endif %}
+
+    </div>
+
+  </body>
+
+  {% include html/scripts.html %}
+
+</html>

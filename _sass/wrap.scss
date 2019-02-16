@@ -36,6 +36,14 @@
     z-index: 2;
   }
 
+  &._search {
+    position: relative;
+    place-self: center;
+    grid-row-gap: 10px;
+    display: grid;
+    z-index: 2;
+  }
+
   &._header {
     grid-template-columns: repeat(2,1fr);
     align-content: center;

@@ -7,7 +7,7 @@ Draggable.create('.popup',{cursor:'pointer'});
 var closeOverlayTl = new TimelineMax(), openOverlayTl = new TimelineMax();
 
 function setupScripts() {
-  TweenMax.set('.lnk._menu',{opacity:0});
+  // TweenMax.set('.lnk._menu',{opacity:0});
 }
 
 function closeOverlayFunc() {

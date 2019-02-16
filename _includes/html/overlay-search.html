@@ -1,0 +1,28 @@
+
+<div class="overlay _search">
+  {% unless page.layout == 'menu' %}
+    <div class="exit"></div>
+  {% endunless %}
+  <div class="wrap _search">
+      <h6 class="title _search">
+        <input type="text" class="search-input" placeholder="Search">
+      </h6>
+      <div class="search-results"></div>
+  </div>
+</div>
+
+<script>
+  window.simpleJekyllSearch = new SimpleJekyllSearch({
+    searchInput: document.querySelector('.search-input'),
+    resultsContainer: document.querySelector('.search-results'),
+    json: '/search.json',
+    searchResultTemplate:
+      `<div class="result">
+        <a class="link" href="{url}">
+          <div class="name">{name}</div>
+        </a>
+      </div>`,
+    noResultsText: 'No results found',
+    fuzzy: false
+  })
+</script>

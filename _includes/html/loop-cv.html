@@ -1,5 +1,5 @@
 
-{% assign staff = page.title | truncatewords: 1,'' | downcase %}
+{% assign staff = page.chapter | downcase %}
 
   <div class="area _cv">
     <div class="wrap _cv">
@@ -63,18 +63,18 @@
       <div class="row _cv _projects">
         <div class="title _cv _projects">Projects</div>
 
-        {% assign loop = site.projects | where: 'staff', {{ staff }} | sort: 'date' | reverse %}
+        {% assign loop = site.projects | where: 'staff', staff | sort: 'date' | reverse %}
 
         {% for item in loop limit:6 %}
-        <div class="entry">
-          <div class="title _cv _date">
-            {{ item.date | date: "%b %y" | append: '–' }}{{ item.end | date: "%b %y" }}
+          <div class="entry">
+            <div class="title _cv _date">
+              {{ item.date | date: "%b %y" | append: '–' }}{{ item.end | date: "%b %y" }}
+            </div>
+            <a class="lnk" href="{{ item.id }}" target="_blank">
+              <div class="title _cv _title">{{ item.title }}</div>
+              <div class="title _cv _project">{{ item.project }}</div>
+            </a>
           </div>
-          <a class="lnk" href="{{ item.id }}" target="_blank">
-            <div class="title _cv _title">{{ item.title }}</div>
-            <div class="title _cv _project">{{ item.project }}</div>
-          </a>
-        </div>
         {% endfor %}
 
       </div>

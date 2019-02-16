@@ -1,5 +1,5 @@
 ---
-title  : Chloe Ings
+title  : Chloe's CV
 layout : cv
 ---
 

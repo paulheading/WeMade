@@ -1,6 +1,18 @@
 
 .layout {
 
+  &._menu {
+    .overlay._search {
+      display: grid;
+    }
+  }
+
+  &._menu {
+    .overlay._menu {
+      display: grid;
+    }
+  }
+
   &._home {
 
     .area {
