@@ -6,7 +6,7 @@
     display: grid;
 
     &._title {
-      font-weight: bold;
+      font-weight: 600;
     }
   }
 
@@ -15,19 +15,19 @@
     display: grid;
 
     &._title {
-      font-weight: bold;
+      font-weight: 600;
     }
   }
 
   &._cv {
     &._title {
-      font-weight: bold;
+      font-weight: 600;
     }
     &._boss {
-      font-weight: bold;
+      font-weight: 600;
     }
     &._school {
-      font-weight: bold;
+      font-weight: 600;
     }
   }
 
@@ -36,7 +36,7 @@
   }
 
   &._bio {
-    font-weight: bold;
+    font-weight: 600;
     font-size: 21px;
 
     @media#{$max719w} {
@@ -45,25 +45,25 @@
   }
 
   &._name {
-    font-weight: bold;
+    font-weight: 600;
     font-size: 36px;
   }
 
   &._projects {
     grid-column: span 3;
-    font-weight: bold;
+    font-weight: 600;
     font-size: 21px;
   }
 
   &._jobs {
     grid-column: span 3;
-    font-weight: bold;
+    font-weight: 600;
     font-size: 21px;
   }
 
   &._skills {
     grid-column: span 3;
-    font-weight: bold;
+    font-weight: 600;
     font-size: 21px;
   }
 
@@ -76,8 +76,12 @@
 
   &._education {
     grid-column: span 3;
-    font-weight: bold;
+    font-weight: 600;
     font-size: 21px;
+  }
+
+  &._search {
+    font-weight: 700;
   }
 
   + p {

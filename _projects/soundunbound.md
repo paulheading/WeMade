@@ -14,7 +14,6 @@ visual  :
   - png : full
   - png : split
   - png : split
-results : [ website, animation ]
 staff   : [ paul, chloe ]
 ---
 

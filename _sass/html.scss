@@ -14,12 +14,16 @@ html {
       }
     }
 
-    .text_jump {
-      display: none;
-    }
-
-    #logo, #menu {
-      fill: white !important;
+    .svg {
+      &._logo {
+        fill: $smoke;
+      }
+      &._search {
+        fill: $smoke;
+      }
+      &._burger {
+        fill: $smoke;
+      }
     }
   }
 }

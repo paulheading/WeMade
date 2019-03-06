@@ -1,9 +1,13 @@
 ---
-title  : Blog
-layout : blog
+title : Blog
+tags  : blog
 ---
 
-Blogging is our passion. We are obsessed by the challenges of a discipline that exists in a state of constant flux. At its best it is thought provoking, memorable and leaves a lasting impression.
+# **Blogging is our passion**
+
+We are obsessed by the challenges of a discipline that exists in a state of constant flux. At its best it is thought provoking, memorable and leaves a lasting impression.
+
+> Blogging is our passion.
 
 Our holistic approach in dealing with the complex requirements of clients is supported by extensive experience delivering rigorous identity systems across all platforms, digital, print and environmental.
 

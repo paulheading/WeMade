@@ -1,4 +1,4 @@
-{% for item in loop %}
+{% for item in loop | limit: 3 %}
   <a href="{{ item.id }}" class="row _index">
     <div class="title _index _date">
       {{ item.date | date: "%b %y" | append: '–' }}{{ item.end | date: "%b %y" }}
@@ -12,10 +12,7 @@
       </div>
     </div>
     <div class="title _index _desc">
-      {{ item.desc | truncate: 65 }}
-    </div>
-    <div class="title _index _result">
-      {{ item.results | join: ', ' }}
+      {{ item.desc | truncate: 100 }}
     </div>
   </a>
 {% endfor %}

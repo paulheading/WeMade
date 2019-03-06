@@ -9,9 +9,13 @@ livereload : true
 include    : [_redirects]
 host       : 0.0.0.0
 
+plugins :
+  - jekyll-paginate
+
 # Build settings
 markdown : kramdown
 theme    : barbs
+paginate : 3
 
 collections :
   paul      :
@@ -29,10 +33,6 @@ collections :
 
 defaults    :
 - scope     :
-    path    : _about
+    path    : ""
   values    :
-    layout  : about
-- scope     :
-    path    : _projects
-  values    :
-    layout  : project
+    layout  : default

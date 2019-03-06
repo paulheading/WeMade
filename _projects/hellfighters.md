@@ -13,7 +13,6 @@ visual  :
   - png : full
   - png : split
   - png : split
-results : [ concepts, animations ]
 staff   : [ chloe ]
 ---
 

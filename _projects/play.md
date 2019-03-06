@@ -13,7 +13,6 @@ visual  :
   - jpg : laptopv2bw
   - jpg : scroll
   - jpg : laptopbw
-results : [ concepts, animations ]
 staff   : [ paul, chloe ]
 ---
 

@@ -15,6 +15,7 @@
   "title",
   "entry",
   "folder",
+  "input",
   "overlay",
   "html",
   "layout",
@@ -34,6 +35,10 @@
   "video"
 ;
 
+h1 + p {
+  margin-top: 20px;
+}
+
 .exit {
   position: fixed;
   @include zero();
@@ -44,7 +49,7 @@
 .strike {
   position: relative;
   z-index: -1;
-  background-color: black;
+  background-color: $coal;
   height: 3px;
   width: 100%;
 }
@@ -58,8 +63,8 @@
 .tag {
   background-color: $sky;
   border-radius: 3px;
-  padding: 5px 10px;
-  color: black;
+  padding: 4px 10px 4px 8px;
+  color: $coal;
 }
 
 .project {

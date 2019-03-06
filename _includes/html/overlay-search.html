@@ -1,19 +1,19 @@
 
 <div class="overlay _search">
   {% unless page.layout == 'menu' %}
-    <div class="exit"></div>
+    <div class="exit _search"></div>
   {% endunless %}
   <div class="wrap _search">
-      <h6 class="title _search">
-        <input type="text" class="search-input" placeholder="Search">
-      </h6>
-      <div class="search-results"></div>
+    <div class="title _search">
+      <input class="input _search" type="text" placeholder="Search">
+    </div>
+    <div class="search-results"></div>
   </div>
 </div>
 
 <script>
   window.simpleJekyllSearch = new SimpleJekyllSearch({
-    searchInput: document.querySelector('.search-input'),
+    searchInput: document.querySelector('.input._search'),
     resultsContainer: document.querySelector('.search-results'),
     json: '/search.js',
     searchResultTemplate:

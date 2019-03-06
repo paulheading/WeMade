@@ -1,4 +1,5 @@
 ---
+layout: none
 ---
 
 var $body  = $('body'),
@@ -47,7 +48,7 @@ function heroFunc() {
           val = Object.values(msg[count])[0];
 
       if (key == 'bold') {
-        heroTl.add(TweenLite.set(wordNo,{text:{value:val,delimiter:" "},fontWeight:'bold',delay:'0.15'}));
+        heroTl.add(TweenLite.set(wordNo,{text:{value:val,delimiter:" "},fontWeight:'600',delay:'0.15'}));
       } else if (key == 'italic') {
         heroTl.add(TweenLite.set(wordNo,{text:{value:val,delimiter:" "},fontStyle:'italic',delay:'0.15'}));
       } else {

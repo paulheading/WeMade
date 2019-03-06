@@ -1,57 +1,27 @@
 
 .overlay {
+  background-color: $smoke;
+  border-color: $carbon;
   overflow: scroll;
+  font-size: 40px;
   @include zero();
   position: fixed;
+  color: $carbon;
   display: none;
+  padding: 30px;
   height: 100%;
-  color: $gray;
+  z-index: 3;
 
   &._open {
     display: grid;
   }
 
   &._load {
-    background-color: $smoke;
-    padding: 30px;
-    z-index: 3;
+    font-size: 32px;
   }
 
   &._menu {
-    background-color: $coral;
     justify-content: center;
     font-size: 32px;
-    color: white;
-    z-index: 3;
-  }
-
-  &._about {
-    background-color: rgba($smoke,0.95);
-    padding-bottom: 100px;
-    padding-top: 100px;
-    min-height: 600px;
-    z-index: 3;
-  }
-
-  &._browse {
-    background-color: rgba($smoke,0.95);
-    padding-bottom: 100px;
-    padding-top: 100px;
-    min-height: 600px;
-    z-index: 3;
-  }
-
-  &._search {
-    background-color: rgba($smoke,0.95);
-    padding-bottom: 100px;
-    padding-top: 100px;
-    min-height: 600px;
-    z-index: 3;
-  }
-
-  &._mobile {
-    background-color: $smoke;
-    padding: 30px;
-    z-index: 4;
   }
 }

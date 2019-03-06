@@ -1,38 +1,36 @@
 ---
+layout: none
 ---
 
 TweenLite.defaultEase = Linear.easeNone;
 Draggable.create('.popup',{cursor:'pointer'});
 
-var closeOverlayTl = new TimelineMax(), openOverlayTl = new TimelineMax();
+var menuTl = new TimelineMax({paused:true}),searchTl = new TimelineMax({paused:true});
 
-function setupScripts() {
-  // TweenMax.set('.lnk._menu',{opacity:0});
-}
+menuTl
+.set('html',{className:'+=menu'})
+.set('.overlay._menu',{className:'+=_open'})
+.staggerTo('.lnk._menu',0.1,{opacity:1},'0.1','+=0.1')
+;
 
-function closeOverlayFunc() {
-  closeOverlayTl
-  .set('html',{className:'-=menu'})
-  .set('.overlay._menu',{className:'-= _open'})
-  .set('.lnk._menu',{opacity:0})
-  ;
-  return closeOverlayTl
-}
+searchTl
+.set('html',{className:'+=search'})
+.set('.overlay._search',{className:'+=_open'})
+;
 
-function openOverlayFunc() {
-  openOverlayTl
-  .set('html',{className:'+=menu'})
-  .set('.overlay._menu',{className:'+= _open'})
-  .staggerTo('.lnk._menu',0.1,{opacity:1},'0.1','+=0.1')
-  ;
-  return openOverlayTl
-}
-
-function changeOverlay() {
+var changeMenu = () => {
   if($('html').hasClass('menu')) {
-    closeOverlayFunc();
+    menuTl.reverse();
   } else {
-    openOverlayFunc();
+    menuTl.play();
+  }
+}
+
+var changeSearch = () => {
+  if($('html').hasClass('search')) {
+    searchTl.reverse();
+  } else {
+    searchTl.play();
   }
 }
 
@@ -90,17 +88,42 @@ function changeMin() {
   });
 }
 
-function escOverlay(e){
+var keyFunc = (e) => {
+  console.log(e.keyCode);
+
   if(e.keyCode === 27) {
-    changeOverlay();
+    if($('html').hasClass('menu')) {
+      menuTl.reverse();
+    }
+    if($('html').hasClass('search')) {
+      searchTl.reverse();
+    }
+  }
+
+  if(e.keyCode === 77) {
+    if($('html').hasClass('menu')) {
+      menuTl.reverse();
+    } else {
+      menuTl.play();
+    }
+  }
+
+  if(e.keyCode === 83) {
+    if($('html').hasClass('search')) {
+      searchTl.reverse();
+    } else {
+      searchTl.play();
+    }
   }
 }
 
-$(document).ready(setupScripts);
-$(document).keydown(escOverlay);
+$(document).keydown(keyFunc);
+
 $('.wrap._topbar').on('click','.min',changeMin);
-$('.exit').click(changeOverlay);
-$('.menu-lnk').click(changeOverlay);
+$('.exit._search').click(changeSearch);
+$('.exit._menu').click(changeMenu);
+$('.lnk._search').click(changeSearch);
+$('.lnk._burger').click(changeMenu);
 $('.folder').click(changeFolder);
 $('.btn._close').click(closeBtn);
 $('.btn._min').click(minBtn);

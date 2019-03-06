@@ -9,15 +9,15 @@
     padding-left: 40px;
     position: relative;
     overflow: visible;
-    font-size: 24px;
-    z-index: 10;
     width: 100%;
+    z-index: 4;
   }
 
   &._hero {
+    text-decoration: none;
     padding: 40px;
     display: grid;
-    height: 90%;
+    height: 95%;
   }
 
   &._ticker {
@@ -35,6 +35,7 @@
     padding-right: 20px;
     padding-left: 20px;
     padding-top: 100px;
+    font-size: 16px;
   }
 
   &._cv {
@@ -51,7 +52,7 @@
   }
 
   &._footer {
-    background-color: black;
+    background-color: $coal;
     text-align: center;
     padding: 20px;
     color: white;
@@ -61,8 +62,10 @@
     padding: 0 40px 40px;
   }
 
-  &._about {
+  &._content {
     padding: 0 40px 40px;
+    grid-gap: 40px;
+    display: grid;
   }
 
   &._project {

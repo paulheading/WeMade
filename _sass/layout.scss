@@ -1,44 +1,50 @@
 
 .layout {
 
-  &._blog {
-    &._tech {
-      background-color: #161719;
-      color: #c5c8c6;
+  &._dark {
+    background-color: $carbon;
+    color: $smoke;
 
-      .area._about {
-        font-family: monospace;
+    p {
+
+      &.blue {
+        color: #82a2bd;
       }
-
-      p {
-        line-height: 1.5;
-
-        &.blue {
-          color: #82a2bd;
-        }
-        &.purple {
-          color: #a289ab;
-        }
-        &.red {
-          color: #ca6768;
-        }
-        &.orange {
-          color: #dc9264;
-        }
-        &.yellow {
-          color: #b5bc6d;
-        }
+      &.purple {
+        color: #a289ab;
       }
-
-      blockquote {
-        background-color: #1d1f21;
-        margin: 40px 0 40px 40px;
-        padding: 20px;
+      &.red {
+        color: #ca6768;
       }
-
-      #logo, #menu {
-        fill: #c5c8c6;
+      &.orange {
+        color: #dc9264;
       }
+      &.yellow {
+        color: #b5bc6d;
+      }
+    }
+
+    .svg {
+      &._logo {
+        fill: $smoke;
+      }
+      &._search {
+        fill: $smoke;
+      }
+      &._burger {
+        fill: $smoke;
+      }
+    }
+
+    .overlay {
+      background-color: $carbon;
+      border-color: $smoke;
+      color: $smoke;
+    }
+
+    .input._search {
+      background-image: url('/assets/img/search-dark.svg');
+      background-size: 36px;
     }
   }
 
@@ -68,47 +74,42 @@
       .area {
 
         &._hero {
-          color: white;
+          color: $smoke;
         }
 
         &._ticker {
           background-color: rgba(0,0,0,.25);
-          color: white;
+          color: $smoke;
         }
       }
 
       .wrap {
-        border-color: white;
+        border-color: $smoke;
       }
 
       .row {
-        border-color: white;
+        border-color: $smoke;
 
         &._active {
-          background-color: white;
-          color: black;
+          background-color: $smoke;
+          color: $coal;
         }
       }
 
       .strike {
-        background-color: white;
+        background-color: $smoke;
       }
 
-      #logo, #menu {
-        fill: white;
-      }
-    }
-
-  }
-
-  &._projects {
-  }
-
-  &._about {
-
-    &._cv {
-      @media#{$max719w} {
-        background-color: white;
+      .svg {
+        &._logo {
+          fill: $smoke;
+        }
+        &._search {
+          fill: $smoke;
+        }
+        &._burger {
+          fill: $smoke;
+        }
       }
     }
   }

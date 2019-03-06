@@ -1,5 +1,5 @@
 ---
-layout: null
+layout: none
 ---
 [
   {% for page in site.pages %}

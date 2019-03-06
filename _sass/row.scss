@@ -2,13 +2,14 @@
 .row {
 
   &._ticker {
+    border: 2px solid black;
     grid-column-gap: 20px;
+    text-decoration: none;
     display: grid;
     padding: 8px;
-    border: 2px solid black;
 
     &._active {
-      background-color: black;
+      background-color: $coal;
       color: #ddd;
     }
 
@@ -19,9 +20,10 @@
 
   &._index {
     display: grid;
+    text-decoration: none;
 
     @media#{$min640w} {
-      grid-template-columns: 80px 180px 330px 80px;
+      grid-template-columns: 100fr 200fr 700fr;
       grid-auto-flow: column;
       grid-column-gap: 20px;
       padding-bottom: 10px;

@@ -1,0 +1,22 @@
+
+.input {
+
+  &._email {
+    padding: 0 !important;
+    min-width: 210px;
+    color: $silver;
+  }
+
+  &._subject {
+    padding: 0 !important;
+    color: $silver;
+  }
+
+  &._search {
+    background: url('/assets/img/search.svg') no-repeat right center;
+    padding: 0 0 8px !important;
+    letter-spacing: -0.01rem;
+    border-bottom: 2px solid;
+    background-size: 40px;
+  }
+}

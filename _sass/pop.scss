@@ -36,15 +36,15 @@
     .title {
       font-family: $book;
       font-style: italic;
-      color: black;
+      color: $coal;
     }
 
     ._box {
-      border-color: black;
+      border-color: $coal;
     }
 
     ._progress {
-      background-color: black;
+      background-color: $coal;
     }
   }
 }

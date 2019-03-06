@@ -2,19 +2,16 @@
 <div class="area _header">
   <div class="wrap _header">
     <div class="left _header">
-      <a class="home_link" href="/">
+      <a class="lnk _home" href="/">
         {% include svg/logo.svg %}
       </a>
     </div>
     <div class="right _header">
-      {% if page.layout == 'v1'
-         or page.layout == 'v2'
-      %}
-      <a class="text_jump" href="#notes">Text</a>
-      {% else %}
-      {% endif %}
-      <div class="menu-lnk">
-        {% include svg/menu.svg %}
+      <div class="lnk _search">
+        {% include svg/search.svg %}
+      </div>
+      <div class="lnk _burger">
+        {% include svg/burger.svg %}
       </div>
     </div>
   </div>
