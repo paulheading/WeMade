@@ -1,15 +1,16 @@
 
 .overlay {
-  background-color: $smoke;
-  border-color: $carbon;
+  background-color: $coral;
+  border-color: $smoke;
   overflow: scroll;
-  font-size: 40px;
+  font-size: 32px;
   @include zero();
   position: fixed;
-  color: $carbon;
   display: none;
-  padding: 30px;
+  padding: 150px 30px;
+  color: $smoke;
   height: 100%;
+  width: 100%;
   z-index: 3;
 
   &._open {
@@ -17,11 +18,6 @@
   }
 
   &._load {
-    font-size: 32px;
-  }
-
-  &._menu {
-    justify-content: center;
-    font-size: 32px;
+    background-color: $smoke;
   }
 }

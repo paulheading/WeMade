@@ -35,29 +35,6 @@
         fill: $smoke;
       }
     }
-
-    .overlay {
-      background-color: $carbon;
-      border-color: $smoke;
-      color: $smoke;
-    }
-
-    .input._search {
-      background-image: url('/assets/img/search-dark.svg');
-      background-size: 36px;
-    }
-  }
-
-  &._menu {
-    .overlay._search {
-      display: grid;
-    }
-  }
-
-  &._menu {
-    .overlay._menu {
-      display: grid;
-    }
   }
 
   &._home {

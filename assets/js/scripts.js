@@ -5,32 +5,108 @@ layout: none
 TweenLite.defaultEase = Linear.easeNone;
 Draggable.create('.popup',{cursor:'pointer'});
 
-var menuTl = new TimelineMax({paused:true}),searchTl = new TimelineMax({paused:true});
+var overlayTl = new TimelineMax({paused:true}),
+    menuTl = new TimelineMax({paused:true}),
+    searchTl = new TimelineMax({paused:true}),
+    animMenu = new TimelineMax({paused:true}),
+    nav = ['.svg._logo','.svg._search','.svg._burger']
+    overlayOpen = false, menuOpen = false, searchOpen = false;
 
-menuTl
-.set('html',{className:'+=menu'})
-.set('.overlay._menu',{className:'+=_open'})
-.staggerTo('.lnk._menu',0.1,{opacity:1},'0.1','+=0.1')
+overlayTl
+.set(['html','body'],{overflow:'hidden'})
+.set('.area._header',{position:'fixed'})
+.set(nav,{className:'+=--dark'})
 ;
 
-searchTl
-.set('html',{className:'+=search'})
-.set('.overlay._search',{className:'+=_open'})
-;
+menuTl.set('.overlay._menu',{className:'+=_open'});
+searchTl.set('.overlay._search',{className:'+=_open'});
+animMenu.staggerTo('.lnk._menu',0.1,{opacity:1},'0.1');
 
 var changeMenu = () => {
-  if($('html').hasClass('menu')) {
+  if(menuOpen){
     menuTl.reverse();
-  } else {
+    animMenu.reverse();
+    menuOpen = false;
+    overlayTl.reverse();
+    overlayOpen = false;
+    heroTl.play();
+  } else if(searchOpen){
+    searchTl.reverse();
+    searchOpen = false;
+    menuOpen = true;
     menuTl.play();
+    animMenu.play();
+  } else {
+    overlayTl.play();
+    overlayOpen = true;
+    menuOpen = true;
+    menuTl.play();
+    animMenu.play();
+    heroTl.pause();
   }
 }
 
 var changeSearch = () => {
-  if($('html').hasClass('search')) {
+  if(searchOpen){
     searchTl.reverse();
-  } else {
+    searchOpen = false;
+    overlayTl.reverse();
+    overlayOpen = false;
+    heroTl.play();
+  } else if(menuOpen){
+    menuTl.reverse();
+    animMenu.reverse();
+    menuOpen = false;
+    searchOpen = true;
     searchTl.play();
+  } else {
+    overlayTl.play();
+    overlayOpen = true;
+    searchOpen = true;
+    searchTl.play();
+    heroTl.pause();
+  }
+}
+
+var keyFunc = (e) => {
+  console.log(e.keyCode);
+
+  if(overlayOpen) {
+    if(e.keyCode === 27) {
+      if(searchOpen){
+        searchTl.reverse();
+        searchOpen = false;
+        overlayTl.reverse();
+        overlayOpen = false;
+        heroTl.play();
+      } else if (menuOpen){
+        menuTl.reverse();
+        animMenu.reverse();
+        menuOpen = false;
+        overlayTl.reverse();
+        overlayOpen = false;
+        heroTl.play();
+      }
+    }
+  }
+
+  if(!overlayOpen) {
+    if(e.keyCode === 77) {
+      overlayTl.play();
+      overlayOpen = true;
+      menuOpen = true;
+      menuTl.play();
+      animMenu.play();
+      heroTl.pause();
+    }
+
+    if(e.keyCode === 83) {
+      overlayTl.play();
+      overlayOpen = true;
+      searchOpen = true;
+      searchTl.play();
+      heroTl.pause();
+    }
   }
 }
 
@@ -86,35 +162,6 @@ function changeMin() {
       TweenMax.to($(this),0.3,{scale:1,x:0,y:0,ease:SteppedEase.config(4)});
     }
   });
-}
-
-var keyFunc = (e) => {
-  console.log(e.keyCode);
-
-  if(e.keyCode === 27) {
-    if($('html').hasClass('menu')) {
-      menuTl.reverse();
-    }
-    if($('html').hasClass('search')) {
-      searchTl.reverse();
-    }
-  }
-
-  if(e.keyCode === 77) {
-    if($('html').hasClass('menu')) {
-      menuTl.reverse();
-    } else {
-      menuTl.play();
-    }
-  }
-
-  if(e.keyCode === 83) {
-    if($('html').hasClass('search')) {
-      searchTl.reverse();
-    } else {
-      searchTl.play();
-    }
-  }
 }
 
 $(document).keydown(keyFunc);

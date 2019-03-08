@@ -1,11 +1,29 @@
 
 .svg {
 
-  &._search {
-    height: 30px;
-    width: 30px;
-  }
+  &._logo {
+    fill: $carbon;
 
+    &.--dark {
+      fill: $smoke;
+    }
+  }
+  &._search {
+    fill: $carbon;
+    height: 32px;
+    width: 32px;
+
+    &.--dark {
+      fill: $smoke;
+    }
+  }
+  &._burger {
+    fill: $carbon;
+
+    &.--dark {
+      fill: $smoke;
+    }
+  }
   &._submit {
     width: 54px;
     fill: $carbon;
