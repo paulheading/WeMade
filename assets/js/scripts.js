@@ -13,7 +13,6 @@ var overlayTl = new TimelineMax({paused:true}),
     overlayOpen = false, menuOpen = false, searchOpen = false;
 
 overlayTl
-.set(['html','body'],{overflow:'hidden'})
 .set('.area._header',{position:'fixed'})
 .set(nav,{className:'+=--dark'})
 ;
@@ -29,7 +28,6 @@ var changeMenu = () => {
     menuOpen = false;
     overlayTl.reverse();
     overlayOpen = false;
-    heroTl.play();
   } else if(searchOpen){
     searchTl.reverse();
     searchOpen = false;
@@ -42,7 +40,6 @@ var changeMenu = () => {
     menuOpen = true;
     menuTl.play();
     animMenu.play();
-    heroTl.pause();
   }
 }
 
@@ -52,7 +49,6 @@ var changeSearch = () => {
     searchOpen = false;
     overlayTl.reverse();
     overlayOpen = false;
-    heroTl.play();
   } else if(menuOpen){
     menuTl.reverse();
     animMenu.reverse();
@@ -64,12 +60,10 @@ var changeSearch = () => {
     overlayOpen = true;
     searchOpen = true;
     searchTl.play();
-    heroTl.pause();
   }
 }
 
 var keyFunc = (e) => {
-  console.log(e.keyCode);
 
   if(overlayOpen) {
     if(e.keyCode === 27) {
@@ -78,14 +72,12 @@ var keyFunc = (e) => {
         searchOpen = false;
         overlayTl.reverse();
         overlayOpen = false;
-        heroTl.play();
       } else if (menuOpen){
         menuTl.reverse();
         animMenu.reverse();
         menuOpen = false;
         overlayTl.reverse();
         overlayOpen = false;
-        heroTl.play();
       }
     }
   }
@@ -97,7 +89,6 @@ var keyFunc = (e) => {
       menuOpen = true;
       menuTl.play();
       animMenu.play();
-      heroTl.pause();
     }
 
     if(e.keyCode === 83) {
@@ -105,7 +96,6 @@ var keyFunc = (e) => {
       overlayOpen = true;
       searchOpen = true;
       searchTl.play();
-      heroTl.pause();
     }
   }
 }

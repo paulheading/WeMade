@@ -32,10 +32,10 @@
 
   &._header {
     grid-template-columns: repeat(2,1fr);
-    align-content: center;
-    max-width: 960px;
+    padding: 0 40px;
     display: grid;
     height: 120px;
+    width: 100%;
   }
 
   &._hero {
@@ -44,8 +44,6 @@
   }
 
   &._ticker {
-    justify-content: center;
-    display: grid;
 
     .row._ticker {
       @media#{$min720w} {
@@ -86,7 +84,7 @@
 
     &.--notes {
       max-width: 800px;
-      font-size: 21px;
+      font-size: 18px;
       padding: 40px;
     }
 
@@ -95,9 +93,19 @@
     }
 
     &.--blog {
+      h1 {
+        font-family: poppins, sans-serif;
+        letter-spacing: 0.01rem;
+        padding-top: 8px;
+        font-size: 40px;
+
+        strong {
+          font-weight: 600;
+        }
+      }
+
       p {
         font-family: monospace;
-        font-size: 16px;
       }
     }
 
@@ -108,12 +116,13 @@
     }
 
     h1 {
-      font-size: 36px;
-    }
-
-    p {
       font-family: big-caslon-fb, serif;
-      letter-spacing: 0.02rem;
+      letter-spacing: 0.04rem;
+      font-size: 48px;
+
+      strong {
+        font-weight: 800;
+      }
     }
 
     blockquote {
@@ -131,7 +140,6 @@
     justify-content: flex-start;
     grid-auto-flow: column;
     grid-column-gap: 10px;
-    align-content: center;
     max-width: 960px;
     display: grid;
     width: 100%;

@@ -3,7 +3,7 @@ title : Blog
 tags  : blog
 ---
 
-# **Blogging is our passion**
+# **Logging is our passion**
 
 We are obsessed by the challenges of a discipline that exists in a state of constant flux. At its best it is thought provoking, memorable and leaves a lasting impression.
 

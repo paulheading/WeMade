@@ -39,7 +39,7 @@ h1 + p {
 }
 
 .exit {
-  position: fixed;
+  position: absolute;
   @include zero();
   cursor: pointer;
   z-index: 1;

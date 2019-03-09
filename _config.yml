@@ -9,13 +9,13 @@ livereload : true
 include    : [_redirects]
 host       : 0.0.0.0
 
-plugins :
-  - jekyll-paginate
+# plugins :
+#   - jekyll-paginate
 
 # Build settings
 markdown : kramdown
 theme    : barbs
-paginate : 3
+# paginate : 3
 
 collections :
   paul      :

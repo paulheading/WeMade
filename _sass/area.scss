@@ -5,10 +5,9 @@
   z-index: 2;
 
   &._header {
-    padding-right: 40px;
-    padding-left: 40px;
-    position: relative;
+    align-content: center;
     overflow: visible;
+    display: grid;
     width: 100%;
     z-index: 4;
   }
@@ -22,7 +21,9 @@
 
   &._ticker {
     background-color: rgba(0,0,0,.05);
+    justify-content: center;
     padding: 100px 20px;
+    display: grid;
   }
 
   &._desktop {
