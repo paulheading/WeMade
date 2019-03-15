@@ -2,16 +2,11 @@
 .row {
 
   &._ticker {
-    border: 2px solid black;
     grid-column-gap: 20px;
     text-decoration: none;
+    border: 2px solid;
     display: grid;
     padding: 8px;
-
-    &._active {
-      background-color: $coal;
-      color: #ddd;
-    }
 
     + .row {
       margin-top: -2px;

@@ -2,85 +2,33 @@
 .svg {
 
   &._logo {
-    fill: $carbon;
+    fill: $coal;
 
-    &.--dark {
-      fill: $smoke;
+    &.--overlay {
+      fill: white !important;
     }
   }
+
   &._search {
-    fill: $carbon;
+    fill: $coal;
     height: 32px;
     width: 32px;
 
-    &.--dark {
-      fill: $smoke;
+    &.--overlay {
+      fill: white !important;
     }
   }
-  &._burger {
-    fill: $carbon;
 
-    &.--dark {
-      fill: $smoke;
+  &._burger {
+    fill: $coal;
+
+    &.--overlay {
+      fill: white !important;
     }
   }
+
   &._submit {
     width: 54px;
-    fill: $carbon;
+    fill: $coal;
   }
 }
-
-// #wordmark {
-//   max-height: 360px;
-// }
-//
-// #logo, #menu {
-//   &:hover {
-//     cursor: pointer;
-//   }
-// }
-//
-// #blob {
-//   position: relative;
-//   grid-area: 1 / 1;
-//   z-index: 3;
-// }
-//
-// #left {
-//   transition: left 200ms;
-//   position: relative;
-//   grid-area: 1 / 1;
-//   left: -160px;
-//   z-index: 2;
-//   top: -60px;
-//
-//   @media#{$min640w} {
-//     left: -360px;
-//   }
-// }
-//
-// #right {
-//   transition: right 200ms;
-//   position: relative;
-//   grid-area: 1 / 1;
-//   right: -220px;
-//   z-index: 1;
-//
-//   @media#{$min640w} {
-//     right: -360px;
-//   }
-// }
-//
-// #submit {
-
-// }
-//
-// #wave {
-//   display: none;
-//   fill: rgba(black,0.05);
-// }
-//
-// #ball {
-//   display: none;
-//   fill: rgba(black,0.25);
-// }

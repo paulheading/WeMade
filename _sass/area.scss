@@ -10,6 +10,18 @@
     display: grid;
     width: 100%;
     z-index: 4;
+
+    &.--nyo .svg {
+      &._logo {
+        fill: white;
+      }
+      &._search {
+        fill: white;
+      }
+      &._burger {
+        fill: white;
+      }
+    }
   }
 
   &._hero {
@@ -17,13 +29,59 @@
     padding: 40px;
     display: grid;
     height: 95%;
+
+    &.--nyo {
+      color: white;
+    }
   }
 
   &._ticker {
-    background-color: rgba(0,0,0,.05);
+    background-color: rgba(0,0,0,0.1);
     justify-content: center;
     padding: 100px 20px;
     display: grid;
+
+    &.--wemade {
+      background-color: rgba($wemade,0.2);
+
+      .row.--active {
+        background-color: rgba($wemade,0.2);
+      }
+    }
+
+    &.--paul {
+      background-color: rgba($paul,0.2);
+
+      .row.--active {
+        background-color: rgba($paul,0.2);
+      }
+    }
+
+    &.--chloe {
+      background-color: rgba($chloe,0.2);
+
+      .row.--active {
+        background-color: rgba($chloe,0.2);
+      }
+    }
+
+    &.--play {
+      background-color: rgba($play,0.2);
+
+      .row.--active {
+        background-color: rgba($play,0.2);
+      }
+    }
+
+    &.--nyo {
+      background-color: rgba(white,0.02);
+      border-color: white;
+      color: white;
+
+      .row.--active {
+        background-color: black;
+      }
+    }
   }
 
   &._desktop {

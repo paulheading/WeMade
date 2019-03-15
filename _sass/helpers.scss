@@ -1,15 +1,21 @@
 
+$wemade: hsl(50,85%,55%);
+$paul  : hsl(30,85%,55%);
+$chloe : hsl(175,85%,35%);
+$play  : hsl(200,85%,45%);
+$nyo   : hsl(0,0%,10%);
+
 $smoke:  darken(white,8%);
 $silver: darken(white,24%);
 $gray:   darken(white,44%);
 $carbon: lighten(black,10%);
-$coal:   lighten(black,6%);
+$coal:   lighten(black,5%);
 
-$dodger: #0d9cf5;
-$sky:    #B4E1FF;
-$coral:  #E60032;
-$pink:   #fc4465;
-$teal:   #00BEAA;
+$dodger: rgb(15, 155, 245);
+$sky:    rgb(180, 225, 255);
+$coral:  rgb(230, 0, 50);
+$pink:   rgb(250, 70, 100);
+$teal:   rgb(0, 195, 175);
 
 $NYOblue:  #3eb4e5;
 $NYOred:   #E60032;

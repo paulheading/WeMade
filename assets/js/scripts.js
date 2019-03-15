@@ -14,52 +14,76 @@ var overlayTl = new TimelineMax({paused:true}),
 
 overlayTl
 .set('.area._header',{position:'fixed'})
-.set(nav,{className:'+=--dark'})
+.set(nav,{className:'+=--overlay'})
 ;
 
-menuTl.set('.overlay._menu',{className:'+=_open'});
-searchTl.set('.overlay._search',{className:'+=_open'});
+menuTl.set('.overlay._menu',{className:'+=--open'});
+searchTl.set('.overlay._search',{className:'+=--open'});
 animMenu.staggerTo('.lnk._menu',0.1,{opacity:1},'0.1');
 
-var changeMenu = () => {
-  if(menuOpen){
+var searchFunc = (state) => {
+  if(state == 'exit') {
+    searchTl.reverse();
+    searchOpen = false;
+    overlayTl.reverse();
+    overlayOpen = false;
+  } else if(state == 'reverse') {
+    searchTl.reverse();
+    searchOpen = false;
+  } else if(state == 'play') {
+    searchTl.play();
+    searchOpen = true;
+  } else if(state == 'open') {
+    overlayTl.play();
+    overlayOpen = true;
+    searchTl.play();
+    searchOpen = true;
+  }
+}
+
+var menuFunc = (state) => {
+  if(state == 'exit') {
     menuTl.reverse();
     animMenu.reverse();
     menuOpen = false;
     overlayTl.reverse();
     overlayOpen = false;
-  } else if(searchOpen){
-    searchTl.reverse();
-    searchOpen = false;
-    menuOpen = true;
+  } else if(state == 'reverse') {
+    menuTl.reverse();
+    menuOpen = false;
+    animMenu.reverse();
+  } else if(state == 'play') {
     menuTl.play();
+    menuOpen = true;
     animMenu.play();
-  } else {
+  } else if(state == 'open') {
     overlayTl.play();
     overlayOpen = true;
-    menuOpen = true;
     menuTl.play();
+    menuOpen = true;
     animMenu.play();
+  }
+}
+
+var changeMenu = () => {
+  if(menuOpen){
+    menuFunc('exit');
+  } else if(searchOpen){
+    searchFunc('reverse');
+    menuFunc('play');
+  } else {
+    menuFunc('open');
   }
 }
 
 var changeSearch = () => {
   if(searchOpen){
-    searchTl.reverse();
-    searchOpen = false;
-    overlayTl.reverse();
-    overlayOpen = false;
+    searchFunc('exit');
   } else if(menuOpen){
-    menuTl.reverse();
-    animMenu.reverse();
-    menuOpen = false;
-    searchOpen = true;
-    searchTl.play();
+    menuFunc('reverse');
+    searchFunc('play');
   } else {
-    overlayTl.play();
-    overlayOpen = true;
-    searchOpen = true;
-    searchTl.play();
+    searchFunc('open');
   }
 }
 
@@ -68,34 +92,20 @@ var keyFunc = (e) => {
   if(overlayOpen) {
     if(e.keyCode === 27) {
       if(searchOpen){
-        searchTl.reverse();
-        searchOpen = false;
-        overlayTl.reverse();
-        overlayOpen = false;
+        searchFunc('exit');
       } else if (menuOpen){
-        menuTl.reverse();
-        animMenu.reverse();
-        menuOpen = false;
-        overlayTl.reverse();
-        overlayOpen = false;
+        menuFunc('exit');
       }
     }
   }
 
   if(!overlayOpen) {
     if(e.keyCode === 77) {
-      overlayTl.play();
-      overlayOpen = true;
-      menuOpen = true;
-      menuTl.play();
-      animMenu.play();
+      menuFunc('open');
     }
 
     if(e.keyCode === 83) {
-      overlayTl.play();
-      overlayOpen = true;
-      searchOpen = true;
-      searchTl.play();
+      searchFunc('open');
     }
   }
 }
@@ -103,15 +113,15 @@ var keyFunc = (e) => {
 function changeFolder() {
   var label = $(this)[0].classList[1];
 
-  if($(this).hasClass('_open')) {
-    $(this).removeClass('_open').addClass('_closed');
+  if($(this).hasClass('--open')) {
+    $(this).removeClass('--open').addClass('--closed');
     $('.popup').each(function(){
       if($(this).hasClass(label)) {
         $(this).hide();
       }
     });
   } else {
-    $(this).removeClass('_closed').addClass('_open');
+    $(this).removeClass('--closed').addClass('--open');
     $('.popup').each(function(){
       if($(this).hasClass(label)) {
         $(this).show();
@@ -126,7 +136,7 @@ function closeBtn() {
 
   $('.folder').each(function(){
     if($(this).hasClass(label)) {
-      $(this).removeClass('_open').addClass('_closed');
+      $(this).removeClass('--open').addClass('--closed');
     }
   });
 }

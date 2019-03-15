@@ -3,7 +3,7 @@
 
   &._dark {
     background-color: $carbon;
-    color: $smoke;
+    color: white;
 
     p {
 
@@ -26,62 +26,43 @@
 
     .svg {
       &._logo {
-        fill: $smoke;
+        fill: white;
       }
       &._search {
-        fill: $smoke;
+        fill: white;
       }
       &._burger {
-        fill: $smoke;
+        fill: white;
       }
     }
   }
 
   &._home {
+    transition: background-color 1s;
 
-    &._nyo {
-      background-color: $carbon;
+    &.--wemade {
+      background-color: rgba($wemade,0.2);
+      color: darken($wemade,50%);
+    }
 
-      .area {
+    &.--paul {
+      background-color: rgba($paul,0.2);
+      color: darken($paul,50%);
+    }
 
-        &._hero {
-          color: $smoke;
-        }
+    &.--chloe {
+      background-color: rgba($chloe,0.2);
+      color: darken($chloe,50%);
+    }
 
-        &._ticker {
-          background-color: rgba(0,0,0,.25);
-          color: $smoke;
-        }
-      }
+    &.--play {
+      background-color: rgba($play,0.2);
+      color: darken($play,50%);
+    }
 
-      .wrap {
-        border-color: $smoke;
-      }
-
-      .row {
-        border-color: $smoke;
-
-        &._active {
-          background-color: $smoke;
-          color: $coal;
-        }
-      }
-
-      .strike {
-        background-color: $smoke;
-      }
-
-      .svg {
-        &._logo {
-          fill: $smoke;
-        }
-        &._search {
-          fill: $smoke;
-        }
-        &._burger {
-          fill: $smoke;
-        }
-      }
+    &.--nyo {
+      background-color: $nyo;
+      color: white;
     }
   }
 }

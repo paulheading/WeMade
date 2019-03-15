@@ -1,16 +1,16 @@
 
 .overlay {
   background-color: $coral;
-  border-color: $smoke;
+  border-color: white;
   padding: 160px 0;
   font-size: 32px;
   @include zero();
   position: fixed;
   display: none;
-  color: $smoke;
+  color: white;
   z-index: 3;
 
-  &._open {
+  &.--open {
     display: grid;
   }
 
