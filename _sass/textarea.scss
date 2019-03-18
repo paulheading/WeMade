@@ -1,0 +1,11 @@
+
+.textarea {
+  &._email {
+    min-height: 200px;
+    padding: 0;
+
+    @media#{$min640w} {
+      min-height: 240px;
+    }
+  }
+}

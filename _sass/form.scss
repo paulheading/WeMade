@@ -1,0 +1,8 @@
+
+.form {
+  &._email {
+    @media#{$min720w} {
+      padding-left: 30px;
+    }
+  }
+}

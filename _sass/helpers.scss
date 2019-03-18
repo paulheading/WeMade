@@ -1,9 +1,9 @@
 
-$wemade: hsl(50,85%,55%);
-$paul  : hsl(30,85%,55%);
-$chloe : hsl(175,85%,35%);
-$play  : hsl(200,85%,45%);
-$nyo   : hsl(0,0%,10%);
+$wemade: hsl(50, 85%, 55%);
+$paul  : hsl(30, 85%, 55%);
+$chloe : hsl(175, 85%, 35%);
+$play  : hsl(200, 85%, 45%);
+$nyo   : hsl(0, 0%, 10%);
 
 $smoke:  darken(white,8%);
 $silver: darken(white,24%);
@@ -11,22 +11,24 @@ $gray:   darken(white,44%);
 $carbon: lighten(black,10%);
 $coal:   lighten(black,5%);
 
-$dodger: rgb(15, 155, 245);
-$sky:    rgb(180, 225, 255);
-$coral:  rgb(230, 0, 50);
-$pink:   rgb(250, 70, 100);
-$teal:   rgb(0, 195, 175);
+$dodger: hsl(210, 90%, 50%);
+$sky:    hsl(205, 100%, 85%);
+$coral:  hsl(345, 100%, 45%);
+$pink:   hsl(350, 95%, 65%);
+$teal:   hsl(175, 100%, 35%);
 
 $NYOblue:  #3eb4e5;
 $NYOred:   #E60032;
 $NYOgold:  #fabc49;
 $NYOgreen: #24aba6;
 
-$max639w:  'only screen and (max-width: 599px)';
-$min640w:  'only screen and (min-width: 600px)';
+$folder : hsl(60, 100%, 80%);
+
+$max639w:  'only screen and (max-width: 639px)';
+$min640w:  'only screen and (min-width: 640px)';
 $min1112w: 'only screen and (min-width: 1112px)';
 $min1224w: 'only screen and (min-width: 1224px)';
-$max719w: 'only screen and (max-width: 799px)';
-$min720w: 'only screen and (min-width: 800px)';
+$max719w: 'only screen and (max-width: 719px)';
+$min720w: 'only screen and (min-width: 720px)';
 
 $click: scale(0.95);

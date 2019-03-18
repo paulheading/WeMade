@@ -1,25 +1,17 @@
 
+.folders {
+  grid-template: auto / repeat(2,auto);
+  justify-content: flex-start;
+  align-content: flex-start;
+  direction: rtl;
+  grid-gap: 20px;
+  display: grid;
+  z-index: 1;
+}
+
 .folder {
-  cursor: pointer;
-
-  &._open {
-
-    #folder {
-
-      #open {
-        display: none;
-      }
-
-      #close {
-        display: block;
-      }
-    }
-  }
-
-  #folder {
-
-    #close {
-      display: none;
-    }
-  }
+  background-color: $folder;
+  border-radius: 3px;
+  height: 70px;
+  width: 80px;
 }

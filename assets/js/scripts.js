@@ -101,11 +101,10 @@ var keyFunc = (e) => {
 
   if(!overlayOpen) {
     if(e.keyCode === 77) {
-      menuFunc('open');
+      if($('textarea').is('focus')){} else { menuFunc('open'); }
     }
-
     if(e.keyCode === 83) {
-      searchFunc('open');
+      if($('textarea').is('focus')){} else { searchFunc('open'); }
     }
   }
 }

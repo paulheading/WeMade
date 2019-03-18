@@ -1,20 +1,25 @@
 
 .overlay {
   background-color: $coral;
-  border-color: white;
-  padding: 160px 0;
-  font-size: 32px;
-  @include zero();
-  position: fixed;
-  display: none;
-  color: white;
-  z-index: 3;
+
+  &._load {
+    grid-template-columns: 40px 240px 40px;
+    background-color: $smoke;
+    justify-content: center;
+  }
+
+  &._search {
+    grid-template-columns: 40px minmax(240px,400px) 40px;
+    place-content: center;
+  }
+
+  &._menu {
+    grid-template-columns: 40px minmax(240px,400px) 40px;
+    place-content: center;
+    text-align: center;
+  }
 
   &.--open {
     display: grid;
-  }
-
-  &._load {
-    background-color: $smoke;
   }
 }

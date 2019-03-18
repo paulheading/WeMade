@@ -3,7 +3,7 @@
 
   {% include html/head.html %}
 
-  <body class="layout {{ page.layout | downcase | prepend: '_' }}{% if page.tags contains 'dark' %} _dark{% endif %}">
+  <body class="layout {{ page.layout | downcase | prepend: '_' }}{% if page.tags contains 'dark' %} --dark{% endif %}">
 
     {% include html/overlay-load.html %}
 
@@ -19,14 +19,8 @@
       {% include html/overlay-search.html %}
       {% include html/overlay-menu.html %}
 
-      <div class="area _content">
-        {% if page.title == 'Missing' %}
-        <div class="wrap _content --missing">
-        {% elsif page.collection == 'blog' or page.tags contains 'blog' %}
-        <div class="wrap _content --blog">
-        {% else %}
+      <div class="area _content {% if page.collection %} {{ page.collection | downcase | prepend: '_' }} {% endif %} {% if page.tags contains 'dark' %} --dark {% endif %}">
         <div class="wrap _content">
-        {% endif %}
           {% if page.tags contains 'staff' %}
             <h1>
               <strong>
@@ -36,15 +30,19 @@
           {% endif %}
           {{ content }}
         </div>
+      </div>
 
-        {% if page.tags contains 'projects' %}
+      {% if page.tags contains 'projects' %}
+      <div class="area _index">
           <div class="wrap _index">
             {% assign loop = site.projects | sort: 'date' | reverse %}
             {%- include html/loop-index.html -%}
           </div>
-        {% endif %}
+      </div>
+      {% endif %}
 
-        {% if page.tags contains 'staff' %}
+      {% if page.tags contains 'staff' %}
+      <div class="area _ticker">
           <div class="wrap _ticker">
             {%- if page.title == 'About' -%}
               {% assign loop = site.projects | sort: 'date' | reverse %}
@@ -54,9 +52,8 @@
             {% endif %}
             {%- include html/loop-ticker.html -%}
           </div>
-        {% endif %}
-
       </div>
+      {% endif %}
 
       {% include html/area-desktop.html %}
       {% include html/area-email.html %}

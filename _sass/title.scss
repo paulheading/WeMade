@@ -1,12 +1,30 @@
 
 .title {
 
-  &._ticker {
+  &._email {
     align-self: center;
     display: grid;
 
-    &._title {
-      font-weight: 600;
+    &.--to {
+      padding-top: 2px;
+    }
+  }
+
+  &._ticker {
+    font-weight: 600;
+    display: grid;
+
+    &.--date {
+      font-weight: 400;
+    }
+
+    &.--project {
+      font-weight: 400;
+      display: none;
+
+      @media#{$min720w} {
+        display: grid;
+      }
     }
   }
 

@@ -1,17 +1,49 @@
 
-.window {
+.windows {
+  margin: -50px 0 0 0;
+  direction: ltr;
+  display: grid;
 
-  &._popup {
-    background-color: $smoke;
-    height: 240px;
-    width: 320px;
+  @media#{$min720w} {
+    margin: 100px 0 0 -50px;
+  }
+}
+
+.window {
+  transition: margin 500ms;
+  border-radius: 3px;
+  height: 240px;
+  width: 240px;
+
+  &:nth-of-type(1) {
+    background-color: $coral;
+    margin: 0 0 0 -120px;
   }
 
-  &._email {
-    padding-left: 30px;
+  &:nth-of-type(2) {
+    background-color: $dodger;
+    margin: -150px 0 0 -20px;
+  }
 
-    @media#{$min720w} {
-      padding-left: 30px;
+  &:nth-of-type(3) {
+    background-color: $silver;
+    margin: -150px 0 0 -100px;
+  }
+
+  @media#{$min720w} {
+    height: 300px;
+    width: 300px;
+
+    &:nth-of-type(1) {
+      margin: 0;
+    }
+
+    &:nth-of-type(2) {
+      margin: -370px 0 0 160px;
+    }
+
+    &:nth-of-type(3) {
+      margin: -220px 0 0 80px;
     }
   }
 }

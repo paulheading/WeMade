@@ -5,7 +5,7 @@
   {% endunless %}
   <div class="wrap _search">
     <div class="title _search">
-      <input class="input _search" type="text" placeholder="Search">
+      <input class="input _text --search" type="text" placeholder="Search">
     </div>
     <div class="search-results"></div>
   </div>
@@ -13,7 +13,7 @@
 
 <script>
   window.simpleJekyllSearch = new SimpleJekyllSearch({
-    searchInput: document.querySelector('.input._search'),
+    searchInput: document.querySelector('.input.--search'),
     resultsContainer: document.querySelector('.search-results'),
     json: '/search.js',
     searchResultTemplate:

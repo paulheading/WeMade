@@ -9,8 +9,8 @@ We are obsessed by the challenges of a discipline that exists in a state of cons
 
 > Blogging is our passion.
 
-<p class="blue">blue<p>
-<p class="purple">purple<p>
-<p class="red">red<p>
-<p class="orange">orange<p>
-<p class="yellow">yellow<p>
+<p class="--blue">blue<p>
+<p class="--purple">purple<p>
+<p class="--red">red<p>
+<p class="--orange">orange<p>
+<p class="--yellow">yellow<p>

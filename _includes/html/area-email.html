@@ -1,39 +1,37 @@
 
 <div class="area _email">
   <div class="wrap _email">
-    <div class="topbar _email">
-      <div class="btn _topbar _close"></div>
-      <div class="btn _topbar _min"></div>
+    <div class="bar _email">
+      <div class="btn _email --close"></div>
+      <div class="btn _email --min"></div>
     </div>
-    <form name="contact" method="POST" netlify>
-    <div class="window _email">
+    <form class="form _email" name="contact" method="POST" netlify>
+
       <div class="row _input">
-        <div class="wrap _input">
-          <div class="title">To</div>
-          <div class="tag">
-            hello@wemade.design
-          </div>
-        </div>
+          <div class="title _email --to">To</div>
+          <div class="tag">hello@wemade.design</div>
       </div>
+
       <div class="row _input">
-        <div class="wrap _input">
-          <span class="title">Subject</span>
-          <input class="input _subject" name="subject" type="text" value="Online Enquiry"/></div>
+          <div class="title _email">Subject</div>
+          <input class="input _text --subject" name="subject" type="text" value="Online Enquiry"/>
       </div>
+
       <div class="row _input">
-        <div class="wrap _input"><span class="title">From</span>
+        <div class="title _email">From</div>
         <input class="input _email" name="email" type="email" placeholder="paulheading@me.com"/>
       </div>
-      </div>
+
       <div class="row _textarea">
-        <textarea name="message"></textarea>
+        <textarea class="textarea _email" name="message"></textarea>
       </div>
+
       <div class="row _submit">
-        <button type="submit">
+        <button class="btn" type="submit">
           {% include svg/submit.svg %}
         </button>
       </div>
-      </form>
+
+    </form>
     </div>
   </div>
-</div>

@@ -1,28 +1,8 @@
 
 .layout {
 
-  &._dark {
+  &.--dark {
     background-color: $carbon;
-    color: white;
-
-    p {
-
-      &.blue {
-        color: #82a2bd;
-      }
-      &.purple {
-        color: #a289ab;
-      }
-      &.red {
-        color: #ca6768;
-      }
-      &.orange {
-        color: #dc9264;
-      }
-      &.yellow {
-        color: #b5bc6d;
-      }
-    }
 
     .svg {
       &._logo {
@@ -42,27 +22,22 @@
 
     &.--wemade {
       background-color: rgba($wemade,0.2);
-      color: darken($wemade,50%);
     }
 
     &.--paul {
       background-color: rgba($paul,0.2);
-      color: darken($paul,50%);
     }
 
     &.--chloe {
       background-color: rgba($chloe,0.2);
-      color: darken($chloe,50%);
     }
 
     &.--play {
       background-color: rgba($play,0.2);
-      color: darken($play,50%);
     }
 
     &.--nyo {
       background-color: $nyo;
-      color: white;
     }
   }
 }

@@ -6,6 +6,22 @@ h1, h2, h3, h4, h5, h6, p {
 p {
   line-height: 1.5;
 
+  &.--blue {
+    color: #82a2bd;
+  }
+  &.--purple {
+    color: #a289ab;
+  }
+  &.--red {
+    color: #ca6768;
+  }
+  &.--orange {
+    color: #dc9264;
+  }
+  &.--yellow {
+    color: #b5bc6d;
+  }
+
   strong {
     font-weight: 600;
   }

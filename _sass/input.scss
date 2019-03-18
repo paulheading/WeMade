@@ -2,21 +2,21 @@
 .input {
 
   &._email {
-    padding: 0 !important;
-    min-width: 210px;
+    min-width: 190px;
     color: $silver;
+    padding: 0;
   }
 
-  &._subject {
-    padding: 0 !important;
-    color: $silver;
-  }
-
-  &._search {
-    background: url('/assets/img/search.svg') no-repeat right center;
-    padding: 0 48px 8px 0 !important;
-    letter-spacing: -0.01rem;
-    border-bottom: 2px solid;
-    background-size: 36px;
+  &._text {
+    &.--subject {
+      padding: 0 !important;
+      color: $silver;
+    }
+    &.--search {
+      background: url('/assets/img/search.svg') no-repeat right center;
+      padding: 0 48px 8px 0 !important;
+      border-bottom: 2px solid;
+      background-size: 36px;
+    }
   }
 }

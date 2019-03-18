@@ -2,19 +2,45 @@
 .btn {
   cursor: pointer;
 
-  &._topbar {
-    background-color: $gray;
+  &._desktop {
+    background-color: darken($teal,10%);
     border-radius: 50%;
     height: 20px;
     width: 20px;
+
+    &.--min {
+      background-color: darken($teal,20%);
+    }
   }
 
-  &._close {
-    background-color: red;
+  &._window {
+    background-color: rgba(0,0,0,0.1);
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+
+    &.--close {
+      background-color: red;
+    }
+
+    &.--min {
+      background-color: orange;
+    }
   }
 
-  &._min {
-    background-color: orange;
+  &._email {
+    background-color: rgba(0,0,0,0.1);
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+
+    &.--close {
+      background-color: red;
+    }
+
+    &.--min {
+      background-color: orange;
+    }
   }
 
   &._download {

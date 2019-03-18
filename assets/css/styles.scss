@@ -2,53 +2,43 @@
 ---
 
 @import
-  "normalize.css",
-  "barbs",
-  "helpers",
-  "base",
-  "area",
-  "body",
-  "btn",
-  "bar",
-  "canvas",
-  "copy",
-  "title",
-  "entry",
-  "folder",
-  "input",
-  "overlay",
-  "layout",
-  "left",
-  "lnk",
-  "min",
-  "pop",
-  "popup",
-  "right",
-  "row",
-  "site",
-  "svg",
-  "topbar",
-  "visual",
-  "window",
-  "wrap",
-  "video"
+  'normalize.css',
+  'barbs',
+  'helpers',
+  'base',
+  'area',
+  'body',
+  'btn',
+  'bar',
+  'canvas',
+  'copy',
+  'title',
+  'entry',
+  'folder',
+  'form',
+  'input',
+  'overlay',
+  'layout',
+  'left',
+  'lnk',
+  'min',
+  'pop',
+  'popup',
+  'right',
+  'row',
+  'svg',
+  'textarea',
+  'topbar',
+  'visual',
+  'window',
+  'wrap',
+  'video'
 ;
 
-h1 + p {
-  margin-top: 20px;
-}
-
-.exit {
-  position: absolute;
-  @include zero();
-  cursor: pointer;
-  z-index: 1;
-}
-
 .strike {
+  background-color: $coal;
   position: relative;
   z-index: -1;
-  background-color: $coal;
   height: 3px;
   width: 100%;
 }
@@ -60,19 +50,8 @@ h1 + p {
 }
 
 .tag {
+  padding: 4px 10px 4px 8px;
   background-color: $sky;
   border-radius: 3px;
-  padding: 4px 10px 4px 8px;
   color: $coal;
-}
-
-.project {
-  padding-top: 120px;
-}
-
-// THEME UPDATES
-
-button {
-  background-color: transparent;
-  color: inherit;
 }

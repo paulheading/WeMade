@@ -16,6 +16,7 @@
       {% endif %}
 
       {% include html/area-header.html %}
+      {% include html/overlay-search.html %}
       {% include html/overlay-menu.html %}
 
       <div class="area _project">
@@ -36,7 +37,7 @@
           {% endfor %}
         </div>
 
-        <div class="wrap _content --notes" id="notes">
+        <div class="row _notes" id="notes">
           {{ page.content }}
         </div>
 

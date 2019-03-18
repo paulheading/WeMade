@@ -1,42 +1,41 @@
 
-.topbar {
-  height: 40px;
+.bar {
 
   &._desktop {
-    background-color: rgba(0,0,0,.05);
+    grid-template-columns: 40px minmax(240px,800px) 40px;
+    background-color: rgba(0,0,0,0.05);
+    justify-content: center;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    display: grid;
+    height: 40px;
+  }
+
+  &._window {
+    background-color: rgba(0,0,0,0.1);
+    justify-content: flex-start;
+    grid-auto-flow: column;
+    grid-column-gap: 10px;
     align-content: center;
     padding-right: 10px;
     padding-left: 10px;
     display: grid;
+    height: 40px;
   }
 
   &._email {
+    background-color: rgba(0,0,0,0.3);
     justify-content: flex-start;
-    background-color: $gray;
     grid-auto-flow: column;
     grid-column-gap: 10px;
     align-content: center;
     padding-right: 10px;
     padding-left: 10px;
     display: grid;
+    height: 40px;
   }
+}
 
-  &._popup {
-    justify-content: flex-start;
-    background-color: $gray;
-    grid-auto-flow: column;
-    grid-column-gap: 10px;
-    align-content: center;
-    padding-right: 10px;
-    padding-left: 10px;
-    display: grid;
-
-    &._tim {
-      background-color: $dodger;
-    }
-
-    &._eric {
-      background-color: $pink;
-    }
-  }
+.topbar {
+  height: 40px;
 }

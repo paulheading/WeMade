@@ -1,6 +1,6 @@
 ---
 title : Blog
-tags  : blog
+collection : blog
 ---
 
 # **Logging is our passion**
