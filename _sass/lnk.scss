@@ -10,7 +10,18 @@
 
   &._menu {
     text-decoration: none;
+    padding: 10px;
     opacity: 0;
+
+    &:hover {
+      background-color: white;
+      color: $coral;
+    }
+
+    + .lnk._menu {
+      border-top: 2px solid;
+      margin-top: -2px;
+    }
   }
 
   &._page {

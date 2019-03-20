@@ -4,20 +4,21 @@
 
   &._email {
     min-width: 190px;
-    color: $silver;
+    color: $gray;
     padding: 0;
   }
 
   &._text {
     &.--subject {
       padding: 0 !important;
-      color: $silver;
+      color: $gray;
     }
     &.--search {
       background: url('/assets/img/search.svg') no-repeat right center;
-      padding: 0 48px 8px 0 !important;
       border-bottom: 2px solid;
       background-size: 36px;
+      padding: 0 50px 0 0;
+      line-height: 1;
     }
   }
 }

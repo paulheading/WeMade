@@ -10,7 +10,7 @@ var overlayTl = new TimelineMax({paused:true}),
     searchTl = new TimelineMax({paused:true}),
     animMenu = new TimelineMax({paused:true}),
     nav = ['.svg._logo','.svg._search','.svg._burger']
-    overlayOpen = false, menuOpen = false, searchOpen = false;
+    quicKeys = true, menuOpen = false, searchOpen = false;
 
 overlayTl
 .set('.area._header',{position:'fixed'})
@@ -26,7 +26,7 @@ var searchFunc = (state) => {
     searchTl.reverse();
     searchOpen = false;
     overlayTl.reverse();
-    overlayOpen = false;
+    quicKeys = true;
   } else if(state == 'reverse') {
     searchTl.reverse();
     searchOpen = false;
@@ -35,7 +35,7 @@ var searchFunc = (state) => {
     searchOpen = true;
   } else if(state == 'open') {
     overlayTl.play();
-    overlayOpen = true;
+    quicKeys = false;
     searchTl.play();
     searchOpen = true;
   }
@@ -47,7 +47,7 @@ var menuFunc = (state) => {
     animMenu.reverse();
     menuOpen = false;
     overlayTl.reverse();
-    overlayOpen = false;
+    quicKeys = true;
   } else if(state == 'reverse') {
     menuTl.reverse();
     menuOpen = false;
@@ -58,7 +58,7 @@ var menuFunc = (state) => {
     animMenu.play();
   } else if(state == 'open') {
     overlayTl.play();
-    overlayOpen = true;
+    quicKeys = false;
     menuTl.play();
     menuOpen = true;
     animMenu.play();
@@ -89,7 +89,7 @@ var changeSearch = () => {
 
 var keyFunc = (e) => {
 
-  if(overlayOpen) {
+  if(!quicKeys) {
     if(e.keyCode === 27) {
       if(searchOpen){
         searchFunc('exit');
@@ -99,12 +99,12 @@ var keyFunc = (e) => {
     }
   }
 
-  if(!overlayOpen) {
+  if(quicKeys) {
     if(e.keyCode === 77) {
-      if($('textarea').is('focus')){} else { menuFunc('open'); }
+      menuFunc('open');
     }
     if(e.keyCode === 83) {
-      if($('textarea').is('focus')){} else { searchFunc('open'); }
+      searchFunc('open');
     }
   }
 }
@@ -163,8 +163,16 @@ function changeMin() {
   });
 }
 
-$(document).keydown(keyFunc);
+var hasFocus = () => {
+  quicKeys = false;
+}
 
+var notFocus = () => {
+  quicKeys = true;
+}
+
+$(document).keydown(keyFunc);
+$('input,textarea').focus(hasFocus).blur(notFocus);
 $('.wrap._topbar').on('click','.min',changeMin);
 $('.exit._search').click(changeSearch);
 $('.exit._menu').click(changeMenu);
