@@ -8,6 +8,7 @@
   'base',
   'area',
   'body',
+  'btn',
   'canvas',
   'copy',
   'title',
@@ -26,15 +27,10 @@
   'visual',
   'window',
   'wrap',
-  'video'
-;
+  'video';
 
-.strike {
-  background-color: $coal;
-  position: relative;
-  z-index: -1;
-  height: 3px;
-  width: 100%;
+.search-results {
+  padding-top: 10px;
 }
 
 .desc {
@@ -48,8 +44,4 @@
   background-color: $sky;
   border-radius: 3px;
   color: $coal;
-}
-
-.button {
-  background-color: transparent;
 }

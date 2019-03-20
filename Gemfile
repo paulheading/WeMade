@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'jekyll', '~> 3.8.3'
-gem 'barbs', '~> 0.2.2'
+gem 'barbs', '~> 0.2.9'
 #, :path => '../barbs'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

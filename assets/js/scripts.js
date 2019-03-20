@@ -13,6 +13,7 @@ var overlayTl = new TimelineMax({paused:true}),
     quicKeys = true, menuOpen = false, searchOpen = false;
 
 overlayTl
+.set('body',{overflow:'hidden'})
 .set('.area._header',{position:'fixed'})
 .set(nav,{className:'+=--overlay'})
 ;

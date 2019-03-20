@@ -20,7 +20,7 @@
       {% include html/overlay-menu.html %}
 
       <div class="area _content {% if page.collection %} {{ page.collection | downcase | prepend: '_' }} {% endif %} {% if page.tags contains 'dark' %} --dark {% endif %}">
-        <div class="wrap _content">
+        <div class="wrap _content --grid">
           {% if page.tags contains 'staff' %}
             <h1>
               <strong>
@@ -34,7 +34,7 @@
 
       {% if page.tags contains 'projects' %}
       <div class="area _index">
-          <div class="wrap _index">
+          <div class="wrap _index --grid">
             {% assign loop = site.projects | sort: 'date' | reverse %}
             {%- include html/loop-index.html -%}
           </div>
@@ -43,7 +43,7 @@
 
       {% if page.tags contains 'staff' %}
       <div class="area _ticker">
-          <div class="wrap _ticker">
+          <div class="wrap _ticker --grid">
             {%- if page.title == 'About' -%}
               {% assign loop = site.projects | sort: 'date' | reverse %}
             {%- else -%}

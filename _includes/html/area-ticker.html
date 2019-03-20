@@ -1,5 +1,5 @@
 <div class="area _ticker{% if page.title == 'Home' %} --home{% endif %}">
-  <div class="wrap _ticker">
+  <div class="wrap _ticker --grid">
     {% assign loop = site.projects | sort: 'date' | reverse %}
     {% include html/loop-ticker.html %}
   </div>
