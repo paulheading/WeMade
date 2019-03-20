@@ -1,6 +1,11 @@
 
 .wrap {
 
+  &._hero {
+    position: relative;
+    z-index: 2;
+  }
+
   &._header {
     grid-template-columns: repeat(2,1fr);
     display: grid;

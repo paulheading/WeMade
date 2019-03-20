@@ -1,6 +1,17 @@
 
 .svg {
 
+  &._hero {
+    position: fixed;
+    @include zero();
+    cursor: pointer;
+    display: grid;
+    height: 568px;
+    width: 320px;
+    margin: auto;
+    z-index: 1;
+  }
+
   &._logo {
     fill: $coal;
 

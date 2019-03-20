@@ -22,22 +22,42 @@
 
     &.--wemade {
       background-color: rgba($wemade,0.2);
+
+      #noodle {
+        stroke: $wemade;
+      }
     }
 
     &.--paul {
       background-color: rgba($paul,0.2);
+
+      #noodle {
+        stroke: $paul;
+      }
     }
 
     &.--chloe {
       background-color: rgba($chloe,0.2);
+
+      #noodle {
+        stroke: $chloe;
+      }
     }
 
     &.--play {
       background-color: rgba($play,0.2);
+
+      #noodle {
+        stroke: $play;
+      }
     }
 
     &.--nyo {
       background-color: $nyo;
+
+      #noodle {
+        stroke: black;
+      }
     }
   }
 }

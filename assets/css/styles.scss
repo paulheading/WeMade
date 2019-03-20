@@ -8,7 +8,6 @@
   'base',
   'area',
   'body',
-  'btn',
   'canvas',
   'copy',
   'title',
@@ -49,4 +48,8 @@
   background-color: $sky;
   border-radius: 3px;
   color: $coal;
+}
+
+.button {
+  background-color: transparent;
 }

@@ -22,6 +22,15 @@ function tickerFunc() {
   return tickerTl;
 }
 
+var svgFunc = () => {
+  TweenLite.defaultEase = Sine.easeInOut;
+  var svgTl = new TimelineMax({repeat:-1,yoyo:true});
+  svgTl.fromTo('.svg._hero',1,{y:-5},{y:5});
+
+  var drawTl = new TimelineMax({repeat:-1,yoyo:true});
+  drawTl.fromTo('#noodle',1,{drawSVG:'0%'},{drawSVG:'100%'});
+}
+
 function heroFunc() {
 
   data.sort(function(){
@@ -93,6 +102,7 @@ function heroFunc() {
 }
 
 $(document)
+.ready(svgFunc)
 .ready(tickerFunc)
 .ready(heroFunc)
 ;
