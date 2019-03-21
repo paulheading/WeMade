@@ -8,11 +8,10 @@
     grid-template-columns: 40px minmax(200px,800px) 40px;
     justify-content: center;
     padding-bottom: 40px;
-    position: absolute;
     padding-top: 40px;
     display: grid;
     width: 100%;
-    z-index: 4;
+    z-index: 3;
 
     &.--nyo .svg {
       &._logo {
@@ -103,6 +102,7 @@
 
   &._desktop {
     background-color: $teal;
+    min-height: 600px;
   }
 
   &._canvas {
@@ -130,7 +130,6 @@
   &._content {
     grid-template-columns: 40px minmax(200px,800px) 40px;
     justify-content: center;
-    padding-top: 112px;
     display: grid;
 
     &._blog {
@@ -154,7 +153,6 @@
   &._cv {
     grid-template-columns: 1fr minmax(320px,440px) 1fr;
     justify-content: center;
-    padding-top: 112px;
     line-height: 1.5;
     display: grid;
 
@@ -180,7 +178,6 @@
   &._project {
     grid-template-columns: 1fr minmax(320px,960px) 1fr;
     justify-content: center;
-    padding-top: 112px;
     display: grid;
   }
 

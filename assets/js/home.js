@@ -59,8 +59,6 @@ function heroFunc() {
 
           if(key == 'bold!') {
             heroTl.add(TweenLite.set(wordNo,{text:{value:val},
-            // background: 'url(/assets/img/flash_'+name+'.svg) repeat-x bottom',
-            // padding: '0 6px',
             textDecoration: 'underline',
             fontWeight: 600,
             delay: '0.15'}));
@@ -70,8 +68,6 @@ function heroFunc() {
             delay: '0.15'}));
           } else if(key == 'italic!') {
             heroTl.add(TweenLite.set(wordNo,{text:{value:val},
-            // background: 'url(/assets/img/flash_'+name+'.svg) repeat-x bottom',
-            // padding: '0 6px',
             textDecoration: 'underline',
             fontStyle: 'italic',
             delay: '0.15'}));
@@ -81,8 +77,6 @@ function heroFunc() {
             delay:'0.15'}));
           } else if(key == 'book!') {
             heroTl.add(TweenLite.set(wordNo,{text:{value:val},
-            // background: 'url(/assets/img/flash_'+name+'.svg) repeat-x bottom',
-            // padding: '0 6px',
             textDecoration: 'underline',
             delay:'0.15'}));
           } else {

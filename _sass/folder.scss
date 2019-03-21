@@ -1,7 +1,12 @@
 
 .folder {
-  background-color: $folder;
+  background-color: red;
   border-radius: 3px;
+  cursor: pointer;
   height: 70px;
   width: 80px;
+
+  &.--open {
+    background-color: $folder;
+  }
 }
