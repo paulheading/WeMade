@@ -30,9 +30,10 @@
     grid-template-columns: 40px minmax(240px,360px) 40px;
     text-decoration: none;
     place-content: center;
+    overflow: visible;
     display: grid;
     height: 95%;
-    z-index: 3;
+    z-index: 1;
 
     &.--nyo {
       color: white;
