@@ -29,8 +29,17 @@
   'wrap',
   'video';
 
+.container {
+  &._search {
+    width: 100%;
+  }
+}
+
 .search-results {
+  margin-right: auto;
+  margin-left: auto;
   padding-top: 10px;
+  text-align: left;
 }
 
 .desc {

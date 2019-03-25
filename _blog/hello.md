@@ -1,5 +1,6 @@
 ---
 title : Hello
+type  : blog
 ---
 
 # **Helloing is our passion**

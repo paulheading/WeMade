@@ -112,7 +112,7 @@
     }
   }
 
-  &._split {
+  &.--split {
     display: grid;
 
     @media#{$max639w} {

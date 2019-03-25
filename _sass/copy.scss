@@ -7,6 +7,22 @@
     }
   }
 
+  &.--blue {
+    color: #82a2bd;
+  }
+  &.--purple {
+    color: #a289ab;
+  }
+  &.--red {
+    color: #ca6768;
+  }
+  &.--orange {
+    color: #dc9264;
+  }
+  &.--yellow {
+    color: #b5bc6d;
+  }
+
   &._hero {
     text-align: center;
     line-height: 1.5;

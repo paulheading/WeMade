@@ -1,6 +1,18 @@
 
+{% assign next = page.ref | plus: 1 %}
+{% assign prev = page.ref | minus: 1 %}
+{% assign loop = site.projects %}
+
 <div class="row _paginate">
-  <a href="" class="lnk _paginate _next">Next</a>
+  {% for thing in loop %}
+  {% if thing.ref == next %}
+  <a class="lnk _paginate _next" href="{{ thing.url }}">{{ thing.title }}</a>
+  {% endif %}
+  {% endfor %}
   <a href="/projects/" class="lnk _paginate _index">Projects</a>
-  <a href="" class="lnk _paginate _prev">Prev</a>
+  {% for thing in loop %}
+  {% if thing.ref == prev %}
+  <a class="lnk _paginate _prev" href="{{ thing.url }}">{{ thing.title }}</a>
+  {% endif %}
+  {% endfor %}
 </div>

@@ -4,80 +4,72 @@ layout: none
 
 TweenLite.defaultEase = Linear.easeNone;
 
-var overlayTl = new TimelineMax({paused:true}),
-    menuTl = new TimelineMax({paused:true}),
+var menuTl = new TimelineMax({paused:true}),
     searchTl = new TimelineMax({paused:true}),
-    animMenu = new TimelineMax({paused:true}),
-    overlayOpen = false, menuOpen = false, searchOpen = false, hasFocus = false;
+    menuOpen = false, searchOpen = false, hasFocus = false;
 
-overlayTl.set('body',{overflow:'hidden'});
-menuTl.set('.overlay._menu',{className:'+=--open'});
-searchTl.set('.overlay._search',{className:'+=--open'});
-animMenu.staggerTo('.lnk._menu',0.1,{opacity:1},'0.1');
+function overlayFunc(goto,type) {
+  if(goto == 'open') {
+    document.querySelector('body').style.overflow = 'hidden';
+    document.querySelector('.overlay._'+type).style.display = 'block';
+  } else if(goto == 'close') {
+    document.querySelector('body').removeAttribute('style');
+    document.querySelector('.overlay._'+type).removeAttribute('style');
+  }
+}
+
+menuTl
+.staggerTo('.lnk._menu',0.1,{opacity:1},'0.1')
+;
+
+searchTl
+.to('.title._search',0.5,{width:'100%'})
+.to('input.--search',0.1,{opacity:1})
+;
 
 var changeSearch = () => {
   if(searchOpen){
-    searchFunc('exit');
+    searchFunc('close');
   } else if(menuOpen){
-    menuFunc('reverse');
-    searchFunc('play');
+    menuFunc('close');
+    searchFunc('open');
   } else {
     searchFunc('open');
   }
 }
 
 var searchFunc = (state) => {
-  if(state == 'exit') {
+  if(state == 'close') {
     searchTl.reverse();
+    overlayFunc('close','search');
     searchOpen = false;
-    overlayTl.reverse();
-    overlayOpen = false;
-  } else if(state == 'reverse') {
-    searchTl.reverse();
-    searchOpen = false;
-  } else if(state == 'play') {
-    searchTl.play();
-    searchOpen = true;
   } else if(state == 'open') {
-    overlayTl.play();
-    overlayOpen = true;
-    searchTl.play();
+    overlayFunc('open','search');
     searchOpen = true;
+    searchTl.play();
   }
 }
 
 var changeMenu = () => {
   if(menuOpen){
-    menuFunc('exit');
+    menuFunc('close');
   } else if(searchOpen){
-    searchFunc('reverse');
-    menuFunc('play');
+    searchFunc('close');
+    menuFunc('open');
   } else {
     menuFunc('open');
   }
 }
 
 var menuFunc = (state) => {
-  if(state == 'exit') {
+  if(state == 'close') {
     menuTl.reverse();
-    animMenu.reverse();
+    overlayFunc('close','menu');
     menuOpen = false;
-    overlayTl.reverse();
-    overlayOpen = false;
-  } else if(state == 'reverse') {
-    menuTl.reverse();
-    menuOpen = false;
-    animMenu.reverse();
-  } else if(state == 'play') {
-    menuTl.play();
-    menuOpen = true;
-    animMenu.play();
   } else if(state == 'open') {
-    overlayTl.play();
-    overlayOpen = true;
-    menuTl.play();
+    overlayFunc('open','menu');
     menuOpen = true;
-    animMenu.play();
+    menuTl.play();
   }
 }
 
@@ -85,40 +77,22 @@ var keyFunc = (e) => {
 
   if(e.keyCode === 83) {
     if(!hasFocus) {
-      if(!searchOpen) {
-        if(menuOpen) {
-          menuFunc('exit');
-          searchFunc('open');
-        } else {
-          searchFunc('open');
-        }
-      } else {
-        searchFunc('exit');
-      }
+      changeSearch();
     }
   }
 
   if(e.keyCode === 77) {
     if(!hasFocus) {
-      if(!menuOpen) {
-        if(searchOpen) {
-          searchFunc('exit');
-          menuFunc('open');
-        } else {
-          menuFunc('open');
-        }
-      } else {
-        menuFunc('exit');
-      }
+      changeMenu();
     }
   }
 
   if(e.keyCode === 27) {
     if(!hasFocus) {
       if(searchOpen) {
-        searchFunc('exit');
+        searchFunc('close');
       } else if(menuOpen) {
-        menuFunc('exit');
+        menuFunc('close');
       }
     }
   }

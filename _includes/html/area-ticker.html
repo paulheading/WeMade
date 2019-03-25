@@ -1,4 +1,7 @@
 <div class="area _ticker{% if page.title == 'Home' %} --home{% endif %}">
+  <div class="svg _hero">
+    {% include svg/paul/hero.svg %}
+  </div>
   <div class="wrap _ticker --grid">
     {% assign loop = site.projects | sort: 'date' | reverse %}
     {% include html/loop-ticker.html %}

@@ -1,9 +1,14 @@
 
 .wrap {
 
+  &.--block {
+    margin-right: auto;
+    margin-left: auto;
+  }
+
   &._search {
-    text-align: left;
     max-width: 440px;
+    width: 100%;
   }
 
   &._header {
@@ -28,56 +33,6 @@
     border-radius: 3px 3px 0 0;
     background-color: white;
     overflow: hidden;
-  }
-
-  &._content {
-
-    h1, h2 {
-      + p {
-        margin-top: 20px;
-      }
-    }
-
-    h1 {
-      font-family: big-caslon-fb, serif;
-      letter-spacing: 0.1rem;
-      font-size: 48px;
-
-      strong {
-        font-weight: 800;
-      }
-    }
-
-    blockquote {
-      background-color: rgba(120,120,120,.06);
-      margin: 40px 0;
-      padding: 20px;
-
-      @media#{$min720w} {
-        margin: 40px;
-      }
-    }
-
-    &.--missing {
-      text-align: center;
-    }
-
-    &.--blog {
-      h1 {
-        font-family: poppins, sans-serif;
-        letter-spacing: 0.01rem;
-        padding-top: 8px;
-        font-size: 40px;
-
-        strong {
-          font-weight: 600;
-        }
-      }
-
-      p {
-        font-family: monospace;
-      }
-    }
   }
 
   &._input {

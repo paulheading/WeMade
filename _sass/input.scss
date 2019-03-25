@@ -15,10 +15,10 @@
     }
     &.--search {
       background: url('/assets/img/search.svg') no-repeat right center;
-      border-bottom: 2px solid;
       background-size: 36px;
       padding: 0 50px 0 0;
       line-height: 1;
+      opacity: 0;
     }
   }
 }

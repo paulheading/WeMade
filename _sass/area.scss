@@ -32,6 +32,7 @@
     place-content: center;
     display: grid;
     height: 95%;
+    z-index: 3;
 
     &.--nyo {
       color: white;
@@ -42,7 +43,6 @@
     grid-template-columns: 40px 240px 40px;
     justify-content: center;
     padding-bottom: 40px;
-    padding-top: 40px;
     font-size: 18px;
     display: grid;
 
@@ -102,7 +102,7 @@
 
   &._desktop {
     background-color: $teal;
-    min-height: 600px;
+    height: 600px;
   }
 
   &._canvas {
@@ -130,19 +130,15 @@
   &._content {
     grid-template-columns: 40px minmax(200px,800px) 40px;
     justify-content: center;
+    padding-bottom: 40px;
     display: grid;
 
-    &._blog {
+    &.--blog {
       font-family: monospace;
-
-      h1 {
-        font-family: poppins, sans-serif;
-        letter-spacing: -0.01rem;
-      }
     }
 
-    + .area._desktop {
-      margin-top: 40px;
+    &.--missing {
+      text-align: center;
     }
 
     &.--dark {
@@ -171,7 +167,6 @@
     grid-template-columns: 40px minmax(240px,800px) 40px;
     justify-content: center;
     padding-bottom: 40px;
-    padding-top: 40px;
     display: grid;
   }
 

@@ -1,7 +1,7 @@
 ---
-ref     : 3
-layout  : v2
-title   : Play
+ref     : 9
+title   : Play!
+staff   : [paul,chloe]
 project : Animation
 date    : 05/2018
 end     : 07/2018
@@ -13,7 +13,6 @@ visual  :
   - jpg : laptopv2bw
   - jpg : scroll
   - jpg : laptopbw
-staff   : [ paul, chloe ]
 ---
 
 We drew and animated the Barbican estate as an 8-bit arcade game, before the event travelled to Leeds. Leeds Council were keen to retain this identity, so asked us to create the same experience with Leeds Town Hall.

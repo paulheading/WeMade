@@ -6,21 +6,7 @@ var $body  = $('body'),
     $words = $('.word'),
     data = {{ site.data.homepage | jsonify }},
     heroTl = new TimelineMax({delay:1,repeat:-1}),
-    tickerTl = new TimelineMax({repeat:-1})
     zones = ['body','.area._header','.area._hero','.area._ticker'];
-
-function tickerFunc() {
-
-  $('.row._ticker').each(function(i){
-    var count = i++, countPlus = count +1, tickerNo = '.row._ticker:nth-child('+ countPlus +')';
-    tickerTl
-    .add(TweenLite.to(tickerNo,0.1,{className:'+=--active',ease:SteppedEase.config(1)}))
-    .add(TweenLite.set(tickerNo,{className:'-=--active',delay:'1'}))
-    ;
-  });
-
-  return tickerTl;
-}
 
 var svgFunc = () => {
   TweenLite.defaultEase = Sine.easeInOut;
@@ -97,6 +83,5 @@ function heroFunc() {
 
 $(document)
 .ready(svgFunc)
-.ready(tickerFunc)
 .ready(heroFunc)
 ;

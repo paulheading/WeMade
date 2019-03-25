@@ -22,7 +22,9 @@
       <div class="area _project">
         <div class="wrap _project --grid">
 
-        <div class="row _project _split --canvas">
+        {%- include html/area-paginate.html -%}     
+
+        <div class="row _project --split --canvas">
           {% assign loop = page.visual %}
           {% for thing in loop %}
             {% if forloop.index == 1 %}
@@ -59,7 +61,7 @@
           {% endfor %}
         </div>
 
-        <div class="row _project _split">
+        <div class="row _project --split">
           {% assign loop = page.visual %}
           {% for thing in loop %}
             {% if forloop.index == 5 %}

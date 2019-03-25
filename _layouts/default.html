@@ -3,7 +3,7 @@
 
   {% include html/head.html %}
 
-  <body class="layout {{ page.layout | downcase | prepend: '_' }}{% if page.tags contains 'dark' %} --dark{% endif %}">
+  <body class="layout{{ page.layout | downcase | prepend: ' _' }}{% if page.tags %}{{ page.tags | join: ' --' | replace: ',','' | prepend: ' --' }}{% endif %}">
 
     {% include html/overlay-load.html %}
 
@@ -19,7 +19,7 @@
       {% include html/overlay-search.html %}
       {% include html/overlay-menu.html %}
 
-      <div class="area _content {% if page.collection %} {{ page.collection | downcase | prepend: '_' }} {% endif %} {% if page.tags contains 'dark' %} --dark {% endif %}">
+      <div class="area _content{% if page.collection %}{{ page.collection | downcase | prepend: ' --' }}{% endif %}{% if page.tags %}{{ page.tags | join: ' --' | replace: ',','' | prepend: ' --' }}{% endif %}">
         <div class="wrap _content --grid">
           {% if page.tags contains 'staff' %}
             <h1>

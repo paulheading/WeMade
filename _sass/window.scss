@@ -1,23 +1,26 @@
 
 .window {
-  transition: margin 500ms;
+  transition: left 500ms;
   border-radius: 3px;
+  position: absolute;
   height: 240px;
   width: 240px;
 
   &:nth-of-type(1) {
     background-color: $coral;
-    margin: 0 0 0 -120px;
+    left: -120px;
   }
 
   &:nth-of-type(2) {
     background-color: $dodger;
-    margin: -150px 0 0 -20px;
+    top: 80px;
+    left: -20px;
   }
 
   &:nth-of-type(3) {
     background-color: $gray;
-    margin: -150px 0 0 -100px;
+    top: 180px;
+    left: -100px;
   }
 
   @media#{$min720w} {
@@ -25,15 +28,17 @@
     width: 300px;
 
     &:nth-of-type(1) {
-      margin: 0;
+      left: 0;
     }
 
     &:nth-of-type(2) {
-      margin: -370px 0 0 160px;
+      top: -70px;
+      left: 160px;
     }
 
     &:nth-of-type(3) {
-      margin: -220px 0 0 80px;
+      top: 80px;
+      left: 80px;
     }
   }
 }
