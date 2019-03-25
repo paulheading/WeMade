@@ -10,6 +10,16 @@
 
     &.--min {
       background-color: darken($teal,20%);
+
+      &._tom {
+        background-color: $coral;
+      }
+      &._dick {
+        background-color: $dodger;
+      }
+      &._harry {
+        background-color: $gray;
+      }
     }
   }
 

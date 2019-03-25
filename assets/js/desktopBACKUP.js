@@ -29,6 +29,8 @@ function closeBtn() {
   var win = $(this).parents('.window'); win.hide();
   var label = win[0].classList[1];
 
+  console.log(label);
+
   $('.folder').each(function(){
     if($(this).hasClass(label)) {
       $(this).removeClass('--open');
@@ -37,30 +39,34 @@ function closeBtn() {
 }
 
 function newMin() {
-  var ting = $(this).parents('.window')[0].classList[1],
-      win = $(this).parents('.window');
-
-  TweenMax.to(win,0.3,{scale:0,ease:SteppedEase.config(4)});
-  makeBtn(ting);
+  var test = $('this').parent('.window');
+  console.log($('this'));
 }
 
-function makeBtn(name) {
-  var bar = $('.wrap._bar'),
-      newBtn = '<div class="btn _desktop '+name+' --min"></div>';
+function minBtn() {
+  var label = $(this).parents('.window')[0].classList[1];
+  var popup = $(this).parents('.window');
+  var newBtn = '<div class="min '+ label +' _on"></div>';
+  var pos = $(this).offset();
+  var newPos = $('.wrap._topbar').last().offset();
+  var posLeft = newPos.left - pos.left;
+  var posTop = newPos.top - pos.top;
 
-  bar.append(newBtn);
+  TweenMax.to(popup,0.3,{scale:0,x:posLeft,y:posTop,ease:SteppedEase.config(4)});
+  $('.wrap._topbar').append(newBtn);
 }
 
-function newExpand() {
-  var me = $(this),
-      tang = me[0].classList[2],
-      winTang = $('.window.'+tang);
-
-  me.remove();
-  TweenMax.to(winTang,0.3,{scale:1,ease:SteppedEase.config(4)});
+function changeMin() {
+  var label = $(this)[0].classList[1];
+  $(this).removeClass('_on');
+  $('.window').each(function(){
+    if($(this).hasClass(label)) {
+      TweenMax.to($(this),0.3,{scale:1,x:0,y:0,ease:SteppedEase.config(4)});
+    }
+  });
 }
 
-$('.wrap._bar').on('click','.btn.--min',newExpand);
+// $('.wrap._topbar').on('click','.min',changeMin);
 $('.folder').click(changeFolder);
 $('.btn._window.--close').click(closeBtn);
 $('.btn._window.--min').click(newMin);

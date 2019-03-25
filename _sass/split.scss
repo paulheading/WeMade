@@ -7,12 +7,12 @@
     display: grid;
 
     &.--desktop {
-      margin: -50px 0 0 0;
+      // margin: -50px 0 0 0;
       direction: ltr;
       display: grid;
 
       @media#{$min720w} {
-        margin: 100px 0 0 -50px;
+        // margin: 100px 0 0 -50px;
       }
     }
   }
