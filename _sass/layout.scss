@@ -1,5 +1,6 @@
 
 .layout {
+  transition: background-color 1s;
 
   &.--dark {
     background-color: $carbon;
@@ -18,7 +19,6 @@
   }
 
   &._home {
-    transition: background-color 1s;
 
     &.--wemade {
       background-color: rgba($wemade,0.2);
@@ -58,6 +58,14 @@
       #noodle {
         stroke: black;
       }
+    }
+  }
+
+  &._cv {
+    background-color: white;
+
+    @media#{$min720w} {
+      background-color: $smoke;
     }
   }
 }
