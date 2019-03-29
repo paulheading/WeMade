@@ -4,15 +4,15 @@
   &._left {
     justify-content: flex-start;
     position: relative;
-    display: grid;
 
     &.--desktop {
-      // margin: -50px 0 0 0;
       direction: ltr;
       display: grid;
+      top: -160px;
+      z-index: 2;
 
       @media#{$min720w} {
-        // margin: 100px 0 0 -50px;
+        top: 0px;
       }
     }
   }

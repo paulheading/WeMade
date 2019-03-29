@@ -3,7 +3,7 @@
 
 @import
   'normalize.css',
-  'barbs',
+  'futuro',
   'helpers',
   'base',
   'area',
@@ -28,6 +28,10 @@
   'window',
   'wrap',
   'video';
+
+.box._load {
+  min-width: 0;
+}
 
 .container {
   &._search {

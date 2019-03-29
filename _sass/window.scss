@@ -5,22 +5,24 @@
   position: absolute;
   height: 240px;
   width: 240px;
+  top: 0;
 
   &:nth-of-type(1) {
     background-color: $coral;
+    top: 20px;
     left: -120px;
   }
 
   &:nth-of-type(2) {
     background-color: $dodger;
-    // top: 80px;
+    top: 110px;
     left: -20px;
   }
 
   &:nth-of-type(3) {
     background-color: $gray;
-    top: 180px;
-    left: -100px;
+    top: 220px;
+    left: -120px;
   }
 
   @media#{$min720w} {
@@ -28,16 +30,17 @@
     width: 300px;
 
     &:nth-of-type(1) {
+      top: 70px;
       left: 0;
     }
 
     &:nth-of-type(2) {
-      // top: -70px;
+      top: 0px;
       left: 160px;
     }
 
     &:nth-of-type(3) {
-      top: 80px;
+      top: 150px;
       left: 80px;
     }
   }
