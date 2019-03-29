@@ -29,16 +29,6 @@
   'wrap',
   'video';
 
-.box._load {
-  min-width: 0;
-}
-
-.container {
-  &._search {
-    width: 100%;
-  }
-}
-
 .search-results {
   margin-right: auto;
   margin-left: auto;
