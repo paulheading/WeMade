@@ -5,6 +5,7 @@
   'normalize.css',
   'futuro',
   'helpers',
+  'bar',
   'base',
   'area',
   'body',
@@ -23,7 +24,6 @@
   'split',
   'svg',
   'textarea',
-  'topbar',
   'visual',
   'window',
   'wrap',
@@ -31,11 +31,11 @@
 
 .list {
   &._desktop {
-    display: grid;
-    grid-row-gap: 10px;
-    grid-template-columns: 10px 280px 10px;
+    grid-template-columns: 10px auto 10px;
     padding-bottom: 10px;
+    grid-row-gap: 10px;
     padding-top: 10px;
+    display: grid;
   }
 }
 
@@ -46,6 +46,7 @@
     grid-column: 2 / 3;
     display: grid;
     height: 60px;
+    padding: 10px;
   }
 }
 
