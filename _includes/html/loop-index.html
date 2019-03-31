@@ -3,7 +3,7 @@
     <div class="title _index _date">
       {{ item.date | date: "%b %y" | append: '–' }}{{ item.end | date: "%b %y" }}
     </div>
-    <div class="entry">
+    <div class="entry _index">
       <div class="title _index _title">
         {{ item.title }}
       </div>
@@ -12,7 +12,7 @@
       </div>
     </div>
     <div class="title _index _desc">
-      {{ item.desc | truncate: 100 }}
+      {{ item.desc | truncate: 125 }}
     </div>
   </a>
 {% endfor %}

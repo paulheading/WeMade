@@ -52,51 +52,51 @@
     }
 
     &.--home {
-      background-color: rgba(0,0,0,0.1);
+      // background-color: rgba(0,0,0,0.1);
       padding-bottom: 80px;
       padding-top: 80px;
       font-size: 21px;
     }
 
-    &.--wemade {
-      background-color: rgba($wemade,0.2);
-
-      .row.--active {
-        background-color: rgba($wemade,0.2);
-      }
-    }
-
-    &.--paul {
-      background-color: rgba($paul,0.2);
-
-      .row.--active {
-        background-color: rgba($paul,0.2);
-      }
-    }
-
-    &.--chloe {
-      background-color: rgba($chloe,0.2);
-
-      .row.--active {
-        background-color: rgba($chloe,0.2);
-      }
-    }
-
-    &.--play {
-      background-color: rgba($play,0.2);
-
-      .row.--active {
-        background-color: rgba($play,0.2);
-      }
-    }
+    // &.--wemade {
+    //   background-color: rgba($wemade,0.2);
+    //
+    //   .row.--active {
+    //     background-color: rgba($wemade,0.2);
+    //   }
+    // }
+    //
+    // &.--paul {
+    //   background-color: rgba($paul,0.2);
+    //
+    //   .row.--active {
+    //     background-color: rgba($paul,0.2);
+    //   }
+    // }
+    //
+    // &.--chloe {
+    //   background-color: rgba($chloe,0.2);
+    //
+    //   .row.--active {
+    //     background-color: rgba($chloe,0.2);
+    //   }
+    // }
+    //
+    // &.--play {
+    //   background-color: rgba($play,0.2);
+    //
+    //   .row.--active {
+    //     background-color: rgba($play,0.2);
+    //   }
+    // }
 
     &.--nyo {
-      background-color: rgba(white,0.02);
+      // background-color: rgba(white,0.02);
       border-color: white;
       color: white;
 
       .row.--active {
-        background-color: black;
+        // background-color: black;
       }
     }
   }

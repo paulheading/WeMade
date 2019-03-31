@@ -29,6 +29,26 @@
   'wrap',
   'video';
 
+.img {
+  &._rollover {
+    position: absolute;
+    margin: auto;
+    @include zero;
+  }
+  &._thumb {
+    position: absolute;
+    height: 150px;
+    width: 150px;
+    margin: auto;
+    @include zero;
+    display: none;
+
+    &.--open {
+      display: block;
+    }
+  }
+}
+
 .search-results {
   margin-right: auto;
   margin-left: auto;
