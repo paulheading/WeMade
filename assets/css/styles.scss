@@ -29,6 +29,26 @@
   'wrap',
   'video';
 
+.list {
+  &._desktop {
+    display: grid;
+    grid-row-gap: 10px;
+    grid-template-columns: 10px 280px 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+  }
+}
+
+.item {
+  &._desktop {
+    background-color: white;
+    border-radius: 3px;
+    grid-column: 2 / 3;
+    display: grid;
+    height: 60px;
+  }
+}
+
 .img {
   &._rollover {
     position: absolute;
