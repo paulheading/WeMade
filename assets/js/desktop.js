@@ -13,9 +13,9 @@ Draggable.create(win,{cursor:'pointer'});
 
 function winFunc(obj,state) {
   if(state == 'close') {
-    TweenMax.set(obj,{className:'-=--open',scale:0});
+    TweenMax.set(obj,{className:'-=--open'});
   } else if(state == 'open') {
-    TweenMax.set(obj,{className:'+=--open',scale:1});
+    TweenMax.set(obj,{className:'+=--open'});
   } else if(state == 'minim') {
     TweenMax.to(obj,0.3,{scale:0,ease:SteppedEase.config(4)});
   } else if(state == 'xpand') {
@@ -77,7 +77,7 @@ function minFunc() {
       label = tang[0].classList[1];
 
   winFunc(tang,'minim');
-  mkBtn(label,'minim');
+  mkBtn(label);
 
   folder.each(function(){
     var tong = $(this);
@@ -93,7 +93,6 @@ function closeFunc() {
       label = tang[0].classList[1];
 
   winFunc(tang,'close');
-  mkBtn(label,'close');
 
   folder.each(function(){
     var tong = $(this);
@@ -103,15 +102,9 @@ function closeFunc() {
   });
 }
 
-function mkBtn(name,type) {
-  var xpandBtn = '<div class="btn _desktop '+name+' --xpand"></div>',
-      openBtn = '<div class="btn _desktop '+name+' --open"></div>';
-
-  if(type == 'minim') {
-    bar.append(xpandBtn);
-  } else if(type == 'close') {
-    bar.append(openBtn);
-  }
+function mkBtn(name) {
+  var newBtn = '<div class="btn _desktop '+name+' --xpand"></div>';
+  bar.append(newBtn);
 }
 
 function btnFunc() {
