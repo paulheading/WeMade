@@ -3,9 +3,14 @@
   transition: left 500ms;
   border-radius: 3px;
   position: absolute;
+  display: none;
   height: 240px;
   width: 240px;
   top: 0;
+
+  &.--open {
+    display: block;
+  }
 
   &:nth-of-type(1) {
     background-color: $coral;

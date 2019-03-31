@@ -15,4 +15,8 @@ visual  :
   - png : split
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce interdum vel sem vitae gravida. Fusce sodales sit amet erat aliquet aliquam. Fusce congue felis risus, in feugiat purus pharetra nec. Nullam pharetra iaculis urna, sit amet condimentum dolor dapibus sed. Vestibulum malesuada lacus a enim auctor, ac dapibus purus congue. Nullam volutpat consectetur enim, nec viverra dui blandit in.
+We have annual themes which link events across the Centre.
+
+This year our annual theme is Life Rewired. A season exploring what it means to be human when technology is changing everything.
+
+We created an animated identity and glitched screens around the centre.

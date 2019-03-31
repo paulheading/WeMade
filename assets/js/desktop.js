@@ -2,65 +2,145 @@
 layout: none
 ---
 
-Draggable.create('.window',{cursor:'pointer'});
+var win = $('.window'),
+    folder = $('.folder'),
+    closeBtn = $('.btn._window.--close'),
+    minBtn = $('.btn._window.--min'),
+    xpandBtn = $('.btn._desktop'),
+    bar = $('.wrap._bar');
+
+Draggable.create(win,{cursor:'pointer'});
+
+function winFunc(obj,state) {
+  if(state == 'close') {
+    TweenMax.set(obj,{className:'-=--open',scale:0});
+  } else if(state == 'open') {
+    TweenMax.set(obj,{className:'+=--open',scale:1});
+  } else if(state == 'minim') {
+    TweenMax.to(obj,0.3,{scale:0,ease:SteppedEase.config(4)});
+  } else if(state == 'xpand') {
+    TweenMax.to(obj,0.3,{scale:1,ease:SteppedEase.config(4)});
+  }
+}
 
 function changeFolder() {
-  var label = $(this)[0].classList[1];
-  var win = $('.window');
+  var ting = $(this),
+      label = ting[0].classList[1];
 
-  if($(this).hasClass('--open')) {
-    $(this).removeClass('--open');
+  if(ting.hasClass('--open')) {
+
+    TweenMax.set(ting,{className:'-=--open'});
+
     win.each(function(){
       if($(this).hasClass(label)) {
-        $(this).hide();
+        winFunc(this,'close');
       }
     });
-  } else {
-    $(this).addClass('--open');
+
+  } else if(ting.hasClass('--min')) {
+
+    TweenMax.set(ting,{className:'-=--min'});
+    TweenMax.set(ting,{className:'+=--open'});
+
     win.each(function(){
       if($(this).hasClass(label)) {
-        $(this).show();
+        winFunc(this,'xpand');
+      }
+    });
+
+    $('.btn._desktop').each(function(){
+      if($(this).hasClass(label)) {
+        $(this).remove();
+      }
+    });
+
+  } else {
+
+    TweenMax.set(ting,{className:'+=--open'});
+
+    win.each(function(){
+      if($(this).hasClass(label)) {
+        winFunc(this,'open');
+      }
+    });
+
+    $('.btn._desktop').each(function(){
+      if($(this).hasClass(label)) {
+        $(this).remove();
       }
     });
   }
 }
 
-function closeBtn() {
-  var win = $(this).parents('.window'); win.hide();
-  var label = win[0].classList[1];
+function minFunc() {
+  var tang = $(this).parents('.window'),
+      label = tang[0].classList[1];
 
-  $('.folder').each(function(){
-    if($(this).hasClass(label)) {
-      $(this).removeClass('--open');
+  winFunc(tang,'minim');
+  mkBtn(label,'minim');
+
+  folder.each(function(){
+    var tong = $(this);
+    if(tong.hasClass(label)) {
+      TweenMax.set(tong,{className:'-=--open'});
+      TweenMax.set(tong,{className:'+=--min'});
     }
   });
 }
 
-function newMin() {
-  var ting = $(this).parents('.window')[0].classList[1],
-      win = $(this).parents('.window');
+function closeFunc() {
+  var tang = $(this).parents('.window'),
+      label = tang[0].classList[1];
 
-  TweenMax.to(win,0.3,{scale:0,ease:SteppedEase.config(4)});
-  makeBtn(ting);
+  winFunc(tang,'close');
+  mkBtn(label,'close');
+
+  folder.each(function(){
+    var tong = $(this);
+    if(tong.hasClass(label)) {
+      TweenMax.set(tong,{className:'-=--open'});
+    }
+  });
 }
 
-function makeBtn(name) {
-  var bar = $('.wrap._bar'),
-      newBtn = '<div class="btn _desktop '+name+' --min"></div>';
+function mkBtn(name,type) {
+  var xpandBtn = '<div class="btn _desktop '+name+' --xpand"></div>',
+      openBtn = '<div class="btn _desktop '+name+' --open"></div>';
 
-  bar.append(newBtn);
+  if(type == 'minim') {
+    bar.append(xpandBtn);
+  } else if(type == 'close') {
+    bar.append(openBtn);
+  }
 }
 
-function newExpand() {
-  var me = $(this),
-      tang = me[0].classList[2],
-      winTang = $('.window.'+tang);
+function btnFunc() {
+  var ting = $(this),
+      label = ting[0].classList[2],
+      type = ting[0].classList[3];
 
-  me.remove();
-  TweenMax.to(winTang,0.3,{scale:1,ease:SteppedEase.config(4)});
+  win.each(function(){
+    if($(this).hasClass(label)) {
+      if(type == '--xpand') {
+        winFunc(this,'xpand');
+      } else if(type == '--open') {
+        winFunc(this,'open');
+      }
+    }
+  });
+
+  $(this).remove();
+
+  folder.each(function(){
+    var tong = $(this);
+    if(tong.hasClass(label)) {
+      TweenMax.set(tong,{className:'-=--min'});
+      TweenMax.set(tong,{className:'+=--open'});
+    }
+  });
 }
 
-$('.wrap._bar').on('click','.btn.--min',newExpand);
-$('.folder').click(changeFolder);
-$('.btn._window.--close').click(closeBtn);
-$('.btn._window.--min').click(newMin);
+bar.on('click','.btn._desktop',btnFunc);
+closeBtn.click(closeFunc);
+minBtn.click(minFunc);
+folder.click(changeFolder);

@@ -6,13 +6,13 @@
 <div class="row _paginate">
   {% for thing in loop %}
   {% if thing.ref == next %}
-  <a class="lnk _paginate _next" href="{{ thing.url }}">{{ thing.title }}</a>
+  <a class="lnk _paginate _next" href="{{ thing.url | replace: '.html','' }}">{{ thing.title }}</a>
   {% endif %}
   {% endfor %}
   <a href="/projects/" class="lnk _paginate _index">Projects</a>
   {% for thing in loop %}
   {% if thing.ref == prev %}
-  <a class="lnk _paginate _prev" href="{{ thing.url }}">{{ thing.title }}</a>
+  <a class="lnk _paginate _prev" href="{{ thing.url | replace: '.html','' }}">{{ thing.title }}</a>
   {% endif %}
   {% endfor %}
 </div>
