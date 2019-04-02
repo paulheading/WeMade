@@ -1,15 +1,5 @@
 
 .folder {
-  background-color: red;
-  border-radius: 3px;
+  position: relative;
   cursor: pointer;
-  height: 70px;
-  width: 80px;
-
-  &.--open {
-    background-color: $folder;
-  }
-  &.--min {
-    background-color: $folder;
-  }
 }

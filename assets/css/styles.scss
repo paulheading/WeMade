@@ -29,6 +29,10 @@
   'wrap',
   'video';
 
+.day {
+  padding-right: 3px;
+}
+
 .list {
   &._desktop {
     grid-template-columns: 10px 240px 10px;

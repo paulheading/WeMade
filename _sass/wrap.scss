@@ -16,10 +16,8 @@
   }
 
   &._bar {
-    justify-content: flex-end;
     grid-auto-flow: column;
-    grid-column-gap: 20px;
-    direction: rtl;
+    color: rgba(0,0,0,0.4);
   }
 
   &._canvas {
@@ -33,6 +31,7 @@
     border-radius: 3px 3px 0 0;
     background-color: white;
     overflow: hidden;
+    @include shadow($d:0.1);
   }
 
   &._input {

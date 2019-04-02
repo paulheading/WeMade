@@ -1,6 +1,6 @@
 ---
 title : Projects
-tags  : projects
+tags  : index
 ---
 
 # **What we do**

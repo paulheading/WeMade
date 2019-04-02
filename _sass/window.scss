@@ -1,5 +1,6 @@
 
 .window {
+  @include shadow;
   background-color: $gray;
   transition: left 500ms;
   border-radius: 3px;

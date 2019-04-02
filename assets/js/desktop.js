@@ -7,7 +7,43 @@ var win = $('.window'),
     closeBtn = $('.btn._window.--close'),
     minBtn = $('.btn._window.--min'),
     xpandBtn = $('.btn._desktop'),
-    bar = $('.wrap._bar');
+    bar = $('.split._left.--bar'),
+    day = $('.day'),
+    hours = $('.hours'),
+    minutes = $('.minutes');
+
+var timeFunc = () => {
+  var weekday = new Array(7);
+      weekday[0] = "Sun",
+      weekday[1] = "Mon",
+      weekday[2] = "Tue",
+      weekday[3] = "Wed",
+      weekday[4] = "Thu",
+      weekday[5] = "Fri",
+      weekday[6] = "Sat";
+  var d = new Date(),
+      n = weekday[d.getDay()],
+      h = d.getHours(),
+      m = d.getMinutes();
+      
+  day.text(n);
+
+  if(h < 10) {
+    var addZero = '0'+h;
+    hours.text(addZero);
+  } else {
+    hours.text(h);
+  }
+
+  if(m < 10) {
+    var addZero = '0'+m;
+    minutes.text(addZero);
+  } else {
+    minutes.text(m);
+  }
+}
+
+window.setInterval(timeFunc,1000);
 
 Draggable.create(win,{cursor:'pointer'});
 
@@ -25,11 +61,22 @@ function winFunc(obj,state) {
 
 function changeFolder() {
   var ting = $(this),
-      label = ting[0].classList[1];
+      label = ting[0].classList[1],
+      front = $('#front',this),
+      paper = $('#paper',this),
+      shut = $('#shut',this),
+      tab = $('#tab',this),
+      openTl = new TimelineMax(),
+      closeTl = new TimelineMax();
 
   if(ting.hasClass('--open')) {
 
     TweenMax.set(ting,{className:'-=--open'});
+
+    closeTl
+    .to(paper,0.1,{y:10})
+    .set(paper,{opacity:0})
+    .to(front,0.1,{morphSVG:shut});
 
     win.each(function(){
       if($(this).hasClass(label)) {
@@ -57,6 +104,11 @@ function changeFolder() {
   } else {
 
     TweenMax.set(ting,{className:'+=--open'});
+
+    openTl
+    .to(front,0.1,{morphSVG:front})
+    .set(paper,{opacity:1})
+    .to(paper,0.1,{y:0});
 
     win.each(function(){
       if($(this).hasClass(label)) {

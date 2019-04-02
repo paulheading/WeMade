@@ -1,14 +1,31 @@
 
 <div class="area _desktop">
   <div class="bar _desktop">
-    <div class="wrap _bar --grid"></div>
+    <div class="wrap _bar --grid">
+      <div class="split _left --bar"></div>
+      <div class="split _right --bar">
+        <div class="day"></div>
+        <div class="hours"></div>
+        <div>:</div>
+        <div class="minutes"></div>
+      </div>
+    </div>
   </div>
   <div class="area _canvas">
     <div class="wrap _canvas --grid">
       <div class="split _right --desktop">
-        <div class="folder _tom --open"></div>
-        <div class="folder _dick --open"></div>
-        <div class="folder _harry --open"></div>
+        <div class="folder _tom --open">
+          {% include svg/cover.svg %}
+          {% include svg/folder.svg %}
+        </div>
+        <div class="folder _dick --open">
+          {% include svg/cover.svg %}
+          {% include svg/folder.svg %}
+        </div>
+        <div class="folder _harry --open">
+          {% include svg/cover.svg %}
+          {% include svg/folder.svg %}
+        </div>
       </div>
       <div class="split _left --desktop">
         <div class="window _tom --open">

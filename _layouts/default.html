@@ -32,29 +32,20 @@
         </div>
       </div>
 
-      {% if page.tags contains 'projects' %}
+      {% if page.tags contains 'index' %}
       <div class="area _index">
-          <div class="wrap _index --grid">
+        <div class="wrap _index --grid">
+          {% if page.tags contains 'staff' %}
+            {% assign staff = page.title | downcase %}
+            {% assign loop = site.projects | where: 'staff', staff | sort: 'date' | reverse %}
+          {% else %}
             {% assign loop = site.projects | sort: 'date' | reverse %}
-            {%- include html/loop-index.html -%}
-          </div>
+          {% endif %}
+          {%- include html/loop-index.html -%}
           <div class="img _rollover">
             <img class="img _thumb" src="/assets/img/1.jpg" alt="1">
           </div>
-      </div>
-      {% endif %}
-
-      {% if page.tags contains 'staff' %}
-      <div class="area _ticker">
-          <div class="wrap _ticker --grid">
-            {%- if page.title == 'About' -%}
-              {% assign loop = site.projects | sort: 'date' | reverse %}
-            {%- else -%}
-              {% assign staff = page.title | downcase %}
-              {% assign loop = site.projects | where: 'staff', staff | sort: 'date' | reverse %}
-            {% endif %}
-            {%- include html/loop-ticker.html -%}
-          </div>
+        </div>
       </div>
       {% endif %}
 

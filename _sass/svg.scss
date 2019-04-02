@@ -1,4 +1,12 @@
 
+svg {
+  &#cover {
+    @include shadow;
+    position: absolute;
+    @include zero;
+  }
+}
+
 .svg {
 
   &._hero {

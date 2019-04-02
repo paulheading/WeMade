@@ -5,6 +5,14 @@
     justify-content: flex-start;
     position: relative;
 
+    &.--bar {
+      display: grid;
+      justify-content: flex-end;
+      grid-auto-flow: column;
+      grid-column-gap: 20px;
+      direction: rtl;
+    }
+
     &.--desktop {
       direction: ltr;
       display: grid;
@@ -26,6 +34,11 @@
       grid-auto-flow: column;
       align-items: center;
       grid-gap: 30px;
+    }
+
+    &.--bar {
+      grid-auto-flow: column;
+      grid-column-gap: 3px;
     }
 
     &.--desktop {

@@ -25,3 +25,7 @@ $min1112w: 'only screen and (min-width: 1112px)';
 $min1224w: 'only screen and (min-width: 1224px)';
 $max719w: 'only screen and (max-width: 719px)';
 $min720w: 'only screen and (min-width: 720px)';
+
+@mixin shadow($a:0px,$b:0px,$c:3px,$d:0.2) {
+  filter: drop-shadow($a $b $c rgba(0,0,0,$d));
+}
