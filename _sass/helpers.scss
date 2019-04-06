@@ -11,21 +11,32 @@ $coral  : hsl(345, 100%, 45%);
 $pink   : hsl(350, 95%, 65%);
 $teal   : hsl(175, 100%, 35%);
 
-$NYOblue  : #3eb4e5;
-$NYOred   : #E60032;
-$NYOgold  : #fabc49;
-$NYOgreen : #24aba6;
+$nyoBlue  : #3eb4e5;
+$nyoRed   : #E60032;
+$nyoGold  : #fabc49;
+$nyoGreen : #24aba6;
 
 $folder  : hsl(60, 100%, 80%);
 $spotify : #0b0b0f;
 
-$max639w:  'only screen and (max-width: 639px)';
-$min640w:  'only screen and (min-width: 640px)';
-$min1112w: 'only screen and (min-width: 1112px)';
-$min1224w: 'only screen and (min-width: 1224px)';
-$max719w: 'only screen and (max-width: 719px)';
-$min720w: 'only screen and (min-width: 720px)';
+$codeBlue   : #82a2bd;
+$codePurple : #a289ab;
+$codeRed    : #ca6768;
+$codeOrange : #dc9264;
+$codeYellow : #b5bc6d;
+
+$max639w  : 'only screen and (max-width: 639px)';
+$min640w  : 'only screen and (min-width: 640px)';
+$min1112w : 'only screen and (min-width: 1112px)';
+$min1224w : 'only screen and (min-width: 1224px)';
+$max719w  : 'only screen and (max-width: 719px)';
+$min720w  : 'only screen and (min-width: 720px)';
 
 @mixin shadow($a:0px,$b:0px,$c:3px,$d:0.2) {
   filter: drop-shadow($a $b $c rgba(0,0,0,$d));
+}
+
+%wrap_block {
+  margin-right: auto;
+  margin-left: auto;
 }

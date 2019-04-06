@@ -6,7 +6,7 @@ var $body  = $('body'),
     $words = $('.word'),
     data = {{ site.data.homepage | jsonify }},
     heroTl = new TimelineMax({delay:1,repeat:-1}),
-    zones = ['body','.area._header','.area._hero','.area._ticker'];
+    zones = ['body','.area._hero','#logo','#search','#burger'];
 
 var svgFunc = () => {
   TweenLite.defaultEase = Sine.easeInOut;

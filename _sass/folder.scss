@@ -1,5 +1,10 @@
 
 .folder {
   position: relative;
+  text-align: center;
   cursor: pointer;
+  grid-gap: 10px;
+  display: grid;
+  color: rgba(black,0.4);
+  user-select: none;
 }

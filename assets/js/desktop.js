@@ -7,7 +7,7 @@ var win = $('.window'),
     closeBtn = $('.btn._window.--close'),
     minBtn = $('.btn._window.--min'),
     xpandBtn = $('.btn._desktop'),
-    bar = $('.split._left.--bar'),
+    bar = $('.split._left.--toolbar'),
     day = $('.day'),
     hours = $('.hours'),
     minutes = $('.minutes');
@@ -25,7 +25,7 @@ var timeFunc = () => {
       n = weekday[d.getDay()],
       h = d.getHours(),
       m = d.getMinutes();
-      
+
   day.text(n);
 
   if(h < 10) {
@@ -49,13 +49,19 @@ Draggable.create(win,{cursor:'pointer'});
 
 function winFunc(obj,state) {
   if(state == 'close') {
-    TweenMax.set(obj,{className:'-=--open'});
+    var closeTl = new TimelineMax();
+    closeTl
+    .to(obj,0.2,{opacity:0,ease:SteppedEase.config(2)})
+    .set(obj,{className:'-=--open'});
   } else if(state == 'open') {
-    TweenMax.set(obj,{className:'+=--open'});
+    var openTl = new TimelineMax();
+    openTl
+    .set(obj,{className:'+=--open'})
+    .to(obj,0.2,{opacity:1,ease:SteppedEase.config(2)});
   } else if(state == 'minim') {
-    TweenMax.to(obj,0.3,{scale:0,ease:SteppedEase.config(4)});
+    TweenMax.to(obj,0.3,{scale:0,ease:SteppedEase.config(3)});
   } else if(state == 'xpand') {
-    TweenMax.to(obj,0.3,{scale:1,ease:SteppedEase.config(4)});
+    TweenMax.to(obj,0.3,{scale:1,ease:SteppedEase.config(3)});
   }
 }
 
@@ -95,7 +101,7 @@ function changeFolder() {
       }
     });
 
-    $('.btn._desktop').each(function(){
+    $('.btn._toolbar').each(function(){
       if($(this).hasClass(label)) {
         $(this).remove();
       }
@@ -142,20 +148,31 @@ function minFunc() {
 
 function closeFunc() {
   var tang = $(this).parents('.window'),
-      label = tang[0].classList[1];
+      label = tang[0].classList[1],
+      closeTl = new TimelineMax();
 
   winFunc(tang,'close');
 
   folder.each(function(){
-    var tong = $(this);
+    var tong = $(this),
+        front = $('#front',this),
+        paper = $('#paper',this),
+        shut = $('#shut',this);
+
     if(tong.hasClass(label)) {
+
       TweenMax.set(tong,{className:'-=--open'});
+
+      closeTl
+      .to(paper,0.1,{y:10})
+      .set(paper,{opacity:0})
+      .to(front,0.1,{morphSVG:shut});
     }
   });
 }
 
 function mkBtn(name) {
-  var newBtn = '<div class="btn _desktop '+name+' --xpand"></div>';
+  var newBtn = '<div class="btn _toolbar '+name+' --xpand"></div>';
   bar.append(newBtn);
 }
 
@@ -185,7 +202,7 @@ function btnFunc() {
   });
 }
 
-bar.on('click','.btn._desktop',btnFunc);
+bar.on('click','.btn._toolbar',btnFunc);
 closeBtn.click(closeFunc);
 minBtn.click(minFunc);
 folder.click(changeFolder);

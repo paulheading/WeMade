@@ -27,12 +27,17 @@ collections :
     title   : Blog
     output  : true
 
-defaults    :
-- scope     :
-    path    : ""
-  values    :
-    layout  : default
-- scope     :
-    path    : "_projects"
-  values    :
-    layout  : v2
+defaults   :
+- scope    :
+    path   : ""
+  values   :
+    layout : default
+    type   : text
+- scope    :
+    path   : "_projects"
+  values   :
+    type   : project
+- scope    :
+    path   : "_blog"
+  values   :
+    type   : blog

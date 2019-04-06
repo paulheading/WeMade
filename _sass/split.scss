@@ -5,7 +5,7 @@
     justify-content: flex-start;
     position: relative;
 
-    &.--bar {
+    &.--toolbar {
       display: grid;
       justify-content: flex-end;
       grid-auto-flow: column;
@@ -36,9 +36,9 @@
       grid-gap: 30px;
     }
 
-    &.--bar {
+    &.--toolbar {
       grid-auto-flow: column;
-      grid-column-gap: 3px;
+      letter-spacing: 0.1rem;
     }
 
     &.--desktop {

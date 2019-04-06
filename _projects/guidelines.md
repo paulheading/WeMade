@@ -4,16 +4,18 @@ title   : Guidelines
 staff   : [paul]
 project : Website
 date    : 02/2019
-end     : Now
 url     : https://guidelines.barbican.org.uk
 desc    : A single, shareable, publicly accessible set of guidelines for the Barbican.
           A living set of guidelines that responds quickly and easily to change.
 visual  :
-  - svg : barbican/logo
-  - png : split
+  - split :
+    - svg : barbican/logo
+    - png : split
+  - text : here
   - png : full
-  - png : split
-  - png : split
+  - split :
+    - png : split
+    - png : split
 ---
 
 There are 4 people in the Barbican in-house design team. We produce the majority of marketing collateral associated with events at the Barbican.

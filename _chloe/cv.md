@@ -1,6 +1,4 @@
 ---
 title  : Chloe's CV
-layout : cv
+type   : resume
 ---
-
-{% include html/loop-cv.html %}

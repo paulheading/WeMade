@@ -1,6 +1,6 @@
 ---
 title : Chloe
-tags  : index, staff
+tags  : index staff
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tempus ullamcorper tincidunt. Aliquam posuere ex a lacus placerat ullamcorper. Aliquam auctor ante et ornare convallis.

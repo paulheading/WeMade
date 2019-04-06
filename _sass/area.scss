@@ -12,18 +12,6 @@
     display: grid;
     width: 100%;
     z-index: 3;
-
-    &.--nyo .svg {
-      &._logo {
-        fill: white;
-      }
-      &._search {
-        fill: white;
-      }
-      &._burger {
-        fill: white;
-      }
-    }
   }
 
   &._hero {
@@ -32,7 +20,7 @@
     place-content: center;
     overflow: visible;
     display: grid;
-    height: 95%;
+    height: 100%;
     z-index: 1;
 
     &.--nyo {
@@ -40,79 +28,25 @@
     }
   }
 
-  &._ticker {
-    grid-template-columns: 40px 240px 40px;
+  &._toolbar {
+    grid-template-columns: 40px minmax(240px,800px) 40px;
+    background-color: darken($teal,3%);
     justify-content: center;
-    padding-bottom: 40px;
-    font-size: 18px;
+    padding-bottom: 10px;
+    padding-top: 10px;
     display: grid;
-
-    @media#{$min720w} {
-      grid-template-columns: 40px 400px 40px;
-    }
-
-    &.--home {
-      // background-color: rgba(0,0,0,0.1);
-      padding-bottom: 80px;
-      padding-top: 80px;
-      font-size: 21px;
-    }
-
-    // &.--wemade {
-    //   background-color: rgba($wemade,0.2);
-    //
-    //   .row.--active {
-    //     background-color: rgba($wemade,0.2);
-    //   }
-    // }
-    //
-    // &.--paul {
-    //   background-color: rgba($paul,0.2);
-    //
-    //   .row.--active {
-    //     background-color: rgba($paul,0.2);
-    //   }
-    // }
-    //
-    // &.--chloe {
-    //   background-color: rgba($chloe,0.2);
-    //
-    //   .row.--active {
-    //     background-color: rgba($chloe,0.2);
-    //   }
-    // }
-    //
-    // &.--play {
-    //   background-color: rgba($play,0.2);
-    //
-    //   .row.--active {
-    //     background-color: rgba($play,0.2);
-    //   }
-    // }
-
-    &.--nyo {
-      // background-color: rgba(white,0.02);
-      border-color: white;
-      color: white;
-
-      .row.--active {
-        // background-color: black;
-      }
-    }
+    height: 40px;
   }
 
   &._desktop {
-    background-color: $teal;
-    height: 600px;
-  }
-
-  &._canvas {
     grid-template-columns: 40px minmax(240px,800px) 40px;
+    background-color: $teal;
     justify-content: center;
     padding-bottom: 40px;
     padding-top: 40px;
     overflow: visible;
     display: grid;
+    height: 600px;
   }
 
   &._email {
@@ -128,26 +62,37 @@
     }
   }
 
-  &._content {
+  &._footer {
+    background-color: $coal;
+    text-align: center;
+    padding: 20px;
+    color: white;
+  }
+
+  &._text {
     grid-template-columns: 40px minmax(200px,800px) 40px;
     justify-content: center;
     padding-bottom: 40px;
     display: grid;
 
-    &.--blog {
-      font-family: monospace;
-    }
-
     &.--missing {
       text-align: center;
     }
+  }
+
+  &._blog {
+    grid-template-columns: 40px minmax(200px,800px) 40px;
+    justify-content: center;
+    font-family: monospace;
+    padding-bottom: 40px;
+    display: grid;
 
     &.--dark {
       color: white;
     }
   }
 
-  &._cv {
+  &._resume {
     grid-template-columns: 1fr minmax(320px,440px) 1fr;
     justify-content: center;
     line-height: 1.5;
@@ -164,23 +109,9 @@
     }
   }
 
-  &._index {
-    grid-template-columns: 40px minmax(240px,800px) 40px;
-    justify-content: center;
-    padding-bottom: 40px;
-    display: grid;
-  }
-
   &._project {
     grid-template-columns: 1fr minmax(320px,960px) 1fr;
     justify-content: center;
     display: grid;
-  }
-
-  &._footer {
-    background-color: $coal;
-    text-align: center;
-    padding: 20px;
-    color: white;
   }
 }

@@ -8,19 +8,19 @@
   }
 
   &.--blue {
-    color: #82a2bd;
+    color: $codeBlue;
   }
   &.--purple {
-    color: #a289ab;
+    color: $codePurple;
   }
   &.--red {
-    color: #ca6768;
+    color: $codeRed;
   }
   &.--orange {
-    color: #dc9264;
+    color: $codeOrange;
   }
   &.--yellow {
-    color: #b5bc6d;
+    color: $codeYellow;
   }
 
   &._hero {

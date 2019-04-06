@@ -1,26 +1,20 @@
 
 .wrap {
-
-  &.--block {
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  &._search {
-    max-width: 440px;
-    width: 100%;
-  }
+  @extend %wrap_grid;
 
   &._header {
     grid-template-columns: repeat(2,1fr);
+    @extend %wrap_grid;
   }
 
-  &._bar {
+  &._toolbar {
     grid-auto-flow: column;
     color: rgba(0,0,0,0.4);
+    @extend %wrap_grid;
   }
 
-  &._canvas {
+  &._desktop {
+    @extend %wrap_grid;
     @media#{$min720w} {
       grid-auto-flow: column;
       direction: rtl;
@@ -30,8 +24,14 @@
   &._email {
     border-radius: 3px 3px 0 0;
     background-color: white;
+    @extend %wrap_grid;
     overflow: hidden;
     @include shadow($d:0.1);
+  }
+
+  &._search {
+    max-width: 440px;
+    width: 100%;
   }
 
   &._input {
@@ -51,7 +51,7 @@
     }
   }
 
-  &._cv {
+  &._resume {
     padding-right: 40px;
     padding-left: 40px;
 

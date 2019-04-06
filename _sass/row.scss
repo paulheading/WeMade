@@ -1,6 +1,16 @@
 
 .row {
 
+  &._trello {
+    &.--bottom {
+      justify-content: flex-start;
+      grid-auto-flow: column;
+      grid-column-gap: 6px;
+      font-size: 12px;
+      display: grid;
+    }
+  }
+
   &._ticker {
     grid-template-columns: 1fr 2fr;
     text-decoration: none;
@@ -109,8 +119,16 @@
   }
 
   &._project {
+    &.--notes {
+      grid-template-columns: minmax(240px,640px);
+      justify-content: center;
+      font-size: 18px;
+      padding: 40px;
+      display: grid;
+    }
+
     + .row._project {
-      padding-top: 20px;
+      margin-top: 20px;
     }
   }
 
@@ -131,14 +149,6 @@
         grid-row-gap: 40px;
       }
     }
-  }
-
-  &._notes {
-    grid-template-columns: minmax(240px,640px);
-    justify-content: center;
-    font-size: 18px;
-    padding: 40px;
-    display: grid;
   }
 
   &._paginate {

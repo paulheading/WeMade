@@ -1,5 +1,6 @@
 ---
 title : Projects
+type  : text
 tags  : index
 ---
 

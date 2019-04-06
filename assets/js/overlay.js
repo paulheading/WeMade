@@ -18,12 +18,15 @@ function overlayFunc(goto,type) {
   }
 }
 
+var test = $('strong','.lnk._menu');
+
 menuTl
-.staggerTo('.lnk._menu',0.1,{opacity:1},'0.1')
+.from('.lnk._menu',0.2,{width:0})
+.staggerTo(test,0.1,{opacity:1},'0.1')
 ;
 
 searchTl
-.to('.title._search',0.5,{width:'100%'})
+.from('.title._search',0.4,{width:0})
 .to('input.--search',0.1,{opacity:1})
 ;
 
@@ -42,6 +45,8 @@ var searchFunc = (state) => {
   if(state == 'close') {
     searchTl.reverse();
     overlayFunc('close','search');
+    $('.input.--search').val('');
+    $('.search-results').html('');
     searchOpen = false;
   } else if(state == 'open') {
     overlayFunc('open','search');
@@ -88,12 +93,10 @@ var keyFunc = (e) => {
   }
 
   if(e.keyCode === 27) {
-    if(!hasFocus) {
-      if(searchOpen) {
-        searchFunc('close');
-      } else if(menuOpen) {
-        menuFunc('close');
-      }
+    if(searchOpen) {
+      searchFunc('close');
+    } else if(menuOpen) {
+      menuFunc('close');
     }
   }
 }

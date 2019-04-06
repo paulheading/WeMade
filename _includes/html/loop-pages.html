@@ -1,6 +1,0 @@
-
-{% assign loop = site.projects %}
-{{ include.ting }}
-{% for thing in loop | where: 'ref',ting %}
-<a href="{{ thing.url }}">{{ thing.title }}</a>
-{% endfor %}

@@ -1,65 +1,60 @@
 
 <div class="area _desktop">
-  <div class="bar _desktop">
-    <div class="wrap _bar --grid">
-      <div class="split _left --bar"></div>
-      <div class="split _right --bar">
-        <div class="day"></div>
-        <div class="hours"></div>
-        <div>:</div>
-        <div class="minutes"></div>
+  <div class="wrap _desktop">
+    <div class="split _right --desktop">
+      <div class="folder _tom --open">
+        <div>
+          {% include svg/cover.svg %}
+          {% include svg/folder.svg %}
+        </div>
+        <div>Funny</div>
+      </div>
+      <div class="folder _dick --open">
+        <div>
+          {% include svg/cover.svg %}
+          {% include svg/folder.svg %}
+        </div>
+        <div>Songs</div>
+      </div>
+      <div class="folder _harry --open">
+        <div>
+          {% include svg/cover.svg %}
+          {% include svg/folder.svg %}
+        </div>
+        <div>Jobs</div> 
       </div>
     </div>
-  </div>
-  <div class="area _canvas">
-    <div class="wrap _canvas --grid">
-      <div class="split _right --desktop">
-        <div class="folder _tom --open">
-          {% include svg/cover.svg %}
-          {% include svg/folder.svg %}
+    <div class="split _left --desktop">
+      <div class="window _tom --open">
+        <div class="bar _window">
+          <div class="btn _window --close"></div>
+          <div class="btn _window --min"></div>
         </div>
-        <div class="folder _dick --open">
-          {% include svg/cover.svg %}
-          {% include svg/folder.svg %}
-        </div>
-        <div class="folder _harry --open">
-          {% include svg/cover.svg %}
-          {% include svg/folder.svg %}
-        </div>
+        <video class="video" autoplay playsinline muted loop poster="/assets/img/meme.jpg">
+          <source src="/assets/img/meme.mp4" type="video/mp4">
+        </video>
       </div>
-      <div class="split _left --desktop">
-        <div class="window _tom --open">
-          <div class="bar _window">
-            <div class="btn _window --close"></div>
-            <div class="btn _window --min"></div>
-          </div>
-          <video class="video" autoplay playsinline muted loop poster="/assets/img/meme.jpg">
-            <source src="/assets/img/meme.mp4" type="video/mp4">
-          </video>
+      <div class="window _dick --open">
+        <div class="bar _window">
+          <div class="btn _window --close"></div>
+          <div class="btn _window --min"></div>
         </div>
-        <div class="window _dick --open">
-          <div class="bar _window">
-            <div class="btn _window --close"></div>
-            <div class="btn _window --min"></div>
-          </div>
-          <iframe src="https://open.spotify.com/embed/user/pheading86/playlist/1BTGIMCoaxVTLVAz2BcFsY" width="300" height="260" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+        <iframe src="https://open.spotify.com/embed/user/pheading86/playlist/1BTGIMCoaxVTLVAz2BcFsY" width="300" height="260" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+      </div>
+      <div class="window _harry --open">
+        <div class="bar _window">
+          <div class="btn _window --close"></div>
+          <div class="btn _window --min"></div>
         </div>
-        <div class="window _harry --open">
-          <div class="bar _window">
-            <div class="btn _window --close"></div>
-            <div class="btn _window --min"></div>
-          </div>
-          <div class="list _desktop">
-            <div class="item _desktop">
-              Job One
-            </div>
-            <div class="item _desktop">
-              Job Two
-            </div>
-            <div class="item _desktop">
-              Job Three
-            </div>
-          </div>
+        <div class="list _desktop">
+
+          {% assign loop = site.projects | sort: 'date' | reverse %}
+          {% for item in loop limit:3 %}
+          <a href="{{ item.id }}" class="item _desktop">
+            <div class="row _trello --middle">{{ item.title }}</div>
+            <div class="row _trello --bottom"><div class="tag _trello --date">{{ item.date | date: "%b %y" }}</div><div class="tag _trello --animate">{{ item.project }}</div><div class="tag _trello --member">CI</div><div class="tag _trello --member">PH</div></div>
+          </a>
+          {% endfor %}
         </div>
       </div>
     </div>

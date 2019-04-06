@@ -1,0 +1,19 @@
+{% assign loop = page.visual %}
+{% for thing in loop %}
+{% if thing.split %}
+<div class="row _project --split">
+  {% assign loop = thing.split %}
+  {% for thing in loop %}
+  {% include html/loop-visual.html %}
+  {% endfor %}
+</div>
+{% elsif thing.text %}
+<div class="row _project --notes">
+  {{ content }}
+</div>
+{% else %}
+<div class="row _project">
+  {% include html/loop-visual.html %}
+</div>
+{% endif %}
+{% endfor %}

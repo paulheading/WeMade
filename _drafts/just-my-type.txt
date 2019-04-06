@@ -1,0 +1,9 @@
+
+article about jekyll metadata
+
+ordered logic, cross over skills, multimedia designer
+
+    'title' metadata - why not use title? cos it changes
+B   'layout' metadata - why not use layout? cos you'll have duplicates, not DRY code
+E   'type' metadata - you can group layout sub categories
+M   'tag' metadata - you can create endless variations

@@ -1,0 +1,32 @@
+
+{% if page.tags contains 'staff' %}
+
+<h1>
+  <strong>
+    This is {{ page.title }}
+  </strong>
+</h1>
+
+{% endif %}
+
+{{ content }}
+
+{% if page.tags contains 'index' %}
+
+{% if page.tags contains 'staff' %}
+  {% assign staff = page.title | downcase %}
+  {% assign loop = site.projects | where: 'staff', staff | sort: 'date' | reverse %}
+{% else %}
+  {% assign loop = site.projects | sort: 'date' | reverse %}
+{% endif %}
+
+<div class="area _index">
+  <div class="wrap _index">
+    {% include html/loop-index.html %}
+    <div class="img _rollover">
+      <img class="img _thumb" src="/assets/img/1.jpg" alt="1">
+    </div>
+  </div>
+</div>
+
+{% endif %}

@@ -3,7 +3,15 @@
 
   {% include html/head.html %}
 
-  <body class="layout{{ page.layout | downcase | prepend: ' _' }}{% if page.tags %}{{ page.tags | join: ' --' | replace: ',','' | prepend: ' --' }}{% endif %}">
+  {% if page.type == 'hero' %}
+    <body class="layout{{ page.type | downcase | prepend: ' _' }}">
+  {% elsif page.type == 'text' or page.type == 'blog' %}
+    <body class="layout{{ page.type | downcase | prepend: ' _' }}{% if page.tags %}{{ page.tags | join: ' --' | replace: ',','' | prepend: ' --' }}{% endif %}">
+  {% elsif page.type == 'resume' %}
+    <body class="layout{{ page.type | downcase | prepend: ' _' }}{{ page.collection | downcase | prepend: ' --' }}">
+  {% elsif page.type == 'project' %}
+    <body class="layout{{ page.type | downcase | prepend: ' _' }}{{ page.title | downcase | prepend: ' --' }}">
+  {% endif %}
 
     {% include html/overlay-load.html %}
 
@@ -15,43 +23,42 @@
       </header>
       {% endif %}
 
-      {% include html/area-header.html %}
-      {% include html/overlay-search.html %}
-      {% include html/overlay-menu.html %}
+      {% include html/upper.html %}
 
-      <div class="area _content{% if page.collection %}{{ page.collection | downcase | prepend: ' --' }}{% endif %}{% if page.tags %}{{ page.tags | join: ' --' | replace: ',','' | prepend: ' --' }}{% endif %}">
-        <div class="wrap _content --grid">
-          {% if page.tags contains 'staff' %}
-            <h1>
-              <strong>
-                This is {{ page.title }}
-              </strong>
-            </h1>
-          {% endif %}
+      {% if page.type == 'hero' %}
+
+      {% include html/area-hero.html %}
+
+      {% else %}
+
+      <div class="area{{ page.type | prepend: ' _' }}">
+        <div class="wrap{{ page.type | prepend: ' _' }}">
+
+        {% if page.type == 'text' %}
+
+          {% include html/loop-text.html %}
+
+        {% elsif page.type == 'blog' %}
+
           {{ content }}
+
+        {% elsif page.type == 'resume' %}
+
+          {% include html/loop-cv.html %}
+
+        {% elsif page.type == 'project' %}
+
+          {% include html/loop-project.html %}
+          {% include html/area-paginate.html %}
+
+        {% endif %}
+
         </div>
       </div>
 
-      {% if page.tags contains 'index' %}
-      <div class="area _index">
-        <div class="wrap _index --grid">
-          {% if page.tags contains 'staff' %}
-            {% assign staff = page.title | downcase %}
-            {% assign loop = site.projects | where: 'staff', staff | sort: 'date' | reverse %}
-          {% else %}
-            {% assign loop = site.projects | sort: 'date' | reverse %}
-          {% endif %}
-          {%- include html/loop-index.html -%}
-          <div class="img _rollover">
-            <img class="img _thumb" src="/assets/img/1.jpg" alt="1">
-          </div>
-        </div>
-      </div>
       {% endif %}
 
-      {% include html/area-desktop.html %}
-      {% include html/area-email.html %}
-      {% include html/area-footer.html %}
+      {% include html/lower.html %}
 
       {% if site.footer %}
       <footer>

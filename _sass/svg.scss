@@ -1,9 +1,34 @@
 
 svg {
+
   &#cover {
-    @include shadow;
     position: absolute;
+    @include shadow;
     @include zero;
+  }
+
+  &#logo {
+    fill: $coal;
+
+    &.--nyo {
+      fill: white;
+    }
+  }
+
+  &#search {
+    fill: $coal;
+
+    &.--nyo {
+      fill: white;
+    }
+  }
+
+  &#burger {
+    fill: $coal;
+
+    &.--nyo {
+      fill: white;
+    }
   }
 }
 
@@ -18,32 +43,6 @@ svg {
     width: 320px;
     margin: auto;
     z-index: 1;
-  }
-
-  &._logo {
-    fill: $coal;
-
-    &.--overlay {
-      fill: white !important;
-    }
-  }
-
-  &._search {
-    fill: $coal;
-    height: 32px;
-    width: 32px;
-
-    &.--overlay {
-      fill: white !important;
-    }
-  }
-
-  &._burger {
-    fill: $coal;
-
-    &.--overlay {
-      fill: white !important;
-    }
   }
 
   &._submit {
