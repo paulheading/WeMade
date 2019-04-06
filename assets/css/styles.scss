@@ -98,8 +98,6 @@ li {
 }
 
 .search-results {
-  margin-right: auto;
-  margin-left: auto;
   padding-top: 10px;
   text-align: left;
 }
@@ -113,23 +111,27 @@ li {
 .tag {
 
   &._trello {
+    background-color: darken(white,16%);
     padding: 3px 6px 3px 6px;
-    background-color: $gray;
+    letter-spacing: normal;
     border-radius: 6px;
     font-weight: 600;
-    letter-spacing: normal;
     color: white;
 
     &.--date {
-      background-color: $teal;
+      background-color: $trelloGreen;
     }
 
-    &.--animate {
-      background-color: $dodger;
+    &.--animation {
+      background-color: $trelloBlue;
+    }
+
+    &.--website {
+      background-color: $trelloRed;
     }
 
     &.--member {
-      color: $gun;
+      color: darken(white,64%);
     }
   }
 

@@ -9,7 +9,7 @@
 
   &._toolbar {
     grid-auto-flow: column;
-    color: rgba(0,0,0,0.4);
+    color: rgba(black,0.4);
     @extend %wrap_grid;
   }
 
@@ -26,7 +26,7 @@
     background-color: white;
     @extend %wrap_grid;
     overflow: hidden;
-    @include shadow($d:0.1);
+    @include shadow(3px,0.1);
   }
 
   &._search {

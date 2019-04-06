@@ -21,7 +21,7 @@
           {% include svg/cover.svg %}
           {% include svg/folder.svg %}
         </div>
-        <div>Jobs</div> 
+        <div>Jobs</div>
       </div>
     </div>
     <div class="split _left --desktop">
@@ -52,7 +52,7 @@
           {% for item in loop limit:3 %}
           <a href="{{ item.id }}" class="item _desktop">
             <div class="row _trello --middle">{{ item.title }}</div>
-            <div class="row _trello --bottom"><div class="tag _trello --date">{{ item.date | date: "%b %y" }}</div><div class="tag _trello --animate">{{ item.project }}</div><div class="tag _trello --member">CI</div><div class="tag _trello --member">PH</div></div>
+            <div class="row _trello --bottom"><div class="tag _trello --date">{{ item.date | date: "%b %y" }}</div><div class="tag _trello{{ item.project | downcase | prepend: ' --' }}">{{ item.project }}</div><div class="tag _trello --member">CI</div><div class="tag _trello --member">PH</div></div>
           </a>
           {% endfor %}
         </div>

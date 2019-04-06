@@ -1,12 +1,12 @@
 {% for item in loop | limit: 3 %}
   <a href="{{ item.id }}" class="row _index">
     <div class="title _index _date">
-      {{ item.date | date: "%b %y" | append: '–' }}
-      {% if item.end %}
-        {{ item.end | date: "%b %y" }}
-      {% else %}
-        {{ site.time | date: "%b %y" }}
-      {% endif %}
+      {{- item.date | date: "%b %y" | append: '–' -}}
+      {%- if item.end -%}
+        {{- item.end | date: "%b %y" -}}
+      {%- else -%}
+        {{- site.time | date: "%b %y" -}}
+      {%- endif -%}
     </div>
     <div class="entry _index">
       <div class="title _index _title">

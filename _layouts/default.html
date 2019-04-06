@@ -23,7 +23,9 @@
       </header>
       {% endif %}
 
-      {% include html/upper.html %}
+      {% include html/overlay-search.html %}
+      {% include html/overlay-menu.html %}
+      {% include html/area-header.html %}
 
       {% if page.type == 'hero' %}
 
@@ -58,7 +60,10 @@
 
       {% endif %}
 
-      {% include html/lower.html %}
+      {% include html/area-toolbar.html %}
+      {% include html/area-desktop.html %}
+      {% include html/area-email.html %}
+      {% include html/area-footer.html %}
 
       {% if site.footer %}
       <footer>

@@ -64,7 +64,12 @@
 {% for item in loop limit:6 %}
   <div class="entry">
     <div class="title _cv _date">
-      {{ item.date | date: "%b %y" | append: '–' }}{{ item.end | date: "%b %y" }}
+      {{- item.date | date: "%b %y" | append: '–' -}}
+      {%- if item.end -%}
+        {{- item.end | date: "%b %y" -}}
+      {%- else -%}
+        {{- site.time | date: "%b %y" -}}
+      {%- endif -%}
     </div>
     <a class="lnk" href="{{ item.id }}" target="_blank">
       <div class="title _cv _title">{{ item.title }}</div>
