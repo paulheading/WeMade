@@ -4,6 +4,22 @@
 
   &.--dark {
     background-color: $carbon;
+
+    blockquote {
+      background-color: rgba(white,0.04);
+    }
+
+    svg {
+      &#logo {
+        fill: white;
+      }
+      &#search {
+        fill: white;
+      }
+      &#burger {
+        fill: white;
+      }
+    }
   }
 
   &._hero {

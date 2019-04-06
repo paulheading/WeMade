@@ -31,7 +31,7 @@
 
       {% else %}
 
-      <div class="area{{ page.type | prepend: ' _' }}">
+      <div class="area{{ page.type | prepend: ' _' }}{{ page.tags | join: ' --' | replace: ',','' | prepend: ' --' }}">
         <div class="wrap{{ page.type | prepend: ' _' }}">
 
         {% if page.type == 'text' %}
