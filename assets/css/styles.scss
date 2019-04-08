@@ -57,7 +57,7 @@ li {
 
 .list {
   &._desktop {
-    grid-template-columns: 10px 240px 10px;
+    grid-template-columns: 10px 260px 10px;
     padding-bottom: 10px;
     grid-row-gap: 10px;
     padding-top: 10px;
@@ -78,6 +78,9 @@ li {
 }
 
 .img {
+  &._kenm {
+    @extend %img_flex;
+  }
   &._rollover {
     position: absolute;
     margin: auto;

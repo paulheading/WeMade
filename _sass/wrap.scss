@@ -1,9 +1,35 @@
 
 .wrap {
-  @extend %wrap_grid;
+
+  &._overlay {
+    align-content: center;
+    position: relative;
+    @extend %wrap_grid;
+    z-index: 2;
+
+    &.--menu {
+      justify-content: center;
+    }
+  }
 
   &._header {
     grid-template-columns: repeat(2,1fr);
+    @extend %wrap_grid;
+  }
+
+  &._project {
+    @extend %wrap_grid;
+  }
+
+  &._hero {
+    @extend %wrap_grid;
+  }
+
+  &._text {
+    @extend %wrap_grid;
+  }
+
+  &._blog {
     @extend %wrap_grid;
   }
 
@@ -14,7 +40,9 @@
   }
 
   &._desktop {
+    align-content: flex-start;
     @extend %wrap_grid;
+
     @media#{$min720w} {
       grid-auto-flow: column;
       direction: rtl;
@@ -23,10 +51,10 @@
 
   &._email {
     border-radius: 3px 3px 0 0;
+    @include shadow(3px,0.1);
     background-color: white;
     @extend %wrap_grid;
     overflow: hidden;
-    @include shadow(3px,0.1);
   }
 
   &._search {

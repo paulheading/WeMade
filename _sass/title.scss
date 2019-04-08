@@ -1,6 +1,13 @@
 
 .title {
 
+  &._menu {
+    text-align: center;
+    font-size: 32px;
+    padding: 10px;
+    opacity: 0;
+  }
+
   &._email {
     align-self: center;
     display: grid;

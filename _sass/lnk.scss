@@ -10,12 +10,8 @@
 
   &._menu {
     text-decoration: none;
-    padding: 10px;
-
-    strong {
-      opacity: 0;
-    }
-
+    overflow: hidden;
+  
     &:hover {
       background-color: white;
       color: $coral;

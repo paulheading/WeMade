@@ -74,14 +74,6 @@ span {
   }
 }
 
-img {
-  display: block;
-
-  &._flex {
-    max-width: 100%;
-  }
-}
-
 video {
   background-color: rgba(black,0.04);
   width: 100%;
@@ -91,4 +83,10 @@ blockquote {
   background-color: rgba(black,0.04);
   margin: 40px 0;
   padding: 20px;
+}
+
+img {
+  &._flex {
+    @extend %img_flex;
+  }
 }
