@@ -2,7 +2,7 @@
 .wrap {
 
   &._overlay {
-    align-content: center;
+    align-self: center;
     position: relative;
     @extend %wrap_grid;
     z-index: 2;
