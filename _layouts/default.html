@@ -13,7 +13,7 @@
     <body class="layout{{ page.type | downcase | prepend: ' _' }}{{ page.title | downcase | prepend: ' --' }}">
   {% endif %}
 
-    {% include html/overlay-load.html %}
+    {% include html/overlay.html title='load' state='open' %}
 
     <div class="site _full">
 
@@ -23,8 +23,8 @@
       </header>
       {% endif %}
 
-      {% include html/overlay.html type='search' %}
-      {% include html/overlay.html type='menu' %}
+      {% include html/overlay.html title='search' %}
+      {% include html/overlay.html title='menu' %}
       {% include html/area-header.html %}
 
       {% if page.type == 'hero' %}

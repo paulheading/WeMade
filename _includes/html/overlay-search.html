@@ -2,14 +2,13 @@
 <div class="title _search">
   <input class="input _text --search" type="text" placeholder="Search">
 </div>
-
 <div class="search-results"></div>
 
 <script>
   window.simpleJekyllSearch = new SimpleJekyllSearch({
     searchInput: document.querySelector('.input.--search'),
     resultsContainer: document.querySelector('.search-results'),
-    json: '/search.js',
+    json: '/search.json',
     searchResultTemplate:
       `<div class="result">
         <a class="lnk _page" href="{url}">

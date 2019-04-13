@@ -11,10 +11,10 @@ var menuTl = new TimelineMax({paused:true}),
 function overlayFunc(goto,type) {
   if(goto == 'open') {
     document.querySelector('body').style.overflow = 'hidden';
-    document.querySelector('.overlay-new._'+type).style.display = 'grid';
+    document.querySelector('.overlay._'+type).style.display = 'grid';
   } else if(goto == 'close') {
     document.querySelector('body').removeAttribute('style');
-    document.querySelector('.overlay-new._'+type).removeAttribute('style');
+    document.querySelector('.overlay._'+type).removeAttribute('style');
   }
 }
 

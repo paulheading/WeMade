@@ -1,18 +1,10 @@
 
 .overlay {
-  &-new {
-    grid-template-columns: 40px minmax(240px,360px) 40px;
-    background-color: rgba($coral,0.95);
-    justify-content: center;
-    padding-bottom: 120px;
-    padding-top: 120px;
-    overflow: scroll;
-    position: fixed;
-    display: none;
-    @include zero;
-    color: white;
-    height: 100%;
-    width: 100%;
-    z-index: 4;
+  background-color: rgba($coral,0.95);
+  @extend %overlay_grid;
+  color: white;
+
+  &._load {
+    grid-template-columns: 40px minmax(240px,320px) 40px;
   }
 }

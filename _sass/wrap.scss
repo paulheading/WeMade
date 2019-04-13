@@ -3,9 +3,7 @@
 
   &._overlay {
     align-self: center;
-    position: relative;
     @extend %wrap_grid;
-    z-index: 2;
 
     &.--menu {
       justify-content: center;

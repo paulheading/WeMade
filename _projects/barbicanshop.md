@@ -8,10 +8,10 @@ url     : https://shop.barbican.org.uk
 desc    : The Barbican Shop offers design-led gifts, inspired by it's artistic programme and dynamic
           architecture.
 visual :
+  - text : here
   - split :
     - svg : barbican/logo
     - png : split
-  - text : here
   - png : full
   - split :
     - png : split
