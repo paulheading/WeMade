@@ -4,6 +4,7 @@ layout: none
 
 var $body  = $('body'),
     $words = $('.word'),
+    $mw = $('#wm'),
     data = {{ site.data.homepage | jsonify }},
     heroTl = new TimelineMax({delay:1,repeat:-1}),
     zones = ['body','.area._hero','#logo','#search','#burger'];
@@ -71,7 +72,10 @@ function heroFunc() {
     });
 
     heroTl
-    .to($words,0.4,{text:'',delay:3})
+    .to($mw,3,{drawSVG:'0%',ease:Power0.easeNone})
+    .add('both')
+    .to($words,0.4,{text:''},'both')
+    .to($mw,0.4,{drawSVG:'100%',ease:Power0.easeNone},'both')
     .set($words,{clearProps:'all'})
     .set(zones,{className:'-=--'+name})
     ;

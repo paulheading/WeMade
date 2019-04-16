@@ -8,10 +8,42 @@ svg {
   }
 
   &#logo {
-    fill: $coal;
+
+    path#wm {
+      stroke: $coal;
+    }
+
+    &.--wemade {
+      path#bg {
+        stroke: rgba($wemade,0.6);
+      }
+    }
+
+    &.--paul {
+      path#bg {
+        stroke: rgba($paul,0.6);
+      }
+    }
+
+    &.--chloe {
+      path#bg {
+        stroke: rgba($chloe,0.6);
+      }
+    }
+
+    &.--play {
+      path#bg {
+        stroke: rgba($play,0.6);
+      }
+    }
 
     &.--nyo {
-      fill: white;
+      path#wm {
+        stroke: white;
+      }
+      path#bg {
+        stroke: rgba(white,0.6);
+      }
     }
   }
 

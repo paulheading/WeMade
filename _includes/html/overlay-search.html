@@ -2,17 +2,17 @@
 <div class="title _search">
   <input class="input _text --search" type="text" placeholder="Search">
 </div>
-<div class="search-results"></div>
+<div class="area _results"></div>
 
 <script>
   window.simpleJekyllSearch = new SimpleJekyllSearch({
     searchInput: document.querySelector('.input.--search'),
-    resultsContainer: document.querySelector('.search-results'),
+    resultsContainer: document.querySelector('.area._results'),
     json: '/search.json',
     searchResultTemplate:
-      `<div class="result">
-        <a class="lnk _page" href="{url}">
-          <div class="name">{name}</div>
+      `<div class="row _results">
+        <a class="lnk _results" href="{url}">
+          <div class="title _results">{name}</div>
         </a>
       </div>`,
     noResultsText: 'No results found',

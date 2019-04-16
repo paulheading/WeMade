@@ -44,12 +44,13 @@ var searchFunc = (state) => {
     searchTl.reverse();
     overlayFunc('close','search');
     $('.input.--search').val('');
-    $('.search-results').html('');
+    $('.area._results').html('');
     searchOpen = false;
   } else if(state == 'open') {
     overlayFunc('open','search');
     searchOpen = true;
     searchTl.play();
+    $('.input.--search').focus();
   }
 }
 
@@ -107,7 +108,7 @@ var noFocus = () => {
   hasFocus = false;
 }
 
-$(document).keydown(keyFunc);
+$(document).keyup(keyFunc);
 $('input,textarea').focus(yesFocus).blur(noFocus);
 $('.lnk._search').click(changeSearch);
 $('.exit._search').click(changeSearch);

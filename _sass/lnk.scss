@@ -11,7 +11,7 @@
   &._menu {
     text-decoration: none;
     overflow: hidden;
-  
+
     &:hover {
       background-color: white;
       color: $coral;
@@ -23,9 +23,8 @@
     }
   }
 
-  &._page {
+  &._results {
     text-decoration: none;
-    font-size: 24px;
   }
 
   &._index {

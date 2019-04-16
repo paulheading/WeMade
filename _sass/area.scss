@@ -4,6 +4,14 @@
   overflow: hidden;
   z-index: 2;
 
+  &._results {
+    @extend %area_grid;
+    justify-content: flex-start;
+    padding-top: 10px;
+    font-size: 24px;
+    grid-gap: 2px;
+  }
+
   &._clock {
     @extend %area_grid;
     letter-spacing: 0.05rem;
