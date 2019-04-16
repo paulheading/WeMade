@@ -1,0 +1,11 @@
+
+article about building in jekyll
+
+the story behind the wemade jekyll site
+
+_layouts files - house
+_includes files - bricks, windows, doors
+_css files - paint, fabrics
+_js files - plumbing, electrics
+_drafts files - bin, recycling
+assets - tv, silverware, furniture

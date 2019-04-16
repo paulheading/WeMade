@@ -2,34 +2,37 @@
 ---
 
 @import
-  'normalize.css',
-  'futuro',
-  'helpers',
-  'bar',
-  'base',
-  'area',
-  'body',
-  'btn',
-  'copy',
-  'title',
-  'entry',
-  'folder',
-  'form',
-  'input',
-  'overlay',
-  'layout',
-  'lnk',
-  'row',
-  'split',
-  'svg',
-  'textarea',
-  'visual',
-  'window',
-  'wrap',
-  'video';
+'normalize.css',
+'futuro',
+'helpers',
+'bar',
+'base',
+'area',
+'body',
+'btn',
+'chloe',
+'copy',
+'title',
+'entry',
+'folder',
+'form',
+'input',
+'overlay',
+'layout',
+'lnk',
+'row',
+'split',
+'svg',
+'textarea',
+'visual',
+'window',
+'wrap',
+'video';
 
-li {
-  list-style-position: inside;
+.flag {
+  background-color: rgba(black,0.1);
+  height: 16px;
+  width: 30px;
 }
 
 .canvas {
@@ -51,7 +54,6 @@ li {
 }
 
 .day {
-  padding-right: 5px;
   font-weight: 600;
 }
 

@@ -4,22 +4,29 @@
   overflow: hidden;
   z-index: 2;
 
+  &._clock {
+    @extend %area_grid;
+    letter-spacing: 0.05rem;
+    grid-auto-flow: column;
+    line-height: 1;
+    grid-gap: 10px;
+  }
+
   &._header {
-    grid-template-columns: 40px minmax(200px,800px) 40px;
-    justify-content: center;
+    @extend %area_grid;
+    @extend %grid_default;
     padding-bottom: 40px;
     padding-top: 40px;
-    display: grid;
     width: 100%;
     z-index: 3;
   }
 
   &._hero {
+    @extend %area_grid;
     grid-template-columns: 40px minmax(240px,360px) 40px;
     text-decoration: none;
-    place-content: center;
+    align-content: center;
     overflow: visible;
-    display: grid;
     height: 100%;
     z-index: 1;
 
@@ -29,32 +36,29 @@
   }
 
   &._toolbar {
-    grid-template-columns: 40px minmax(240px,800px) 40px;
+    @extend %area_grid;
+    @extend %grid_default;
     background-color: darken($teal,3%);
-    justify-content: center;
     padding-bottom: 10px;
     padding-top: 10px;
-    display: grid;
     height: 40px;
   }
 
   &._desktop {
-    grid-template-columns: 40px minmax(240px,800px) 40px;
+    @extend %area_grid;
+    @extend %grid_default;
     background-color: $teal;
-    justify-content: center;
     padding-bottom: 40px;
     padding-top: 40px;
-    display: grid;
     height: 600px;
   }
 
   &._email {
+    @extend %area_grid;
     grid-template-columns: 40px minmax(280px,600px) 40px;
     background-color: $smoke;
-    justify-content: center;
     padding-top: 40px;
     font-size: 16px;
-    display: grid;
 
     @media#{$min720w} {
       padding-top: 80px;
@@ -69,10 +73,10 @@
   }
 
   &._text {
-    grid-template-columns: 40px minmax(200px,800px) 40px;
-    justify-content: center;
+    @extend %area_grid;
+    @extend %grid_default;
     padding-bottom: 40px;
-    display: grid;
+
 
     &.--missing {
       text-align: center;
@@ -80,11 +84,11 @@
   }
 
   &._blog {
-    grid-template-columns: 40px minmax(200px,800px) 40px;
-    justify-content: center;
+    @extend %area_grid;
+    @extend %grid_default;
     font-family: monospace;
     padding-bottom: 40px;
-    display: grid;
+
 
     &.--dark {
       color: white;
@@ -92,10 +96,9 @@
   }
 
   &._resume {
+    @extend %area_grid;
     grid-template-columns: 1fr minmax(320px,440px) 1fr;
-    justify-content: center;
     line-height: 1.5;
-    display: grid;
 
     @media#{$max719w} {
       padding-bottom: 40px;
@@ -109,8 +112,7 @@
   }
 
   &._project {
+    @extend %area_grid;
     grid-template-columns: 1fr minmax(320px,960px) 1fr;
-    justify-content: center;
-    display: grid;
   }
 }

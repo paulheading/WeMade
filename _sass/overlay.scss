@@ -5,6 +5,14 @@
   color: white;
 
   &._load {
-    grid-template-columns: 40px minmax(240px,320px) 40px;
+    @extend %grid_load;
+  }
+
+  &._search {
+    @extend %grid_overlay;
+  }
+
+  &._menu {
+    @extend %grid_overlay;
   }
 }

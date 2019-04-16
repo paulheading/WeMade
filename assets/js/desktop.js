@@ -7,12 +7,9 @@ var win = $('.window'),
     closeBtn = $('.btn._window.--close'),
     minBtn = $('.btn._window.--min'),
     xpandBtn = $('.btn._desktop'),
-    bar = $('.split._left.--toolbar'),
-    day = $('.day'),
-    hours = $('.hours'),
-    minutes = $('.minutes');
+    bar = $('.split._left.--toolbar');
 
-var timeFunc = () => {
+var timeFunc = (city) => {
   var weekday = new Array(7);
       weekday[0] = "Sun",
       weekday[1] = "Mon",
@@ -22,9 +19,20 @@ var timeFunc = () => {
       weekday[5] = "Fri",
       weekday[6] = "Sat";
   var d = new Date(),
-      n = weekday[d.getDay()],
-      h = d.getHours(),
-      m = d.getMinutes();
+      n = weekday[d.getUTCDay()],
+      m = d.getUTCMinutes();
+
+  if(city == 'Toronto') {
+    var h = d.getUTCHours() - 4,
+        day = $('.day','._clock.--toronto'),
+        hours = $('.hours','._clock.--toronto'),
+        minutes = $('.minutes','._clock.--toronto');
+  } else {
+    var h = d.getUTCHours() + 1,
+        day = $('.day','._clock.--london'),
+        hours = $('.hours','._clock.--london'),
+        minutes = $('.minutes','._clock.--london');
+  }
 
   day.text(n);
 
@@ -43,7 +51,10 @@ var timeFunc = () => {
   }
 }
 
-window.setInterval(timeFunc,1000);
+window.setInterval(function(){
+  timeFunc('Toronto');
+  timeFunc();
+},1000);
 
 Draggable.create(win,{cursor:'pointer'});
 

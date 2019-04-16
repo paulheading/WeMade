@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'jekyll', '~> 3.8.3'
-gem 'futuro', '~> 0.1.4'
+gem 'futuro', '~> 0.1.6'
 # :path => '../futuro'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
