@@ -59,23 +59,15 @@
 
 .list {
   &._desktop {
-    grid-template-columns: 10px 260px 10px;
-    padding-bottom: 10px;
-    grid-row-gap: 10px;
-    padding-top: 10px;
-    display: grid;
+    padding: 5px 10px;
   }
 }
 
 .item {
-  &._desktop {
-    background-color: white;
+  &._trello {
+    background-color: darken(white,16%);
     border-radius: 3px;
-    grid-column: 2 / 3;
-    display: grid;
-    padding: 10px;
-    grid-row-gap: 5px;
-    text-decoration: none;
+    margin: 5px 0;
   }
 }
 

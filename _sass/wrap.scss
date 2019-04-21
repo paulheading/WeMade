@@ -1,6 +1,14 @@
 
 .wrap {
 
+  &._trello {
+    background-color: white;
+    border-radius: 3px;
+    grid-row-gap: 5px;
+    display: grid;
+    padding: 10px;
+  }
+
   &._overlay {
     align-self: center;
     @extend %wrap_grid;
@@ -79,6 +87,7 @@
 
   &._resume {
     padding-right: 40px;
+    @extend %wrap_grid;
     padding-left: 40px;
 
     @media#{$min720w} {

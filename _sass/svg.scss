@@ -9,32 +9,19 @@ svg {
 
   &#logo {
 
+    %path_logo {
+      // stroke-linecap:round;
+      // stroke-linejoin:round;
+      stroke-width: 5;
+    }
+
     path#wm {
       stroke: $coal;
+      @extend %path_logo;
     }
-
-    &.--wemade {
-      path#bg {
-        stroke: rgba($wemade,0.6);
-      }
-    }
-
-    &.--paul {
-      path#bg {
-        stroke: rgba($paul,0.6);
-      }
-    }
-
-    &.--chloe {
-      path#bg {
-        stroke: rgba($chloe,0.6);
-      }
-    }
-
-    &.--play {
-      path#bg {
-        stroke: rgba($play,0.6);
-      }
+    path#bg {
+      stroke: rgba($coal,0.2);
+      @extend %path_logo;
     }
 
     &.--nyo {
@@ -42,7 +29,7 @@ svg {
         stroke: white;
       }
       path#bg {
-        stroke: rgba(white,0.6);
+        stroke: rgba(white,0.2);
       }
     }
   }

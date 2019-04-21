@@ -1,1 +1,5 @@
-<svg version="1.1" id="logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" width="68" height="32" viewBox="0 0 68 32" xml:space="preserve" enable-background="new 0 0 68 32"><defs><clipPath id="clip"><path d="M2,2h64v28H2V2z"/></clipPath></defs><path id="bg" clip-path="url(#clip)" d="M4.6,0l7,27.6h2.6l6.4-23.1h2.3l6,23l2.7,0l5.8-23h2.2l5.6,23	h2.2l6.4-23h2.8L63.4,32" fill="none" stroke-width="5"/><path id="wm" clip-path="url(#clip)" d="M4.6,0l7,27.6h2.6l6.4-23.1h2.3l6,23l2.7,0l5.8-23h2.2l5.6,23	h2.2l6.4-23h2.8L63.4,32" fill="none" stroke-width="5"/></svg>
+<svg version="1.1" id="logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" width="68" height="32" viewBox="0 0 68 32" xml:space="preserve" enable-background="new 0 0 68 32">
+  <defs><clipPath id="clip"><path d="M2,2h64v28H2V2z"/></clipPath></defs>
+  <path id="bg" clip-path="url(#clip)" d="M4.6,0l7,27.6h2.6l6.4-23.1h2.3l6,23l2.7,0l5.8-23h2.2l5.6,23	h2.2l6.4-23h2.8L63.4,32" fill="none" />
+  <path id="wm" clip-path="url(#clip)" d="M4.6,0l7,27.6h2.6l6.4-23.1h2.3l6,23l2.7,0l5.8-23h2.2l5.6,23	h2.2l6.4-23h2.8L63.4,32" fill="none" />
+</svg>

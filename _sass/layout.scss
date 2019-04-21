@@ -11,7 +11,9 @@
 
     svg {
       &#logo {
-        fill: white;
+        path#wm {
+          stroke: white;
+        }
       }
       &#search {
         fill: white;

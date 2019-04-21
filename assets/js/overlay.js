@@ -79,6 +79,15 @@ var menuFunc = (state) => {
 
 var keyFunc = (e) => {
 
+  if(e.keyCode === 13) {
+    if(searchOpen) {
+      if(hasFocus) {
+        var url = $('.row._results')[0].children[0].href;
+        window.location.href = url;
+      }
+    }
+  }
+
   if(e.keyCode === 83) {
     if(!hasFocus) {
       changeSearch();

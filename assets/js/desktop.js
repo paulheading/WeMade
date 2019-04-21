@@ -7,7 +7,19 @@ var win = $('.window'),
     closeBtn = $('.btn._window.--close'),
     minBtn = $('.btn._window.--min'),
     xpandBtn = $('.btn._desktop'),
-    bar = $('.split._left.--toolbar');
+    bar = $('.split._left.--toolbar'),
+    trelloTl = new TimelineMax({repeat:-1,repeatDelay:3});
+
+var card6 = $('.item._trello','.lnk._trello:nth-child(6)'),
+    card6wrap = $('.wrap._trello','.lnk._trello:nth-child(6)'),
+    card3 = $('.wrap._trello','.lnk._trello:nth-child(3)');
+
+trelloTl
+.from(card6,0.5,{opacity:0})
+.from(card6wrap,1,{x:-280})
+// .to(card3,1,{height:76},'both')
+// .from(card6,1,{x:-100})
+;
 
 var timeFunc = (city) => {
   var weekday = new Array(7);
