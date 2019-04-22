@@ -46,6 +46,24 @@ $min720w : 'only screen and (min-width: 720px)';
   filter: drop-shadow(0 0 $a rgba(black,$b));
 }
 
+@mixin svg_nav($color) {
+  &#logo {
+    path#wm {
+      stroke: $color;
+    }
+  }
+  &#search {
+    line, circle {
+      stroke: $color;
+    }
+  }
+  &#burger {
+    line {
+      stroke: $color;
+    }
+  }
+}
+
 %grid {
   &_default {
     grid-template-columns: 40px minmax(240px,800px) 40px;

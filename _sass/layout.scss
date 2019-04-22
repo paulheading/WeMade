@@ -10,17 +10,7 @@
     }
 
     svg {
-      &#logo {
-        path#wm {
-          stroke: white;
-        }
-      }
-      &#search {
-        fill: white;
-      }
-      &#burger {
-        fill: white;
-      }
+      @include svg_nav(white);
     }
   }
 

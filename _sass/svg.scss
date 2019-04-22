@@ -7,49 +7,10 @@ svg {
     @include zero;
   }
 
-  &#logo {
+  @include svg_nav(black);
 
-    path#wm {
-      stroke: $coal;
-    }
-
-    path#bg {
-      stroke: white;
-    }
-
-    &.--nyo {
-      path#wm {
-        stroke: white;
-      }
-      path#bg {
-        stroke: black;
-      }
-    }
-  }
-
-  &#search {
-    line, circle {
-      stroke: $coal;
-    }
-
-    &.--nyo {
-      line, circle {
-        stroke: white;
-      }
-    }
-  }
-
-  &#burger {
-
-    line {
-      stroke: $coal;
-    }
-
-    &.--nyo {
-      line {
-        stroke: white;
-      }
-    }
+  &.--nyo {
+    @include svg_nav(white);
   }
 }
 
