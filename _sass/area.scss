@@ -4,6 +4,12 @@
   overflow: hidden;
   z-index: 2;
 
+  &._rollover {
+    position: absolute;
+    @include zero;
+    margin: auto;
+  }
+
   &._results {
     @extend %area_grid;
     justify-content: flex-start;

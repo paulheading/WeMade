@@ -31,7 +31,7 @@
           <div class="btn _window --min"></div>
         </div>
         <a href="https://imgur.com/qVQvHPN">
-          <img class="img _kenm" src="/assets/img/kenM.jpg" alt="">
+          <img class="_kenm" src="/assets/img/kenM.jpg" alt="">
         </a>
       </div>
       <div class="window _dick --open">
@@ -39,7 +39,7 @@
           <div class="btn _window --close"></div>
           <div class="btn _window --min"></div>
         </div>
-        <iframe src="https://open.spotify.com/embed/user/chloeings/playlist/1JGUbJ96tkwEg9rNY41Dcm" width="280" height="260" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+        <!-- <iframe src="https://open.spotify.com/embed/user/chloeings/playlist/1JGUbJ96tkwEg9rNY41Dcm" width="280" height="260" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe> -->
       </div>
       <div class="window _harry --open">
         <div class="bar _window">
@@ -49,7 +49,7 @@
         <div class="list _desktop">
 
           {% assign loop = site.projects | sort: 'date' | reverse %}
-          {% for item in loop limit:6 %}
+          {% for item in loop limit:3 %}
           <a href="{{ item.id }}" class="lnk _trello">
             <div class="item _trello">
               <div class="wrap _trello">

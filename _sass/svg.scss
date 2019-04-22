@@ -9,19 +9,12 @@ svg {
 
   &#logo {
 
-    %path_logo {
-      // stroke-linecap:round;
-      // stroke-linejoin:round;
-      stroke-width: 5;
-    }
-
     path#wm {
       stroke: $coal;
-      @extend %path_logo;
     }
+
     path#bg {
-      stroke: rgba($coal,0.2);
-      @extend %path_logo;
+      stroke: white;
     }
 
     &.--nyo {
@@ -29,24 +22,33 @@ svg {
         stroke: white;
       }
       path#bg {
-        stroke: rgba(white,0.2);
+        stroke: black;
       }
     }
   }
 
   &#search {
-    fill: $coal;
+    line, circle {
+      stroke: $coal;
+    }
 
     &.--nyo {
-      fill: white;
+      line, circle {
+        stroke: white;
+      }
     }
   }
 
   &#burger {
-    fill: $coal;
+
+    line {
+      stroke: $coal;
+    }
 
     &.--nyo {
-      fill: white;
+      line {
+        stroke: white;
+      }
     }
   }
 }

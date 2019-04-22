@@ -1,3 +1,1 @@
-<svg version="1.1" id="search" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" width="32" height="32" viewBox="0 0 32 32" xml:space="preserve" enable-background="new 0 0 32 32">
-  <path d="M25.6,22c1.6-2.3,2.5-5.1,2.5-7.9c0-7.7-6.3-14-14-14S0,6.3,0,14s6.3,14,14,14c2.9,0,5.6-0.9,7.9-2.5	l6.4,6.4l3.6-3.6L25.6,22z M22.9,14c0,2.3-0.9,4.5-2.5,6.2l-0.2,0.2c-1.7,1.6-3.9,2.5-6.2,2.5c-4.9,0-8.9-4-8.9-8.9	c0-4.9,4-8.9,8.9-8.9C19,5.1,22.9,9.1,22.9,14z"/>
-</svg>
+<svg version="1.1" id="search" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" width="32" height="32" viewBox="0 0 32 32" xml:space="preserve" enable-background="new 0 0 32 32"><circle cx="14.7" cy="14.7" r="10.7" fill="none" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><line x1="28" y1="28" x2="22.2" y2="22.2" fill="none" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>

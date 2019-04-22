@@ -7,66 +7,7 @@ var win = $('.window'),
     closeBtn = $('.btn._window.--close'),
     minBtn = $('.btn._window.--min'),
     xpandBtn = $('.btn._desktop'),
-    bar = $('.split._left.--toolbar'),
-    trelloTl = new TimelineMax({repeat:-1,repeatDelay:3});
-
-var card6 = $('.item._trello','.lnk._trello:nth-child(6)'),
-    card6wrap = $('.wrap._trello','.lnk._trello:nth-child(6)'),
-    card3 = $('.wrap._trello','.lnk._trello:nth-child(3)');
-
-trelloTl
-.from(card6,0.5,{opacity:0})
-.from(card6wrap,1,{x:-280})
-// .to(card3,1,{height:76},'both')
-// .from(card6,1,{x:-100})
-;
-
-var timeFunc = (city) => {
-  var weekday = new Array(7);
-      weekday[0] = "Sun",
-      weekday[1] = "Mon",
-      weekday[2] = "Tue",
-      weekday[3] = "Wed",
-      weekday[4] = "Thu",
-      weekday[5] = "Fri",
-      weekday[6] = "Sat";
-  var d = new Date(),
-      n = weekday[d.getUTCDay()],
-      m = d.getUTCMinutes();
-
-  if(city == 'Toronto') {
-    var h = d.getUTCHours() - 4,
-        day = $('.day','._clock.--toronto'),
-        hours = $('.hours','._clock.--toronto'),
-        minutes = $('.minutes','._clock.--toronto');
-  } else {
-    var h = d.getUTCHours() + 1,
-        day = $('.day','._clock.--london'),
-        hours = $('.hours','._clock.--london'),
-        minutes = $('.minutes','._clock.--london');
-  }
-
-  day.text(n);
-
-  if(h < 10) {
-    var addZero = '0'+h;
-    hours.text(addZero);
-  } else {
-    hours.text(h);
-  }
-
-  if(m < 10) {
-    var addZero = '0'+m;
-    minutes.text(addZero);
-  } else {
-    minutes.text(m);
-  }
-}
-
-window.setInterval(function(){
-  timeFunc('Toronto');
-  timeFunc();
-},1000);
+    bar = $('.split._left.--toolbar');
 
 Draggable.create(win,{cursor:'pointer'});
 

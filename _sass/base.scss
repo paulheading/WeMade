@@ -89,4 +89,19 @@ img {
   &._flex {
     @extend %img_flex;
   }
+  &._kenm {
+    @extend %img_flex;
+  }
+  &._thumb {
+    position: absolute;
+    @include zero;
+    display: none;
+    height: 150px;
+    width: 150px;
+    margin: auto;
+
+    &.--open {
+      display: block;
+    }
+  }
 }

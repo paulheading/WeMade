@@ -13,7 +13,6 @@ var svgFunc = () => {
   TweenLite.defaultEase = Sine.easeInOut;
   var svgTl = new TimelineMax({repeat:-1,yoyo:true});
   svgTl.fromTo('.svg._hero',1,{y:-5},{y:5});
-
   var drawTl = new TimelineMax({repeat:-1,yoyo:true});
   drawTl.fromTo('#noodle',1,{drawSVG:'0%'},{drawSVG:'100%'});
 }
@@ -32,6 +31,7 @@ function heroFunc() {
         msg = data[i].hero.message;
 
     heroTl
+    .call(trelloFunc,['play'])
     .set(zones,{className:'+=--'+name})
     .set($heroArea,{attr:{href:url}})
     ;
@@ -72,10 +72,11 @@ function heroFunc() {
     });
 
     heroTl
-    .to($mw,3,{drawSVG:'0%',ease:Power0.easeNone})
+    .to($mw,6,{drawSVG:'0%',ease:Power0.easeNone})
     .add('both')
-    .to($words,0.4,{text:''},'both')
-    .to($mw,0.4,{drawSVG:'100%',ease:Power0.easeNone},'both')
+    .call(trelloFunc,['reverse'],'both')
+    .to($words,0.6,{text:''},'both')
+    .to($mw,0.6,{drawSVG:'100%',ease:Power0.easeNone},'both')
     .set($words,{clearProps:'all'})
     .set(zones,{className:'-=--'+name})
     ;

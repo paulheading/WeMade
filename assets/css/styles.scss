@@ -23,6 +23,7 @@
 'row',
 'split',
 'svg',
+'tag',
 'textarea',
 'visual',
 'window',
@@ -71,29 +72,6 @@
   }
 }
 
-.img {
-  &._kenm {
-    @extend %img_flex;
-  }
-  &._rollover {
-    position: absolute;
-    margin: auto;
-    @include zero;
-  }
-  &._thumb {
-    position: absolute;
-    height: 150px;
-    width: 150px;
-    margin: auto;
-    @include zero;
-    display: none;
-
-    &.--open {
-      display: block;
-    }
-  }
-}
-
 .search-results {
   padding-top: 10px;
   text-align: left;
@@ -102,40 +80,5 @@
 .desc {
   @media#{$max639w} {
     display: none;
-  }
-}
-
-.tag {
-
-  &._trello {
-    background-color: darken(white,16%);
-    padding: 3px 6px 3px 6px;
-    letter-spacing: normal;
-    border-radius: 6px;
-    font-weight: 600;
-    color: white;
-
-    &.--date {
-      background-color: $trelloGreen;
-    }
-
-    &.--animation {
-      background-color: $trelloBlue;
-    }
-
-    &.--website {
-      background-color: $trelloRed;
-    }
-
-    &.--member {
-      color: darken(white,64%);
-    }
-  }
-
-  &._email {
-    padding: 4px 10px 4px 8px;
-    background-color: $sky;
-    border-radius: 3px;
-    color: $coal;
   }
 }

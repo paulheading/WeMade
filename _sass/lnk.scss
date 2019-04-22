@@ -7,12 +7,9 @@
   &._trello {
     text-decoration: none;
     grid-column: 2 / 3;
+    overflow: hidden;
     display: grid;
-
-    &:nth-child(1), &:nth-child(2), &:nth-child(3) {
-      height: 0;
-      overflow: hidden;
-    }
+    opacity: 0;
   }
 
   &._paginate {
