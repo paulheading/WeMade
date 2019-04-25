@@ -2,22 +2,20 @@
 layout: none
 ---
 
-var $body  = $('body'),
-    $words = $('.word'),
-    $mw = $('#wm'),
+var words = $('.word'),
     data = {{ site.data.homepage | jsonify }},
-    heroTl = new TimelineMax({delay:1,repeat:-1}),
     zones = ['body','.area._hero','#logo','#search','#burger'];
 
-var svgFunc = () => {
+var svgAnim = () => {
   TweenLite.defaultEase = Sine.easeInOut;
-  var svgTl = new TimelineMax({repeat:-1,yoyo:true});
+  var svgTl = new TimelineMax({repeat:-1,yoyo:true}),
+      drawTl = new TimelineMax({repeat:-1,yoyo:true});
   svgTl.fromTo('.svg._hero',1,{y:-5},{y:5});
-  var drawTl = new TimelineMax({repeat:-1,yoyo:true});
   drawTl.fromTo('#noodle',1,{drawSVG:'0%'},{drawSVG:'100%'});
 }
 
-function heroFunc() {
+function heroAnim() {
+  var heroTl = new TimelineMax({delay:1,repeat:-1});
 
   data.sort(function(){
     return 0.5 - Math.random()
@@ -31,7 +29,6 @@ function heroFunc() {
         msg = data[i].hero.message;
 
     heroTl
-    .call(trelloFunc,['play'])
     .set(zones,{className:'+=--'+name})
     .set($heroArea,{attr:{href:url}})
     ;
@@ -45,25 +42,25 @@ function heroFunc() {
           val = Object.values(msg[count])[0];
 
           if(key == 'bold!') {
-            heroTl.add(TweenLite.set(wordNo,{text:{value:val},
+            heroTl.add(TweenMax.set(wordNo,{text:{value:val},
             textDecoration: 'underline',
             fontWeight: 600,
             delay: '0.15'}));
           } else if(key == 'bold') {
-            heroTl.add(TweenLite.set(wordNo,{text:{value:val},
+            heroTl.add(TweenMax.set(wordNo,{text:{value:val},
             fontWeight: 600,
             delay: '0.15'}));
           } else if(key == 'italic!') {
-            heroTl.add(TweenLite.set(wordNo,{text:{value:val},
+            heroTl.add(TweenMax.set(wordNo,{text:{value:val},
             textDecoration: 'underline',
             fontStyle: 'italic',
             delay: '0.15'}));
           } else if(key == 'italic') {
-            heroTl.add(TweenLite.set(wordNo,{text:{value:val},
+            heroTl.add(TweenMax.set(wordNo,{text:{value:val},
             fontStyle:'italic',
             delay:'0.15'}));
           } else if(key == 'book!') {
-            heroTl.add(TweenLite.set(wordNo,{text:{value:val},
+            heroTl.add(TweenMax.set(wordNo,{text:{value:val},
             textDecoration: 'underline',
             delay:'0.15'}));
           } else {
@@ -72,21 +69,11 @@ function heroFunc() {
     });
 
     heroTl
-    .to($mw,6,{drawSVG:'0%',ease:Power0.easeNone})
-    .add('both')
-    .call(trelloFunc,['reverse'],'both')
-    .to($words,0.6,{text:''},'both')
-    .to($mw,0.6,{drawSVG:'100%',ease:Power0.easeNone},'both')
-    .set($words,{clearProps:'all'})
+    .call(logoAnim,[],'start')
+    .call(trelloAnim,[],'start')
+    .to(words,0.5,{text:''},'+=5')
+    .set(words,{clearProps:'all'})
     .set(zones,{className:'-=--'+name})
     ;
-
-    return heroTl;
-
   });
 }
-
-$(document)
-.ready(svgFunc)
-.ready(heroFunc)
-;

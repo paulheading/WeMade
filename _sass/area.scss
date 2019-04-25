@@ -37,7 +37,7 @@
 
   &._hero {
     @extend %area_grid;
-    grid-template-columns: 40px minmax(240px,360px) 40px;
+    grid-template-columns: 40px minmax(240px,380px) 40px;
     text-decoration: none;
     align-content: center;
     overflow: visible;

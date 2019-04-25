@@ -15,7 +15,7 @@ GEM
     ffi (1.10.0-java)
     ffi (1.10.0-x86-mingw32)
     forwardable-extended (2.6.0)
-    futuro (0.1.8)
+    futuro (0.1.9)
       jekyll (~> 3.8)
       jekyll-feed (~> 0.9)
       jekyll-seo-tag (~> 2.1)
@@ -76,7 +76,7 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
-  futuro (~> 0.1.7)
+  futuro (~> 0.1.8)
   jekyll (~> 3.8.3)
   tzinfo-data
 

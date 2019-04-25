@@ -10,7 +10,4 @@
   <video class="video _dtp" autoplay playsinline muted loop poster="{{ page.id | replace: 'projects/' | prepend: '/assets/vid' }}{{ thing.mp4 | prepend: '/' | append: '.png' }}">
     <source src="{{ page.id | replace: 'projects/' | prepend: '/assets/vid' }}{{ thing.mp4 | prepend: '/' | append: '.mp4' }}" type="video/mp4">
   </video>
-  <video class="video _mob" autoplay playsinline muted loop poster="{{ page.id | replace: 'projects/' | prepend: '/assets/vid' }}{{ thing.mp4 | prepend: '/' | append: 'MOB.png' }}">
-    <source src="{{ page.id | replace: 'projects/' | prepend: '/assets/vid' }}{{ thing.mp4 | prepend: '/' | append: 'MOB.mp4' }}" type="video/mp4">
-  </video>
 {% endif %}

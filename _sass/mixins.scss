@@ -1,0 +1,21 @@
+@mixin shadow($a:3px,$b:0.2) {
+  filter: drop-shadow(0 0 $a rgba(black,$b));
+}
+
+@mixin svg_nav($color) {
+  &#logo {
+    path {
+      stroke: $color;
+    }
+  }
+  &#search {
+    line, circle {
+      stroke: $color;
+    }
+  }
+  &#burger {
+    line {
+      stroke: $color;
+    }
+  }
+}

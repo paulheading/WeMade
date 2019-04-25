@@ -35,44 +35,8 @@ $chromeGreen  : #34c84a;
 
 $folder  : hsl(60, 100%, 80%);
 $spotify : hsl(240, 15%, 5%);
-
 $coal   : lighten(black,10%);
 
 $max639w : 'only screen and (max-width: 639px)';
 $max719w : 'only screen and (max-width: 719px)';
 $min720w : 'only screen and (min-width: 720px)';
-
-@mixin shadow($a:3px,$b:0.2) {
-  filter: drop-shadow(0 0 $a rgba(black,$b));
-}
-
-@mixin svg_nav($color) {
-  &#logo {
-    path#wm {
-      stroke: $color;
-    }
-  }
-  &#search {
-    line, circle {
-      stroke: $color;
-    }
-  }
-  &#burger {
-    line {
-      stroke: $color;
-    }
-  }
-}
-
-%grid {
-  &_default {
-    grid-template-columns: 40px minmax(240px,800px) 40px;
-  }
-  &_overlay {
-    grid-template-columns: 40px minmax(240px,480px) 40px;
-  }
-}
-
-%img_flex {
-  max-width: 100%;
-}
