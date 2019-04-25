@@ -12,7 +12,7 @@ var otherAnim = () => {
   otherTl
   .call(logoAnim,[],'start')
   .call(trelloAnim,[],'start')
-  .set(body,{opacity:1},'+=5')
+  .set(body,{opacity:1},'+=6')
   ;
 }
 
