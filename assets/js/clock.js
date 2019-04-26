@@ -27,15 +27,15 @@ var timeFunc = (city) => {
   day.text(n);
 
   if(h < 10) {
-    var addZero = '0'+h;
-    hours.text(addZero);
+    hours.text('0'+h);
+  } else if(h == 24) {
+    hours.text('00');
   } else {
     hours.text(h);
   }
 
   if(m < 10) {
-    var addZero = '0'+m;
-    minutes.text(addZero);
+    minutes.text('0'+m);
   } else {
     minutes.text(m);
   }

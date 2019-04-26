@@ -3,7 +3,7 @@ layout: none
 ---
 
 var logoAnim = () => {
-  var logo = $('path','#logo'),
+  var logo = $('#wm'),
       logoTl = new TimelineMax();
 
   logoTl

@@ -4,8 +4,11 @@
 
 @mixin svg_nav($color) {
   &#logo {
-    path {
+    path#wm {
       stroke: $color;
+    }
+    path#bg {
+      stroke: rgba($color,0.1);
     }
   }
   &#search {
