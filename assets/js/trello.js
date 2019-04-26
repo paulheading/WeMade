@@ -14,7 +14,7 @@ var trelloAnim = () => {
   trelloTl
   .staggerTo([card1,card2,card3],'0.2',{opacity:1,y:0},'0.2')
   .staggerTo([card1wrap,card2wrap,card3wrap],'0.2',{opacity:1},'0.2')
-  .add('back','+=4')
+  .add('back','+=3')
   .staggerTo([card3,card2,card1],'0.2',{opacity:0,x:10},'0.2','back')
   .staggerTo([card3wrap,card2wrap,card1wrap],'0.2',{opacity:0},'0.2','back')
   .set('.lnk._trello',{x:0,y:-10})

@@ -19,7 +19,7 @@ var otherAnim = () => {
 if(body.hasClass('_hero')) {
   heroAnim();
   svgAnim();
-}  else {
+} else {
   otherAnim();
 }
 
