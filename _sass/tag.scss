@@ -20,6 +20,10 @@
       background-color: $trelloRed;
     }
 
+    &.--branding {
+      background-color: $trelloOrange;
+    }
+
     &.--member {
       color: darken(white,64%);
     }

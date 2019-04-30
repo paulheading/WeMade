@@ -1,7 +1,8 @@
 ---
 ref     : 9
 title   : Play
-staff   : [paul,chloe]
+# list staff alphabetically
+staff   : chloe, paul
 project : Animation
 date    : 05/2018
 end     : 07/2018

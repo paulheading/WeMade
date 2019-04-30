@@ -1,7 +1,8 @@
 ---
 ref     : 6
 title   : Montagues
-staff   : [paul,chloe]
+# list staff alphabetically
+staff   : chloe, paul
 project : Branding
 date    : 10/2015
 end     : 10/2016

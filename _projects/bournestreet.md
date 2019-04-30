@@ -1,7 +1,8 @@
 ---
 ref     : 0
 title   : Bourne Street
-staff   : [paul,chloe]
+# list staff alphabetically
+staff   : chloe, paul
 project : Branding
 date    : 10/2015
 url     : https://36bournestreet.com

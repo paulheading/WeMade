@@ -30,9 +30,8 @@
   }
 
   &._index {
-    display: grid;
-    text-decoration: none;
     position: relative;
+    display: grid;
     z-index: 2;
 
     @media#{$min640w} {
@@ -41,10 +40,6 @@
       grid-column-gap: 20px;
       padding-bottom: 10px;
       padding-top: 10px;
-
-      + .row {
-        border-top: 2px solid black;
-      }
     }
   }
 

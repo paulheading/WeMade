@@ -47,9 +47,9 @@
           <div class="btn _window --min"></div>
         </div>
         <div class="list _desktop">
-
           {% assign loop = site.projects | sort: 'date' | reverse %}
-          {% for item in loop limit:3 %}
+          {% for item in loop %}
+          {% if item.staff contains 'chloe, paul' %}
           <a href="{{ item.id }}" class="lnk _trello">
             <div class="item _trello">
               <div class="wrap _trello">
@@ -58,6 +58,7 @@
               </div>
             </div>
           </a>
+          {% endif %}
           {% endfor %}
         </div>
       </div>

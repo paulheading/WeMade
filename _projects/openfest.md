@@ -1,7 +1,8 @@
 ---
 ref     : 8
 title   : OpenFest
-staff   : [paul]
+# list staff alphabetically
+staff   : paul
 project : Animation
 date    : 12/2018
 end     : 01/2019

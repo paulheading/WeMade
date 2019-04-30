@@ -1,7 +1,8 @@
 ---
 ref     : 1
 title   : Barbican Shop
-staff   : [paul]
+# list staff alphabetically
+staff   : chloe, paul
 project : Website
 date    : 04/2018
 url     : https://shop.barbican.org.uk

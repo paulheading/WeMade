@@ -1,7 +1,8 @@
 ---
 ref     : 10
 title   : Sound Unbound
-staff   : [paul,chloe]
+# list staff alphabetically
+staff   : chloe, paul
 project : Artwork
 date    : 09/2015
 end     : 11/2015

@@ -1,7 +1,8 @@
 ---
 ref     : 2
 title   : Design Blog
-staff   : [paul,chloe]
+# list staff alphabetically
+staff   : chloe, paul
 project : Website
 date    : 10/2017
 url     : https://design.barbican.org.uk

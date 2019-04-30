@@ -12,20 +12,16 @@
 {{ content }}
 
 {% if page.tags contains 'index' %}
-
+{% assign loop = site.projects | sort: 'date' | reverse %}
 {% if page.tags contains 'staff' %}
-  {% assign staff = page.title | downcase %}
-  {% assign loop = site.projects | where: 'staff', staff | sort: 'date' | reverse %}
+{% assign name = page.title | downcase %}
 {% else %}
-  {% assign loop = site.projects | sort: 'date' | reverse %}
+{% assign name = 'chloe, paul' %}
 {% endif %}
 
 <div class="area _index">
   <div class="wrap _index">
     {% include html/loop-index.html %}
-    <div class="area _rollover">
-      <img class="_thumb" src="/assets/img/1.jpg" alt="1">
-    </div>
   </div>
 </div>
 

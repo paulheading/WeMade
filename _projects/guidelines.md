@@ -1,7 +1,8 @@
 ---
 ref     : 3
 title   : Guidelines
-staff   : [paul]
+# list staff alphabetically
+staff   : paul
 project : Website
 date    : 02/2019
 url     : https://guidelines.barbican.org.uk

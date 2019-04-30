@@ -1,7 +1,8 @@
 ---
 ref     : 7
 title   : NYO
-staff   : [paul,chloe]
+# list staff alphabetically
+staff   : chloe, paul
 project : Animation
 date    : 05/2017
 end     : 07/2017

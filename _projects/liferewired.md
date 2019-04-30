@@ -1,7 +1,8 @@
 ---
 ref     : 5
 title   : Life Rewired
-staff   : [paul]
+# list staff alphabetically
+staff   : paul
 project : Animation
 date    : 02/2019
 url     : https://www.barbican.org.uk/liferewired

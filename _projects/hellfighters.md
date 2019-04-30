@@ -1,7 +1,8 @@
 ---
 ref     : 4
 title   : Hellfighters
-staff   : [chloe]
+# list staff alphabetically
+staff   : chloe
 project : Artwork
 date    : 08/2017
 end     : 11/2017

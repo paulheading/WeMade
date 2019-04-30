@@ -15,7 +15,7 @@ var trelloAnim = () => {
 
   trelloTl
   .staggerTo(all,'0.2',{opacity:1},'0.2')
-  .staggerTo(wraps,'0.2',{opacity:0,x:10},'0.2','+=3')
+  .staggerTo(wraps,'0.2',{opacity:0,x:10},'0.2','+=4')
   .set('.wrap._trello',{x:0})
   ;
 }

@@ -4,6 +4,10 @@
   overflow: hidden;
   z-index: 2;
 
+  &._index {
+    overflow: visible;
+  }
+
   &._rollover {
     position: absolute;
     @include zero;

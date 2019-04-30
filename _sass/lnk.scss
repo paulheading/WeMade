@@ -8,8 +8,12 @@
     text-decoration: none;
     grid-column: 2 / 3;
     overflow: hidden;
-    display: grid;
+    display: none;
     opacity: 0;
+
+    &:nth-child(-n+3) {
+      display: grid;
+    }
   }
 
   &._paginate {
@@ -36,11 +40,18 @@
   }
 
   &._index {
-    border: 2px solid;
-    padding: 10px;
+    text-decoration: none;
+    position: relative;
+    display: none;
 
-    @media#{$min720w} {
-      grid-column: 2;
+    &:nth-child(-n+5) {
+      display: block;
+    }
+
+    @media#{$min640w} {
+      + .lnk._index {
+        border-top: 2px solid black;
+      }
     }
   }
 }

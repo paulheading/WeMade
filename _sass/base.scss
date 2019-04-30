@@ -93,15 +93,11 @@ img {
     @extend %img_flex;
   }
   &._thumb {
+    @include zero($t:-40px,$l:160px);
     position: absolute;
-    @include zero;
-    display: none;
     height: 150px;
     width: 150px;
-    margin: auto;
-
-    &.--open {
-      display: block;
-    }
+    z-index: -1;
+    opacity: 0;
   }
 }

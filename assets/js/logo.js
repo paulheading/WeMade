@@ -7,7 +7,7 @@ var logoAnim = () => {
       logoTl = new TimelineMax();
 
   logoTl
-  .to(logo,4.5,{drawSVG:'0%',ease:Power0.easeNone})
-  .to(logo,0.5,{drawSVG:'100%',ease:Power0.easeNone})
+  .to(logo,4,{drawSVG:'0%',ease:Power0.easeNone})
+  .to(logo,1,{drawSVG:'100%',ease:Power0.easeNone})
   ;
 }

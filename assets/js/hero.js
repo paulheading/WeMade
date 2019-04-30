@@ -4,29 +4,28 @@ layout: none
 
 var words = $('.word'),
     data = {{ site.data.homepage | jsonify }},
-    zones = ['body','.area._hero','#logo','#search','#burger'];
+    zones = ['body','.area._hero','#logo','#search','#burger'],
+    heroArea = $('.area._hero');
+
+var random = () => {
+  return 0.5 - Math.random();
+}
 
 function heroAnim() {
-  var heroTl = new TimelineMax({delay:1,repeat:-1});
+  var heroTl = new TimelineMax({repeat:-1});
 
-  data.sort(function(){
-    return 0.5 - Math.random()
-  });
-
+  data.sort(random);
   $(data).each(function(i){
-
-    var $heroArea = $('.area._hero'),
-        name = data[i].hero.name.toLowerCase(),
+    var name = data[i].hero.name.toLowerCase(),
         url = data[i].hero.url,
         msg = data[i].hero.message;
 
     heroTl
     .set(zones,{className:'+=--'+name})
-    .set($heroArea,{attr:{href:url}})
+    .set(heroArea,{attr:{href:url}})
     ;
 
     $(msg).each(function(i){
-
       var count = i++,
           countPlus = count +1,
           wordNo = '.word:nth-child('+ countPlus +')',
@@ -61,9 +60,10 @@ function heroAnim() {
     });
 
     heroTl
+    .add('start')
     .call(logoAnim,[],'start')
     .call(trelloAnim,[],'start')
-    .to(words,0.5,{text:''},'+=5')
+    .to(words,1,{text:''},'+=4')
     .set(words,{clearProps:'all'})
     .set(zones,{className:'-=--'+name})
     ;

@@ -7,12 +7,12 @@ TweenLite.defaultEase = Linear.easeNone;
 var body = $('body');
 
 var otherAnim = () => {
-  var otherTl = new TimelineMax({delay:1,repeat:-1});
+  var otherTl = new TimelineMax({repeat:-1,repeatDelay:1});
 
   otherTl
   .call(logoAnim,[],'start')
   .call(trelloAnim,[],'start')
-  .set(body,{opacity:1},'+=6')
+  .set(body,{opacity:1},'+=5')
   ;
 }
 
