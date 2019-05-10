@@ -1,6 +1,15 @@
 
 svg {
 
+  &#wifi {
+    stroke: darken($teal,15%);
+  }
+
+  &#send {
+    transition: 300ms;
+    stroke: $gray;
+  }
+
   &#cover {
     position: absolute;
     @include shadow;
@@ -17,10 +26,11 @@ svg {
 .svg {
 
   &._hero {
-    position: fixed;
+    position: absolute;
     @include zero();
     cursor: pointer;
     display: grid;
+    place-content: center;
     height: 568px;
     width: 320px;
     margin: auto;

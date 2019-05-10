@@ -3,13 +3,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="format-detection" content="telephone=no">
-  <meta name="msapplication-TileColor" content="#ddd">
-  <meta name="msapplication-TileImage" content="{{ "/assets/img/tileicon.png" | relative_url }}">
-  <link rel="apple-touch-icon-precomposed" href="{{ "/assets/img/apple-touch-icon-152x152-precomposed.png" | relative_url }}">
-  <link rel="icon" href="{{ "/assets/img/favicon.png" | relative_url }}">
-  <!--[if IE]><link rel="shortcut icon" href="{{ "/assets/img/favicon.ico" | relative_url }}"><![endif]-->
+  <link rel="icon" href="{{ "/assets/img/favicon.png?v=1" | relative_url }}">
   {% seo %}
-  <link rel="stylesheet" href="{{ "/assets/css/styles.css" | relative_url }}">
+  <link rel="stylesheet" href="{{ "/assets/css/styles.css?v=1" | relative_url }}">
   <link rel="stylesheet" href="https://use.typekit.net/enw1ksx.css">
   {% if jekyll.environment == 'production' and site.google_analytics %}
     {% include html/analytics.html %}

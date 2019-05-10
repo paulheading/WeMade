@@ -23,9 +23,9 @@
   }
 
   &._clock {
-    @extend %area_grid;
     letter-spacing: 0.05rem;
     grid-auto-flow: column;
+    @extend %area_grid;
     line-height: 1;
     grid-gap: 10px;
   }
@@ -59,7 +59,6 @@
     background-color: darken($teal,3%);
     padding-bottom: 10px;
     padding-top: 10px;
-    height: 40px;
   }
 
   &._desktop {

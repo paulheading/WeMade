@@ -16,20 +16,6 @@
   },
   {
     "hero" : {
-      "name" : "Paul",
-      "url" : "/paul",
-      "message" : [
-        { "bold"   : "Paul" },
-        { "book"   : "makes" },
-        { "italic" : "shapes" },
-        { "book"   : "and" },
-        { "book"   : "enjoys" },
-        { "bold!"   : "noodles!" }
-      ]
-    }
-  },
-  {
-    "hero" : {
       "name" : "Chloe",
       "url" : "/chloe",
       "message" : [
@@ -40,35 +26,6 @@
         { "book"   : "enjoys" },
         { "bold"   : "clay" },
         { "bold"   : "pots!" }
-      ]
-    }
-  },
-  {
-    "hero" : {
-      "name" : "PLAY",
-      "url" : "/projects/play",
-      "message" : [
-        { "bold" : "WeMade" },
-        { "book" : "an" },
-        { "book!" : "8-bit" },
-        { "book" : "world" },
-        { "book" : "for" },
-        { "bold" : "PLAY!" }
-      ]
-    }
-  },
-  {
-    "hero" : {
-      "name" : "NYO",
-      "url" : "/projects/nyo",
-      "message" : [
-        { "bold" : "WeMade" },
-        { "book" : "a" },
-        { "book!" : "living" },
-        { "book" : "identity" },
-        { "book" : "for" },
-        { "book" : "the" },
-        { "bold" : "NYO" }
       ]
     }
   }

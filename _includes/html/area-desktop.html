@@ -2,21 +2,21 @@
 <div class="area _desktop">
   <div class="wrap _desktop">
     <div class="split _right --desktop">
-      <div class="folder _tom --open">
+      <div class="folder _funny --open">
         <div>
           {% include svg/cover.svg %}
           {% include svg/folder.svg %}
         </div>
         <div>Funny</div>
       </div>
-      <div class="folder _dick --open">
+      <div class="folder _songs --open">
         <div>
           {% include svg/cover.svg %}
           {% include svg/folder.svg %}
         </div>
         <div>Songs</div>
       </div>
-      <div class="folder _harry --open">
+      <div class="folder _jobs --open">
         <div>
           {% include svg/cover.svg %}
           {% include svg/folder.svg %}
@@ -25,42 +25,19 @@
       </div>
     </div>
     <div class="split _left --desktop">
-      <div class="window _tom --open">
-        <div class="bar _window">
-          <div class="btn _window --close"></div>
-          <div class="btn _window --min"></div>
-        </div>
+      <div class="window _funny --open">
+        {% include html/bar-window.html %}
         <a href="https://imgur.com/qVQvHPN">
           <img class="_kenm" src="/assets/img/kenM.jpg" alt="">
         </a>
       </div>
-      <div class="window _dick --open">
-        <div class="bar _window">
-          <div class="btn _window --close"></div>
-          <div class="btn _window --min"></div>
-        </div>
+      <div class="window _songs --open">
+        {% include html/bar-window.html %}
         <iframe src="https://open.spotify.com/embed/user/chloeings/playlist/1JGUbJ96tkwEg9rNY41Dcm" width="280" height="260" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
       </div>
-      <div class="window _harry --open">
-        <div class="bar _window">
-          <div class="btn _window --close"></div>
-          <div class="btn _window --min"></div>
-        </div>
-        <div class="list _desktop">
-          {% assign loop = site.projects | sort: 'date' | reverse %}
-          {% for item in loop %}
-          {% if item.staff contains 'chloe, paul' %}
-          <a href="{{ item.id }}" class="lnk _trello">
-            <div class="item _trello">
-              <div class="wrap _trello">
-                <div class="row _trello --middle">{{ item.title }}</div>
-                <div class="row _trello --bottom"><div class="tag _trello --date">{{ item.date | date: "%b %y" }}</div><div class="tag _trello{{ item.project | downcase | prepend: ' --' }}">{{ item.project }}</div><div class="tag _trello --member">CI</div><div class="tag _trello --member">PH</div></div>
-              </div>
-            </div>
-          </a>
-          {% endif %}
-          {% endfor %}
-        </div>
+      <div class="window _jobs --open">
+        {% include html/bar-window.html %}
+        {% include html/loop-trello.html %}
       </div>
     </div>
   </div>

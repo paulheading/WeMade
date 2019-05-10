@@ -13,15 +13,9 @@ Draggable.create(win,{cursor:'pointer'});
 
 function winFunc(obj,state) {
   if(state == 'close') {
-    var closeTl = new TimelineMax();
-    closeTl
-    .to(obj,0.2,{opacity:0,ease:SteppedEase.config(2)})
-    .set(obj,{className:'-=--open'});
+    TweenMax.set(obj,{opacity:0,className:'-=--open'});
   } else if(state == 'open') {
-    var openTl = new TimelineMax();
-    openTl
-    .set(obj,{className:'+=--open'})
-    .to(obj,0.2,{opacity:1,ease:SteppedEase.config(2)});
+    TweenMax.set(obj,{opacity:1,className:'+=--open'});
   } else if(state == 'minim') {
     TweenMax.to(obj,0.3,{scale:0,ease:SteppedEase.config(3)});
   } else if(state == 'xpand') {

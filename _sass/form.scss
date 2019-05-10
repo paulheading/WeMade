@@ -4,5 +4,11 @@
     @media#{$min720w} {
       padding-left: 30px;
     }
+
+    &:hover {
+      svg#send {
+        stroke: black;
+      }
+    }
   }
 }
