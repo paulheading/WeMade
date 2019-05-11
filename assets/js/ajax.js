@@ -3,7 +3,7 @@ layout: none
 ---
 
 function getAjax(test) {
-  $.get('assets/svg/'+test+'.svg?v=1.7', function(data) {
+  $.get('assets/svg/'+test+'.svg?v=1.8', function(data) {
     var svg = new XMLSerializer().serializeToString(data.documentElement);
     $('.area._hero').html(svg);
   });

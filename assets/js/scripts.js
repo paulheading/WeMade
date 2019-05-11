@@ -4,6 +4,22 @@ layout: none
 
 TweenLite.defaultEase = Linear.easeNone;
 
+enquire.register('screen and (min-width: 768px)',{
+  match   : function() { match(); },
+  unmatch : function() { unmatch(); },
+  setup   : function() { setup(); }
+});
+
+function match() {
+  console.log('match');
+}
+function unmatch() {
+  console.log('unmatch');
+}
+function setup() {
+  console.log('setup');
+}
+
 var body = $('body');
 
 var otherAnim = () => {
