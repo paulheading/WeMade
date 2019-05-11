@@ -30,6 +30,12 @@
 'wrap',
 'video';
 
+.tickerSingle {
+  padding-right: 4px;
+  padding-left: 4px;
+  @include ib;
+}
+
 .tickerWords {
   min-width: 1000px;
 }

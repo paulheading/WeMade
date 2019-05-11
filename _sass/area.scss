@@ -5,29 +5,11 @@
   z-index: 2;
 
   &._ticker {
-    background-color: transparent;
-    border-top: 4px solid;
+    border-top: 4px solid black;
+    background-color: white;
     padding-bottom: 12px;
     white-space: nowrap;
     padding-top: 12px;
-
-    &.--chloe {
-      background-color: rgba($chloe,0.1);
-      border-color: $chloe;
-      color: $chloe;
-    }
-
-    &.--wemade {
-      background-color: rgba($wemade,0.1);
-      border-color: $wemade;
-      color: $wemade;
-    }
-
-    div {
-      padding-right: 4px;
-      padding-left: 4px;
-      @include ib;
-    }
   }
 
   &._index {
@@ -68,7 +50,7 @@
   &._hero {
     align-content: center;
     @extend %area_grid;
-    height: 85%;
+    height: 595px;
   }
 
   &._toolbar {

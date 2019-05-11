@@ -55,7 +55,7 @@ $min720w : 'only screen and (min-width: 720px)';
       stroke: $color;
     }
     path#bg {
-      stroke: rgba($color,0.1);
+      stroke: white;
     }
   }
   &#search {
