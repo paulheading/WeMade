@@ -4,7 +4,7 @@ layout: none
 
 var words = $('.word'),
     data = {{ site.data.homepage | jsonify }},
-    zones = ['body','.area._hero','#logo','#search','#burger'],
+    zones = ['body','.area._hero','.area._ticker','#logo','#search','#burger'],
     heroArea = $('.area._hero');
 
 var random = () => {

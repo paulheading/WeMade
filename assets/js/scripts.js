@@ -24,3 +24,12 @@ if(body.hasClass('_hero')) {
 }
 
 $(document).ready(siteFunc);
+
+$(document).ready(function(){
+  var tickerWords = $('.tickerWords'),
+      tickerSingle = $('.tickerSingle'),
+      tickerLength = tickerSingle[0].clientWidth,
+      tickerTime = tickerLength/100,
+      tickerTl = new TimelineMax({repeat:-1});
+      tickerTl.to(tickerWords,tickerTime,{x:-tickerLength,ease:Power0.easeNone});
+})
