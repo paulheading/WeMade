@@ -4,9 +4,8 @@ layout: none
 
 function getAjax(test) {
   $.get('assets/svg/'+test+'.svg?v=1.3', function(data) {
-    var div = document.querySelector('.svg._hero');
-    div.innerHTML = new XMLSerializer().serializeToString(data.documentElement);
-    document.body.insertBefore(div,document.body.childNodes[0]);
+    var svg = new XMLSerializer().serializeToString(data.documentElement);
+    $('.area._hero').html(svg);
   });
 
   $(document).ajaxComplete(function(){
@@ -30,13 +29,3 @@ function getAnim(test) {
     ;
   }
 }
-
-// function getAjax(test) {
-//   $.ajax({
-//     url: '/assets/html/'+test+'.html',
-//     context: document.body,
-//     success: function(response){
-//       $('.svg._hero').html(response);
-//     }
-//   });
-// }

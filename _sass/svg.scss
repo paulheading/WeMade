@@ -26,14 +26,10 @@ svg {
 .svg {
 
   &._hero {
-    position: absolute;
+    place-content: center;
     @include zero();
     cursor: pointer;
     display: grid;
-    place-content: center;
-    height: 568px;
-    width: 320px;
-    margin: auto;
     z-index: 1;
   }
 

@@ -40,17 +40,9 @@
   }
 
   &._hero {
-    @extend %area_grid;
-    grid-template-columns: 40px minmax(240px,380px) 40px;
-    text-decoration: none;
     align-content: center;
-    overflow: visible;
+    @extend %area_grid;
     height: 100%;
-    z-index: 1;
-
-    &.--nyo {
-      color: white;
-    }
   }
 
   &._toolbar {
