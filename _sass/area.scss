@@ -50,7 +50,11 @@
   &._hero {
     align-content: center;
     @extend %area_grid;
-    height: 595px;
+    height: 500px;
+
+    @media#{$min640w} {
+      height: 600px;
+    }
   }
 
   &._toolbar {
