@@ -2,35 +2,48 @@
 layout: none
 ---
 
-function getAjax(name,msg,url) {
-  $.get('assets/html/'+name+'.html?v=1', function(data) {
-    $('.area._hero').html(data);
-  });
+var see = $('.copy._something');
 
-  $(document).ajaxComplete(function(){
-    if(name == 'chloe')  {
-      chloeAnim();
-    } else if(name == 'wemade') {
-      wemadeAnim();
-    }
+function getAjax(name,msg,url) {
+  $.get('assets/html/'+name+'.html?v=1', function(data) {$('.area._hero').html(data);})
+  .done(function(){
+    setAnim(name);
     setTicker(msg);
     setUrl(url);
   });
 }
 
-// $(window).on('resize',function(e){
-//   clearTimeout(resizeTimer);
-//   resizeTimer = setTimeout(checkState(),250);
-// });
+function setAnim(name) {
+  if(name == 'chloe')  {
+    chloeAnim();
+  } else if(name == 'paul') {
+    paulAnim();
+  } else if(name == 'wemade') {
+    wemadeAnim();
+  }
+}
 
 function chloeAnim() {
+  see.html('Chloe');
+  TweenMax.set($('#chloe_svg'),{y:40});
+  TweenMax.to($('path','#chloe_svg'),1,{y:10,repeat:-1,yoyo:true});
+  TweenMax.to('#chloe',1,{x:10,repeat:-1,yoyo:true});
+  TweenMax.to('#makes',1,{x:-10,repeat:-1,yoyo:true});
+  TweenMax.to('#waves',1,{x:10,repeat:-1,yoyo:true});
   if(state == 'match') {
     var desktopTl = new TimelineMax({repeat:-1,yoyo:true});
-    TweenMax.set(['#chloe','#new'],{scale:1.5,transformOrigin:'center'});
   } else {
     var mobileTl = new TimelineMax({repeat:-1,yoyo:true});
-    TweenMax.set(['#chloe','#new'],{scale:1,transformOrigin:'center'});
+    TweenMax.set($('#chloe_svg'),{scale:0.8,transformOrigin:'center'});
   }
+}
+
+function wemadeAnim() {
+  see.html('Studio');
+}
+
+function paulAnim() {
+  see.html('Paul');
 }
 
 function setTicker(msg) {
@@ -64,3 +77,8 @@ function setTicker(msg) {
 function setUrl(url) {
   TweenMax.set(['.area._hero','.lnk._something'],{attr:{href:url}});
 }
+
+// $(window).on('resize',function(e){
+//   clearTimeout(resizeTimer);
+//   resizeTimer = setTimeout(checkState(),250);
+// });

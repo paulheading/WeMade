@@ -55,7 +55,6 @@
     align-content: center;
     @extend %area_grid;
     height: 440px;
-    // width: 100%;
 
     @media#{$min640w} {
       height: 550px;
