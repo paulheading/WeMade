@@ -5,7 +5,7 @@ layout: none
 var see = $('.copy._something');
 
 function getAjax(name,msg,url) {
-  $.get('assets/html/'+name+'.html?v=1', function(data) {$('.area._hero').html(data);})
+  $.get('assets/html/'+name+'.html?v=1.1', function(data) {$('.area._hero').html(data);})
   .done(function(){
     setAnim(name);
     setTicker(msg);
@@ -25,7 +25,6 @@ function setAnim(name) {
 
 function chloeAnim() {
   see.html('Chloe');
-  TweenMax.set($('#chloe_svg'),{y:40});
   TweenMax.to($('path','#chloe_svg'),1,{y:10,repeat:-1,yoyo:true});
   TweenMax.to('#chloe',1,{x:10,repeat:-1,yoyo:true});
   TweenMax.to('#makes',1,{x:-10,repeat:-1,yoyo:true});
@@ -40,10 +39,12 @@ function chloeAnim() {
 
 function wemadeAnim() {
   see.html('Studio');
+  TweenMax.to($('path','#wemade_svg'),1,{y:10,repeat:-1,yoyo:true});
 }
 
 function paulAnim() {
   see.html('Paul');
+  TweenMax.to($('path','#paul_svg'),1,{y:10,repeat:-1,yoyo:true});
 }
 
 function setTicker(msg) {
@@ -71,7 +72,7 @@ function setTicker(msg) {
   });
   wordWrap.html(tingo);
   var wrapWidth = $('.wordWrap')[0].clientWidth;
-  TweenMax.to('.tickerWords',3,{x:-wrapWidth,ease:Power0.easeNone,repeat:-1});
+  TweenMax.to('.tickerWords',5,{x:-wrapWidth,ease:Power0.easeNone,repeat:-1});
 }
 
 function setUrl(url) {
