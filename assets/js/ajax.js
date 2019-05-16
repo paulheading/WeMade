@@ -30,9 +30,7 @@ function chloeAnim() {
   TweenMax.to('#makes',1,{x:-10,repeat:-1,yoyo:true});
   TweenMax.to('#waves',1,{x:10,repeat:-1,yoyo:true});
   if(state == 'match') {
-    var desktopTl = new TimelineMax({repeat:-1,yoyo:true});
   } else {
-    var mobileTl = new TimelineMax({repeat:-1,yoyo:true});
     TweenMax.set($('#chloe_svg'),{scale:0.8,transformOrigin:'center'});
   }
 }
@@ -40,11 +38,22 @@ function chloeAnim() {
 function wemadeAnim() {
   see.html('Studio');
   TweenMax.to($('path','#wemade_svg'),1,{y:10,repeat:-1,yoyo:true});
+  if(state == 'match') {
+  } else {
+    TweenMax.set($('#wemade_svg'),{scale:0.8,transformOrigin:'center'});
+  }
 }
 
 function paulAnim() {
   see.html('Paul');
   TweenMax.to($('path','#paul_svg'),1,{y:10,repeat:-1,yoyo:true});
+  TweenMax.to('#paul',1,{x:10,repeat:-1,yoyo:true});
+  TweenMax.to('#makes',1,{x:-10,repeat:-1,yoyo:true});
+  TweenMax.to('#shapes',1,{x:10,repeat:-1,yoyo:true});
+  if(state == 'match') {
+  } else {
+    TweenMax.set($('#paul_svg'),{scale:0.8,transformOrigin:'center'});
+  }
 }
 
 function setTicker(msg) {
@@ -72,7 +81,7 @@ function setTicker(msg) {
   });
   wordWrap.html(tingo);
   var wrapWidth = $('.wordWrap')[0].clientWidth;
-  TweenMax.to('.tickerWords',5,{x:-wrapWidth,ease:Power0.easeNone,repeat:-1});
+  TweenMax.to('.tickerWords',6,{x:-wrapWidth,ease:Power0.easeNone,repeat:-1});
 }
 
 function setUrl(url) {
