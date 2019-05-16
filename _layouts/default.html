@@ -6,7 +6,7 @@
   {% if page.type == 'hero' %}
     <body class="layout{{ page.type | downcase | prepend: ' _' }}">
   {% elsif page.type == 'text' or page.type == 'blog' %}
-    <body class="layout{{ page.type | downcase | prepend: ' _' }}{% if page.tags %}{{ page.tags | join: ' --' | replace: ',','' | prepend: ' --' }}{% endif %}">
+    <body class="layout{{ page.type | downcase | prepend: ' _' }}{% if page.tags %}{{ page.tags | join: ' --' | replace: ' ',' --' | prepend: ' --' }}{% endif %}{% if page.title %}{{ page.title | downcase | prepend: ' --' }}{% endif %}">
   {% elsif page.type == 'resume' %}
     <body class="layout{{ page.type | downcase | prepend: ' _' }}{{ page.collection | downcase | prepend: ' --' }}">
   {% elsif page.type == 'project' %}
@@ -34,8 +34,8 @@
 
       {% else %}
 
-      <div class="area{{ page.type | prepend: ' _' }}{% if page.tags %}{{ page.tags | join: ' --' | replace: ',','' | prepend: ' --' }}{% endif %}">
-        <div class="wrap{{ page.type | prepend: ' _' }}">
+      <div class="area{{ page.type | prepend: ' _' }}{% if page.tags %}{{ page.tags | join: ' --' | replace: ' ',' --' | prepend: ' --' }}{% endif %}">
+        <div class="wrap{{ page.type | prepend: ' _' }}{% if page.title %}{{ page.title | downcase | prepend: ' --' }}{% endif %}">
 
         {% if page.type == 'text' %}
 

@@ -4,8 +4,12 @@
   overflow: hidden;
   z-index: 2;
 
+  &._see {
+    border-bottom: 4px solid;
+    @extend %area_grid;
+  }
+
   &._ticker {
-    border-top: 4px solid black;
     background-color: white;
     padding-bottom: 12px;
     white-space: nowrap;
@@ -50,10 +54,11 @@
   &._hero {
     align-content: center;
     @extend %area_grid;
-    height: 480px;
+    height: 440px;
+    // width: 100%;
 
     @media#{$min640w} {
-      height: 600px;
+      height: 550px;
     }
   }
 
@@ -76,7 +81,7 @@
 
   &._email {
     @extend %area_grid;
-    grid-template-columns: 40px minmax(280px,600px) 40px;
+    grid-template-columns: 20px minmax(280px,600px) 20px;
     background-color: $smoke;
     padding-top: 40px;
     font-size: 16px;
@@ -96,7 +101,7 @@
   &._text {
     @extend %area_grid;
     @extend %grid_default;
-    padding-bottom: 40px;
+    padding-bottom: 80px;
 
     &.--missing {
       text-align: center;

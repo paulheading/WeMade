@@ -1,6 +1,17 @@
 
 .title {
 
+  &._something {
+    border-bottom: 2px solid white;
+    color: white;
+  }
+
+  &._staff {
+    @media#{$min640w} {
+      display: inline;
+    }
+  }
+
   &._menu {
     text-align: center;
     padding: 10px 30px;

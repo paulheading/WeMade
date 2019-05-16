@@ -12,6 +12,7 @@
 'btn',
 'chloe',
 'copy',
+'img',
 'title',
 'entry',
 'folder',
@@ -29,6 +30,40 @@
 'window',
 'wrap',
 'video';
+
+.word {
+  padding-right: 2px;
+  padding-left: 2px;
+  @include ib();
+
+  &Wrap {
+    @include ib();
+  }
+
+  &._bold {
+    font-weight: bold;
+
+    &-u {
+      font-weight: bold;
+      text-decoration: underline;
+    }
+  }
+
+  &._italic {
+    font-style: italic;
+
+    &-u {
+      font-style: italic;
+      text-decoration: underline;
+    }
+  }
+
+  &._book {
+    &-u {
+      text-decoration: underline;
+    }
+  }
+}
 
 .tickerSingle {
   padding-right: 4px;

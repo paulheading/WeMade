@@ -1,6 +1,12 @@
 
 svg {
 
+  &#chloe_svg {
+    path#chloe {
+      fill: white;
+    }
+  }
+
   &#wifi {
     stroke: darken($teal,15%);
   }

@@ -2,6 +2,29 @@
 .layout {
   transition: background-color 500ms;
 
+  &._text {
+    &.--chloe {
+      background-image: url('/assets/img/chloe.png?v=1');
+      background-position: calc(50% + 40px) 60px;
+      background-repeat: no-repeat;
+      background-size: 240px;
+
+      @media#{$min640w} {
+        background-position: calc(50% + 60px) 60px;
+      }
+    }
+    &.--paul {
+      background-image: url('/assets/img/paul.png?v=1');
+      background-position: calc(50% + 100px) 60px;
+      background-repeat: no-repeat;
+      background-size: 240px;
+
+      @media#{$min640w} {
+        background-position: calc(50% + 60px) 60px;
+      }
+    }
+  }
+
   &.--dark {
     background-color: $carbon;
 

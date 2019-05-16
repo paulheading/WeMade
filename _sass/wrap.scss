@@ -34,6 +34,8 @@
 
   &._text {
     @extend %wrap_grid;
+    position: relative;
+    padding-top: 40px;
   }
 
   &._blog {

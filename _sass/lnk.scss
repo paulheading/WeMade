@@ -4,6 +4,12 @@
   cursor: pointer;
   display: grid;
 
+  &._something {
+    background-color: black;
+    text-decoration: none;
+    padding: 12px;
+  }
+
   &._trello {
     text-decoration: none;
     grid-column: 2 / 3;
