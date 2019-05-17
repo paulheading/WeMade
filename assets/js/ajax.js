@@ -2,56 +2,74 @@
 layout: none
 ---
 
-var see = $('.copy._something');
+var see = $('.copy._something'),
+    nameG,resizeTimer;
+
+$(window).on('resize',function(e){
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(setAnim(nameG),300);
+});
 
 function getAjax(name,msg,url) {
-  $.get('assets/html/'+name+'.html?v=1.1', function(data) {$('.area._hero').html(data);})
+  $.get('assets/html/'+name+'.html?v=1.1', function(data) {
+    $('.area._hero').html(data);
+    nameG = name;
+  })
   .done(function(){
-    setAnim(name);
+    setAnim(nameG);
     setTicker(msg);
     setUrl(url);
   });
 }
 
-function setAnim(name) {
-  if(name == 'chloe')  {
-    chloeAnim();
-  } else if(name == 'paul') {
-    paulAnim();
-  } else if(name == 'wemade') {
-    wemadeAnim();
+function setAnim(nameG) {
+  if(nameG == 'chloe')  {
+    chloeAnim(stateG);
+  } else if(nameG == 'paul') {
+    paulAnim(stateG);
+  } else if(nameG == 'wemade') {
+    wemadeAnim(stateG);
   }
 }
 
-function chloeAnim() {
+function chloeAnim(stateG) {
   see.html('Chloe');
   TweenMax.to($('path','#chloe_svg'),1,{y:10,repeat:-1,yoyo:true});
   TweenMax.to('#chloe',1,{x:10,repeat:-1,yoyo:true});
   TweenMax.to('#makes',1,{x:-10,repeat:-1,yoyo:true});
   TweenMax.to('#waves',1,{x:10,repeat:-1,yoyo:true});
-  if(state == 'match') {
-  } else {
+
+  if(stateG == 'match') {
+    TweenMax.set($('#chloe_svg'),{scale:1,transformOrigin:'center'});
+  } else
+  if(stateG == 'unmatch') {
     TweenMax.set($('#chloe_svg'),{scale:0.8,transformOrigin:'center'});
   }
 }
 
-function wemadeAnim() {
+function wemadeAnim(stateG) {
   see.html('Studio');
   TweenMax.to($('path','#wemade_svg'),1,{y:10,repeat:-1,yoyo:true});
-  if(state == 'match') {
-  } else {
+
+  if(stateG == 'match') {
+    TweenMax.set($('#wemade_svg'),{scale:1,transformOrigin:'center'});
+  } else
+  if(stateG == 'unmatch') {
     TweenMax.set($('#wemade_svg'),{scale:0.8,transformOrigin:'center'});
   }
 }
 
-function paulAnim() {
+function paulAnim(stateG) {
   see.html('Paul');
   TweenMax.to($('path','#paul_svg'),1,{y:10,repeat:-1,yoyo:true});
   TweenMax.to('#paul',1,{x:10,repeat:-1,yoyo:true});
   TweenMax.to('#makes',1,{x:-10,repeat:-1,yoyo:true});
   TweenMax.to('#shapes',1,{x:10,repeat:-1,yoyo:true});
-  if(state == 'match') {
-  } else {
+
+  if(stateG == 'match') {
+    TweenMax.set($('#paul_svg'),{scale:1,transformOrigin:'center'});
+  } else
+  if(stateG == 'unmatch') {
     TweenMax.set($('#paul_svg'),{scale:0.8,transformOrigin:'center'});
   }
 }
@@ -87,8 +105,3 @@ function setTicker(msg) {
 function setUrl(url) {
   TweenMax.set(['.area._hero','.lnk._something'],{attr:{href:url}});
 }
-
-// $(window).on('resize',function(e){
-//   clearTimeout(resizeTimer);
-//   resizeTimer = setTimeout(checkState(),250);
-// });
