@@ -2,19 +2,9 @@
 .layout {
   transition: background-color 500ms;
 
-  &._text {
-    &.--chloe {
-      background-image: url('/assets/img/chloe.png?v=1');
-      background-position: calc(50% + 40px) 60px;
-      background-repeat: no-repeat;
-      background-size: 240px;
-
-      @media#{$min640w} {
-        background-position: calc(50% + 60px) 60px;
-      }
-    }
+  &._hero {
     &.--paul {
-      background-image: url('/assets/img/paul.png?v=1');
+      background-image: url('/assets/img/paul.gif');
       background-position: calc(50% + 100px) 60px;
       background-repeat: no-repeat;
       background-size: 240px;
@@ -57,6 +47,14 @@
 
     &.--chloe {
       background-color: rgba($chloe,0.2);
+      background-image: url('/assets/img/chloeGreen.gif');
+      background-position: center 130px; 
+      background-repeat: no-repeat;
+      background-size: 200px;
+
+      @media#{$min640w} {
+        // background-position: calc(50% + 60px) 60px;
+      }
 
       #noodle {
         stroke: $chloe;

@@ -34,16 +34,27 @@ function setAnim(nameG) {
 
 function chloeAnim(stateG) {
   see.html('Chloe');
-  TweenMax.to($('path','#chloe_svg'),1,{y:10,repeat:-1,yoyo:true});
-  TweenMax.to('#chloe',1,{x:10,repeat:-1,yoyo:true});
-  TweenMax.to('#makes',1,{x:-10,repeat:-1,yoyo:true});
-  TweenMax.to('#waves',1,{x:10,repeat:-1,yoyo:true});
+  var sen = $('#words > path'),
+      senTargets = [];
+
+  for (var i = 1, l = sen.length; i <= l; i++) {
+    senTargets.push('#words > path:nth-of-type('+i+')');
+  }
+
+  TweenMax.staggerFromTo(senTargets,0.1,{opacity:0},{opacity:1},0.1);
+  TweenMax.to('#chloe_svg',1,{y:10,repeat:-1,yoyo:true});
+  TweenMax.set($('path','#chloe_svg'),{transformOrigin:'center'});
+  TweenMax.from(['#pinkLine','#pinkShade'],2,{drawSVG:'0%',ease:Power0.easeNone});
+  TweenMax.from(['#greenLine','#greenShade'],2,{drawSVG:'0%',ease:Power0.easeNone});
+  TweenMax.set($('path:nth-of-type(1)','#chloe'),{rotation:180,x:3,delay:4});
+  TweenMax.set($('path:nth-of-type(2)','#chloe'),{rotation:180,y:10,delay:4});
+  TweenMax.set($('path:nth-of-type(5)','#chloe'),{rotation:180,scale:1.2,delay:4});
 
   if(stateG == 'match') {
-    TweenMax.set($('#chloe_svg'),{scale:1,transformOrigin:'center'});
+    // TweenMax.set($('#chloe_svg'),{scale:1,transformOrigin:'center'});
   } else
   if(stateG == 'unmatch') {
-    TweenMax.set($('#chloe_svg'),{scale:0.8,transformOrigin:'center'});
+    // TweenMax.set($('#chloe_svg'),{scale:0.8,transformOrigin:'center'});
   }
 }
 
@@ -62,9 +73,9 @@ function wemadeAnim(stateG) {
 function paulAnim(stateG) {
   see.html('Paul');
   TweenMax.to($('path','#paul_svg'),1,{y:10,repeat:-1,yoyo:true});
-  TweenMax.to('#paul',1,{x:10,repeat:-1,yoyo:true});
-  TweenMax.to('#makes',1,{x:-10,repeat:-1,yoyo:true});
-  TweenMax.to('#shapes',1,{x:10,repeat:-1,yoyo:true});
+  // TweenMax.to('#paul',1,{x:10,repeat:-1,yoyo:true});
+  // TweenMax.to('#makes',1,{x:-10,repeat:-1,yoyo:true});
+  // TweenMax.to('#shapes',1,{x:10,repeat:-1,yoyo:true});
 
   if(stateG == 'match') {
     TweenMax.set($('#paul_svg'),{scale:1,transformOrigin:'center'});
