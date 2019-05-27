@@ -11,11 +11,11 @@ GEM
     eventmachine (1.2.7)
     eventmachine (1.2.7-java)
     eventmachine (1.2.7-x86-mingw32)
-    ffi (1.10.0)
-    ffi (1.10.0-java)
-    ffi (1.10.0-x86-mingw32)
+    ffi (1.11.1)
+    ffi (1.11.1-java)
+    ffi (1.11.1-x86-mingw32)
     forwardable-extended (2.6.0)
-    futuro (0.2.0)
+    futuro (0.2.2)
       jekyll (~> 3.8)
       jekyll-feed (~> 0.9)
       jekyll-seo-tag (~> 2.1)
@@ -40,8 +40,8 @@ GEM
       jekyll (>= 3.7, < 5.0)
     jekyll-sass-converter (1.5.2)
       sass (~> 3.4)
-    jekyll-seo-tag (2.6.0)
-      jekyll (~> 3.3)
+    jekyll-seo-tag (2.6.1)
+      jekyll (>= 3.3, < 5.0)
     jekyll-watch (2.2.1)
       listen (~> 3.0)
     kramdown (1.17.0)
@@ -53,7 +53,7 @@ GEM
     mercenary (0.3.6)
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
-    public_suffix (3.0.3)
+    public_suffix (3.1.0)
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
       ffi (~> 1.0)
@@ -76,7 +76,7 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
-  futuro (~> 0.2.0)
+  futuro (~> 0.2.2)
   jekyll (~> 3.8.3)
   tzinfo-data
 

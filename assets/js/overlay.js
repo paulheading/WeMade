@@ -44,7 +44,7 @@ var searchFunc = (state) => {
     searchTl.reverse();
     overlayFunc('close','search');
     $('.input.--search').val('');
-    $('.area._results').html('');
+    $('.area._results').empty();
     searchOpen = false;
   } else if(state == 'open') {
     overlayFunc('open','search');

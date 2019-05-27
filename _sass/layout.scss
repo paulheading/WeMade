@@ -29,52 +29,16 @@
 
   &._hero {
 
-    &.--wemade {
+    &._wemade {
       background-color: rgba($wemade,0.2);
-
-      #noodle {
-        stroke: $wemade;
-      }
     }
 
-    &.--paul {
+    &._paul {
       background-color: rgba($paul,0.2);
-
-      #noodle {
-        stroke: $paul;
-      }
     }
 
-    &.--chloe {
+    &._chloe {
       background-color: rgba($chloe,0.2);
-      background-image: url('/assets/img/chloeGreen.gif');
-      background-position: center 130px; 
-      background-repeat: no-repeat;
-      background-size: 200px;
-
-      @media#{$min640w} {
-        // background-position: calc(50% + 60px) 60px;
-      }
-
-      #noodle {
-        stroke: $chloe;
-      }
-    }
-
-    &.--play {
-      background-color: rgba($play,0.2);
-
-      #noodle {
-        stroke: $play;
-      }
-    }
-
-    &.--nyo {
-      background-color: $nyo;
-
-      #noodle {
-        stroke: black;
-      }
     }
   }
 

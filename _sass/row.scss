@@ -1,6 +1,11 @@
 
 .row {
 
+  &._results {
+    background-color: rgba(0,0,0,0.1);
+    padding: 4px 8px;
+  }
+
   &._trello {
     &.--bottom {
       justify-content: flex-start;

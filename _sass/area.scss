@@ -29,10 +29,10 @@
 
   &._results {
     @extend %area_grid;
-    justify-content: flex-start;
+    grid-template-columns: 1fr;
     padding-top: 10px;
     font-size: 24px;
-    grid-gap: 2px;
+    grid-gap: 4px;
   }
 
   &._clock {
@@ -55,10 +55,25 @@
   &._hero {
     align-content: center;
     @extend %area_grid;
-    height: 480px;
+    max-height: 700px;
+    height: 90%;
 
-    @media#{$min640w} {
-      height: 600px;
+    svg path {
+      opacity: 0;
+    }
+
+    &._paul {
+      background-image: url('/assets/img/paulCol.gif');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 240px;
+    }
+
+    &._chloe {
+      background-image: url('/assets/img/chloeCol.gif');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 240px;
     }
   }
 

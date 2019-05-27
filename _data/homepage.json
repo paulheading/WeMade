@@ -1,6 +1,20 @@
 [
   {
     "hero" : {
+      "name" : "Paul",
+      "url" : "/paul",
+      "message" : [
+        { "bold"   : "Paul" },
+        { "book"   : "makes" },
+        { "italic" : "shapes" },
+        { "book"   : "and" },
+        { "book"   : "enjoys" },
+        { "bold!"   : "noodles!" }
+      ]
+    }
+  },
+  {
+    "hero" : {
       "name" : "Chloe",
       "url" : "/chloe",
       "message" : [
