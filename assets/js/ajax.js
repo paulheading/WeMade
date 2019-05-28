@@ -11,15 +11,10 @@ $(window).on('resize',function(e){
 });
 
 function animHero(name,msg,url) {
-  $.get('assets/html/'+name+'.html?v=1.1', function(data) {
-    $('.area._hero').html(data);
-    nameG = name;
-  })
-  .done(function(){
-    setAnim(nameG);
-    setTicker(msg);
-    setUrl(url);
-  });
+  nameG = name;
+  setAnim(nameG);
+  setTicker(msg);
+  setUrl(url);
 }
 
 function animSvg() {
@@ -58,16 +53,11 @@ function animChloe(stateG) {
   }
 
   chloeTl
-  .from(['#pinkLine','#pinkShade'],3,{drawSVG:'0%',ease:Power0.easeNone},'now')
-  .from(['#greenLine','#greenShade'],3,{drawSVG:'0%',ease:Power0.easeNone},'now')
+  .set('#chloe path',{rotation:0,x:0,y:0,scale:1})
   .set('#chloe path:nth-of-type(1)',{rotation:180,x:3},'4')
   .set('#chloe path:nth-of-type(2)',{rotation:180,y:10},'4')
   .set('#chloe path:nth-of-type(5)',{rotation:180,scale:1.2},'4')
   ;
-
-  // TweenMax;
-  // TweenMax.set($('path:nth-of-type(2)','#chloe'),{rotation:180,y:10,delay:4});
-  // TweenMax.set($('path:nth-of-type(5)','#chloe'),{rotation:180,scale:1.2,delay:4});
 }
 
 function animWemade(stateG) {

@@ -58,8 +58,8 @@
     max-height: 700px;
     height: 90%;
 
-    svg path {
-      opacity: 0;
+    svg {
+      display: none;
     }
 
     &._paul {
@@ -67,6 +67,10 @@
       background-repeat: no-repeat;
       background-position: center;
       background-size: 240px;
+
+      #paul_svg {
+        display: block;
+      }
     }
 
     &._chloe {
@@ -74,6 +78,16 @@
       background-repeat: no-repeat;
       background-position: center;
       background-size: 240px;
+
+      #chloe_svg {
+        display: block;
+      }
+    }
+
+    &._wemade {
+      #wemade_svg {
+        display: block;
+      }
     }
   }
 

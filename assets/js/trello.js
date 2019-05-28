@@ -8,7 +8,7 @@ var animJobs = () => {
 
   tl
   .staggerTo(cards,'0.2',{opacity:1},'0.2')
-  .staggerTo(cards,'0.2',{opacity:0,x:10},'0.2','+=3')
+  .staggerTo(cards,'0.2',{opacity:0,x:10},'0.2','+=3.5')
   .set('.wrap._trello',{x:0})
   ;
 }

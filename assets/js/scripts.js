@@ -20,12 +20,14 @@ if(body.hasClass('_hero')){
 
     homeTl
     .set(zones,{className:'+=_'+name})
-    .call(animHero,[name,msg,url],'now')
-    .call(animLogo,[],'now')
-    .call(animJobs,[],'now')
-    .set('.word',{clearProps:'all'},'+=5')
-    .set(zones,{className:'-=_'+name})
+    .call(animHero,[name,msg,url],'start')
+    .call(animLogo,[],'start')
+    .call(animJobs,[],'start')
+    .add('stop','+=6')
+    .set('.word',{clearProps:'all'},'stop')
+    .set(zones,{className:'-=_'+name},'stop')
     ;
+    
   });
 } else {
   // var notHomeTl = new TimelineMax({repeat:-1});
