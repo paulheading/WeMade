@@ -10,14 +10,14 @@ $(window).on('resize',function(e){
   resizeTimer = setTimeout(setAnim(nameG),300);
 });
 
-function animHero(name,msg,url) {
+var animHero = (name,msg,url) => {
   nameG = name;
   setAnim(nameG);
   setTicker(msg);
   setUrl(url);
 }
 
-function animSvg() {
+var animSvg = () => {
   var svgTl = new TimelineMax(),
       heroSvg = '.area._hero svg',
       heroPath = '.area._hero svg path';
@@ -29,26 +29,24 @@ function animSvg() {
   ;
 }
 
-function setAnim(nameG) {
+var setAnim = (nameG) => {
   if(nameG == 'chloe')  {
-    animSvg();
     animChloe(stateG);
   } else if(nameG == 'paul') {
-    animSvg();
     animPaul(stateG);
   } else if(nameG == 'wemade') {
-    animSvg();
     animWemade(stateG);
   }
 }
 
-function animChloe(stateG) {
-  see.html('Chloe');
+var animChloe = (stateG) => {
   var sen = $('#words > path'),
       senTargets = [],
       chloeTl = new TimelineMax();
 
-  for (var i = 1, l = sen.length; i <= l; i++) {
+  see.html('Chloe');
+
+  for(var i = 1, l = sen.length; i <= l; i++) {
     senTargets.push('#words > path:nth-of-type('+i+')');
   }
 
@@ -60,17 +58,15 @@ function animChloe(stateG) {
   ;
 }
 
-function animWemade(stateG) {
+var animWemade = (stateG) => {
   see.html('Studio');
-  TweenMax.to($('path','#wemade_svg'),1,{y:10,ease: Sine.easeInOut,repeat:-1,yoyo:true});
 }
 
-function animPaul(stateG) {
+var animPaul = (stateG) => {
   see.html('Paul');
-  TweenMax.to($('path','#paul_svg'),1,{y:10,ease: Sine.easeInOut,repeat:-1,yoyo:true});
 }
 
-function setTicker(msg) {
+var setTicker = (msg) => {
   var tingo = '',
       wordWrap = $('.wordWrap');
   TweenMax.set('.tickerWords',{x:0});
@@ -99,6 +95,6 @@ function setTicker(msg) {
   TweenMax.to('.tickerWords',6,{x:-wrapWidth,ease:Power0.easeNone,repeat:-1});
 }
 
-function setUrl(url) {
+var setUrl = (url) => {
   TweenMax.set(['.area._hero','.lnk._something'],{attr:{href:url}});
 }

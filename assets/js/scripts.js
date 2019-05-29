@@ -12,6 +12,7 @@ var random = () => {
 if(body.hasClass('_hero')){
   var homeTl = new TimelineMax({repeat:-1});
   data.sort(random);
+  animSvg();
 
   $(data).each(function(i){
     var name = data[i].hero.name.toLowerCase(),
@@ -20,14 +21,14 @@ if(body.hasClass('_hero')){
 
     homeTl
     .set(zones,{className:'+=_'+name})
-    .call(animHero,[name,msg,url],'start')
     .call(animLogo,[],'start')
+    .call(animHero,[name,msg,url],'start')
     .call(animJobs,[],'start')
-    .add('stop','+=6')
+    .add('stop','+=5')
     .set('.word',{clearProps:'all'},'stop')
     .set(zones,{className:'-=_'+name},'stop')
     ;
-    
+
   });
 } else {
   // var notHomeTl = new TimelineMax({repeat:-1});
