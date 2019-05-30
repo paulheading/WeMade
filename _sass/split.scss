@@ -46,8 +46,9 @@
       grid-template: auto / repeat(2,auto);
       justify-content: flex-start;
       align-content: flex-start;
+      grid-column-gap: 25px;
+      grid-row-gap: 20px;
       direction: rtl;
-      grid-gap: 30px;
       display: grid;
       z-index: 1;
     }

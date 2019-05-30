@@ -24,6 +24,10 @@ svg {
     @include zero;
   }
 
+  &#send {
+    stroke: $gun;
+  }
+
   @include svg_nav(black);
 
   &.--nyo {
