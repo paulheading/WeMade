@@ -33,6 +33,7 @@
 .word {
   padding-right: 2px;
   padding-left: 2px;
+  font-size: 18px;
   @include ib();
 
   &Wrap {
@@ -99,7 +100,7 @@
 }
 
 .day {
-  font-weight: 600;
+  font-weight: bold;
 }
 
 .list {

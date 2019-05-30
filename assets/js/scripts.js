@@ -12,8 +12,7 @@ var random = () => {
 if(body.hasClass('_hero')){
   var homeTl = new TimelineMax({repeat:-1});
   data.sort(random);
-  animSvg();
-
+  
   $(data).each(function(i){
     var name = data[i].hero.name.toLowerCase(),
         url = data[i].hero.url,

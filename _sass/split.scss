@@ -33,13 +33,13 @@
     &.--header {
       grid-auto-flow: column;
       align-items: center;
-      grid-gap: 36px;
+      grid-gap: 40px;
     }
 
     &.--toolbar {
       grid-auto-flow: column;
       align-items: center;
-      grid-gap: 10px;
+      grid-gap: 20px;
     }
 
     &.--desktop {
@@ -47,7 +47,7 @@
       justify-content: flex-start;
       align-content: flex-start;
       direction: rtl;
-      grid-gap: 20px;
+      grid-gap: 30px;
       display: grid;
       z-index: 1;
     }

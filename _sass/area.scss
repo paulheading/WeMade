@@ -56,14 +56,14 @@
     align-content: center;
     @extend %area_grid;
     max-height: 700px;
-    height: 90%;
+    height: 80%;
 
     svg {
       display: none;
     }
 
     &._paul {
-      // background-image: url('/assets/img/paulCol.gif');
+      // background-image: url('/assets/img/paulDuo.gif');
       background-repeat: no-repeat;
       background-position: center;
       background-size: 240px;
@@ -95,8 +95,8 @@
     @extend %area_grid;
     @extend %grid_default;
     background-color: darken($teal,3%);
-    padding-bottom: 10px;
-    padding-top: 10px;
+    padding-bottom: 15px;
+    padding-top: 15px;
   }
 
   &._desktop {

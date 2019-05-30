@@ -1,13 +1,21 @@
 
 svg {
 
-  &#wifi {
-    stroke: darken($teal,15%);
+  &#logo {
+    transform: scale(1.1);
   }
 
-  &#send {
-    transition: 300ms;
-    stroke: $gray;
+  &#search {
+    transform: scale(1.1);
+  }
+
+  &#burger {
+    transform: scale(1.1);
+  }
+
+  &#wifi {
+    stroke: darken($teal,15%);
+    transform: scale(1.1);
   }
 
   &#cover {
