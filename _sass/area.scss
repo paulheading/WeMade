@@ -110,9 +110,9 @@
 
   &._email {
     @extend %area_grid;
-    grid-template-columns: 20px minmax(280px,600px) 20px;
+    grid-template-columns: 30px minmax(260px,600px) 30px;
     background-color: $smoke;
-    padding-top: 40px;
+    padding-top: 30px;
     font-size: 16px;
 
     @media#{$min720w} {

@@ -1,7 +1,7 @@
 
 .textarea {
   &._email {
-    min-height: 200px;
+    min-height: 160px;
     padding: 0;
 
     @media#{$min640w} {
