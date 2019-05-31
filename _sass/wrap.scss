@@ -46,7 +46,6 @@
   &._toolbar {
     @extend %wrap_grid;
     color: rgba(black,0.4);
-    grid-gap: 30px;
 
     @media#{$max639w} {
       grid-template-columns: repeat(3,1fr);
@@ -54,6 +53,7 @@
     @media#{$min640w} {
       justify-content: flex-end;
       grid-auto-flow: column;
+      grid-gap: 30px;
     }
   }
 
