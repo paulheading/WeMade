@@ -1,20 +1,24 @@
 
+%strip {
+  padding-bottom: 15px;
+  padding-top: 15px;
+}
+
 .area {
   position: relative;
   overflow: hidden;
   z-index: 2;
 
   &._see {
-    margin-top: -46px;
-    border-bottom: 4px solid;
     @extend %area_grid;
+    border-bottom: 4px solid;
+    margin-top: -52px;
   }
 
   &._ticker {
+    @extend %strip;
     background-color: white;
-    padding-bottom: 12px;
     white-space: nowrap;
-    padding-top: 12px;
   }
 
   &._index {
@@ -22,8 +26,8 @@
   }
 
   &._rollover {
-    position: absolute;
     @include zero;
+    position: absolute;
     margin: auto;
   }
 
@@ -36,9 +40,9 @@
   }
 
   &._clock {
+    @extend %area_grid;
     letter-spacing: 0.05rem;
     grid-auto-flow: column;
-    @extend %area_grid;
     line-height: 1;
     grid-gap: 10px;
   }
@@ -53,8 +57,8 @@
   }
 
   &._hero {
-    align-content: center;
     @extend %area_grid;
+    align-content: center;
     max-height: 700px;
     height: 80%;
 
@@ -63,22 +67,12 @@
     }
 
     &._paul {
-      // background-image: url('/assets/img/paulDuo.gif');
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: 240px;
-
       #paul_svg {
         display: block;
       }
     }
 
     &._chloe {
-      // background-image: url('/assets/img/chloeCol.gif');
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: 240px;
-
       #chloe_svg {
         display: block;
       }
@@ -94,9 +88,8 @@
   &._toolbar {
     @extend %area_grid;
     @extend %grid_default;
+    @extend %strip;
     background-color: darken($teal,3%);
-    padding-bottom: 15px;
-    padding-top: 15px;
   }
 
   &._desktop {
@@ -113,7 +106,6 @@
     grid-template-columns: 30px minmax(260px,600px) 30px;
     background-color: $smoke;
     padding-top: 30px;
-    font-size: 16px;
 
     @media#{$min720w} {
       padding-top: 80px;

@@ -1,26 +1,21 @@
 
-.bar {
+%bar {
+  justify-content: flex-start;
+  grid-auto-flow: column;
+  grid-column-gap: 12px;
+  align-content: center;
+  padding: 12px;
+  display: grid;
+}
 
+.bar {
+  
   &._window {
-    justify-content: flex-start;
-    grid-auto-flow: column;
-    grid-column-gap: 10px;
-    align-content: center;
-    padding-right: 10px;
-    padding-left: 10px;
-    display: grid;
-    height: 40px;
+    @extend %bar;
   }
 
   &._email {
-    justify-content: flex-start;
+    @extend %bar;
     background-color: $gray;
-    grid-auto-flow: column;
-    grid-column-gap: 10px;
-    align-content: center;
-    padding-right: 10px;
-    padding-left: 10px;
-    display: grid;
-    height: 40px;
   }
 }

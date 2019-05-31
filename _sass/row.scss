@@ -55,15 +55,15 @@
     border-bottom: 1px #ddd solid;
     justify-content: flex-start;
     grid-auto-flow: column;
-    grid-column-gap: 10px;
+    grid-column-gap: 12px;
     align-content: center;
-    padding-bottom: 10px;
-    padding-top: 10px;
+    padding-bottom: 12px;
+    padding-top: 12px;
     display: grid;
     color: #aaa;
 
     @media#{$max719w} {
-      padding-left: 10px;
+      padding-left: 12px;
     }
   }
 
@@ -76,8 +76,8 @@
   }
 
   &._submit {
-    padding-bottom: 20px;
-    padding-right: 20px;
+    padding-bottom: 24px;
+    padding-right: 24px;
     direction: rtl;
     display: grid;
   }

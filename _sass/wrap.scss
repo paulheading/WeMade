@@ -44,9 +44,17 @@
   }
 
   &._toolbar {
-    grid-auto-flow: column;
-    color: rgba(black,0.4);
     @extend %wrap_grid;
+    color: rgba(black,0.4);
+    grid-gap: 30px;
+
+    @media#{$max639w} {
+      grid-template-columns: repeat(3,1fr);
+    }
+    @media#{$min640w} {
+      justify-content: flex-end;
+      grid-auto-flow: column;
+    }
   }
 
   &._desktop {

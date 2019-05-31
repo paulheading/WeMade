@@ -1,16 +1,19 @@
 
 .split {
+  position: relative;
+  display: grid;
+
+  &.--toolbar {
+    align-items: center;
+  }
 
   &._left {
     justify-content: flex-start;
-    position: relative;
 
     &.--toolbar {
-      display: grid;
-      justify-content: flex-end;
-      grid-auto-flow: column;
-      grid-column-gap: 20px;
-      direction: rtl;
+      @media#{$max639w} {
+        justify-content: center;
+      }
     }
 
     &.--desktop {
@@ -25,10 +28,19 @@
     }
   }
 
+  &._center {
+    &.--toolbar {
+      @media#{$max639w} {
+        justify-content: center;
+      }
+      @media#{$min640w} {
+        justify-self: flex-end;
+      }
+    }
+  }
+
   &._right {
     justify-content: flex-end;
-    position: relative;
-    display: grid;
 
     &.--header {
       grid-auto-flow: column;
@@ -37,9 +49,9 @@
     }
 
     &.--toolbar {
-      grid-auto-flow: column;
-      align-items: center;
-      grid-gap: 20px;
+      @media#{$max639w} {
+        justify-content: center;
+      }
     }
 
     &.--desktop {
