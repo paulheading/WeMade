@@ -89,7 +89,11 @@
     padding-top: 12px;
 
     @media#{$max639w} {
+<<<<<<< HEAD
       grid-template-columns: auto minmax(320px,800px) auto;
+=======
+      grid-template-columns: auto minmax(300px,800px) auto;
+>>>>>>> b058aeea39a06a18007fd4bffa3eadc1fdae197a
     }
   }
 
