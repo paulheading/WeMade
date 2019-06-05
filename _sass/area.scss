@@ -89,7 +89,7 @@
     padding-top: 12px;
 
     @media#{$max639w} {
-      grid-template-columns: 10px minmax(300px,800px) 10px;
+      grid-template-columns: auto minmax(320px,800px) auto;
     }
   }
 
