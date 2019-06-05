@@ -52,7 +52,7 @@
     align-items: center;
 
     @media#{$max639w} {
-      grid-template-columns: auto repeat(3,1fr);
+      grid-template-columns: auto 1fr 34px 1fr;
     }
     @media#{$min640w} {
       grid-template-columns: auto 68px 34px 114px;

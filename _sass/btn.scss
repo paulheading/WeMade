@@ -31,6 +31,10 @@
 
     &.--min {
       background-color: $chromeYellow;
+
+      @media#{$max639w} {
+        display: none;
+      }
     }
   }
 
