@@ -1,6 +1,10 @@
 
 .wrap {
 
+  &._ticker {
+    min-width: 1000px;
+  }
+
   &._trello {
     background-color: white;
     border-radius: 3px;
@@ -45,15 +49,14 @@
 
   &._toolbar {
     @extend %wrap_grid;
-    color: rgba(black,0.4);
+    align-items: center;
 
     @media#{$max639w} {
-      grid-template-columns: repeat(3,1fr);
+      grid-template-columns: auto repeat(3,1fr);
     }
     @media#{$min640w} {
-      justify-content: flex-end;
-      grid-auto-flow: column;
-      grid-gap: 30px;
+      grid-template-columns: auto 68px 34px 114px;
+      grid-gap: 20px;
     }
   }
 

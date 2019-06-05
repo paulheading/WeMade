@@ -1,17 +1,22 @@
 
 <div class="area _toolbar">
   <div class="wrap _toolbar">
-    <div class="split _left --toolbar"></div>
-    <div class="split _center --toolbar">
+    <div class="col _icons"></div>
+    <div class="col _city --toolbar">
+      <div class="title _city">
+        London
+      </div>
+    </div>
+    <div class="col _wifi --toolbar">
       {% include svg/wifi.svg %}
     </div>
-    <div class="split _right --toolbar">
-      <div class="area _clock --london">
-        <div class="day"></div>
-        <div class="time">
-          <span class="hours"></span>
-          <span>:</span>
-          <span class="minutes"></span>
+    <div class="col _clock --toolbar">
+      <div class="area _clock">
+        <div class="copy _clock --day"></div>
+        <div class="copy _clock --time">
+          <span class="copy _clock --hrs"></span>
+          <span class="copy _clock --dots">:</span>
+          <span class="copy _clock --mins"></span>
         </div>
       </div>
     </div>

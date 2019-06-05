@@ -3,6 +3,11 @@
   transition: background-color 500ms;
 
   &._hero {
+
+    .area._header {
+      position: absolute;
+    }
+
     &.--paul {
       background-image: url('/assets/img/paul.gif');
       background-position: calc(50% + 100px) 60px;

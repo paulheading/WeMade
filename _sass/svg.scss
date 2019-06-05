@@ -1,23 +1,6 @@
 
 svg {
 
-  &#logo {
-    transform: scale(1.1);
-  }
-
-  &#search {
-    transform: scale(1.1);
-  }
-
-  &#burger {
-    transform: scale(1.1);
-  }
-
-  &#wifi {
-    stroke: darken($teal,15%);
-    transform: scale(1.1);
-  }
-
   &#cover {
     position: absolute;
     @include shadow;

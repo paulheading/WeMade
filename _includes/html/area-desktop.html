@@ -1,41 +1,23 @@
 
 <div class="area _desktop">
   <div class="wrap _desktop">
-    <div class="split _right --desktop">
-      <div class="folder _funny --open">
-        <div>
-          {% include svg/cover.svg %}
-          {% include svg/folder.svg %}
-        </div>
-        <div>Funny</div>
-      </div>
-      <div class="folder _songs --open">
-        <div>
-          {% include svg/cover.svg %}
-          {% include svg/folder.svg %}
-        </div>
-        <div>Songs</div>
-      </div>
-      <div class="folder _jobs --open">
-        <div>
-          {% include svg/cover.svg %}
-          {% include svg/folder.svg %}
-        </div>
-        <div>Jobs</div>
-      </div>
+    <div class="col _right --desktop">
+      {% include html/block-folder.html title='Funny' state='open' %}
+      {% include html/block-folder.html title='Songs' state='open' %}
+      {% include html/block-folder.html title='Jobs' state='open' %}
     </div>
-    <div class="split _left --desktop">
-      <div class="window _funny --open">
+    <div class="col _left --desktop">
+      <div class="block _window --funny --open">
         {% include html/bar-window.html %}
         <a href="https://imgur.com/qVQvHPN">
           <img class="_kenm" src="/assets/img/kenM.jpg" alt="">
         </a>
       </div>
-      <div class="window _songs --open">
+      <div class="block _window --songs --open">
         {% include html/bar-window.html %}
         <iframe src="https://open.spotify.com/embed/user/chloeings/playlist/1JGUbJ96tkwEg9rNY41Dcm" width="280" height="260" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
       </div>
-      <div class="window _jobs --open">
+      <div class="block _window --jobs --open">
         {% include html/bar-window.html %}
         {% include html/loop-trello.html %}
       </div>

@@ -1,5 +1,5 @@
 
-var timeFunc = (city) => {
+var timeFunc = () => {
   var weekday = new Array(7);
       weekday[0] = "Sun",
       weekday[1] = "Mon",
@@ -12,17 +12,10 @@ var timeFunc = (city) => {
       n = weekday[d.getUTCDay()],
       m = d.getUTCMinutes();
 
-  if(city == 'Toronto') {
-    var h = d.getUTCHours() - 4,
-        day = $('.day','._clock.--toronto'),
-        hours = $('.hours','._clock.--toronto'),
-        minutes = $('.minutes','._clock.--toronto');
-  } else {
-    var h = d.getUTCHours() + 1,
-        day = $('.day','._clock.--london'),
-        hours = $('.hours','._clock.--london'),
-        minutes = $('.minutes','._clock.--london');
-  }
+  var h = d.getUTCHours() + 1,
+      day = $('._clock.--day'),
+      hours = $('._clock.--hrs'),
+      minutes = $('._clock.--mins');
 
   day.text(n);
 
@@ -42,6 +35,5 @@ var timeFunc = (city) => {
 }
 
 window.setInterval(function(){
-  timeFunc('Toronto');
   timeFunc();
 },1000);

@@ -1,7 +1,18 @@
 
 .title {
 
-  &._something {
+  &._folder {
+    color: rgba(black,0.4);
+    text-align: center;
+    font-size: 16px;
+  }
+
+  &._city {
+    color: rgba(black,0.4);
+    font-weight: bold;
+  }
+
+  &._see {
     border-bottom: 2px solid white;
     font-size: 20px;
     color: white;

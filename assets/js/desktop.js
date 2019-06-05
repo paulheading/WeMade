@@ -2,131 +2,146 @@
 layout: none
 ---
 
-var win = $('.window'),
-    folder = $('.folder'),
+var win = $('.block._window'),
+    folder = $('.block._folder'),
     closeBtn = $('.btn._window.--close'),
     minBtn = $('.btn._window.--min'),
     xpandBtn = $('.btn._desktop'),
-    bar = $('.split._left.--toolbar');
+    bar = $('.col._icons');
 
 Draggable.create(win,{cursor:'pointer'});
 
 function winFunc(obj,state) {
+  
+  if(state == 'open') {
+    TweenMax.set(obj,{opacity:1,className:'+=--open'});
+  }
+
   if(state == 'close') {
     TweenMax.set(obj,{opacity:0,className:'-=--open'});
-  } else if(state == 'open') {
-    TweenMax.set(obj,{opacity:1,className:'+=--open'});
-  } else if(state == 'minim') {
+  }
+
+  if(state == 'minim') {
+    TweenMax.set(obj,{className:'-=--open'});
+    TweenMax.set(obj,{className:'+=--minim'});
     TweenMax.to(obj,0.3,{scale:0,ease:SteppedEase.config(3)});
-  } else if(state == 'xpand') {
+  }
+
+  if(state == 'xpand') {
+    TweenMax.set(obj,{className:'-=--minim'});
+    TweenMax.set(obj,{className:'+=--open'});
     TweenMax.to(obj,0.3,{scale:1,ease:SteppedEase.config(3)});
   }
 }
 
-function changeFolder() {
-  var ting = $(this),
-      label = ting[0].classList[1],
-      front = $('#front',this),
-      paper = $('#paper',this),
-      shut = $('#shut',this),
-      tab = $('#tab',this),
-      openTl = new TimelineMax(),
-      closeTl = new TimelineMax();
+function btnFunc(e) {
+  var state = e.data.state,
+      ting = $(this);
 
-  if(ting.hasClass('--open')) {
+  if(state == 'minim' || state == 'close') {
+    var ting = ting.parents('.block._window'),
+        label = ting[0].classList[2];
 
-    TweenMax.set(ting,{className:'-=--open'});
+    winFunc(ting,state);
 
-    closeTl
-    .to(paper,0.1,{y:10})
-    .set(paper,{opacity:0})
-    .to(front,0.1,{morphSVG:shut});
+    folder.each(function(){
+      var tang = $(this);
+      if(tang.hasClass(label)) {
+        folderFunc(tang,label,state);
+      }
+    });
+
+    if(state == 'minim') {
+      mkBtn(label);
+    }
+  }
+
+  if(state == 'xpand' || state == 'open') {
+    var label = ting[0].classList[2],
+        type = ting[0].classList[3];
+
+    folder.each(function(){
+      var tang = $(this);
+      if(tang.hasClass(label)) {
+        folderFunc(tang,label,state);
+      }
+    });
 
     win.each(function(){
-      if($(this).hasClass(label)) {
-        winFunc(this,'close');
+      var tang = $(this);
+      if(tang.hasClass(label)) {
+        winFunc(tang,state);
       }
     });
 
-  } else if(ting.hasClass('--min')) {
-
-    TweenMax.set(ting,{className:'-=--min'});
-    TweenMax.set(ting,{className:'+=--open'});
-
-    win.each(function(){
-      if($(this).hasClass(label)) {
-        winFunc(this,'xpand');
-      }
-    });
-
-    $('.btn._toolbar').each(function(){
-      if($(this).hasClass(label)) {
-        $(this).remove();
-      }
-    });
-
-  } else {
-
-    TweenMax.set(ting,{className:'+=--open'});
-
-    openTl
-    .to(front,0.1,{morphSVG:front})
-    .set(paper,{opacity:1})
-    .to(paper,0.1,{y:0});
-
-    win.each(function(){
-      if($(this).hasClass(label)) {
-        winFunc(this,'open');
-      }
-    });
-
-    $('.btn._desktop').each(function(){
-      if($(this).hasClass(label)) {
-        $(this).remove();
-      }
-    });
+    ting.remove();
   }
 }
 
-function minFunc() {
-  var tang = $(this).parents('.window'),
-      label = tang[0].classList[1];
+function folderFunc(tang,label,state) {
+  var front = $('#front',tang),
+      paper = $('#paper',tang),
+      shut = $('#shut',tang),
+      openTl = new TimelineMax({paused:true}),
+      closeTl = new TimelineMax({paused:true});
 
-  winFunc(tang,'minim');
-  mkBtn(label);
-
-  folder.each(function(){
-    var tong = $(this);
-    if(tong.hasClass(label)) {
-      TweenMax.set(tong,{className:'-=--open'});
-      TweenMax.set(tong,{className:'+=--min'});
-    }
-  });
-}
-
-function closeFunc() {
-  var tang = $(this).parents('.window'),
-      label = tang[0].classList[1],
-      closeTl = new TimelineMax();
-
-  winFunc(tang,'close');
-
-  folder.each(function(){
-    var tong = $(this),
-        front = $('#front',this),
-        paper = $('#paper',this),
-        shut = $('#shut',this);
-
-    if(tong.hasClass(label)) {
-
-      TweenMax.set(tong,{className:'-=--open'});
+      openTl
+      .to(front,0.1,{morphSVG:front})
+      .set(paper,{opacity:1})
+      .to(paper,0.1,{y:0});
 
       closeTl
       .to(paper,0.1,{y:10})
       .set(paper,{opacity:0})
       .to(front,0.1,{morphSVG:shut});
-    }
-  });
+
+  if(state == 'close') {
+    TweenMax.set(tang,{className:'-=--open'});
+    closeTl.play();
+  }
+
+  if(state == 'minim') {
+    TweenMax.set(tang,{className:'-=--open'});
+    TweenMax.set(tang,{className:'+=--minim'});
+    closeTl.play();
+  }
+
+  if(state == 'open') {
+    TweenMax.set(tang,{className:'+=--open'});
+    openTl.play();
+  }
+
+  if(state == 'xpand') {
+    TweenMax.set(tang,{className:'+=--open'});
+    TweenMax.set(tang,{className:'-=--minim'});
+    openTl.play();
+  }
+}
+
+function resetFunc() {
+  var tang = $(this),
+      label = tang[0].classList[2],
+      state = tang[0].classList[3];
+
+  if(state == '--open') {
+    folderFunc(tang,label,'close');
+
+    win.each(function(){
+      var tang = $(this);
+      if(tang.hasClass(label)) {
+        winFunc(tang,'close');
+      }
+    });
+  } else {
+    folderFunc(tang,label,'open');
+
+    win.each(function(){
+      var tang = $(this);
+      if(tang.hasClass(label)) {
+        winFunc(tang,'open');
+      }
+    });
+  }
 }
 
 function mkBtn(name) {
@@ -134,33 +149,7 @@ function mkBtn(name) {
   bar.append(newBtn);
 }
 
-function btnFunc() {
-  var ting = $(this),
-      label = ting[0].classList[2],
-      type = ting[0].classList[3];
-
-  win.each(function(){
-    if($(this).hasClass(label)) {
-      if(type == '--xpand') {
-        winFunc(this,'xpand');
-      } else if(type == '--open') {
-        winFunc(this,'open');
-      }
-    }
-  });
-
-  $(this).remove();
-
-  folder.each(function(){
-    var tong = $(this);
-    if(tong.hasClass(label)) {
-      TweenMax.set(tong,{className:'-=--min'});
-      TweenMax.set(tong,{className:'+=--open'});
-    }
-  });
-}
-
-bar.on('click','.btn._toolbar',btnFunc);
-closeBtn.click(closeFunc);
-minBtn.click(minFunc);
-folder.click(changeFolder);
+bar.on('click','.btn._toolbar',{state:'xpand'},btnFunc);
+closeBtn.click({state:'close'},btnFunc);
+minBtn.click({state:'minim'},btnFunc);
+folder.click(resetFunc);

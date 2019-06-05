@@ -2,7 +2,7 @@
 layout: none
 ---
 
-var see = $('.copy._something'),
+var see = $('.copy._see'),
     nameG,resizeTimer;
 
 $(window).on('resize',function(e){
@@ -15,18 +15,6 @@ var animHero = (name,msg,url) => {
   setAnim(nameG);
   setTicker(msg);
   setUrl(url);
-}
-
-var animSvg = () => {
-  var svgTl = new TimelineMax(),
-      heroSvg = '.area._hero svg',
-      heroPath = '.area._hero svg path';
-
-  svgTl
-  .set(heroPath,{transformOrigin:'center'})
-  .to(heroPath,0.1,{opacity:1})
-  .to(heroSvg,1,{y:10,ease: Sine.easeInOut,repeat:-1,yoyo:true})
-  ;
 }
 
 var setAnim = (nameG) => {
@@ -68,8 +56,8 @@ var animPaul = (stateG) => {
 
 var setTicker = (msg) => {
   var tingo = '',
-      wordWrap = $('.wordWrap');
-  TweenMax.set('.tickerWords',{x:0});
+      tango = $('.copy._ticker');
+  TweenMax.set('.wrap._ticker',{x:0});
 
   $(msg).each(function(i){
     var count = i++,
@@ -90,11 +78,11 @@ var setTicker = (msg) => {
       tingo += '<div class="word _book">'+val+'</div>';
     }
   });
-  wordWrap.html(tingo);
-  var wrapWidth = $('.wordWrap')[0].clientWidth;
-  TweenMax.to('.tickerWords',6,{x:-wrapWidth,ease:Power0.easeNone,repeat:-1});
+  tango.html(tingo);
+  var copyWidth = $('.copy._ticker')[0].clientWidth;
+  TweenMax.to('.wrap._ticker',6,{x:-copyWidth,ease:Power0.easeNone,repeat:-1});
 }
 
 var setUrl = (url) => {
-  TweenMax.set(['.area._hero','.lnk._something'],{attr:{href:url}});
+  TweenMax.set(['.area._hero','.lnk._see'],{attr:{href:url}});
 }

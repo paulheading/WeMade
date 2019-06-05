@@ -7,14 +7,15 @@
 'helpers',
 'bar',
 'base',
+'block',
 'area',
 'btn',
 'chloe',
+'col',
 'copy',
 'img',
 'title',
 'entry',
-'folder',
 'form',
 'input',
 'overlay',
@@ -26,7 +27,6 @@
 'tag',
 'textarea',
 'visual',
-'window',
 'wrap',
 'video';
 
@@ -35,10 +35,6 @@
   padding-left: 2px;
   font-size: 18px;
   @include ib();
-
-  &Wrap {
-    @include ib();
-  }
 
   &._bold {
     font-weight: bold;
@@ -71,7 +67,7 @@
   @include ib;
 }
 
-.tickerWords {
+.wrap _ticker {
   min-width: 1000px;
 }
 

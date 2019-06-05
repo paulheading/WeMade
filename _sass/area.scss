@@ -1,9 +1,4 @@
 
-%strip {
-  padding-bottom: 15px;
-  padding-top: 15px;
-}
-
 .area {
   position: relative;
   overflow: hidden;
@@ -16,9 +11,10 @@
   }
 
   &._ticker {
-    @extend %strip;
     background-color: white;
+    padding-bottom: 15px;
     white-space: nowrap;
+    padding-top: 10px;
   }
 
   &._index {
@@ -88,8 +84,13 @@
   &._toolbar {
     @extend %area_grid;
     @extend %grid_default;
-    @extend %strip;
     background-color: darken($teal,3%);
+    padding-bottom: 12px;
+    padding-top: 12px;
+
+    @media#{$max639w} {
+      grid-template-columns: 10px minmax(300px,800px) 10px;
+    }
   }
 
   &._desktop {
@@ -106,6 +107,7 @@
     grid-template-columns: 30px minmax(260px,600px) 30px;
     background-color: $smoke;
     padding-top: 30px;
+    font-size: 16px;
 
     @media#{$min720w} {
       padding-top: 80px;

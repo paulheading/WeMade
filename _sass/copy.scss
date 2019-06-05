@@ -1,6 +1,23 @@
 
 .copy {
 
+  &._clock {
+    color: rgba(black,0.4);
+
+    &.--day {
+      font-weight: bold;
+    }
+
+    &.--dots {
+      margin: 0 -3px;
+    }
+  }
+
+  &._ticker {
+    @include ib();
+    line-height: 1;
+  }
+
   &._hello {
     @media#{$max639w} {
       display: none;

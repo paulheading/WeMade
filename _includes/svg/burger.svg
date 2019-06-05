@@ -1,1 +1,14 @@
-<svg version="1.1" id="burger" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" width="36" height="36" viewBox="0 0 36 36" xml:space="preserve" enable-background="new 0 0 36 36"><line x1="4" y1="18" x2="32" y2="18" fill="none" stroke="#000000" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><line x1="4" y1="6.3" x2="32" y2="6.3" fill="none" stroke="#000000" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><line x1="4" y1="29.7" x2="32" y2="29.7" fill="none" stroke="#000000" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.0.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="burger" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="40px" height="40px" viewBox="0 0 40 40" style="enable-background:new 0 0 40 40;" xml:space="preserve">
+<g>
+	<rect style="opacity:0;fill:#FFFFFF;" width="40" height="40"/>
+	
+		<line style="fill:none;stroke:#000000;stroke-width:6;stroke-linecap:round;stroke-linejoin:round;" x1="4.4" y1="20" x2="35.6" y2="20"/>
+	
+		<line style="fill:none;stroke:#000000;stroke-width:6;stroke-linecap:round;stroke-linejoin:round;" x1="4.4" y1="7" x2="35.6" y2="7"/>
+	
+		<line style="fill:none;stroke:#000000;stroke-width:6;stroke-linecap:round;stroke-linejoin:round;" x1="4.4" y1="33" x2="35.6" y2="33"/>
+</g>
+</svg>

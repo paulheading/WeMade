@@ -17,12 +17,35 @@
       {% if page.type == 'hero' %}
 
       {% include html/area-hero.html %}
-      {% include html/area-see.html %}
       {% include html/area-ticker.html %}
 
       {% else %}
 
+      <div class="area{{ page.type | prepend: ' _' }}{% if page.tags %}{{ page.tags | join: ' --' | replace: ' ',' --' | prepend: ' --' }}{% endif %}">
 
+        <div class="wrap{{ page.type | prepend: ' _' }}{% if page.title %}{{ page.title | downcase | prepend: ' --' }}{% endif %}">
+
+        {% if page.type == 'text' %}
+
+          {% include html/loop-text.html %}
+
+        {% elsif page.type == 'blog' %}
+
+          {{ content }}
+
+        {% elsif page.type == 'resume' %}
+
+          {% include html/loop-cv.html %}
+
+        {% elsif page.type == 'project' %}
+
+          {% include html/loop-project.html %}
+          {% include html/area-paginate.html %}
+
+        {% endif %}
+
+        </div>
+      </div>
 
       {% endif %}
 
@@ -30,6 +53,8 @@
       {% include html/area-desktop.html %}
       {% include html/area-email.html %}
       {% include html/area-footer.html %}
+
+    </div>
 
   </body>
 

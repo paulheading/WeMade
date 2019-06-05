@@ -1,6 +1,21 @@
 [
   {
     "hero" : {
+      "name" : "WeMade",
+      "url" : "/about",
+      "message" : [
+        { "bold" : "WeMade" },
+        { "book" : "a" },
+        { "book" : "whole" },
+        { "book" : "new" },
+        { "book" : "&#35;&#36;" },
+        { "bold!" : "studio" },
+        { "book" : "&#169;&#8482;" }
+      ]
+    }
+  },
+  {
+    "hero" : {
       "name" : "Paul",
       "url" : "/paul",
       "message" : [
