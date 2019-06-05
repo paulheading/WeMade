@@ -25,6 +25,10 @@
     height: 20px;
     width: 20px;
 
+    @media#{$max639w} {
+      display: none;
+    }
+
     &.--close {
       background-color: $chromeRed;
     }
@@ -39,6 +43,10 @@
     border-radius: 50%;
     height: 20px;
     width: 20px;
+
+    @media#{$max639w} {
+      display: none;
+    }
 
     &.--close {
       background-color: $chromeRed;
