@@ -14,15 +14,9 @@
     transition: left 500ms;
     border-radius: 3px;
     position: absolute;
-    min-height: 280px;
     overflow: hidden;
     @include shadow;
-    display: none;
     width: 280px;
-
-    &.--open {
-      display: block;
-    }
 
     &:nth-of-type(1) {
       background-color: $coral;

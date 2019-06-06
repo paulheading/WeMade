@@ -4,12 +4,18 @@
   grid-auto-flow: column;
   grid-column-gap: 12px;
   align-content: center;
-  padding: 12px;
+  padding-right: 12px;
+  padding-left: 12px;
   display: grid;
+  height: 32px;
+
+  @media#{$min640w} {
+    height: 44px;
+  }
 }
 
 .bar {
-  
+
   &._window {
     @extend %bar;
   }

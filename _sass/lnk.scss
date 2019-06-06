@@ -17,6 +17,10 @@
     display: none;
     opacity: 0;
 
+    + .lnk._trello {
+      margin-top: 10px;
+    }
+
     &:nth-child(-n+3) {
       display: grid;
       opacity: 1;

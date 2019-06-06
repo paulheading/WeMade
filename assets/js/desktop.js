@@ -12,25 +12,27 @@ var win = $('.block._window'),
 Draggable.create(win,{cursor:'pointer'});
 
 function winFunc(obj,state) {
-  
+
   if(state == 'open') {
-    TweenMax.set(obj,{opacity:1,className:'+=--open'});
+    TweenMax.set(obj,{opacity:1,className:'-=--close'});
+    TweenMax.set(obj,{className:'+=--open'});
   }
 
   if(state == 'close') {
     TweenMax.set(obj,{opacity:0,className:'-=--open'});
-  }
-
-  if(state == 'minim') {
-    TweenMax.set(obj,{className:'-=--open'});
-    TweenMax.set(obj,{className:'+=--minim'});
-    TweenMax.to(obj,0.3,{scale:0,ease:SteppedEase.config(3)});
+    TweenMax.set(obj,{className:'+=--close'});
   }
 
   if(state == 'xpand') {
+    TweenMax.to(obj,0.3,{scale:1,ease:SteppedEase.config(3)});
     TweenMax.set(obj,{className:'-=--minim'});
     TweenMax.set(obj,{className:'+=--open'});
-    TweenMax.to(obj,0.3,{scale:1,ease:SteppedEase.config(3)});
+  }
+
+  if(state == 'minim') {
+    TweenMax.to(obj,0.3,{scale:0,ease:SteppedEase.config(3)});
+    TweenMax.set(obj,{className:'-=--open'});
+    TweenMax.set(obj,{className:'+=--minim'});
   }
 }
 
@@ -95,35 +97,37 @@ function folderFunc(tang,label,state) {
       .set(paper,{opacity:0})
       .to(front,0.1,{morphSVG:shut});
 
-  if(state == 'close') {
-    TweenMax.set(tang,{className:'-=--open'});
-    closeTl.play();
-  }
-
-  if(state == 'minim') {
-    TweenMax.set(tang,{className:'-=--open'});
-    TweenMax.set(tang,{className:'+=--minim'});
-    closeTl.play();
-  }
-
   if(state == 'open') {
-    TweenMax.set(tang,{className:'+=--open'});
     openTl.play();
+    TweenMax.set(tang,{className:'-=--close'});
+    TweenMax.set(tang,{className:'+=--open'});
+  }
+
+  if(state == 'close') {
+    closeTl.play();
+    TweenMax.set(tang,{className:'-=--open'});
+    TweenMax.set(tang,{className:'+=--close'});
   }
 
   if(state == 'xpand') {
-    TweenMax.set(tang,{className:'+=--open'});
-    TweenMax.set(tang,{className:'-=--minim'});
     openTl.play();
+    TweenMax.set(tang,{className:'-=--minim'});
+    TweenMax.set(tang,{className:'+=--open'});
+  }
+
+  if(state == 'minim') {
+    closeTl.play();
+    TweenMax.set(tang,{className:'-=--open'});
+    TweenMax.set(tang,{className:'+=--minim'});
   }
 }
 
 function resetFunc() {
   var tang = $(this),
       label = tang[0].classList[2],
-      state = tang[0].classList[3];
+      state = tang[0].classList[3].slice(2);
 
-  if(state == '--open') {
+  if(state == 'open') {
     folderFunc(tang,label,'close');
 
     win.each(function(){
@@ -132,13 +136,26 @@ function resetFunc() {
         winFunc(tang,'close');
       }
     });
-  } else {
+  }
+
+  if(state == 'close') {
     folderFunc(tang,label,'open');
 
     win.each(function(){
       var tang = $(this);
       if(tang.hasClass(label)) {
         winFunc(tang,'open');
+      }
+    });
+  }
+
+  if(state == 'minim') {
+    folderFunc(tang,label,'open');
+
+    win.each(function(){
+      var tang = $(this);
+      if(tang.hasClass(label)) {
+        winFunc(tang,'xpand');
       }
     });
   }
