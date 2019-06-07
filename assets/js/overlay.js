@@ -6,7 +6,7 @@ TweenLite.defaultEase = Linear.easeNone;
 
 var menuTl = new TimelineMax({paused:true}),
     searchTl = new TimelineMax({paused:true}),
-    menuOpen = false, searchOpen = false, hasFocus = false;
+    menuOpen = false, searchOpen = false, hasFocus = false, counter = 1, last;
 
 function overlayFunc(goto,type) {
   if(goto == 'open') {
@@ -79,32 +79,69 @@ var menuFunc = (state) => {
 
 var keyFunc = (e) => {
 
-  if(e.keyCode === 13) {
-    if(searchOpen) {
-      if(hasFocus) {
-        var url = $('.row._results')[0].children[0].href;
-        window.location.href = url;
+  if(searchOpen) {
+
+    if(e.keyCode === 27) {
+      searchFunc('close');
+    }
+    
+    if(hasFocus) {
+
+      if(e.keyCode){
+        TweenMax.set('.row._results:nth-of-type('+counter+')',{className:'+=test'});
+      }
+
+      if(e.keyCode == 8) {
+        TweenMax.set('.row._results',{clearProps:'all'});
+        counter = 1;
+      }
+
+      if(e.keyCode === 13) {
+        $('.row._results').each(function(){
+          var ting = $(this);
+          if(ting.hasClass('test')) {
+            var url = ting[0].children[0].href;
+            window.location.href = url;
+          }
+        });
+      }
+
+      if(e.keyCode === 40) {
+        counter +=1;
+        last = counter -1;
+
+        var downTl = new TimelineMax();
+        downTl
+        .set('.row._results:nth-of-type('+counter+')',{className:'+=test'})
+        .set('.row._results:nth-of-type('+last+')',{className:'-=test'})
+        ;
+      }
+
+      if(e.keyCode === 38) {
+        counter -=1;
+        last = counter +1;
+
+        var upTl = new TimelineMax();
+        upTl
+        .set('.row._results:nth-of-type('+counter+')',{className:'+=test'})
+        .set('.row._results:nth-of-type('+last+')',{className:'-=test'})
+        ;
       }
     }
   }
 
-  if(e.keyCode === 83) {
-    if(!hasFocus) {
+  if(menuOpen){
+    if(e.keyCode === 27) {
+      menuFunc('close');
+    }
+  }
+
+  if(!hasFocus) {
+    if(e.keyCode === 83) {
       changeSearch();
     }
-  }
-
-  if(e.keyCode === 77) {
-    if(!hasFocus) {
+    if(e.keyCode === 77) {
       changeMenu();
-    }
-  }
-
-  if(e.keyCode === 27) {
-    if(searchOpen) {
-      searchFunc('close');
-    } else if(menuOpen) {
-      menuFunc('close');
     }
   }
 }

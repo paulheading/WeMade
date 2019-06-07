@@ -6,7 +6,6 @@ var win = $('.block._window'),
     folder = $('.block._folder'),
     closeBtn = $('.btn._window.--close'),
     minBtn = $('.btn._window.--min'),
-    xpandBtn = $('.btn._desktop'),
     bar = $('.col._icons');
 
 Draggable.create(win,{cursor:'pointer'});
@@ -150,7 +149,14 @@ function resetFunc() {
   }
 
   if(state == 'minim') {
-    folderFunc(tang,label,'open');
+    folderFunc(tang,label,'xpand');
+
+    $('.btn._toolbar').each(function(){
+      var tang = $(this);
+      if(tang.hasClass(label)){
+        tang.remove();
+      }
+    });
 
     win.each(function(){
       var tang = $(this);

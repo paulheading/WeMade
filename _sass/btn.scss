@@ -8,13 +8,13 @@
     height: 20px;
     width: 20px;
 
-    &._funny {
+    &.--funny {
       background-color: $coral;
     }
-    &._songs {
+    &.--songs {
       background-color: $songs;
     }
-    &._jobs {
+    &.--jobs {
       background-color: $gray;
     }
   }
