@@ -1,19 +1,14 @@
 img {
 
   &._paul {
-    position: absolute;
-    // left: calc(50%);
-    // height: auto;
-    // width: 240px;
-    // z-index: -1;
-    // top: 100px;
-
-
-    top: 200px;
-    left: 200px;
-    width: 180px;
+    @extend %center;
     mix-blend-mode: multiply;
     z-index: 999;
+    width: 180px;
+    transform:
+      translateX(-68%)
+      translateY(-42%)
+      scale(0.8);
   }
 
   &._chloe {

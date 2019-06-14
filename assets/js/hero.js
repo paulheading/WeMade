@@ -79,8 +79,8 @@ var setTicker = (msg) => {
     }
   });
   tango.html(tingo);
-  var copyWidth = $('.copy._ticker')[0].clientWidth;
-  TweenMax.to('.wrap._ticker',6,{x:-copyWidth,ease:Power0.easeNone,repeat:-1});
+  var copyWidth = $('.copy._ticker')[0].clientWidth+4;
+  TweenMax.to('.wrap._ticker',5,{x:-copyWidth,ease:Power0.easeNone,repeat:-1});
 }
 
 var setUrl = (url) => {

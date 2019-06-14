@@ -8,6 +8,7 @@
     @extend %area_grid;
     border-bottom: 4px solid;
     margin-top: -52px;
+    // border-top: 1px solid black;
   }
 
   &._ticker {
@@ -46,21 +47,17 @@
   &._header {
     @extend %area_grid;
     @extend %grid_default;
-    padding-bottom: 40px;
     padding-top: 40px;
     width: 100%;
     z-index: 3;
+    // border-bottom: 1px solid black;
   }
 
   &._hero {
-    @extend %area_grid;
-    align-content: center;
+    position: relative;
     max-height: 700px;
+    display: block;
     height: 80%;
-
-    svg {
-      display: none;
-    }
 
     &._paul {
       #paul_svg {

@@ -7,6 +7,7 @@ layout: none
      page.url contains '404' or
      page.url contains '.js' or
      page.url contains '.css' or
+     page.url contains '.xml' or
      page.url contains 'search' or
      page.url contains 'menu' %} {}
   {% else %}

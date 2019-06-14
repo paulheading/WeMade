@@ -30,9 +30,9 @@ if(body.hasClass('_hero')){
 
   });
 } else {
-  // var notHomeTl = new TimelineMax({repeat:-1});
-  // notHomeTl
-  // .call(animLogo,[],'now')
-  // .call(animJobs,[],'now')
-  // ;
+  var notHomeTl = new TimelineMax({repeat:-1,repeatDelay:5});
+  notHomeTl
+  .call(animLogo,[],'now')
+  .call(animJobs,[],'now')
+  ;
 }

@@ -81,6 +81,12 @@ $min720w : 'only screen and (min-width: 720px)';
   }
 }
 
+%center {
+  position: absolute;
+  @include zero();
+  margin: auto;
+}
+
 %img_flex {
   max-width: 100%;
 }
