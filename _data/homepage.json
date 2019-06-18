@@ -12,5 +12,20 @@
         { "bold!"   : "noodles!" }
       ]
     }
+  },
+  {
+    "hero" : {
+      "name" : "Chloe",
+      "url" : "/chloe",
+      "message" : [
+        { "bold"   : "Chloe" },
+        { "book"   : "makes" },
+        { "italic!" : "waves" },
+        { "book"   : "and" },
+        { "book"   : "enjoys" },
+        { "bold"   : "clay" },
+        { "bold"   : "pots!" }
+      ]
+    }
   }
 ]

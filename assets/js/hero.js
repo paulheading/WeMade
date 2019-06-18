@@ -28,22 +28,12 @@ var setAnim = (nameG) => {
 }
 
 var animChloe = (stateG) => {
-  var sen = $('#words > path'),
-      senTargets = [],
-      chloeTl = new TimelineMax();
-
   see.html('Chloe');
 
-  for(var i = 1, l = sen.length; i <= l; i++) {
-    senTargets.push('#words > path:nth-of-type('+i+')');
-  }
-
-  chloeTl
-  .set('#chloe path',{rotation:0,x:0,y:0,scale:1})
-  .set('#chloe path:nth-of-type(1)',{rotation:180,x:3},'4')
-  .set('#chloe path:nth-of-type(2)',{rotation:180,y:10},'4')
-  .set('#chloe path:nth-of-type(5)',{rotation:180,scale:1.2},'4')
-  ;
+  var svgChloe = new TimelineMax();
+  svgChloe
+  .set('.block._hero-chloe',{className:'+=--open'})
+  .set('.block._hero-chloe',{className:'-=--open'},'+=5');
 }
 
 var animWemade = (stateG) => {
@@ -52,6 +42,10 @@ var animWemade = (stateG) => {
 
 var animPaul = (stateG) => {
   see.html('Paul');
+  var svgPaul = new TimelineMax();
+  svgPaul
+  .set('.block._hero-paul',{className:'+=--open'})
+  .set('.block._hero-paul',{className:'-=--open'},'+=5');
 }
 
 var setTicker = (msg) => {
@@ -79,7 +73,7 @@ var setTicker = (msg) => {
     }
   });
   tango.html(tingo);
-  var copyWidth = $('.copy._ticker')[0].clientWidth+4;
+  var copyWidth = $('.copy._ticker')[0].clientWidth+5;
   TweenMax.to('.wrap._ticker',5,{x:-copyWidth,ease:Power0.easeNone,repeat:-1});
 }
 

@@ -8,7 +8,6 @@
     @extend %area_grid;
     border-bottom: 4px solid;
     margin-top: -52px;
-    // border-top: 1px solid black;
   }
 
   &._ticker {
@@ -47,26 +46,23 @@
   &._header {
     @extend %area_grid;
     @extend %grid_default;
+    padding-bottom: 40px;
     padding-top: 40px;
     width: 100%;
     z-index: 3;
-    // border-bottom: 1px solid black;
   }
 
   &._hero {
-    position: relative;
     max-height: 700px;
     display: block;
     height: 80%;
 
-    &._paul {
-      #paul_svg {
-        display: block;
-      }
-    }
+    .block {
+      position: relative;
+      display: none;
+      height: 100%;
 
-    &._chloe {
-      #chloe_svg {
+      &.--open {
         display: block;
       }
     }
@@ -144,6 +140,7 @@
     @extend %area_grid;
     grid-template-columns: 1fr minmax(320px,440px) 1fr;
     line-height: 1.5;
+    font-size: 16px;
 
     @media#{$max719w} {
       padding-bottom: 40px;

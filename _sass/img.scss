@@ -2,27 +2,22 @@ img {
 
   &._paul {
     @extend %center;
-    mix-blend-mode: multiply;
-    z-index: 999;
-    width: 180px;
+    width: 200px;
     transform:
       translateX(-68%)
       translateY(-42%)
       scale(0.8);
+    z-index: 1;
   }
 
   &._chloe {
-    left: calc(50% - 120px);
-    top: calc(50% - 200px);
-    position: absolute;
-    height: auto;
-    width: 240px;
-    z-index: -1;
-
-    @media#{$min640w} {
-      left: calc(50%);
-      top: 100px;
-    }
+    @extend %center;
+    width: 200px;
+    transform:
+      translateX(-68%)
+      translateY(-42%)
+      scale(0.8);
+    z-index: 1;
   }
 
   &._flex {
