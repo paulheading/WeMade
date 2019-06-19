@@ -4,28 +4,31 @@ svg {
   &#paul {
     @extend %center;
     transform:
-      translateY(-50%)
-      translateX(-55%)
+      // translateY(-50%)
+      // translateX(-55%)
       scale(0.7);
     z-index: 2;
+    display: none;
   }
 
   &#makes {
     @extend %center;
     transform:
-      translateY(15%)
-      translateX(30%)
+      // translateY(15%)
+      // translateX(30%)
       scale(0.7);
     z-index: 2;
+    display: none;
   }
 
   &#shapes {
     @extend %center;
     transform:
-      translateY(110%)
-      translateX(-35%)
+      // translateY(110%)
+      // translateX(-35%)
       scale(0.7);
     z-index: 2;
+    display: none;
   }
 
   &#squiggle {
@@ -35,6 +38,7 @@ svg {
       translateX(5%)
       rotate(-20deg)
       scale(0.7);
+    display: none;
   }
 
   &#twizzle {
@@ -43,6 +47,7 @@ svg {
       translateY(-20%)
       translateX(-400%)
       scale(0.7);
+    display: none;
   }
 
   &#bizzle {
@@ -51,6 +56,7 @@ svg {
       translateX(130%)
       translateY(-50%)
       scale(0.7);
+    display: none;
   }
 
   &#fizzle {
@@ -59,6 +65,7 @@ svg {
       translateX(80%)
       translateY(-50%)
       scale(0.7);
+    display: none;
   }
 
   &#man {
@@ -67,6 +74,7 @@ svg {
       translateX(250%)
       translateY(-90%)
       scale(0.7);
+    display: none;
   }
 
   &#hand {
@@ -75,6 +83,7 @@ svg {
       translateX(80%)
       translateY(100%)
       scale(0.7);
+    display: none;
   }
 
   &#cover {

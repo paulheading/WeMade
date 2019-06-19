@@ -28,12 +28,8 @@ var setAnim = (nameG) => {
 }
 
 var animChloe = (stateG) => {
-  see.html('Chloe');
-
-  var svgChloe = new TimelineMax();
-  svgChloe
-  .set('.block._hero-chloe',{className:'+=--open'})
-  .set('.block._hero-chloe',{className:'-=--open'},'+=5');
+  see.html(nameG);
+  svgOn(nameG);
 }
 
 var animWemade = (stateG) => {
@@ -41,11 +37,45 @@ var animWemade = (stateG) => {
 }
 
 var animPaul = (stateG) => {
-  see.html('Paul');
-  var svgPaul = new TimelineMax();
-  svgPaul
-  .set('.block._hero-paul',{className:'+=--open'})
-  .set('.block._hero-paul',{className:'-=--open'},'+=5');
+  see.html(nameG);
+  svgOn(nameG);
+
+  var all = ['#paul','#makes','#shapes'],
+      mobile = new TimelineMax({paused:true}),
+      desktop = new TimelineMax({paused:true});
+
+      mobile
+      .set('#paul',{display:'block',rotation:'-70deg'})
+      .add('switch','+=1')
+      .set('#paul',{fill:'orange',opacity:0.5},'switch')
+      .set('#makes',{display:'block',rotation:'-100deg',x:-20},'switch')
+      .add('switch','+=1')
+      .set('#makes',{fill:'orange',opacity:0.5},'switch')
+      .set('#shapes',{display:'block',rotation:'100deg',y:20,x:-20},'switch')
+      ;
+
+      desktop
+      .set('#paul',{display:'block',rotation:0})
+      ;
+
+  if(stateG != 'match') {
+    desktop.pause();
+    TweenMax.set(all,{clearProps:'all'});
+    mobile.play();
+  } else {
+    mobile.pause();
+    TweenMax.set(all,{clearProps:'all'});
+    desktop.play();
+  }
+}
+
+var svgOn = (nameG) => {
+  var onOff = new TimelineMax(),
+      block = '.block._hero.--'+nameG;
+  onOff
+  .set(block,{className:'+=--open'})
+  .set(block,{className:'-=--open'},'5')
+  ;
 }
 
 var setTicker = (msg) => {

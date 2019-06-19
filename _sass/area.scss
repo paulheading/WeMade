@@ -56,22 +56,6 @@
     max-height: 700px;
     display: block;
     height: 80%;
-
-    .block {
-      position: relative;
-      display: none;
-      height: 100%;
-
-      &.--open {
-        display: block;
-      }
-    }
-
-    &._wemade {
-      #wemade_svg {
-        display: block;
-      }
-    }
   }
 
   &._toolbar {

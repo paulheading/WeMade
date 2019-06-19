@@ -2,9 +2,15 @@
 layout: none
 ---
 
-var stateG = 'unmatch';
+var stateG;
 
 enquire.register('screen and (min-width: 640px)',{
-  match   : function() { stateG = 'match'; },
-  unmatch : function() { stateG = 'unmatch'; }
+  match   : function() {
+    stateG = 'match';
+    console.log(stateG);
+  },
+  unmatch : function() {
+    stateG = 'unmatch';
+    console.log(stateG);
+  }
 });
