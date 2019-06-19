@@ -30,6 +30,33 @@ var setAnim = (nameG) => {
 var animChloe = (stateG) => {
   see.html(nameG);
   svgOn(nameG);
+
+  var all = ['#chloe-pic','#chloe','#makes2','#waves'],
+      mobile = new TimelineMax({paused:true}),
+      desktop = new TimelineMax({paused:true});
+
+      mobile
+      .set('#chloe-pic',{x:'-60%'})
+      .add('switch','+=1')
+      .set('#makes2',{opacity:1,rotation:-100,x:-20},'switch')
+      .add('switch','+=1')
+      .set('#makes2',{fill:'teal',opacity:0.5},'switch')
+      ;
+
+      desktop
+      .set('#chloe-pic',{x:'-110%',y:'-50%'})
+      .set('#makes2',{opacity:1,rotation:5,x:'50%',y:'20%'})
+      ;
+
+  if(stateG != 'match') {
+    desktop.pause();
+    TweenMax.set(all,{clearProps:'all'});
+    mobile.play();
+  } else {
+    mobile.pause();
+    TweenMax.set(all,{clearProps:'all'});
+    desktop.play();
+  }
 }
 
 var animWemade = (stateG) => {
@@ -40,22 +67,27 @@ var animPaul = (stateG) => {
   see.html(nameG);
   svgOn(nameG);
 
-  var all = ['#paul','#makes','#shapes'],
+  var all = ['#paul-pic','#paul','#makes','#shapes'],
       mobile = new TimelineMax({paused:true}),
       desktop = new TimelineMax({paused:true});
 
       mobile
-      .set('#paul',{display:'block',rotation:'-70deg'})
+      .set('#paul-pic',{x:'-60%'})
+      .set('#paul',{opacity:1,rotation:-70})
       .add('switch','+=1')
       .set('#paul',{fill:'orange',opacity:0.5},'switch')
-      .set('#makes',{display:'block',rotation:'-100deg',x:-20},'switch')
+      .set('#makes',{opacity:1,rotation:-100,x:-20},'switch')
       .add('switch','+=1')
       .set('#makes',{fill:'orange',opacity:0.5},'switch')
-      .set('#shapes',{display:'block',rotation:'100deg',y:20,x:-20},'switch')
+      .set('#shapes',{opacity:1,rotation:100,y:20,x:-20},'switch')
       ;
 
       desktop
-      .set('#paul',{display:'block',rotation:0})
+      .set('#paul-pic',{x:'-110%',y:'-50%'})
+      .set('#paul',{opacity:1,rotation:-10,x:'-100%',y:'-50%'})
+      .set('#makes',{opacity:1,rotation:5,x:'50%',y:'20%'})
+      .set('#shapes',{opacity:1,rotation:-5,x:'-50%',y:'150%'})
+      .set('#squiggle',{opacity:1,rotation:-10,x:'-10%',y:'-70%'})
       ;
 
   if(stateG != 'match') {

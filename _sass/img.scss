@@ -1,22 +1,14 @@
 img {
 
-  &._paul {
+  &#paul-pic {
     @extend %center;
-    width: 200px;
-    transform:
-      translateX(-68%)
-      // translateY(-42%)
-      scale(0.8);
+    width: 160px;
     z-index: 1;
   }
 
-  &._chloe {
+  &#chloe-pic {
     @extend %center;
-    width: 200px;
-    transform:
-      translateX(-68%)
-      translateY(-42%)
-      scale(0.8);
+    width: 160px;
     z-index: 1;
   }
 
