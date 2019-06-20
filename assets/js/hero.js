@@ -3,6 +3,7 @@ layout: none
 ---
 
 var see = $('.copy._see'),
+    city = $('.title._city'),
     nameG,resizeTimer;
 
 $(window).on('resize',function(e){
@@ -12,9 +13,26 @@ $(window).on('resize',function(e){
 
 var animHero = (name,msg,url) => {
   nameG = name;
-  // setAnim(nameG);
+  setAnim(nameG);
   setTicker(msg);
   setUrl(url);
+  setWifi();
+}
+
+var setWifi = () => {
+  var wifiTl = new TimelineMax(),
+      zero = $('#zero','#wifi'),
+      one = $('#one','#wifi'),
+      two = $('#two','#wifi'),
+      three = $('#three','#wifi'),
+      all = [zero,one,two,three];
+
+  wifiTl
+  .staggerTo(all,0.2,{opacity:0.4},0.2,'+=0.4')
+  .staggerTo([three,two],0.2,{opacity:0.2},0.2,'+=1.0')
+  .staggerTo(two,0.2,{opacity:0.4},0.2,'+=0.4')
+  .staggerTo([three,two,one,zero],0.2,{opacity:0.2},0.2,'+=1.0')
+  ;
 }
 
 var setAnim = (nameG) => {
@@ -29,7 +47,8 @@ var setAnim = (nameG) => {
 
 var animChloe = (stateG) => {
   see.html(nameG);
-  svgOn(nameG);
+  city.html('Toronto');
+  // svgOn(nameG);
 
   var all = ['#chloe-pic','#chloe','#makes2','#waves'],
       mobile = new TimelineMax({paused:true}),
@@ -48,24 +67,26 @@ var animChloe = (stateG) => {
       .set('#makes2',{opacity:1,rotation:5,x:'50%',y:'20%'})
       ;
 
-  if(stateG != 'match') {
-    desktop.pause();
-    TweenMax.set(all,{clearProps:'all'});
-    mobile.play();
-  } else {
-    mobile.pause();
-    TweenMax.set(all,{clearProps:'all'});
-    desktop.play();
-  }
+  // if(stateG != 'match') {
+  //   desktop.pause();
+  //   TweenMax.set(all,{clearProps:'all'});
+  //   mobile.play();
+  // } else {
+  //   mobile.pause();
+  //   TweenMax.set(all,{clearProps:'all'});
+  //   desktop.play();
+  // }
 }
 
 var animWemade = (stateG) => {
   see.html('Studio');
+  city.html('Wemade');
 }
 
 var animPaul = (stateG) => {
   see.html(nameG);
-  svgOn(nameG);
+  city.html('London');
+  // svgOn(nameG);
 
   var all = ['#paul-pic','#paul','#makes','#shapes'],
       mobile = new TimelineMax({paused:true}),
@@ -90,15 +111,15 @@ var animPaul = (stateG) => {
       .set('#squiggle',{opacity:1,rotation:-10,x:'-10%',y:'-70%'})
       ;
 
-  if(stateG != 'match') {
-    desktop.pause();
-    TweenMax.set(all,{clearProps:'all'});
-    mobile.play();
-  } else {
-    mobile.pause();
-    TweenMax.set(all,{clearProps:'all'});
-    desktop.play();
-  }
+  // if(stateG != 'match') {
+  //   desktop.pause();
+  //   TweenMax.set(all,{clearProps:'all'});
+  //   mobile.play();
+  // } else {
+  //   mobile.pause();
+  //   TweenMax.set(all,{clearProps:'all'});
+  //   desktop.play();
+  // }
 }
 
 var svgOn = (nameG) => {
@@ -136,7 +157,7 @@ var setTicker = (msg) => {
   });
   tango.html(tingo);
   var copyWidth = $('.copy._ticker')[0].clientWidth+5;
-  TweenMax.to('.wrap._ticker',5,{x:-copyWidth,ease:Power0.easeNone,repeat:-1});
+  TweenMax.to('.wrap._ticker',7,{x:-copyWidth,ease:Power0.easeNone,repeat:-1});
 }
 
 var setUrl = (url) => {
