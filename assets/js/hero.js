@@ -12,7 +12,7 @@ $(window).on('resize',function(e){
 
 var animHero = (name,msg,url) => {
   nameG = name;
-  setAnim(nameG);
+  // setAnim(nameG);
   setTicker(msg);
   setUrl(url);
 }
