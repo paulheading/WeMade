@@ -56,6 +56,17 @@
     max-height: 700px;
     display: block;
     height: 80%;
+
+    &._chloe {
+      .block._hero.--chloe {
+        opacity: 1;
+      }
+    }
+    &._paul {
+      .block._hero.--paul {
+        opacity: 1;
+      }
+    }
   }
 
   &._toolbar {
