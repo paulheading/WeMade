@@ -8,8 +8,10 @@
       font-weight: bold;
     }
 
-    &.--dots {
-      margin: 0 -3px;
+    &.--time {
+      grid-auto-flow: column;
+      grid-gap: 5px;
+      display: grid;
     }
   }
 

@@ -22,6 +22,7 @@ if(body.hasClass('_hero')){
     .set(zones,{className:'+=_'+name})
     .call(animLogo,[],'start')
     .call(animHero,[name,msg,url],'start')
+    .call(setWifi,[],'start')
     .call(animJobs,[],'start')
     .add('stop','+=5')
     .set('.word',{clearProps:'all'},'stop')
@@ -33,6 +34,7 @@ if(body.hasClass('_hero')){
   var notHomeTl = new TimelineMax({repeat:-1,repeatDelay:5});
   notHomeTl
   .call(animLogo,[],'now')
+  .call(setWifi,[],'start')
   .call(animJobs,[],'now')
   ;
 }

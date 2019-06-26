@@ -1,5 +1,5 @@
 
-var timeFunc = () => {
+var timeFunc = (name) => {
   var weekday = new Array(7);
       weekday[0] = "Sun",
       weekday[1] = "Mon",
@@ -8,30 +8,43 @@ var timeFunc = () => {
       weekday[4] = "Thu",
       weekday[5] = "Fri",
       weekday[6] = "Sat";
-  var d = new Date(),
-      n = weekday[d.getUTCDay()],
-      m = d.getUTCMinutes();
 
-  var h = d.getUTCHours() + 1,
+  var date = new Date(),
+      utcDay = date.getUTCDay(),
+      utcHrs = date.getUTCHours(),
+      utcMins = date.getUTCMinutes(),
+
       day = $('._clock.--day'),
       hours = $('._clock.--hrs'),
       minutes = $('._clock.--mins');
 
-  day.text(n);
+  minutes.text(utcMins);
 
-  if(h < 10) {
-    hours.text('0'+h);
-  } else if(h == 24) {
-    hours.text('00');
-  } else {
-    hours.text(h);
+  if(name == 'chloe') {
+    var dispHrs = utcHrs-4;
+    day.text(weekday[utcDay-1]);
+    hours.text(dispHrs);
   }
 
-  if(m < 10) {
-    minutes.text('0'+m);
-  } else {
-    minutes.text(m);
+  if(name == 'paul') {
+    var dispHrs = utcHrs+1;
+    day.text(weekday[utcDay]);
+    hours.text(dispHrs);
   }
+
+  // if(h < 10) {
+  //   hours.text('0'+h);
+  // } else if(h == 24) {
+  //   hours.text('00');
+  // } else {
+  //   hours.text(h);
+  // }
+  //
+  // if(m < 10) {
+  //   minutes.text('0'+m);
+  // } else {
+  //   minutes.text(m);
+  // }
 }
 
 window.setInterval(function(){

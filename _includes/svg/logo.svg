@@ -4,8 +4,8 @@
 	 width="87.6px" height="40px" viewBox="0 0 87.6 40" style="enable-background:new 0 0 87.6 40;" xml:space="preserve">
 <g>
 	<rect style="opacity:0;fill:#FFFFFF;" width="87.6" height="40"/>
-	
-		<path id="wm" style="fill:none;stroke:#000000;stroke-width:6;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" d="
+
+		<path id="wm" style="fill:none;stroke-width:6;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" d="
 		M6.1,5.1l10.7,30L27.6,5l10.7,30L49,5l10.7,30L70.4,5l10.7,29.6"/>
 </g>
 </svg>

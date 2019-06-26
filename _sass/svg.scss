@@ -85,10 +85,6 @@ svg {
   }
 
   @include svg_nav(black);
-
-  &.--nyo {
-    @include svg_nav(white);
-  }
 }
 
 .svg {
