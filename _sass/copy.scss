@@ -6,12 +6,20 @@
 
     &.--day {
       font-weight: bold;
+
+      @media#{$max639w} {
+        display: none;
+      }
     }
 
     &.--time {
       grid-auto-flow: column;
       grid-gap: 5px;
       display: grid;
+
+      @media#{$max639w} {
+        font-weight: bold;
+      }
     }
   }
 

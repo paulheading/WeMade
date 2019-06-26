@@ -6,6 +6,10 @@
     grid-auto-flow: column;
     grid-gap: 12px;
     display: grid;
+
+    @media#{$max639w} {
+      display: none;
+    }
   }
 
   &.--toolbar {

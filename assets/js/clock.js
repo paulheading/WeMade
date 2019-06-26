@@ -13,38 +13,33 @@ var timeFunc = (name) => {
       utcDay = date.getUTCDay(),
       utcHrs = date.getUTCHours(),
       utcMins = date.getUTCMinutes(),
-
+      localHrs,
+      localMins,
       day = $('._clock.--day'),
       hours = $('._clock.--hrs'),
       minutes = $('._clock.--mins');
 
-  minutes.text(utcMins);
+  localMins = utcMins;
 
   if(name == 'chloe') {
-    var dispHrs = utcHrs-4;
+    localHrs = utcHrs-4;
+  } else {
+    localHrs = utcHrs+1;
+  }
+
+  if(localHrs < 0){
     day.text(weekday[utcDay-1]);
-    hours.text(dispHrs);
-  }
-
-  if(name == 'paul') {
-    var dispHrs = utcHrs+1;
+    hours.text(localHrs+24);
+  } else {
     day.text(weekday[utcDay]);
-    hours.text(dispHrs);
+    hours.text(localHrs);
   }
 
-  // if(h < 10) {
-  //   hours.text('0'+h);
-  // } else if(h == 24) {
-  //   hours.text('00');
-  // } else {
-  //   hours.text(h);
-  // }
-  //
-  // if(m < 10) {
-  //   minutes.text('0'+m);
-  // } else {
-  //   minutes.text(m);
-  // }
+  if(localMins < 10){
+    minutes.text('0'+localMins);
+  } else {
+    minutes.text(localMins);
+  }
 }
 
 window.setInterval(function(){

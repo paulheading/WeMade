@@ -52,11 +52,12 @@
     align-items: center;
 
     @media#{$max639w} {
-      grid-template-columns: auto 12fr 3fr 15fr;
+      grid-template-columns: 134px 34px 134px;
+      justify-content: center;
     }
     @media#{$min640w} {
       grid-template-columns: auto 68px 34px 114px;
-      grid-gap: 20px;
+      grid-gap: 30px;
     }
   }
 
