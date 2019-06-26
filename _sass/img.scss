@@ -1,15 +1,18 @@
+
+%pic {
+  @extend %center;
+  width: 150px;
+  z-index: 1;
+}
+
 img {
 
   &#paul-pic {
-    @extend %center;
-    width: 150px;
-    z-index: 1;
+    @extend %pic;
   }
 
   &#chloe-pic {
-    @extend %center;
-    width: 150px;
-    z-index: 1;
+    @extend %pic;
   }
 
   &._flex {
@@ -18,12 +21,12 @@ img {
   &._kenm {
     @extend %img_flex;
   }
-  &._thumb {
-    @include zero($t:-40px,$l:160px);
-    position: absolute;
-    height: 150px;
-    width: 150px;
-    z-index: -1;
-    opacity: 0;
-  }
+  // &._thumb {
+  //   @include zero($t:-40px,$l:160px);
+  //   position: absolute;
+  //   height: 150px;
+  //   width: 150px;
+  //   z-index: -1;
+  //   opacity: 0;
+  // }
 }
