@@ -12,7 +12,6 @@ visual  :
   - split :
     - svg : barbican/logo
     - jpg : laptopbw
-  - text : here
   - jpg : laptopv2bw
   - split :
     - jpg : scroll

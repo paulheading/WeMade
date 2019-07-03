@@ -2,7 +2,7 @@
 layout: none
 ---
 
-var stateG;
+var stateG,nameG,resizeTimer;
 
 enquire.register('screen and (min-width: 640px)',{
   match   : function() {
@@ -14,3 +14,5 @@ enquire.register('screen and (min-width: 640px)',{
     console.log(stateG);
   }
 });
+
+smoothScroll();

@@ -38,8 +38,9 @@
         {% elsif page.type == 'project' %}
 
           {% include html/loop-project.html %}
-          {% include html/area-paginate.html %}
-
+          <div id="text" class="row _project --content">
+            {{ content }}
+          </div>
         {% endif %}
 
         </div>

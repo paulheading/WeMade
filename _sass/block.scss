@@ -1,6 +1,12 @@
 
 .block {
 
+  &._paginate {
+    grid-auto-flow: column;
+    display: grid;
+    grid-gap: 20px;
+  }
+
   &._hero {
     @extend %center;
     opacity: 0;

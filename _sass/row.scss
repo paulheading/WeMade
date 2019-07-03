@@ -130,6 +130,10 @@
       display: grid;
     }
 
+    &.--content {
+      padding: 40px 60px 60px;
+    }
+
     + .row._project {
       margin-top: 20px;
     }

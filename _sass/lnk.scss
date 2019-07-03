@@ -28,7 +28,12 @@
   }
 
   &._paginate {
-    width: 200px;
+    text-decoration: none;
+
+    &.--text {
+      border-bottom: 3px solid;
+      font-weight: bold;
+    }
   }
 
   &._menu {

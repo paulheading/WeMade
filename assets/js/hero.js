@@ -3,12 +3,11 @@ layout: none
 ---
 
 var see = $('.copy._see'),
-    city = $('.title._city'),
-    nameG,resizeTimer;
+    city = $('.title._city');
 
 $(window).on('resize',function(e){
-  clearTimeout(resizeTimer);
   resizeTimer = setTimeout(setAnim(nameG),300);
+  clearTimeout(resizeTimer);
 });
 
 var animHero = (name,msg,url) => {

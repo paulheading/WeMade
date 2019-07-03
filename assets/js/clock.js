@@ -43,5 +43,5 @@ var timeFunc = (name) => {
 }
 
 window.setInterval(function(){
-  timeFunc();
+  timeFunc(nameG);
 },1000);

@@ -12,7 +12,6 @@ visual :
   - split :
     - svg : nyo/logo
     - jpg : laptopbw
-  - text : here
   - jpg : laptopv2bw
   - mp4 : explode
   - split :

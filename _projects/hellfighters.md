@@ -12,7 +12,6 @@ visual  :
   - split :
     - svg : barbican/logo
     - png : split
-  - text : here
   - png : full
   - split :
     - png : split

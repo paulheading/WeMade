@@ -7,6 +7,9 @@
       </a>
     </div>
     <div class="split _right --header">
+      {% if page.type == 'project' %}
+        {% include html/area-paginate.html %}
+      {% endif %}
       <div class="lnk _search">
         {% include svg/search.svg %}
       </div>
