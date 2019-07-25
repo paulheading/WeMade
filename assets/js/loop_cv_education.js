@@ -1,7 +1,6 @@
 
 function loop_cv_education(name,limit=1) {
-  var count = 0,
-      match = 0,
+  var match = 0,
       feed;
 
   if(name == 'paul') {
@@ -11,8 +10,8 @@ function loop_cv_education(name,limit=1) {
     feed = feed_data_chloe.education;
   }
 
-  $(feed).each(function(){
-    var ting = feed[count],
+  $(feed).each(function(i){
+    var ting = feed[i],
         cert = ting.cert,
         school = ting.school,
         url = ting.url;
@@ -29,6 +28,5 @@ function loop_cv_education(name,limit=1) {
     match++
     }
     $('.list._cv._education').append(entry);
-    count++
   });
 }

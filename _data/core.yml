@@ -1,17 +1,16 @@
 
-  # - name : WeMade
-  #   url : '/work'
-  #   message :
-  #     - bold : WeMade
-  #     - book : a
-  #     - book : whole
-  #     - book : new
-  #     - book : '&#35;&#36;'
-  #     - bold! : studio
-  #     - book : '&#169;&#8482;'
-  #
+  - name : WeMade
+    message :
+      - bold : WeMade
+      - book : a
+      - book : whole
+      - book : new
+      - book : '&#35;&#36;'
+      - bold! : studio
+      - book : '&#169;&#8482;'
+
   - name : Paul
-    url : '/paul'
+    city : London
     message :
       - bold : Paul
       - book : makes
@@ -21,7 +20,7 @@
       - bold! : noodles!
 
   - name : Chloe
-    url : '/chloe'
+    city : Toronto
     message :
       - bold : Chloe
       - book : makes

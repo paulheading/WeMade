@@ -1,33 +1,6 @@
 
 svg {
 
-  &#logo {
-    &.--n1 {
-      @extend %center;
-      transform: scale(1.1);
-      left: -500px;
-      top: -280px;
-    }
-  }
-
-  &#search {
-    &.--n1 {
-      @extend %center;
-      transform: scale(1.1);
-      left: 140px;
-      top: -320px;
-    }
-  }
-
-  &#burger {
-    &.--n1 {
-      @extend %center;
-      transform: scale(1.1);
-      left: 460px;
-      top: 240px;
-    }
-  }
-
   &#paul {
     @extend %center;
     z-index: 2;

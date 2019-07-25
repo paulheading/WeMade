@@ -1,6 +1,7 @@
 
 function loop_work_pages(feed,name) {
   var total = feed.length -1;
+
   $(feed).each(function(i){
     var ting = feed[i],
         next = ting.next,

@@ -1,7 +1,6 @@
 
 function loop_cv_skills(name,limit=1) {
-  var count = 0,
-      match = 0;
+  var match = 0;
 
   if(name == 'paul') {
     var feed = feed_data_paul.skills;
@@ -10,8 +9,8 @@ function loop_cv_skills(name,limit=1) {
     var feed = feed_data_chloe.skills;
   }
 
-  $(feed).each(function(){
-    var ting = feed[count],
+  $(feed).each(function(i){
+    var ting = feed[i],
         skillsType = ting.type;
 
     if(match < limit) {
@@ -25,6 +24,5 @@ function loop_cv_skills(name,limit=1) {
     match++
     }
     $('.list._cv._skills').append(entry);
-    count++
   });
 }

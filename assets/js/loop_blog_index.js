@@ -1,11 +1,10 @@
 
 function loop_blog_index(name,limit=1) {
-  var count = 0,
-      match = 0,
+  var match = 0,
       feed = feed_blog;
 
-  $(feed).each(function(){
-    var ting = feed[count],
+  $(feed).each(function(i){
+    var ting = feed[i],
         date = ting.date,
         end = ting.end,
         desc = ting.desc,
@@ -44,6 +43,5 @@ function loop_blog_index(name,limit=1) {
         match++
       }
     }
-    count++
   });
 }

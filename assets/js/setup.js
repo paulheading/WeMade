@@ -5,14 +5,18 @@ layout: none
 var stateG,
     nameG,
     resizeTimer,
+    prnt,
     month = new Array(12),
     weekday = new Array(7),
     feed_work = {{ site.work | jsonify }},
     feed_blog = {{ site.blog | jsonify }},
     feed_data_core = {{ site.data.core | jsonify }},
     feed_data_paul = {{ site.data.paul | jsonify }},
-    feed_data_chloe = {{ site.data.chloe | jsonify }};
+    feed_data_chloe = {{ site.data.chloe | jsonify }},
+    coreTl = new TimelineMax({repeat:-1}),
+    random = () => { return 0.3 - Math.random(); };
 
+    feed_data_core.sort(random);
     feed_work.reverse();
     feed_blog.reverse();
 

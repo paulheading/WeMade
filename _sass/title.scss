@@ -17,16 +17,6 @@
     font-weight: bold;
   }
 
-  &._see {
-    text-transform: capitalize;
-    font-size: 20px;
-
-    &.--n4 {
-      border-bottom: 2px solid white;
-      color: white;
-    }
-  }
-
   &._staff {
     @media#{$min640w} {
       display: inline;

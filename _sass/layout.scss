@@ -84,6 +84,10 @@
 
     &._wemade {
       @include custom($wemade);
+
+      img._wemade {
+        opacity: 1;
+      }
     }
 
     &._paul {

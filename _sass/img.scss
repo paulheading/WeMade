@@ -45,6 +45,25 @@ img {
     }
   }
 
+  &._wemade {
+    @extend %pic;
+    mix-blend-mode: multiply;
+
+    &.--n1 {
+      left: 380px;
+      top: -190px;
+    }
+
+    &.--n2 {
+      left: 190px;
+      top: 190px;
+    }
+
+    &.--n3 {
+      left: -380px;
+    }
+  }
+
   &._flex {
     @extend %img_flex;
   }

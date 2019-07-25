@@ -1,7 +1,6 @@
 
 function loop_cv_jobs(name,limit=1) {
-  var count = 0,
-      match = 0;
+  var match = 0;
 
   if(name == 'paul') {
     var feed = feed_data_paul.jobs;
@@ -10,8 +9,8 @@ function loop_cv_jobs(name,limit=1) {
     var feed = feed_data_chloe.jobs;
   }
 
-  $(feed).each(function(){
-    var ting = feed[count],
+  $(feed).each(function(i){
+    var ting = feed[i],
         boss = ting.boss,
         date = ting.date,
         end = ting.end,
@@ -48,6 +47,5 @@ function loop_cv_jobs(name,limit=1) {
     match++
     }
     $('.list._cv._jobs').append(row);
-    count++
   });
 }

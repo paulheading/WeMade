@@ -1,8 +1,6 @@
 
 function loop_cv(name,limit=1) {
-  var count = 0,
-      match = 0;
-
+  
   if(name == 'paul') {
     var feed = feed_data_paul;
   }
