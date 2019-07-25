@@ -1,21 +1,20 @@
 
-- name :
-    - first  : Chloe
-      second : Ings
+  name :
+    first  : Chloe
+    second : Ings
 
   addr :
-    - area : Hackney
-      city : Toronto
+    area : Hackney
+    city : Toronto
 
   phone  : +44 7873 156 538
   bio    : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ut ultrices ante.
 
   social :
-    - github : chloeings
+    github : chloeings
 
   jobs :
     - date   : 03/2013
-      end    : Now
       role   : Designer
       boss   : Barbican
       url    : https://www.barbican.org.uk
@@ -36,7 +35,6 @@
       url    : https://brandwavemarketing.com
 
   skills :
-    - subtitle : Inc. Photoshop, InDesign, Illustrator, After Effects, Premiere Pro
     - type : SCSS
     - type : Liquid
     - type : PHP

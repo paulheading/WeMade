@@ -1,57 +1,37 @@
 <!DOCTYPE html>
+
 <html lang="{{ page.lang | default: site.lang | default: "en" }}" class="no-js">
 <link rel="stylesheet" href="https://use.typekit.net/enw1ksx.css">
 
   {% include html/head.html %}
 
-  <body class="layout{{ page.type | downcase | prepend: ' _' }}{% if page.collection %}{{ page.collection | downcase | prepend: ' --' }}{% endif %}{% if page.title %}{{ page.title | downcase | prepend: ' --' }}{% endif %}{% if page.tags %}{{ page.tags | join: ' --' | replace: ' ',' --' | prepend: ' --' }}{% endif %}">
+  <body class="layout{% if page.collection %}{{ page.collection | downcase | prepend: ' --' }}{% endif %}{% if page.title %}{{ page.title | replace: ' ','' | downcase | prepend: ' --' }}{% endif %}{% if page.tag %}{{ page.tag | join: ' --' | replace: ' ',' --' | prepend: ' --' }}{% endif %}">
 
-    {% include html/overlay.html title='load' state='open' %}
+  {% include html/overlay.html title='load' state='open' %}
+  {% include html/overlay.html title='search' %}
+  {% include html/overlay.html title='menu' %}
+  {% unless page.type == 'home' %}
+    {% include html/area-header.html %}
+  {% endunless %}
 
-      {% include html/overlay.html title='search' %}
-      {% include html/overlay.html title='menu' %}
-      {% include html/area-header.html %}
+  <div class="area _content">
+    <div class="wrap _content">
 
-      {% if page.type == 'hero' %}
-
-      {% include html/area-hero.html %}
-      {% include html/area-see.html %}
-      {% include html/area-ticker.html %}
-
+      {% if page.type == 'work' %}
+        {% include html/layout-work.html %}
       {% else %}
-
-      <div class="area{{ page.type | prepend: ' _' }}{% if page.tags %}{{ page.tags | join: ' --' | replace: ' ',' --' | prepend: ' --' }}{% endif %}">
-        <div class="wrap{{ page.type | prepend: ' _' }}{% if page.title %}{{ page.title | downcase | prepend: ' --' }}{% endif %}">
-
-        {% if page.type == 'text' %}
-
-          {% include html/loop-text.html %}
-
-        {% elsif page.type == 'blog' %}
-
-          {{ content }}
-
-        {% elsif page.type == 'resume' %}
-
-          {% include html/loop-cv.html %}
-
-        {% elsif page.type == 'project' %}
-
-          {% include html/loop-project.html %}
-          <div id="text" class="row _project --content">
-            {{ content }}
-          </div>
-        {% endif %}
-
-        </div>
-      </div>
-
+        {{ content }}
       {% endif %}
 
-      {% include html/area-toolbar.html %}
-      {% include html/area-desktop.html %}
-      {% include html/area-email.html %}
-      {% include html/area-footer.html %}
+    </div>
+  </div>
+
+  {% include html/area-see.html %}
+  {% include html/area-ticker.html %}
+  {% include html/area-toolbar.html %}
+  {% include html/area-desktop.html %}
+  {% include html/area-email.html %}
+  {% include html/area-footer.html %}
 
   </body>
 

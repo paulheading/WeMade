@@ -7,6 +7,7 @@
     border-radius: 6px;
     font-weight: 600;
     color: white;
+    text-transform: capitalize;
 
     &.--date {
       background-color: $trelloGreen;

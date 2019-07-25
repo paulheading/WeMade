@@ -1,13 +1,41 @@
 
+%see {
+  @extend %center;
+  transform-origin: center;
+  text-align: center;
+  font-weight: bold;
+  z-index: 999;
+  height: 28px;
+  width: 110px;
+}
+
 .lnk {
-  align-content: center;
   cursor: pointer;
-  display: grid;
 
   &._see {
-    background-color: black;
-    text-decoration: none;
-    padding: 12px 15px;
+    &.--n1 {
+      @extend %see;
+      transform: scale(1.1);
+      left: -140px;
+      top: -270px;
+    }
+    &.--n2 {
+      @extend %see;
+      transform: scale(1.1) rotate(-90deg);
+      left: 600px;
+      top: -40px;
+    }
+    &.--n3 {
+      @extend %see;
+      transform: scale(1.1);
+      left: -250px;
+      top: 250px;
+    }
+    &.--n4 {
+      background-color: black;
+      text-decoration: none;
+      padding: 12px 15px;
+    }
   }
 
   &._trello {
@@ -30,9 +58,13 @@
   &._paginate {
     text-decoration: none;
 
+    &-page {
+      padding: 40px;
+    }
+
     &.--text {
-      border-bottom: 3px solid;
       font-weight: bold;
+      font-size: 21px;
     }
   }
 
@@ -58,7 +90,7 @@
   &._index {
     text-decoration: none;
     position: relative;
-    display: none;
+    // display: none;
 
     &:nth-child(-n+5) {
       display: block;

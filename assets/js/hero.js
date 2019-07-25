@@ -2,7 +2,7 @@
 layout: none
 ---
 
-var see = $('.copy._see'),
+var see = $('.title._see'),
     city = $('.title._city');
 
 $(window).on('resize',function(e){
@@ -29,80 +29,18 @@ var setAnim = (nameG) => {
 }
 
 var animChloe = (stateG) => {
-  see.html(nameG);
+  see.html('See '+nameG);
   city.html('Toronto');
-  // svgOn(nameG);
-
-  var all = ['#chloe-pic','#chloe','#makes2','#waves'],
-      mobile = new TimelineMax({paused:true}),
-      desktop = new TimelineMax({paused:true});
-
-      mobile
-      .set('#chloe-pic',{x:'-60%'})
-      .add('switch','+=1')
-      .set('#makes2',{opacity:1,rotation:-100,x:-20},'switch')
-      .add('switch','+=1')
-      .set('#makes2',{fill:'teal',opacity:0.5},'switch')
-      ;
-
-      desktop
-      .set('#chloe-pic',{x:'-110%',y:'-50%'})
-      .set('#makes2',{opacity:1,rotation:5,x:'50%',y:'20%'})
-      ;
-
-  // if(stateG != 'match') {
-  //   desktop.pause();
-  //   TweenMax.set(all,{clearProps:'all'});
-  //   mobile.play();
-  // } else {
-  //   mobile.pause();
-  //   TweenMax.set(all,{clearProps:'all'});
-  //   desktop.play();
-  // }
 }
 
 var animWemade = (stateG) => {
-  see.html('Studio');
+  see.html('See Studio');
   city.html('Wemade');
 }
 
 var animPaul = (stateG) => {
-  see.html(nameG);
+  see.html('See '+nameG);
   city.html('London');
-  // svgOn(nameG);
-
-  var all = ['#paul-pic','#paul','#makes','#shapes'],
-      mobile = new TimelineMax({paused:true}),
-      desktop = new TimelineMax({paused:true});
-
-      mobile
-      .set('#paul-pic',{x:'-60%'})
-      .set('#paul',{opacity:1,rotation:-70})
-      .add('switch','+=1')
-      .set('#paul',{fill:'orange',opacity:0.5},'switch')
-      .set('#makes',{opacity:1,rotation:-100,x:-20},'switch')
-      .add('switch','+=1')
-      .set('#makes',{fill:'orange',opacity:0.5},'switch')
-      .set('#shapes',{opacity:1,rotation:100,y:20,x:-20},'switch')
-      ;
-
-      desktop
-      .set('#paul-pic',{x:'-110%',y:'-50%'})
-      .set('#paul',{opacity:1,rotation:-10,x:'-100%',y:'-50%'})
-      .set('#makes',{opacity:1,rotation:5,x:'50%',y:'20%'})
-      .set('#shapes',{opacity:1,rotation:-5,x:'-50%',y:'150%'})
-      .set('#squiggle',{opacity:1,rotation:-10,x:'-10%',y:'-70%'})
-      ;
-
-  // if(stateG != 'match') {
-  //   desktop.pause();
-  //   TweenMax.set(all,{clearProps:'all'});
-  //   mobile.play();
-  // } else {
-  //   mobile.pause();
-  //   TweenMax.set(all,{clearProps:'all'});
-  //   desktop.play();
-  // }
 }
 
 var svgOn = (nameG) => {
@@ -144,5 +82,5 @@ var setTicker = (msg) => {
 }
 
 var setUrl = (url) => {
-  TweenMax.set(['.area._hero','.lnk._see'],{attr:{href:url}});
+  TweenMax.set('.lnk._see',{attr:{href:url}});
 }

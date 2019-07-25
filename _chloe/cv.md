@@ -1,4 +1,3 @@
 ---
-title  : Chloe's CV
-type   : resume
+title : cv
 ---

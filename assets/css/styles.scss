@@ -10,7 +10,6 @@
 'block',
 'area',
 'btn',
-'chloe',
 'col',
 'copy',
 'img',
@@ -20,6 +19,7 @@
 'input',
 'overlay',
 'layout',
+'list',
 'lnk',
 'row',
 'split',
@@ -27,8 +27,7 @@
 'tag',
 'textarea',
 'visual',
-'wrap',
-'video';
+'wrap';
 
 .word {
   padding-right: 2px;
@@ -67,10 +66,6 @@
   @include ib;
 }
 
-.wrap _ticker {
-  min-width: 1000px;
-}
-
 .flag {
   background-color: rgba(black,0.1);
   height: 16px;
@@ -100,7 +95,7 @@
 }
 
 .list {
-  &._desktop {
+  &._trello {
     padding: 0 10px 10px;
   }
 }

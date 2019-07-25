@@ -1,27 +1,26 @@
 
-- name :
-    - first  : Paul
-      second : Heading
+  name :
+    first  : Paul
+    second : Heading
 
   addr :
-    - area : Hackney
-      city : London
+    area : Hackney
+    city : London
 
   phone  : +44 7873 156 538
   bio    : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ut ultrices ante.
 
   social :
-    - github : paulheading
-    - insta  : folloapollo
-    - other  : adventures
+    github : paulheading
+    insta  : folloapollo
+    other  : adventures
 
   jobs :
     - date   : 03/2013
-      end    : Now
       role   : Designer
       boss   : Barbican
       url    : https://www.barbican.org.uk
-    - date   : 04/2013
+    - date   : 04/2010
       end    : 03/2013
       role   : Designer
       boss   : Skye Creative
@@ -33,7 +32,6 @@
       url    : https://brandwavemarketing.com
 
   skills :
-    - subtitle : Inc. After Effects, Illustrator, Photoshop, InDesign, Premiere Pro
     - type : SCSS
     - type : Liquid
     - type : PHP

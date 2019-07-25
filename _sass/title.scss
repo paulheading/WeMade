@@ -1,6 +1,10 @@
 
 .title {
 
+  &._category {
+    text-transform: capitalize;
+  }
+
   &._folder {
     color: rgba(black,0.4);
     text-align: center;
@@ -8,15 +12,19 @@
   }
 
   &._city {
+    letter-spacing: 0.05em;
     color: rgba(black,0.4);
     font-weight: bold;
   }
 
   &._see {
-    border-bottom: 2px solid white;
     text-transform: capitalize;
     font-size: 20px;
-    color: white;
+
+    &.--n4 {
+      border-bottom: 2px solid white;
+      color: white;
+    }
   }
 
   &._staff {
@@ -63,12 +71,45 @@
     align-self: center;
     display: grid;
 
-    &._project {
+    &.--title {
       font-weight: 600;
+    }
+
+    &.--format {
+      text-transform: capitalize;
     }
   }
 
   &._cv {
+
+    &-jobs {
+      &.--boss {
+        font-weight: 600;
+      }
+      &.--role {
+        text-transform: capitalize;
+      }
+    }
+
+    &-project {
+      &.--title {
+        font-weight: 600;
+      }
+      &.--format {
+        text-transform: capitalize;
+      }
+    }
+
+    &-education {
+      &.--school {
+        font-weight: 600;
+      }
+    }
+
+    &._bio, &._projects, &._jobs, &._skills, &._education {
+      padding-bottom: 5px;
+    }
+
     &._title {
       font-weight: 600;
     }
@@ -135,9 +176,5 @@
     margin-left: auto;
     font-weight: 700;
     font-size: 40px;
-  }
-
-  + p {
-    margin-top: 20px;
   }
 }

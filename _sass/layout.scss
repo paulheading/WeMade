@@ -1,44 +1,114 @@
 
+@mixin custom($color) {
+  background-color: rgba($color,0.1);
+
+  .area._content {
+    a {
+      color: $color;
+    }
+
+    svg._squiggle2 path {
+      stroke: $color;
+    }
+  }
+
+  svg {
+    @include svg_nav($color);
+  }
+}
+
 .layout {
   transition: background-color 500ms;
 
-  &.--dark {
-    background-color: $carbon;
-
-    blockquote {
-      background-color: rgba(white,0.04);
+  &.--blog {
+    .area._content {
+      @extend %copy_blog;
     }
 
-    svg {
-      @include svg_nav(white);
-     }
+    &.--dark {
+      background-color: $carbon;
+
+      .area._content {
+        @extend %copy_dark;
+      }
+
+      svg {
+        @include svg_nav(white);
+      }
+    }
   }
 
-  &._hero {
+  &.--work:not(.--index) {
+    .area._content {
+      @extend %area_work;
+      @extend %copy_blog;
+    }
+  }
 
-    .area._header {
-      position: absolute;
+  &.--index {
+    .area._content {
+      @extend %copy_blog;
+    }
+  }
+
+  &.--notfound {
+    .area._content {
+      @extend %copy_blog;
+      text-align: center;
+
+      h1 {
+        font-size: 60px;
+
+        + p {
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+
+  &.--home {
+
+    .area {
+      &._header {
+        position: absolute;
+      }
+      &._content {
+        max-height: 700px;
+        height: 80%;
+
+        img {
+          opacity: 0;
+        }
+      }
     }
 
     &._wemade {
-      background-color: rgba($wemade,0.2);
+      @include custom($wemade);
     }
 
     &._paul {
-      background-color: rgba($paul,0.2);
+      @include custom($paul);
+
+      img._paul {
+        opacity: 1;
+      }
     }
 
     &._chloe {
-      background-color: rgba($chloe,0.2);
+      @include custom($chloe);
+
+      img._chloe {
+        opacity: 1;
+      }
     }
   }
 
-  &._resume {
-    transition: background-color 300ms;
-    background-color: white;
-
-    @media#{$min720w} {
-      background-color: $smoke;
+  &.--cv {
+    .area._content {
+      @extend %area_cv;
+    }
+    .wrap._content {
+      @extend %wrap_cv;
     }
   }
 }

@@ -4,8 +4,8 @@
   &._results {
     padding: 4px 8px;
 
-    &.test {
-      background-color: rgba(black,0.1);
+    &.active {
+      background-color: rgba(black,0.13);
     }
   }
 
@@ -49,6 +49,10 @@
       padding-bottom: 10px;
       padding-top: 10px;
     }
+
+    + .row._index {
+      border-top: 2px solid;
+    }
   }
 
   &._input {
@@ -83,17 +87,20 @@
   }
 
   &._cv {
-    display: grid;
+
+    &._address, &._bio {
+      grid-template-columns: repeat(3,1fr);
+      grid-column-gap: 10px;
+      display: grid;
+    }
 
     @media#{$max719w} {
       border-bottom: 1px solid black;
     }
 
     @media#{$min720w} {
-      grid-template-columns: repeat(3,1fr);
       padding-bottom: 20px;
       padding-top: 20px;
-      grid-gap: 10px;
 
         + ._cv {
         border-top: 1px solid black;
@@ -101,7 +108,7 @@
     }
   }
 
-  &._projects, &._jobs, &._skills, &._education {
+  &._jobs, &._skills, &._education {
     @media#{$max719w} {
       display: none;
     }
@@ -131,11 +138,8 @@
     }
 
     &.--content {
-      padding: 40px 60px 60px;
-    }
-
-    + .row._project {
-      margin-top: 20px;
+      grid-auto-flow: column;
+      display: grid;
     }
   }
 
@@ -143,12 +147,12 @@
     display: grid;
 
     @media#{$max639w} {
-      grid-row-gap: 20px;
+      grid-row-gap: 10px;
     }
 
     @media#{$min640w} {
       grid-template-columns: repeat(2,1fr);
-      grid-column-gap: 20px;
+      grid-column-gap: 10px;
     }
 
     &.--canvas {

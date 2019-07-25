@@ -7,7 +7,6 @@ github_username: pauheading
 # Server config
 livereload : true
 include    : [_redirects]
-host       : 0.0.0.0
 
 # Build settings
 markdown : kramdown
@@ -20,8 +19,8 @@ collections :
   chloe     :
     title   : Chloe
     output  : true
-  projects  :
-    title   : Projects
+  work      :
+    title   : Work
     output  : true
   blog      :
     title   : Blog
@@ -32,12 +31,7 @@ defaults   :
     path   : ""
   values   :
     layout : default
-    type   : text
 - scope    :
-    path   : "_projects"
+    path   : "_work"
   values   :
-    type   : project
-- scope    :
-    path   : "_blog"
-  values   :
-    type   : blog
+    type   : work

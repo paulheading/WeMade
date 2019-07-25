@@ -1,20 +1,18 @@
 ---
 layout: none
 ---
+
 [
   {% for page in site.pages %}
-  {% if page.url == '/' or
-     page.url contains '404' or
+  {% if page.hidden == true or
      page.url contains '.js' or
      page.url contains '.css' or
-     page.url contains '.xml' or
-     page.url contains 'search' or
-     page.url contains 'menu' %} {}
+     page.url contains '.xml' %} {}
   {% else %}
 
     {
-      "name"     : "{{ page.title }}",
-      "url"      : "{{ page.url | replace: '.html','' | replace: 'index','' }}"
+      "name" : "{{ page.title }}",
+      "url"  : "{{ page.url | replace: '.html','' | replace: 'index','' }}"
     }
 
   {% endif %}
@@ -38,7 +36,7 @@ layout: none
 
   {% unless forloop.last %},{% endunless %}
   {% endfor %},
-  {% for page in site.projects %}
+  {% for page in site.work %}
 
     {
       "name"     : "{{ page.title }}",

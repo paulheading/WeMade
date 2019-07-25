@@ -1,32 +1,64 @@
 
 %pic {
   @extend %center;
-  width: 150px;
+  width: 130px;
   z-index: 1;
 }
 
 img {
 
-  &#paul-pic {
+  &._chloe {
     @extend %pic;
+    mix-blend-mode: multiply;
+
+    &.--n1 {
+      left: 380px;
+      top: -190px;
+    }
+
+    &.--n2 {
+      left: 190px;
+      top: 190px;
+    }
+
+    &.--n3 {
+      left: -380px;
+    }
   }
 
-  &#chloe-pic {
+  &._paul {
     @extend %pic;
+    mix-blend-mode: multiply;
+
+    &.--n1 {
+      left: 380px;
+      top: -190px;
+    }
+
+    &.--n2 {
+      left: 190px;
+      top: 190px;
+    }
+
+    &.--n3 {
+      left: -380px;
+    }
   }
 
   &._flex {
     @extend %img_flex;
   }
+
   &._kenm {
     @extend %img_flex;
   }
-  // &._thumb {
-  //   @include zero($t:-40px,$l:160px);
-  //   position: absolute;
-  //   height: 150px;
-  //   width: 150px;
-  //   z-index: -1;
-  //   opacity: 0;
-  // }
+
+  &._thumb {
+    @include zero($t:-40px,$l:160px);
+    position: absolute;
+    height: 150px;
+    width: 150px;
+    z-index: -1;
+    opacity: 0;
+  }
 }

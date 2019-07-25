@@ -1,13 +1,5 @@
 
 var timeFunc = (name) => {
-  var weekday = new Array(7);
-      weekday[0] = "Sun",
-      weekday[1] = "Mon",
-      weekday[2] = "Tue",
-      weekday[3] = "Wed",
-      weekday[4] = "Thu",
-      weekday[5] = "Fri",
-      weekday[6] = "Sat";
 
   var date = new Date(),
       utcDay = date.getUTCDay(),
@@ -28,11 +20,20 @@ var timeFunc = (name) => {
   }
 
   if(localHrs < 0){
+    localHrs = localHrs+24;
     day.text(weekday[utcDay-1]);
-    hours.text(localHrs+24);
+    hours.text(localHrs);
+
+    if(localHrs < 10){
+      hours.text('0'+localHrs);
+    }
   } else {
     day.text(weekday[utcDay]);
     hours.text(localHrs);
+
+    if(localHrs < 10){
+      hours.text('0'+localHrs);
+    }
   }
 
   if(localMins < 10){

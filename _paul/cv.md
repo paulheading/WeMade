@@ -1,4 +1,3 @@
 ---
-title : Paul's CV
-type  : resume
+title : cv
 ---

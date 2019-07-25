@@ -1,8 +1,10 @@
 ---
 title : Hello
+desc  : Helloing is our passion
+staff : chloe, paul
 ---
 
-# **Helloing is our passion**
+# {{ page.desc }}
 
 We are obsessed by the challenges of a discipline that exists in a state of constant flux. At its best it is thought provoking, memorable and leaves a lasting impression.
 

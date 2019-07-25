@@ -1,4 +1,26 @@
 
+%area {
+
+  &_cv {
+    grid-template-columns: 1fr minmax(320px,440px) 1fr;
+    line-height: 1.5;
+    font-size: 16px;
+
+    @media#{$max719w} {
+      text-align: center;
+    }
+
+    @media#{$min720w} {
+      grid-template-columns: 80px minmax(560px,720px) 80px;
+    }
+  }
+
+  &_work {
+    grid-template-columns: 1fr minmax(320px,960px) 1fr;
+    padding: 0px 10px 100px 10px;
+  }
+}
+
 .area {
   position: relative;
   overflow: hidden;
@@ -17,20 +39,20 @@
     padding-top: 10px;
   }
 
-  &._index {
-    overflow: visible;
-  }
-
-  &._rollover {
-    @include zero;
-    position: absolute;
-    margin: auto;
-  }
-
+  // &._index {
+  //   overflow: visible;
+  // }
+  //
+  // &._rollover {
+  //   @include zero;
+  //   position: absolute;
+  //   margin: auto;
+  // }
+  //
   &._results {
     @extend %area_grid;
     grid-template-columns: 1fr;
-    padding-top: 10px;
+    padding-top: 20px;
     font-size: 24px;
     grid-gap: 4px;
   }
@@ -50,23 +72,6 @@
     padding-top: 40px;
     width: 100%;
     z-index: 3;
-  }
-
-  &._hero {
-    max-height: 700px;
-    display: block;
-    height: 80%;
-
-    &._chloe {
-      .block._hero.--chloe {
-        opacity: 1;
-      }
-    }
-    &._paul {
-      .block._hero.--paul {
-        opacity: 1;
-      }
-    }
   }
 
   &._toolbar {
@@ -109,47 +114,27 @@
     color: white;
   }
 
-  &._text {
+  &._content {
     @extend %area_grid;
     @extend %grid_default;
-    padding-bottom: 80px;
-
-    &.--missing {
-      text-align: center;
-    }
+    padding-bottom: 100px;
   }
 
-  &._blog {
-    @extend %area_grid;
-    @extend %grid_default;
-    font-family: monospace;
-    padding-bottom: 40px;
-
-
-    &.--dark {
-      color: white;
-    }
-  }
-
-  &._resume {
-    @extend %area_grid;
-    grid-template-columns: 1fr minmax(320px,440px) 1fr;
-    line-height: 1.5;
-    font-size: 16px;
-
-    @media#{$max719w} {
-      padding-bottom: 40px;
-      text-align: center;
-    }
-
-    @media#{$min720w} {
-      grid-template-columns: 80px minmax(560px,720px) 80px;
-      padding-bottom: 80px;
-    }
-  }
-
-  &._project {
-    @extend %area_grid;
-    grid-template-columns: 1fr minmax(320px,960px) 1fr;
-  }
+  // &._missing {
+  //   @extend %area_grid;
+  //   @extend %grid_default;
+  //   padding-bottom: 100px;
+  //   text-align: center;
+  // }
+  //
+  // &._blog, &._story {
+  //   @extend %area_grid;
+  //   @extend %grid_default;
+  //   font-family: monospace;
+  //   padding-bottom: 100px;
+  //
+  //   h1 {
+  //     font-weight: bold;
+  //   }
+  // }
 }

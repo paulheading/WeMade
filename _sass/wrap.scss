@@ -1,4 +1,18 @@
 
+%wrap {
+  
+  &_cv {
+    padding-right: 40px;
+    padding-left: 40px;
+
+    @media#{$min720w} {
+      background-color: white;
+      padding-bottom: 20px;
+      padding-top: 20px;
+    }
+  }
+}
+
 .wrap {
 
   &._ticker {
@@ -16,8 +30,8 @@
   }
 
   &._overlay {
-    align-self: center;
     @extend %wrap_grid;
+    align-self: center;
 
     &.--menu {
       justify-content: center;
@@ -25,25 +39,11 @@
   }
 
   &._header {
+    @extend %wrap_grid;
     grid-template-columns: repeat(2,1fr);
-    @extend %wrap_grid;
   }
 
-  &._project {
-    @extend %wrap_grid;
-  }
-
-  &._hero {
-    @extend %wrap_grid;
-  }
-
-  &._text {
-    @extend %wrap_grid;
-    position: relative;
-    padding-top: 40px;
-  }
-
-  &._blog {
+  &._content {
     @extend %wrap_grid;
   }
 
@@ -62,8 +62,8 @@
   }
 
   &._desktop {
-    align-content: flex-start;
     @extend %wrap_grid;
+    align-content: flex-start;
 
     @media#{$min720w} {
       grid-auto-flow: column;
@@ -98,18 +98,6 @@
 
     @media#{$min640w} {
       grid-auto-flow: column;
-    }
-  }
-
-  &._resume {
-    padding-right: 40px;
-    @extend %wrap_grid;
-    padding-left: 40px;
-
-    @media#{$min720w} {
-      background-color: white;
-      padding-bottom: 20px;
-      padding-top: 20px;
     }
   }
 }

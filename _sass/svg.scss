@@ -1,6 +1,33 @@
 
 svg {
 
+  &#logo {
+    &.--n1 {
+      @extend %center;
+      transform: scale(1.1);
+      left: -500px;
+      top: -280px;
+    }
+  }
+
+  &#search {
+    &.--n1 {
+      @extend %center;
+      transform: scale(1.1);
+      left: 140px;
+      top: -320px;
+    }
+  }
+
+  &#burger {
+    &.--n1 {
+      @extend %center;
+      transform: scale(1.1);
+      left: 460px;
+      top: 240px;
+    }
+  }
+
   &#paul {
     @extend %center;
     z-index: 2;
@@ -19,14 +46,20 @@ svg {
     opacity:0;
   }
 
-  &#squiggle {
+  &._squiggle {
     @extend %center;
+    width: 200px;
     // transform:
     //   translateY(-15%)
     //   translateX(5%)
     //   rotate(-20deg)
     //   scale(0.7);
-    opacity:0;
+    // opacity:0;
+
+    &2 {
+      @extend %center;
+      width: 300px;
+    }
   }
 
   &#twizzle {
