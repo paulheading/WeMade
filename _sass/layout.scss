@@ -1,20 +1,8 @@
 
-@mixin custom($color) {
+@mixin theme($color) {
   background-color: rgba($color,0.1);
-
-  .area._content {
-    a {
-      color: $color;
-    }
-
-    svg._squiggle2 path {
-      stroke: $color;
-    }
-  }
-
-  svg {
-    @include svg_nav($color);
-  }
+  @include svg_hero($color);
+  @include svg_nav($color);
 }
 
 .layout {
@@ -32,9 +20,7 @@
         @extend %copy_dark;
       }
 
-      svg {
-        @include svg_nav(white);
-      }
+      @include svg_nav(white);
     }
   }
 
@@ -83,7 +69,7 @@
     }
 
     &._wemade {
-      @include custom($wemade);
+      @include theme($wemade);
 
       img._wemade {
         opacity: 1;
@@ -91,7 +77,7 @@
     }
 
     &._paul {
-      @include custom($paul);
+      @include theme($paul);
 
       img._paul {
         opacity: 1;
@@ -99,7 +85,7 @@
     }
 
     &._chloe {
-      @include custom($chloe);
+      @include theme($chloe);
 
       img._chloe {
         opacity: 1;
@@ -115,4 +101,6 @@
       @extend %wrap_cv;
     }
   }
+
+  &.--designblog {}
 }

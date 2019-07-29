@@ -51,7 +51,7 @@
       font-weight: 400;
       display: none;
 
-      @media#{$min720w} {
+      @media#{$min768w} {
         display: grid;
       }
     }
@@ -119,7 +119,7 @@
     font-weight: 600;
     font-size: 21px;
 
-    @media#{$max719w} {
+    @media#{$max767w} {
       display: none;
     }
   }

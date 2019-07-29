@@ -1,19 +1,21 @@
 
-%see {
-  @extend %center;
-  transform-origin: center;
-  text-align: center;
-  font-weight: bold;
-  z-index: 999;
-  height: 28px;
-  width: 110px;
-}
+%lnk {
 
-%svg {
-  @extend %center;
-  transform: scale(1.1);
-  display: block;
-  height: 40px;
+  &_see {
+    @extend %center;
+    transform-origin: center;
+    text-align: center;
+    font-weight: bold;
+    z-index: 999;
+    height: 28px;
+    width: 110px;
+  }
+
+  &_hero {
+    @extend %center;
+    display: block;
+    height: 40px;
+  }
 }
 
 .lnk {
@@ -21,28 +23,36 @@
 
   &._home {
     &.--n1 {
-      @extend %svg;
-      left: -500px;
+      @extend %lnk_hero;
+      z-index: 999;
       width: 90px;
-      top: -280px;
+      top: -70%;
+
+      @media#{$min640w} {}
     }
   }
 
   &._search {
     &.--n1 {
-      @extend %svg;
+      @extend %lnk_hero;
+      z-index: 999;
       width: 40px;
-      left: 140px;
-      top: -320px;
+      left: -40%;
+      top: 65%;
+
+      @media#{$min640w} {}
     }
   }
 
   &._burger {
     &.--n1 {
-      @extend %svg;
+      @extend %lnk_hero;
+      z-index: 999;
       width: 40px;
-      left: 460px;
-      top: 240px;
+      left: 50%;
+      top: 90%;
+
+      @media#{$min640w} {}
     }
   }
 
@@ -51,19 +61,19 @@
     font-size: 20px;
 
     &.--n1 {
-      @extend %see;
+      @extend %lnk_see;
       transform: scale(1.1);
       left: -140px;
       top: -270px;
     }
     &.--n2 {
-      @extend %see;
+      @extend %lnk_see;
       transform: scale(1.1) rotate(-90deg);
       left: 600px;
       top: -40px;
     }
     &.--n3 {
-      @extend %see;
+      @extend %lnk_see;
       transform: scale(1.1);
       left: -250px;
       top: 250px;

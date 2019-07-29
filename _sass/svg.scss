@@ -1,83 +1,51 @@
 
-svg {
+@include svg_nav(black);
 
-  &#paul {
-    @extend %center;
-    z-index: 2;
-    opacity:0;
-  }
-
-  &#makes, &#makes2 {
-    @extend %center;
-    z-index: 2;
-    opacity:0;
-  }
-
-  &#shapes {
-    @extend %center;
-    z-index: 2;
-    opacity:0;
-  }
-
-  &._squiggle {
-    @extend %center;
-    width: 200px;
-    // transform:
-    //   translateY(-15%)
-    //   translateX(5%)
-    //   rotate(-20deg)
-    //   scale(0.7);
-    // opacity:0;
-
+%svg {
+  &_squiggle {
+    &1 {
+      path {
+        stroke-linejoin: round;
+        stroke-miterlimit: 10;
+        stroke-linecap: round;
+        stroke-width: 36;
+        stroke: white;
+        fill: none;
+      }
+    }
     &2 {
-      @extend %center;
-      width: 300px;
+      path {
+        stroke-linejoin: round;
+        stroke-miterlimit: 10;
+        stroke-linecap: round;
+        stroke-width: 24;
+        fill: none;
+      }
     }
   }
+}
 
-  &#twizzle {
-    @extend %center;
-    transform:
-      translateY(-20%)
-      translateX(-400%)
-      scale(0.7);
-    opacity:0;
-  }
+svg {
 
-  &#bizzle {
-    @extend %center;
-    transform:
-      translateX(130%)
-      translateY(-50%)
-      scale(0.7);
-    opacity:0;
-  }
+  &#squiggle {
+    &1 {
+      @extend %center;
+      @extend %svg_squiggle1;
+      top: 20%;
+    }
+    &2 {
+      @extend %center;
+      @extend %svg_squiggle2;
+      left: 40%;
+      top: 50%;
+    }
 
-  &#fizzle {
-    @extend %center;
-    transform:
-      translateX(80%)
-      translateY(-50%)
-      scale(0.7);
-    opacity:0;
-  }
-
-  &#man {
-    @extend %center;
-    transform:
-      translateX(250%)
-      translateY(-90%)
-      scale(0.7);
-    opacity:0;
-  }
-
-  &#hand {
-    @extend %center;
-    transform:
-      translateX(80%)
-      translateY(100%)
-      scale(0.7);
-    opacity:0;
+    &3 {
+      @extend %center;
+      @extend %svg_squiggle2;
+      left: -25%;
+      top: 0;
+    }
   }
 
   &#cover {
@@ -88,23 +56,5 @@ svg {
 
   &#send {
     stroke: black;
-  }
-
-  @include svg_nav(black);
-}
-
-.svg {
-
-  &._hero {
-    place-content: center;
-    @include zero();
-    cursor: pointer;
-    display: grid;
-    z-index: 1;
-  }
-
-  &._submit {
-    width: 54px;
-    fill: $coal;
   }
 }

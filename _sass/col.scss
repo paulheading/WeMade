@@ -30,7 +30,7 @@
       display: grid;
       z-index: 2;
 
-      @media#{$max719w} {
+      @media#{$max767w} {
         top: -220px;
       }
     }

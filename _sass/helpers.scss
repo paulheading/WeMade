@@ -1,9 +1,9 @@
 
 // # Vars
 
-$wemade : #800080;
-$paul   : #800000;
-$chloe  : #000080;
+$wemade : #CC7A29;
+$paul   : #295FCC;
+$chloe  : #CC2929;
 
 $dodger : hsl(210, 90%, 50%);
 $sky    : hsl(205, 100%, 85%);
@@ -38,8 +38,11 @@ $songs : hsl(240, 0%, 5%);
 $jobs  : darken(white,25%);
 
 $max639w : 'only screen and (max-width: 639px)';
-$max719w : 'only screen and (max-width: 719px)';
-$min720w : 'only screen and (min-width: 720px)';
+// $min640w
+$max767w : 'only screen and (max-width: 767px)';
+// $min768w
+$max1023w : 'only screen and (max-width: 1023px)';
+// $min1024w
 
 // # Mixins
 
@@ -47,23 +50,36 @@ $min720w : 'only screen and (min-width: 720px)';
   filter: drop-shadow(0 0 $a rgba(black,$b));
 }
 
+@mixin svg_hero($color) {
+  svg {
+    &#squiggle {
+      stroke: $color;
+      &2 {
+        stroke: $color;
+      }
+      &3 {
+        stroke: $color;
+      }
+    }
+  }
+}
+
 @mixin svg_nav($color) {
-  &#logo {
-    path#wm {
-      stroke: $color;
+  svg {
+    &#logo {
+      path#wm {
+        stroke: $color;
+      }
     }
-    path#bg {
-      stroke: white;
+    &#search {
+      line, circle {
+        stroke: $color;
+      }
     }
-  }
-  &#search {
-    line, circle {
-      stroke: $color;
-    }
-  }
-  &#burger {
-    line {
-      stroke: $color;
+    &#burger {
+      line {
+        stroke: $color;
+      }
     }
   }
 }

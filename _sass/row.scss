@@ -27,7 +27,7 @@
     display: grid;
     padding: 10px;
 
-    @media#{$min720w} {
+    @media#{$min768w} {
       grid-template-columns: 8fr 15fr 12fr;
       grid-column-gap: 20px;
     }
@@ -66,7 +66,7 @@
     display: grid;
     color: #aaa;
 
-    @media#{$max719w} {
+    @media#{$max767w} {
       padding-left: 12px;
     }
   }
@@ -94,11 +94,11 @@
       display: grid;
     }
 
-    @media#{$max719w} {
+    @media#{$max767w} {
       border-bottom: 1px solid black;
     }
 
-    @media#{$min720w} {
+    @media#{$min768w} {
       padding-bottom: 20px;
       padding-top: 20px;
 
@@ -109,7 +109,7 @@
   }
 
   &._jobs, &._skills, &._education {
-    @media#{$max719w} {
+    @media#{$max767w} {
       display: none;
     }
   }
@@ -120,10 +120,10 @@
     grid-row-gap: 10px;
     padding-top: 20px;
 
-    @media#{$max719w} {
+    @media#{$max767w} {
       border-bottom: none;
     }
-    @media#{$min720w} {
+    @media#{$min768w} {
       display: none;
     }
   }
@@ -170,7 +170,7 @@
     padding: 40px;
     display: grid;
 
-    @media#{$min720w} {
+    @media#{$min768w} {
       grid-template-columns: repeat(3,200px);
       padding-bottom: 60px;
       padding-top: 60px;

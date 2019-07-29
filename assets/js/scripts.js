@@ -2,14 +2,6 @@
 layout: none
 ---
 
-function typeMonth(num) {
-  if(num.charAt(0) == 0){
-    prnt = month[num.slice(1,2)-1];
-  } else {
-    prnt = month[num-1];
-  }
-}
-
 if(body.hasClass('--paul --index')) {
   loop_work_index('paul',5);
 }

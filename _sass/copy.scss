@@ -80,11 +80,11 @@
     line-height: 1;
   }
 
-  // &._hello {
-  //   @media#{$max639w} {
-  //     display: none;
-  //   }
-  // }
+  &._hello {
+    @media#{$max639w} {
+      display: none;
+    }
+  }
 
   &.--blue {
     color: $atomBlue;

@@ -1,11 +1,11 @@
 
 %wrap {
-  
+
   &_cv {
     padding-right: 40px;
     padding-left: 40px;
 
-    @media#{$min720w} {
+    @media#{$min768w} {
       background-color: white;
       padding-bottom: 20px;
       padding-top: 20px;
@@ -45,6 +45,7 @@
 
   &._content {
     @extend %wrap_grid;
+    position: relative;
   }
 
   &._toolbar {
@@ -65,7 +66,7 @@
     @extend %wrap_grid;
     align-content: flex-start;
 
-    @media#{$min720w} {
+    @media#{$min768w} {
       grid-auto-flow: column;
       direction: rtl;
     }

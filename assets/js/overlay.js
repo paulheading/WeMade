@@ -6,7 +6,7 @@ TweenLite.defaultEase = Linear.easeNone;
 
 var menuTl = new TimelineMax({paused:true}),
     searchTl = new TimelineMax({paused:true}),
-    menuOpen = false, searchOpen = false, hasFocus = false, count = 1, limit = 1, last;
+    menuOpen = false, searchOpen = false, hasFocus = false, count = 1, limit = 1, next;
 
 function overlayFunc(goto,type) {
   if(goto == 'open') {
@@ -48,6 +48,7 @@ var searchFunc = (state) => {
     $('.input.--search').blur().val('');
     $('.area._results').empty();
     hasFocus = false;
+    count = 1;
   }
 
   else if(state == 'open') {
@@ -88,16 +89,16 @@ var menuFunc = (state) => {
 var keyFunc = (e) => {
 
   if(searchOpen) {
+
     if(e.keyCode === 27) {
       searchFunc('close');
-      count = 1;
     }
 
     if(hasFocus) {
 
       if(e.keyCode){
         if(count == 1) {
-          TweenMax.set('.row._results:nth-of-type('+count+')',{className:'+=active'});
+          TweenMax.set('.row._results:nth-of-type(1)',{className:'+=active'});
         }
         $('.row._results').each(function(i){
           limit = i+1;
@@ -121,40 +122,41 @@ var keyFunc = (e) => {
 
       if(e.keyCode === 40) {
         if(count >= limit) {
-          var next = 1,
-              loop = new TimelineMax();
+          var loop = new TimelineMax();
               count = 1;
+              next = 1;
               loop
-              .set('.row._results:nth-of-type('+count+')',{className:'+=active'})
-              .set('.row._results:nth-of-type('+limit+')',{className:'-=active'})
+              .set('.row._results',{className:'-=active'})
+              .set('.row._results:nth-of-type(1)',{className:'+=active'})
               ;
         } else {
-          var next = count +1,
-              down = new TimelineMax();
+          var down = new TimelineMax();
+              next = count +1;
               down
+              .set('.row._results',{className:'-=active'})
               .set('.row._results:nth-of-type('+next+')',{className:'+=active'})
-              .set('.row._results:nth-of-type('+count+')',{className:'-=active'})
               ;
-          count++
+          count++;
         }
       }
 
       if(e.keyCode === 38) {
         if(count == 1) {
           var loop = new TimelineMax();
-              count = 1;
+              count = limit;
+              next = limit -1;
               loop
+              .set('.row._results',{className:'-=active'})
               .set('.row._results:nth-of-type('+limit+')',{className:'+=active'})
-              .set('.row._results:nth-of-type('+count+')',{className:'-=active'})
               ;
         } else {
-          var next = count -1,
-              up = new TimelineMax();
+          var up = new TimelineMax();
+              next = count -1;
               up
+              .set('.row._results',{className:'-=active'})
               .set('.row._results:nth-of-type('+next+')',{className:'+=active'})
-              .set('.row._results:nth-of-type('+count+')',{className:'-=active'})
               ;
-          count -=1;
+          count --;
         }
       }
     }

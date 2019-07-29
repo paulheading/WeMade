@@ -2,7 +2,7 @@
 .entry {
   // align-self: center;
 
-  @media#{$max719w} {
+  @media#{$max767w} {
     padding-bottom: 10px;
     padding-top: 10px;
 
@@ -14,7 +14,7 @@
   &._name {
     line-height: 1.1;
 
-    @media#{$max719w} {
+    @media#{$max767w} {
       justify-content: center;
       grid-auto-flow: column;
       grid-column-gap: 10px;
@@ -23,14 +23,14 @@
   }
 
   &._address {
-    @media#{$min720w} {
+    @media#{$min768w} {
       align-self: center;
       grid-column: 3;
     }
   }
 
   &._bio {
-    @media#{$min720w} {
+    @media#{$min768w} {
       padding-right: 30px;
       grid-column: span 2;
       display: grid;

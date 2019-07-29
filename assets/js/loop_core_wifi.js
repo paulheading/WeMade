@@ -1,16 +1,18 @@
 
-var loop_core_wifi = () => {
+var loop_core_wifi = (city) => {
   var tl = new TimelineMax(),
       zero = $('#zero','#wifi'),
       one = $('#one','#wifi'),
       two = $('#two','#wifi'),
       three = $('#three','#wifi'),
-      all = [zero,one,two,three];
+      scan = [zero,one,two];
 
   tl
-  .staggerTo(all,0.2,{opacity:0.4},0.2,'+=0.4')
-  .staggerTo([three,two],0.2,{opacity:0.2},0.2,'+=1.0')
-  .staggerTo(two,0.2,{opacity:0.4},0.2,'+=0.4')
-  .staggerTo([three,two,one,zero],0.2,{opacity:0.2},0.2,'+=1.0')
+  .staggerTo(scan,0.1,{opacity:0.4},0.3,'0.3')
+  .staggerTo(scan,0.1,{opacity:0.2},0.3,'0.6')
+  .to(scan,0.1,{opacity:0.4},'1.8')
+  .to(scan,0.1,{opacity:0.2},'5')
   ;
+
+  $('.title._city').html(city);
 }

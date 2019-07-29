@@ -2,10 +2,7 @@
 layout: none
 ---
 
-var stateG,
-    nameG,
-    resizeTimer,
-    prnt,
+var stateG, nameG, resizeTimer, prnt,
     month = new Array(12),
     weekday = new Array(7),
     feed_work = {{ site.work | jsonify }},
@@ -14,7 +11,16 @@ var stateG,
     feed_data_paul = {{ site.data.paul | jsonify }},
     feed_data_chloe = {{ site.data.chloe | jsonify }},
     coreTl = new TimelineMax({repeat:-1}),
-    random = () => { return 0.3 - Math.random(); };
+    random = () => {
+      return 0.3 - Math.random();
+    },
+    typeMonth = (num) => { 
+      if(num.charAt(0) == 0){
+        prnt = month[num.slice(1,2)-1];
+      } else {
+        prnt = month[num-1];
+      }
+    };
 
     feed_data_core.sort(random);
     feed_work.reverse();

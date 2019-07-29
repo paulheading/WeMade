@@ -1,7 +1,7 @@
 
 .form {
   &._email {
-    @media#{$min720w} {
+    @media#{$min768w} {
       padding-left: 24px;
     }
   }
