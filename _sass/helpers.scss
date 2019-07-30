@@ -50,34 +50,21 @@ $max1023w : 'only screen and (max-width: 1023px)';
   filter: drop-shadow(0 0 $a rgba(black,$b));
 }
 
-@mixin svg_hero($color) {
+@mixin svg_nav($color) {
   svg {
-    &#squiggle {
-      stroke: $color;
-      &2 {
-        stroke: $color;
-      }
-      &3 {
+    &#logo, &#search, &#burger {
+      path {
         stroke: $color;
       }
     }
   }
 }
 
-@mixin svg_nav($color) {
+@mixin svg_hero($color) {
+  @include svg_nav($color);
   svg {
-    &#logo {
-      path#wm {
-        stroke: $color;
-      }
-    }
-    &#search {
-      line, circle {
-        stroke: $color;
-      }
-    }
-    &#burger {
-      line {
+    &#squiggle2, &#squiggle3 {
+      path {
         stroke: $color;
       }
     }

@@ -1,4 +1,8 @@
 
+// ******************************
+// BODY
+// ******************************
+
 body {
   -webkit-tap-highlight-color: rgba(0,0,0,0);
   font-family: poppins, sans-serif;
@@ -56,4 +60,113 @@ blockquote {
   background-color: rgba(black,0.04);
   padding: 20px;
   margin: 0;
+}
+
+// ******************************
+// FORM
+// ******************************
+
+.form {
+  &._email {
+    @media#{$min768w} {
+      padding-left: 24px;
+    }
+  }
+}
+
+.input {
+  border-radius: 0;
+
+  &._email {
+    min-width: 190px;
+    color: $gray;
+    padding: 0;
+  }
+
+  &._text {
+    &.--subject {
+      padding: 0 !important;
+      color: $gray;
+    }
+    &.--search {
+      background: url('/assets/svg/search.svg') no-repeat right center;
+      letter-spacing: -0.01rem;
+      background-size: 36px;
+      padding: 0 50px 0 0;
+      line-height: 60px;
+      opacity: 0;
+    }
+  }
+}
+
+.textarea {
+  &._email {
+    min-height: 160px;
+    padding: 0;
+
+    @media#{$min640w} {
+      min-height: 200px;
+    }
+  }
+}
+
+// ******************************
+// SVG
+// ******************************
+
+%svg {
+  &_core {
+    stroke-linejoin: round;
+    stroke-miterlimit: 10;
+    stroke-linecap: round;
+    fill: none;
+  }
+}
+
+svg {
+
+  &#logo, &#search, &#burger {
+    @extend %svg_core;
+    stroke-width: 10;
+    stroke: black;
+  }
+
+  &#squiggle {
+    &1 {
+      @extend %center;
+      @extend %svg_core;
+      stroke-width: 30;
+      stroke: white;
+      top: 20%;
+    }
+    &2 {
+      @extend %center;
+      @extend %svg_core;
+      stroke-width: 20;
+      stroke: black;
+      left: 40%;
+      top: 50%;
+    }
+
+    &3 {
+      @extend %center;
+      @extend %svg_core;
+      stroke-width: 20;
+      stroke: black;
+      left: -25%;
+      top: 0;
+    }
+  }
+
+  &#cover {
+    position: absolute;
+    @include shadow;
+    @include zero;
+  }
+
+  &#send {
+    @extend %svg_core;
+    stroke-width: 5;
+    stroke: black;
+  }
 }

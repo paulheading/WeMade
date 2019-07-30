@@ -9,9 +9,7 @@ var loop_core_wifi = (city) => {
 
   tl
   .staggerTo(scan,0.1,{opacity:0.4},0.3,'0.3')
-  .staggerTo(scan,0.1,{opacity:0.2},0.3,'0.6')
-  .to(scan,0.1,{opacity:0.4},'1.8')
-  .to(scan,0.1,{opacity:0.2},'5')
+  .set(scan,{opacity:0.2},'5')
   ;
 
   $('.title._city').html(city);
