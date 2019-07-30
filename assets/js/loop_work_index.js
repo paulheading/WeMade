@@ -37,7 +37,7 @@ function loop_work_index(name,limit=1) {
               if(end){
                 row += `–</div><div class="title _index --end">${prntEndMnth} ${endY}</div>`;
               } else {
-                row += `</div>`;
+                row += `–</div><div class="title _index --end">Now</div>`;
               } row +=`
             </div>
             <div class="entry _index">

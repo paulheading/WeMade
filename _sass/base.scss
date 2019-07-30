@@ -125,12 +125,6 @@ blockquote {
 
 svg {
 
-  &#logo, &#search, &#burger {
-    @extend %svg_core;
-    stroke-width: 10;
-    stroke: black;
-  }
-
   &#squiggle {
     &1 {
       @extend %center;
@@ -166,7 +160,9 @@ svg {
 
   &#send {
     @extend %svg_core;
-    stroke-width: 5;
+    stroke-width: 4;
     stroke: black;
   }
 }
+
+@include svg_nav(black);

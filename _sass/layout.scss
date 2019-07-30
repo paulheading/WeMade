@@ -1,9 +1,4 @@
 
-@mixin theme($color) {
-  background-color: rgba($color,0.1);
-  @include svg_hero($color);
-}
-
 .layout {
   transition: background-color 500ms;
 

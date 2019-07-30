@@ -21,6 +21,10 @@
 .lnk {
   cursor: pointer;
 
+  &._cv._social {
+    display: block;
+  }
+
   &._home {
     &.--n1 {
       @extend %lnk_hero;
@@ -137,7 +141,6 @@
   &._index {
     text-decoration: none;
     position: relative;
-    // display: none;
 
     &:nth-child(-n+5) {
       display: block;
