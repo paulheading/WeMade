@@ -1,0 +1,40 @@
+
+{% assign loop = page.job %}
+
+{%- for item in loop -%}
+
+  <div class="block _cv-row-content">
+
+    <div class="block _cv-content --date">
+
+      {{ item.date | date: "%b %y" }}
+
+      &ndash;
+
+      {%- if item.end -%}
+
+        <span> {{ item.end | date: "%b %y" }}</span>
+
+        {%- else -%}
+
+        <span> Now</span>
+
+      {%- endif -%}
+
+    </div>
+
+    <a href="{{ item.url }}" class="lnk _cv-content --boss">
+
+      {{ item.boss }}
+
+    </a>
+
+    <div class="block _cv-content --role">
+
+      {{ item.role }}
+
+    </div>
+
+  </div>
+
+{%- endfor -%}

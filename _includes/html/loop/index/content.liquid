@@ -1,0 +1,43 @@
+
+
+<div class="block _index-list-row {% if i > 3 %}--hide{% endif %}">
+
+  <div class="block _index-list-date">
+
+    {{ item.date | date: "%b %y" }}
+
+    <span>&ndash;</span>
+
+    {%- if item.end -%}
+
+      <div>
+        {{ item.end | date: "%b %y" }}
+      </div>
+
+      {%- else -%}
+
+      <div>
+        Now
+      </div>
+
+    {%- endif -%}
+
+  </div>
+
+  <div class="block _index-list-title">
+
+    <a href="{{ url }}" class="lnk _index-list-title">
+      {{ item.title }}
+    </a>
+
+    <div class="block _index-list-format">
+      {{ item.format | capitalize }}
+    </div>
+
+  </div>
+
+  <div class="block _index-list-desc">
+    {{ item.desc | append: ' ...' }}
+  </div>
+
+</div>

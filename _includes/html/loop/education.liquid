@@ -1,0 +1,20 @@
+
+{% assign loop = page.education %}
+
+{%- for item in loop -%}
+
+  <div class="block _cv-row-content --education">
+
+    <a href="{{ item.url }}" class="lnk _cv-content --school">
+
+      {{ item.school }}
+
+    </a>
+
+    <div class="block _cv-content --cert">
+      {{ item.cert }}
+    </div>
+
+  </div>
+
+{%- endfor -%}

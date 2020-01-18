@@ -4,7 +4,7 @@ staff   : paul
 format  : website
 date    : 02/2019
 url     : https://guidelines.barbican.org.uk
-desc    : A single, shareable, publicly accessible set of guidelines for the Barbican. A living set of guidelines that responds quickly.
+desc    : A single, shareable, publicly accessible set of guidelines for the Barbican. A living set of guidelines
 visual  :
   - split :
       - svg : logo.svg

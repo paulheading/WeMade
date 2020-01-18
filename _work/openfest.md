@@ -5,7 +5,7 @@ format  : animation
 date    : 12/2018
 end     : 01/2019
 url     : https://www.barbican.org.uk/whats-on/2019/event/barbican-openfest-art-50
-desc    : Explore what it means to be British today through the works of artists from around the UK with this free day of art, film
+desc    : Explore what it means to be British today through the works of artists from around the UK
 visual  :
   - split :
       - svg : logo.svg

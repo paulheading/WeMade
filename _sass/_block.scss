@@ -1,0 +1,168 @@
+
+%marquee {
+  justify-content: flex-start;
+  grid-auto-flow: column;
+  grid-column-gap: 4px;
+  align-items: center;
+}
+
+.block {
+
+  &._city {
+    @extend %bold;
+  }
+
+  &._time {
+    grid-column-gap: $gridPad * 0.25;
+    justify-content: center;
+    grid-auto-flow: column;
+    display: grid;
+
+    &-day {
+      @extend %bold;
+    }
+  }
+
+  &._see {
+    @extend %block-setup;
+    @extend %grid_see;
+    border-bottom: 4px solid $black;
+    margin-top: - $blockHeight;
+  }
+
+  &._marquee {
+    @extend %block-setup;
+    background-color: $white;
+    overflow: hidden;
+
+    &-group {
+      @extend %block-setup;
+      @extend %marquee;
+
+      .book {
+
+        &Ul {
+          text-decoration: underline;
+        }
+      }
+
+      .bold {
+        @extend %bold;
+
+        &Ul {
+          @extend %bold;
+          text-decoration: underline;
+        }
+      }
+
+      .italic {
+        @extend %book-italic;
+
+        &Ul {
+          @extend %book-italic;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  &._desktop-topbar {
+    @extend %block-setup;
+    @extend %grid_hero;
+    background-color: $desktopBar;
+    color: $desktopCol;
+  }
+
+  &._paginate {
+    @extend %grid_hero;
+    padding-bottom: $blockHeight * 2;
+    background-color: $email;
+  }
+
+  &._header {
+    @extend %grid_hero;
+
+    @media#{$max767} {
+      border-bottom: $radius solid $black;
+      padding-bottom: $blockHeight * 0.5;
+      padding-top: $blockHeight * 0.5;
+      background-color: $white;
+    }
+
+    @media#{$min768} {
+      padding-bottom: $blockHeight;
+      padding-top: $blockHeight;
+      background-color: $email;
+    }
+  }
+
+  &._paginate {
+    @extend %grid_hero;
+    display: grid;
+  }
+
+  &._to-email {
+    @extend %form-tag;
+  }
+
+  &._subject-title {
+    @extend %form-input;
+  }
+
+  &._from-title {
+    @extend %form-input;
+  }
+
+  &._search {
+    text-align: right;
+    grid-column: 3;
+  }
+
+  &._menu {
+    text-align: right;
+    grid-column: 4;
+  }
+
+  &._blog {
+
+    &-title {
+      @extend %bold;
+      padding-bottom: 20px;
+      font-size: 4.4rem;
+    }
+  }
+
+  &._index {
+
+    &-title {
+      @extend %bold;
+      @extend h1;
+      padding-bottom: 20px;
+    }
+
+    &-content {
+
+      + .block._index-list {
+        margin-top: $gridPad;
+      }
+    }
+
+    &-list {
+
+      &-row {
+        display: grid;
+        grid-template-columns: 17% 23% 60%;
+
+        &.--hide {
+          display: none;
+        }
+
+        + .block._index-list-row {
+          border-top: 2px solid $black;
+          padding-top: $gridPad * 0.5;
+          margin-top: $gridPad * 0.5;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,32 @@
+
+- name : Paul
+  city : London
+  message :
+    - bold   : Paul
+    - book   : makes
+    - italic : shapes
+    - book   : and
+    - book   : enjoys
+    - boldUl : noodles!
+
+- name : WeMade
+  city : Everywhere
+  message :
+    - bold   : WeMade
+    - book   : a
+    - book   : whole
+    - book   : new
+    - book   : '&#35;&#36;'
+    - boldUl : studio
+    - book   : '&#169;&#8482;'
+
+- name : Chloe
+  city : Toronto
+  message :
+    - bold     : Chloe
+    - book     : makes
+    - italicUl : waves
+    - book     : and
+    - book     : enjoys
+    - bold     : clay
+    - bold     : pots!

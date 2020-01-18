@@ -1,57 +1,8 @@
 ---
-layout: none
+layout: mini
 ---
-
 [
-  {% for page in site.pages %}
-  {% if page.hidden == true or
-     page.url contains '.js' or
-     page.url contains '.css' or
-     page.url contains '.xml' %} {}
-  {% else %}
-
-    {
-      "name" : "{{ page.title }}",
-      "url"  : "{{ page.url | replace: '.html','' | replace: 'index','' }}"
-    }
-
-  {% endif %}
-  {% unless forloop.last %},{% endunless %}
-  {% endfor %},
-  {% for page in site.paul %}
-
-    {
-      "name"     : "{{ page.title }}",
-      "url"      : "{{ page.url | replace: '.html','' | replace: 'index','' }}"
-    }
-
-  {% unless forloop.last %},{% endunless %}
-  {% endfor %},
-  {% for page in site.chloe %}
-
-    {
-      "name"     : "{{ page.title }}",
-      "url"      : "{{ page.url | replace: '.html','' | replace: 'index','' }}"
-    }
-
-  {% unless forloop.last %},{% endunless %}
-  {% endfor %},
-  {% for page in site.work %}
-
-    {
-      "name"     : "{{ page.title }}",
-      "url"      : "{{ page.url | replace: '.html','' | replace: 'index','' }}"
-    }
-
-  {% unless forloop.last %},{% endunless %}
-  {% endfor %},
-  {% for page in site.blog %}
-
-    {
-      "name"     : "{{ page.title }}",
-      "url"      : "{{ page.url | replace: '.html','' | replace: 'index','' }}"
-    }
-
-  {% unless forloop.last %},{% endunless %}
-  {% endfor %}
+  {% assign loop = site | sort: 'weight' %}
+  {% include html/loop/search.liquid %}
+  {}
 ]

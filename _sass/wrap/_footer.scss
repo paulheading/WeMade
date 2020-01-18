@@ -1,0 +1,11 @@
+
+.wrap._footer {
+  @extend %wrap_grid;
+  grid-gap: 10px;
+
+  @media#{$min768} {
+    grid-auto-flow: column;
+    place-self: center;
+    grid-gap: 30px;
+  }
+}

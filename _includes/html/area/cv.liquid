@@ -1,0 +1,67 @@
+
+<div class="area _cv">
+
+  <div class="wrap _cv">
+
+    <div class="block _cv-row">
+
+      <div class="block _cv-name">
+
+        <div class="block _cv-name-wrap">
+          {{ page.name.first }} {{ page.name.last }}
+        </div>
+
+      </div>
+
+      <div class="block _cv-deets">
+
+        <div class="block _cv-deets-addr">
+          {{ page.addr.area }}, {{ page.addr.city }}
+        </div>
+
+        <div class="block _cv-deets-phone">
+          {{ page.phone }}
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="block _cv-row">
+
+      <div class="block _cv-bio">
+
+        <div class="block _cv-row-title">
+          Biography
+        </div>
+
+        <div class="block _cv-row-content">
+          {{ page.bio }}
+        </div>
+
+      </div>
+
+      <div class="block _cv-social">
+
+        {% assign loop = page.social %}
+
+        {%- for item in loop -%}
+
+          <a href="{{ item.url }}" target="_blank" class="lnk _cv-social">
+            {{ item.handle }}
+          </a>
+
+        {%- endfor -%}
+
+      </div>
+
+    </div>
+
+    {%- include html/area/cv/row.liquid type='projects' -%}
+    {%- include html/area/cv/row.liquid type='jobs' -%}
+    {%- include html/area/cv/row.liquid type='skills' -%}
+    {%- include html/area/cv/row.liquid type='education' -%}
+
+  </div>
+
+</div>

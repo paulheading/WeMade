@@ -1,0 +1,28 @@
+
+.block._window {
+  background-color: $desktopBar;
+  border-radius: $radius;
+  position: absolute;
+  height: 250px;
+  opacity: 0.8;
+  width: 250px;
+
+  &:nth-child(1) {
+    top: 100px;
+  }
+
+  &:nth-child(2) {
+    left: 180px;
+    top: 40px;
+  }
+
+  &:nth-child(3) {
+    left: 100px;
+    top: 180px;
+  }
+
+  &-group {
+    position: absolute;
+    left: 0;
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "name": "Mindsets",
+  "version": "1.0.0",
+  "description": "> A living set of documents for working with the barbican brand.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://bitbucket.org/barbicandev/mindsets-book.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://bitbucket.org/barbicandev/mindsets-book/issues"
+  },
+  "homepage": "https://bitbucket.org/barbicandev/mindsets-book/#readme",
+  "devDependencies": {
+    "@babel/core": "^7.7.2",
+    "@babel/preset-env": "^7.7.1",
+    "del": "^5.1.0",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-hub": "^4.2.0",
+    "gulp-imagemin": "^6.1.1",
+    "gulp-insert": "^0.5.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-replace": "^1.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-uglify": "^3.0.2",
+    "gulp-util": "^3.0.8"
+  }
+}

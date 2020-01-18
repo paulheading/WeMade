@@ -1,0 +1,13 @@
+
+.block._footer {
+  @extend %block-setup;
+  @extend %grid_hero;
+  background-color: $black;
+  color: $white;
+
+  @media#{$max767} {
+    text-align: center;
+    padding: 20px;
+    height: auto;
+  }
+}

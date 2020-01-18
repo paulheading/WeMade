@@ -1,0 +1,16 @@
+
+{% assign loop = page.skill %}
+
+<div class="block _cv-row-content --skills">
+
+  {%- for item in loop -%}
+
+    <a href="#" class="lnk _cv-content --skills">
+
+      {{ item.name }}
+
+    </a>
+
+  {%- endfor -%}
+
+</div>

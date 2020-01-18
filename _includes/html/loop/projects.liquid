@@ -1,0 +1,48 @@
+
+{% assign loop   = site.work | reverse %}
+{% assign filter = page.name.first | downcase %}
+
+{%- for item in loop -%}
+
+{% assign check = item.staff | split: ',' | replace: ',','' %}
+{% assign url   = item.url | replace: '.html','' %}
+
+  {%- if check contains filter -%}
+
+  <div class="block _cv-row-content">
+
+    <div class="block _cv-content --date">
+
+      {{ item.date | date: "%b %y" }}
+
+      &ndash;
+
+      {%- if item.end -%}
+
+        <span> {{ item.end | date: "%b %y" }}</span>
+
+        {%- else -%}
+
+        <span> Now</span>
+
+      {%- endif -%}
+
+    </div>
+
+    <a href="{{ url }}" class="lnk _cv-content --title">
+
+      {{ item.title }}
+
+    </a>
+
+    <div class="block _cv-content --type">
+
+      {{ item.format | capitalize }}
+
+    </div>
+
+  </div>
+
+  {%- endif -%}
+
+{%- endfor -%}

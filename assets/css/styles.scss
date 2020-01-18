@@ -2,114 +2,20 @@
 ---
 
 @import
-'normalize.css',
 'futuro',
 'helpers',
-'bar',
+'area',
 'base',
 'block',
-'area',
+'block/cv',
+'block/folder',
+'block/footer',
+'block/form',
+'block/window',
 'btn',
-'col',
-'copy',
-'img',
-'title',
-'entry',
-'overlay',
-'layout',
-'list',
 'lnk',
-'row',
-'split',
-'tag',
-'visual',
-'wrap';
-
-.word {
-  padding-right: 2px;
-  padding-left: 2px;
-  font-size: 18px;
-  @include ib();
-
-  &._bold {
-    font-weight: bold;
-
-    &-u {
-      font-weight: bold;
-      text-decoration: underline;
-    }
-  }
-
-  &._italic {
-    font-style: italic;
-
-    &-u {
-      font-style: italic;
-      text-decoration: underline;
-    }
-  }
-
-  &._book {
-    &-u {
-      text-decoration: underline;
-    }
-  }
-}
-
-.tickerSingle {
-  padding-right: 4px;
-  padding-left: 4px;
-  @include ib;
-}
-
-.flag {
-  background-color: rgba(black,0.1);
-  height: 16px;
-  width: 30px;
-}
-
-.canvas {
-  align-items: center;
-  display: grid;
-
-  @media#{$max639w} {
-    padding-right: 40px;
-    padding-left: 40px;
-
-    svg {
-      border: 2px solid black;
-    }
-  }
-
-  @media#{$min640w} {
-    border: 2px solid black;
-  }
-}
-
-.day {
-  font-weight: bold;
-}
-
-.list {
-  &._trello {
-    padding: 0 10px 10px;
-  }
-}
-
-.item {
-  &._trello {
-    background-color: darken(white,16%);
-    border-radius: 3px;
-  }
-}
-
-.search-results {
-  padding-top: 10px;
-  text-align: left;
-}
-
-.desc {
-  @media#{$max639w} {
-    display: none;
-  }
-}
+'site',
+'wrap',
+'wrap/desktop',
+'wrap/footer',
+'wrap/form';

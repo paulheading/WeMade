@@ -1,0 +1,16 @@
+
+{% assign title    = include.type | capitalize %}
+{% assign modifyer = include.type | prepend: '--' %}
+{% assign class    = include.type | prepend: '_' %}
+{% assign path     = include.type | append: '.liquid' %}
+
+
+<div class="block _cv-row {{ modifyer }}">
+
+  <div class="block _cv-row-title {{ modifyer }}">
+    {{ title }}
+  </div>
+
+  {%- include {{ path | prepend: 'html/loop/' }} -%}
+
+</div>

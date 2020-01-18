@@ -1,0 +1,15 @@
+
+.wrap._desktop {
+  @extend %wrap_grid;
+  position: relative;
+
+  &-topbar {
+    @extend %wrap_grid;
+    grid-template-columns:
+      minmax(100px,150px)
+      minmax(100px,150px)
+      minmax(100px,150px);
+    place-self: center;
+    text-align: center;
+  }
+}

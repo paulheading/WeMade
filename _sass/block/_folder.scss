@@ -1,0 +1,25 @@
+
+.block._folder {
+  text-align: center;
+
+  &-icon {
+    background-color: $desktopBar;
+    border-radius: $radius;
+    height: 70px;
+    width: 90px;
+  }
+
+  &-title {
+    padding: 10px 0;
+  }
+
+  &-group {
+    grid-template-columns: repeat(2,90px);
+    grid-column-gap: 20px;
+    position: absolute;
+    padding-top: 20px;
+    direction: rtl;
+    display: grid;
+    right: 0;
+  }
+}

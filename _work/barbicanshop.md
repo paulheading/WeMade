@@ -1,6 +1,6 @@
 ---
 title  : Barbican Shop
-desc   : The Barbican Shop offers design-led gifts, inspired by it's artistic programme and dynamic architecture.
+desc   : The Barbican Shop offers design-led gifts, inspired by it's artistic programme and dynamic architecture
 staff  : chloe, paul
 format : website
 date   : 04/2018

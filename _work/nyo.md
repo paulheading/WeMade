@@ -5,7 +5,7 @@ format  : animation
 date    : 05/2017
 end     : 07/2017
 desc    : The National Youth Orchestra is a collection of 164 teenage musicians, originating from all over
-          the UK.
+          the UK
 visual :
   - split :
     - svg : logo.svg

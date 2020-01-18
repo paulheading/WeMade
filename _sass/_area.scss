@@ -1,0 +1,57 @@
+
+.area {
+
+  &._hero {
+    @extend %area-setup;
+    @extend %grid_hero;
+
+    &.--paul {
+      background-color: $paul;
+    }
+
+    &.--chloe {
+      background-color: $chloe;
+    }
+
+    &.--wemade {
+      background-color: $wemade;
+    }
+  }
+
+  &._desktop {
+    @extend %area-setup;
+    @extend %grid_hero;
+    background-color: $desktop;
+    color: $desktopBar;
+  }
+
+  &._email {
+    @extend %grid_email;
+    height: $blockHeightSml * 11;
+    background-color: $email;
+  }
+
+  &._casestudy {
+    @extend %grid_hero;
+    padding-bottom: $blockHeight;
+    background-color: $email;
+  }
+
+  &._cv {
+    @extend %grid_cv;
+    padding-bottom: $blockHeight * 2;
+    background-color: $email;
+  }
+
+  &._blog {
+    @extend %grid_cv;
+    padding-bottom: $blockHeight;
+    background-color: $email;
+  }
+
+  &._index {
+    @extend %grid_cv;
+    padding-bottom: $blockHeight;
+    background-color: $email;
+  }
+}

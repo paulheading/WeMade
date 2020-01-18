@@ -1,0 +1,52 @@
+
+.wrap {
+
+  &._hero {
+    @extend %wrap_grid;
+    place-self: center;
+  }
+
+  &._see {
+    @extend %wrap_grid;
+    text-align: center;
+  }
+
+  &._casestudy {
+    @extend %wrap_grid;
+    place-self: center;
+  }
+
+  &._paginate {
+    @extend %wrap_grid;
+    text-align: center;
+    justify-content: center;
+    grid-auto-flow: column;
+    grid-column-gap: $blockHeight;
+  }
+
+  &._header {
+    @extend %wrap_grid;
+    grid-template-columns: 90px auto 70px 70px;
+  }
+
+  &._email {
+    @extend %wrap_grid;
+    align-content: flex-end;
+  }
+
+  &._cv {
+    @extend %wrap_grid;
+    background-color: $white;
+    padding: $gridPad;
+  }
+
+  &._blog {
+    @extend %wrap_grid;
+    place-self: center;
+  }
+
+  &._index {
+    @extend %wrap_grid;
+    place-self: center;
+  }
+}

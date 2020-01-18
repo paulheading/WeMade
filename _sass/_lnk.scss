@@ -1,0 +1,49 @@
+
+.lnk {
+
+  &._paginate-index {
+    cursor: pointer;
+  }
+
+  &._see {
+    background-color: $black;
+    padding-right: $gridPad * 0.5;
+    padding-left: $gridPad * 0.5;
+    align-content: center;
+    display: grid;
+    color: $white;
+  }
+
+  &._cv {
+
+    &-content {
+
+      &.--title {
+        @extend %bold;
+      }
+
+      &.--boss {
+        @extend %bold;
+      }
+
+      &.--school {
+        @extend %bold;
+      }
+    }
+  }
+
+  &._index {
+
+    &-list-title {
+      @extend %bold;
+    }
+  }
+
+  &._cv-row-content-title {
+    @extend %bold;
+  }
+
+  &._cv-social {
+    display: block;
+  }
+}

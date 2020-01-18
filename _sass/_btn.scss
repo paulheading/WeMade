@@ -1,0 +1,24 @@
+
+.btn {
+
+  &._nav {
+    cursor: pointer;
+    
+    &.--search {
+      grid-column: 3;
+    }
+  }
+
+  &._form {
+
+    &-exit {
+      @extend %form-btn;
+      background-color: #fc605c;
+    }
+
+    &-mini {
+      @extend %form-btn;
+      background-color: #fdbc40;
+    }
+  }
+}

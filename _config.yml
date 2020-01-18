@@ -1,3 +1,4 @@
+
 title: WeMade
 description: Portfolio
 email: hello@wemade.design
@@ -6,18 +7,19 @@ github_username: pauheading
 
 # Server config
 livereload : true
-include    : [_redirects]
 
 # Build settings
 markdown : kramdown
 theme    : futuro
 
+exclude :
+  - node_modules
+  - gulp
+  - gulpfile.js
+
 collections :
   paul      :
     title   : Paul
-    output  : true
-  chloe     :
-    title   : Chloe
     output  : true
   work      :
     title   : Work
@@ -27,11 +29,19 @@ collections :
     output  : true
 
 defaults   :
+
 - scope    :
-    path   : ""
+    path   : ''
   values   :
     layout : default
+
 - scope    :
-    path   : "_work"
+    path   : '_work'
   values   :
     type   : work
+
+- scope    :
+    path   : '_blog'
+  values   :
+    type   : blog
+    excerpt_separator : <!--more-->

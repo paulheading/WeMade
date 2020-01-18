@@ -5,8 +5,7 @@ format  : artwork
 date    : 09/2015
 end     : 11/2015
 url     : https://www.barbican.org.uk/whats-on/2019/event/sound-unbound
-desc    : The weekend features artists for whom the boundaries between classical music and contemporary,
-          experimental music and jazz are blurred
+desc    : The weekend features artists for whom the boundaries between experimental music are blurred
 visual  :
   - split :
       - svg : logo.svg

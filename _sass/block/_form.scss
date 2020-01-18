@@ -1,0 +1,37 @@
+
+.block._form {
+  grid-template-columns: 20px auto;
+  background-color: $white;
+  display: grid;
+  color: $gray;
+
+  &-topbar {
+    @extend %block-form-setup;
+    grid-template-columns: 20px auto 20px;
+    background-color: darken($email,10%);
+    border-top-right-radius: $radius;
+    border-top-left-radius: $radius;
+    align-content: center;
+  }
+
+  &-row {
+    @extend %block-form-setup;
+    border-bottom: 1px #ddd solid;
+    justify-content: flex-start;
+    grid-auto-flow: column;
+    align-items: center;
+    grid-gap: 10px;
+  }
+
+  &-area {
+    height: $blockHeightSml * 5;
+    padding-top: 20px;
+    display: grid;
+  }
+
+  &-submit {
+    @extend %block-form-setup;
+    justify-content: flex-end;
+    padding-right: 20px;
+  }
+}

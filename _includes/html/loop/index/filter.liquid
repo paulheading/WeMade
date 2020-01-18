@@ -1,0 +1,45 @@
+
+
+{% assign check  = page.tag | split: ',' | replace: ',','' %}
+{% assign filter = page.title | downcase %}
+{% assign loop   = site.[include.type] | reverse %}
+{% assign i = 0 %}
+
+{%- if check contains 'staff' -%}
+
+  {%- for item in loop -%}
+
+    {% assign url   = item.url | replace: '.html','' %}
+    {% assign check = item.staff | split: ',' | replace: ',','' %}
+
+    {%- if check contains filter -%}
+
+      {%- unless item.url contains 'index' -%}
+
+        {% assign i = i | plus: 1 %}
+
+        {%- include html/loop/index/content.liquid -%}
+
+      {%- endunless -%}
+
+    {%- endif -%}
+
+  {%- endfor -%}
+
+{%- else -%}
+
+  {%- for item in loop -%}
+
+    {% assign url = item.url | replace: '.html','' %}
+
+    {%- unless item.url contains 'index' -%}
+
+      {% assign i = i | plus: 1 %}
+
+      {%- include html/loop/index/content.liquid -%}
+
+    {%- endunless -%}
+
+  {%- endfor -%}
+
+{%- endif -%}

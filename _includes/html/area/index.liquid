@@ -1,0 +1,44 @@
+
+{% assign check = page.tag | split: ',' | replace: ',','' %}
+
+<div class="area _index">
+
+  <div class="wrap _index">
+
+    {%- if check contains 'staff' -%}
+
+      <div class="block _index-title">
+        This is {{ page.title }}
+      </div>
+
+    {%- endif -%}
+
+    <div class="block _index-content">
+      {{ content }}
+    </div>
+
+    <div class="block _index-list">
+
+      <div class="wrap _index-list">
+
+        {%- if check contains "work" -%}
+
+          {%- include html/loop/index/filter.liquid type="work" -%}
+
+        {%- elsif check contains "staff" -%}
+
+          {%- include html/loop/index/filter.liquid type="work" -%}
+
+        {%- elsif check contains "blog" -%}
+
+          {%- include html/loop/index/filter.liquid type="blog" -%}
+
+        {%- endif -%}
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

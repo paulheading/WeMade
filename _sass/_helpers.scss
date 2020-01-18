@@ -1,0 +1,97 @@
+
+$white   : white;
+$desktop : #00b3a4;
+$email   : #ededed;
+$silver  : #cccccc;
+$gray    : #aaaaaa;
+$black   : #0d0d0d;
+$tag     : #b3dfff;
+
+$paul   : red;
+$chloe  : blue;
+$wemade : green;
+
+$desktopBar : darken($desktop,5%);
+$desktopCol : darken($desktop,20%);
+
+$max767  : 'only screen and (max-width: 767px)';
+
+$radius  : 4px;
+$gridPad : 40px;
+
+$blockHeight    : 55px;
+$blockHeightSml : $blockHeight * 0.9;
+
+$formBtn : $blockHeightSml * 0.46;
+$formGap : $blockHeightSml * 0.23;
+
+%area {
+
+  &-setup {
+    min-height: $gridPad * 12;
+    max-height: $gridPad * 16;
+    height: 90%;
+  }
+}
+
+%grid {
+
+  &_hero {
+    grid-template-columns: $gridPad minmax(240px,960px) $gridPad;
+    justify-content: center;
+    display: grid;
+  }
+
+  &_cv {
+    grid-template-columns: $gridPad minmax(240px,720px) $gridPad;
+    justify-content: center;
+    display: grid;
+  }
+
+  &_see {
+    grid-template-columns: $gridPad auto $gridPad;
+    justify-content: center;
+    display: grid;
+  }
+
+  &_email {
+    grid-template-columns: 30px minmax(260px,520px) 30px;
+    justify-content: center;
+    display: grid;
+  }
+}
+
+%block {
+
+  &-setup {
+    height: $blockHeight;
+    display: grid;
+  }
+
+  &-form-setup {
+    height: $blockHeightSml;
+    display: grid;
+  }
+}
+
+%form {
+
+  &-input {
+    color: $silver;
+  }
+
+  &-tag {
+    background-color: $tag;
+    border-radius: 4px;
+    padding: 6px 8px;
+    line-height: 1;
+    color: $black;
+  }
+
+  &-btn {
+    border-radius: $formBtn;
+    background-color: $gray;
+    height: $formBtn;
+    width: $formBtn;
+  }
+}

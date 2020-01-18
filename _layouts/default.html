@@ -1,41 +1,136 @@
+---
+layout: mini
+---
+
 <!DOCTYPE html>
-
 <html lang="{{ page.lang | default: site.lang | default: "en" }}" class="no-js">
-<link rel="stylesheet" href="https://use.typekit.net/enw1ksx.css">
 
-  {% include html/head.html %}
+  {% include html/head.liquid %}
 
-  <body class="layout{% if page.collection %}{{ page.collection | downcase | prepend: ' --' }}{% endif %}{% if page.title %}{{ page.title | replace: ' ','' | downcase | prepend: ' --' }}{% endif %}{% if page.tag %}{{ page.tag | join: ' --' | replace: ' ',' --' | prepend: ' --' }}{% endif %}">
+  <body class="{{ page.type | prepend: 'type-' }}{% if page.tag %}{{ page.tag | prepend: ' tag-' | downcase }}{% endif %}{{ page.title | prepend: ' title-' | downcase }}">
 
-  {% include html/overlay.html title='load' state='open' %}
-  {% include html/overlay.html title='search' %}
-  {% include html/overlay.html title='menu' %}
-  {% unless page.type == 'home' %}
-    {% include html/area-header.html %}
-  {% endunless %}
+    {% include html/overlay.liquid title='load' state='open' %}
 
-  <div class="area _content">
-    <div class="wrap _content">
+    {% if page.type == 'overlay' %}
+      {% assign dynamic = page.title | downcase %}
+      {% include html/overlay.liquid title=dynamic %}
+    {% endif %}
+
+    {% unless page.type == 'overlay' %}
+      {% include html/overlay.liquid title='about' %}
+      {% include html/overlay.liquid title='browse' %}
+      {% include html/overlay.liquid title='search' %}
+
+    <div class="site _full">
+
+      {% if site.header %}
+      <header>
+        {{ site.header }}
+      </header>
+      {% endif %}
+
+      {% include html/area/header.liquid %}
 
       {% if page.type == 'work' %}
-        {% include html/layout-work.html %}
+        {% include html/area/work.liquid %}
+        {% include html/area/paginate.liquid %}
+      {% elsif page.type == 'index' %}
+        {% include html/area/index.liquid %}
+        {% include html/area/readmore.liquid %}
+      {% elsif page.type == 'blog' %}
+        {% include html/area/blog.liquid %}
+        {% include html/area/paginate.liquid %}
+      {% elsif page.type == 'cv' %}
+        {% include html/area/cv.liquid %}
       {% else %}
         {{ content }}
       {% endif %}
 
-    </div>
-  </div>
+      {% include html/area/see.liquid %}
 
-  {% include html/area-see.html %}
-  {% include html/area-ticker.html %}
-  {% include html/area-toolbar.html %}
-  {% include html/area-desktop.html %}
-  {% include html/area-email.html %}
-  {% include html/area-footer.html %}
+      {% include html/area/marquee.liquid %}
+
+      {% include html/block/desktop-topbar.liquid %}
+
+      <div class="area _desktop">
+        <div class="wrap _desktop">
+          <div class="block _window-group">
+            <div class="block _window"></div>
+            <div class="block _window"></div>
+            <div class="block _window"></div>
+          </div>
+          <div class="block _folder-group">
+            <div class="block _folder">
+              <div class="block _folder-icon"></div>
+              <div class="block _folder-title">folder</div>
+            </div>
+            <div class="block _folder">
+              <div class="block _folder-icon"></div>
+              <div class="block _folder-title">folder</div>
+            </div>
+            <div class="block _folder">
+              <div class="block _folder-icon"></div>
+              <div class="block _folder-title">folder</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="area _email">
+        <div class="wrap _email">
+          <div class="block _form-topbar">
+            <div class="wrap _form-topbar">
+              <div class="btn _form-exit"></div>
+              <div class="btn _form-mini"></div>
+            </div>
+          </div>
+          <div class="block _form">
+            <div class="wrap _form">
+              <div class="block _form-row">
+                <div class="block _to">To</div>
+                <div class="block _to-email">hello@wemade.design</div>
+              </div>
+              <div class="block _form-row">
+                <div class="block _subject">Subject</div>
+                <div class="block _subject-title">Hey there!</div>
+              </div>
+              <div class="block _form-row">
+                <div class="block _from">From</div>
+                <div class="block _from-title">visitor@wemade.design</div>
+              </div>
+              <div class="block _form-area">message</div>
+              <div class="block _form-submit">submit</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="block _footer">
+        <div class="wrap _footer">
+          <div class="block _hello">
+            Say hello!
+          </div>
+          <div class="block _phone">
+            +44 7873 156538
+          </div>
+          <a href="mailto:hello@wemade.design" class="block _email">
+            hello@wemade.design
+          </a>
+        </div>
+      </div>
+
+      {% if site.footer %}
+      <footer>
+        {{ site.footer }}
+      </footer>
+      {% endif %}
+
+    </div>
+
+    {% endunless %}
 
   </body>
 
-  {% include html/futuro.html %}
-  {% include html/scripts.html %}
+  {% include html/scripts.liquid %}
 
 </html>
