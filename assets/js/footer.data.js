@@ -5,6 +5,69 @@ layout : none
 let loop = {{ site.data.marquee | jsonify }};
 
 
+const Shuffle = (o) => {
+  for(var j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+	return o;
+}
+
+
+const CalcTime = (local) => {
+  let block = $('.block._time'),
+      d     = new Date(),
+      day   = d.getDay(),
+      hrs   = d.getHours(),
+      mins  = d.getMinutes(),
+      week  = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'],
+      time  = '', daysO = '', hrsO  = '', minsO = '', diff  = 5;
+
+  if (local == 'Toronto') {
+
+    if (hrs < diff) {
+      hrsO = hrs + (24 - diff);
+      daysO = week[day - 1];
+
+      if (hrsO < 10) {
+        hrsO = '0' + hrsO;
+      }
+
+    } else {
+      hrsO = hrs - diff;
+      daysO = week[day];
+
+      if (hrsO < 10) {
+        hrsO = '0' + hrsO;
+      }
+    }
+  } else {
+    hrsO = hrs;
+    daysO = week[day];
+
+    if (hrsO < 10) {
+      hrsO = '0' + hrsO;
+    }
+  }
+
+  if (mins < 10) {
+    minsO = '0' + mins;
+  } else {
+    minsO = mins;
+  }
+
+  time = `<div><strong>${daysO}</strong></div><div>${hrsO}:${minsO}</div>`;
+  block.html(time);
+}
+
+let seconds;
+
+const GetTime = (local) => {
+  seconds = setInterval(CalcTime(local),500);
+}
+
+const StopTime = () => {
+  clearInterval(seconds);
+}
+
+
 const PageThatShit = () => {
   let source  = {{ site.work | jsonify }},
       loop    = source.reverse(),
@@ -41,16 +104,11 @@ const PageThatShit = () => {
 $(PageThatShit);
 
 
-const Shuffle = (o) => {
-  for(var j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
-	return o;
-}
-
-
 const ThemeHome = () => {
-	let tl 		  = new TimelineMax({paused:true,repeat:-1}),
+	let tl 		  = gsap.timeline({paused:true,repeat:-1,defaults:{ease:"none"}}),
 			speed		= 5,
 			drag 		= '-' + speed * 80,
+			hero 		= '.area._hero',
 			see 		= '.wrap._see',
 			city 		= '.block._city',
 			time 		= '.block._time',
@@ -84,12 +142,19 @@ const ThemeHome = () => {
 		});
 
 		tl
+		.set(hero,{backgroundColor:val.color})
 		.set(see,{text:lnk})
 		.set(city,{text:local})
-		.set(mods,{className:'+='+modifyer})
-		.set(mrqwrap,{text: content + content + content + content + content + content + content + content + content + content,x:0})
-		.to(mrqwrap,speed,{x:drag,ease:Power0.easeNone})
-		.set(mods,{className:'-='+modifyer});
+		.call(GetTime,[val.city])
+		.set(mrqwrap,{
+			text: content + content + content + content + content + content + content + content + content + content,
+			x:0
+		})
+		.to(mrqwrap,{
+			duration:speed,
+			x:drag
+		})
+		.call(StopTime)
 	});
 
 	tl.play();

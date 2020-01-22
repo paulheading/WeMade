@@ -13,6 +13,6 @@ const CvRowContent = (type) => {
 }
 
 $(document).ready(function() {
-  CvRowContent('projects');
-  CvRowContent('jobs');
+  // CvRowContent('projects');
+  // CvRowContent('jobs');
 });

@@ -10,12 +10,11 @@ const gulp   = require('gulp'),
 exports.custom = (done) => {
   return gulp
     .src([
-      jsRoot + 'vendor/*',
-      jsRoot + 'custom/Let.js',
-      jsRoot + 'custom/*',
-      ! + jsRoot + 'custom/data/*'
+      jsRoot + 'footer/vendor/*',
+      jsRoot + 'footer/custom/Let.js',
+      jsRoot + 'footer/custom/*'
     ])
-    .pipe(concat(jsRoot + 'concat/custom.js'))
+    .pipe(concat(jsRoot + 'concat/footer.custom.js'))
     .pipe(gulp.dest('.'));
   done();
 }
@@ -23,10 +22,11 @@ exports.custom = (done) => {
 exports.data = (done) => {
   return gulp
     .src([
-      jsRoot + 'custom/data/Layout.js',
-      jsRoot + 'custom/data/*'
+      jsRoot + 'footer/data/Let.js',
+      jsRoot + 'footer/data/Shuffle.js',
+      jsRoot + 'footer/data/*'
     ])
-    .pipe(concat(jsRoot + 'data.js'))
+    .pipe(concat(jsRoot + 'footer.data.js'))
     .pipe(gulp.dest('.'));
   done();
 }

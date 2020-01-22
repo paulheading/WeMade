@@ -1,8 +1,9 @@
 
 const ThemeHome = () => {
-	let tl 		  = new TimelineMax({paused:true,repeat:-1}),
+	let tl 		  = gsap.timeline({paused:true,repeat:-1,defaults:{ease:"none"}}),
 			speed		= 5,
 			drag 		= '-' + speed * 80,
+			hero 		= '.area._hero',
 			see 		= '.wrap._see',
 			city 		= '.block._city',
 			time 		= '.block._time',
@@ -36,12 +37,19 @@ const ThemeHome = () => {
 		});
 
 		tl
+		.set(hero,{backgroundColor:val.color})
 		.set(see,{text:lnk})
 		.set(city,{text:local})
-		.set(mods,{className:'+='+modifyer})
-		.set(mrqwrap,{text: content + content + content + content + content + content + content + content + content + content,x:0})
-		.to(mrqwrap,speed,{x:drag,ease:Power0.easeNone})
-		.set(mods,{className:'-='+modifyer});
+		.call(GetTime,[val.city])
+		.set(mrqwrap,{
+			text: content + content + content + content + content + content + content + content + content + content,
+			x:0
+		})
+		.to(mrqwrap,{
+			duration:speed,
+			x:drag
+		})
+		.call(StopTime)
 	});
 
 	tl.play();

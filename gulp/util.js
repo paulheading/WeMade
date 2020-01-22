@@ -15,10 +15,9 @@ const gulp        = require('gulp'),
       jsRoot      = 'assets/js/';
 
 exports.minify = (done) => {
-  return gulp.src(jsRoot + 'concat/custom.js')
+  return gulp.src(jsRoot + 'concat/footer.custom.js')
     .pipe(babel({ presets : ['@babel/preset-env'] }))
     .pipe(uglify())
-    .pipe(rename({ suffix : '.min' }))
     .pipe(gulp.dest(jsRoot));
   done();
 }

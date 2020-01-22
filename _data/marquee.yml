@@ -1,6 +1,7 @@
 
-- name : Paul
-  city : London
+- name  : Paul
+  city  : London
+  color : Red
   message :
     - bold   : Paul
     - book   : makes
@@ -9,8 +10,9 @@
     - book   : enjoys
     - boldUl : noodles!
 
-- name : WeMade
-  city : Everywhere
+- name  : WeMade
+  city  : Everywhere
+  color : Yellow
   message :
     - bold   : WeMade
     - book   : a
@@ -20,8 +22,9 @@
     - boldUl : studio
     - book   : '&#169;&#8482;'
 
-- name : Chloe
-  city : Toronto
+- name  : Chloe
+  city  : Toronto
+  color : Blue
   message :
     - bold     : Chloe
     - book     : makes
