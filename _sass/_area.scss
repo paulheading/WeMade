@@ -4,18 +4,6 @@
   &._hero {
     @extend %area-setup;
     @extend %grid_hero;
-
-    &.--paul {
-      background-color: $paul;
-    }
-
-    &.--chloe {
-      background-color: $chloe;
-    }
-
-    &.--wemade {
-      background-color: $wemade;
-    }
   }
 
   &._desktop {

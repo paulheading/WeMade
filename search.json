@@ -2,7 +2,15 @@
 layout: mini
 ---
 [
-  {% assign loop = site | sort: 'weight' %}
+  {% assign loop = site.blog | sort: 'weight' %}
+  {% include html/loop/search.liquid %}
+  {},
+
+  {% assign loop = site.work | sort: 'weight' %}
+  {% include html/loop/search.liquid %}
+  {},
+
+  {% assign loop = site.paul | sort: 'weight' %}
   {% include html/loop/search.liquid %}
   {}
 ]

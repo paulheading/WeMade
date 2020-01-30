@@ -3,6 +3,7 @@ const ThemeHome = () => {
 	let tl 		  = gsap.timeline({paused:true,repeat:-1,defaults:{ease:"none"}}),
 			speed		= 5,
 			drag 		= '-' + speed * 80,
+			header 	= '.block._header',
 			hero 		= '.area._hero',
 			see 		= '.wrap._see',
 			city 		= '.block._city',
@@ -37,7 +38,8 @@ const ThemeHome = () => {
 		});
 
 		tl
-		.set(hero,{backgroundColor:val.color})
+		.set(hero,{backgroundColor:val.bg})
+		.set(header,{color:val.col})
 		.set(see,{text:lnk})
 		.set(city,{text:local})
 		.call(GetTime,[val.city])

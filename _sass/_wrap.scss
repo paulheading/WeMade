@@ -1,6 +1,14 @@
 
 .wrap {
 
+  &._overlay.--browse {
+    text-align: center;
+
+    .lnk + .lnk {
+      margin-top: $gridPad;
+    }
+  }
+
   &._hero {
     @extend %wrap_grid;
     place-self: center;
