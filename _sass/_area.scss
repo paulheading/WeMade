@@ -22,24 +22,32 @@
   &._casestudy {
     @extend %grid_hero;
     padding-bottom: $blockHeight;
-    background-color: $email;
+
+    @media#{$max767} {
+      padding-top: $blockHeight;
+    }
   }
 
   &._cv {
     @extend %grid_cv;
     padding-bottom: $blockHeight * 2;
-    background-color: $email;
+
+    @media#{$max767} {
+      padding-top: $gridPad;
+    }
   }
 
   &._blog {
     @extend %grid_cv;
     padding-bottom: $blockHeight;
-    background-color: $email;
   }
 
   &._index {
     @extend %grid_cv;
     padding-bottom: $blockHeight;
-    background-color: $email;
+
+    @media#{$max767} {
+      padding-top: $gridPad;
+    }
   }
 }

@@ -29,26 +29,26 @@ layout: mini
       </header>
       {% endif %}
 
-      {% include html/area/header.liquid %}
+      {% include html/block/header.liquid %}
 
       {% if page.type == 'work' %}
         {% include html/area/work.liquid %}
-        {% include html/area/paginate.liquid %}
+        {% include html/block/paginate.liquid %}
       {% elsif page.type == 'index' %}
         {% include html/area/index.liquid %}
-        {% include html/area/readmore.liquid %}
+        {% include html/block/readmore.liquid %}
       {% elsif page.type == 'blog' %}
         {% include html/area/blog.liquid %}
-        {% include html/area/paginate.liquid %}
+        {% include html/block/paginate.liquid %}
       {% elsif page.type == 'cv' %}
         {% include html/area/cv.liquid %}
       {% else %}
         {{ content }}
       {% endif %}
 
-      {% include html/area/see.liquid %}
+      {% include html/block/see.liquid %}
 
-      {% include html/area/marquee.liquid %}
+      {% include html/block/marquee.liquid %}
 
       {% include html/block/desktop-topbar.liquid %}
 

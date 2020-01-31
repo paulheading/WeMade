@@ -15,4 +15,4 @@ const MoreIndex = (e) => {
   }
 }
 
-$('.lnk._paginate-index').on('click',MoreIndex);
+$('.lnk._readmore').on('click',MoreIndex);

@@ -1,7 +1,7 @@
 
 {% assign loop = page.job %}
 
-{%- for item in loop -%}
+{%- for item in loop | limit : 3 -%}
 
   <div class="block _cv-row-content">
 

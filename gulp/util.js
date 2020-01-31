@@ -10,7 +10,6 @@ const gulp        = require('gulp'),
       imagemin    = require('gulp-imagemin'),
       del         = require('del'),
       replace     = require('gulp-replace'),
-      cacheBust   = new Date().getTime(),
       dBox        = '../../Dropbox/Sites/mindsets/',
       jsRoot      = 'assets/js/';
 
@@ -18,15 +17,8 @@ exports.minify = (done) => {
   return gulp.src(jsRoot + 'concat/footer.custom.js')
     .pipe(babel({ presets : ['@babel/preset-env'] }))
     .pipe(uglify())
+    .pipe(rename({ suffix : '.min' }))
     .pipe(gulp.dest(jsRoot));
-  done();
-}
-
-exports.collect = (done) => {
-  return gulp
-    .src([jsRoot + 'minify/custom.js'])
-    .pipe(concat(jsRoot + '/custom.min.js'))
-    .pipe(gulp.dest('.'));
   done();
 }
 
@@ -57,10 +49,11 @@ exports.crunch = (done) => {
 }
 
 exports.bust = (done) => {
+  let bust = new Date().getTime();
   return gulp.src([
     '_includes/html/head.liquid',
     '_includes/html/scripts.liquid'],{ base : '.' })
-  .pipe(replace(/v=\d+/g, function() { return 'v=' + cacheBust; }))
+  .pipe(replace(/v=\d+/g, function() { return 'v=' + bust; }))
   .pipe(gulp.dest('.'));
   done();
 }

@@ -1,5 +1,5 @@
 ---
-title : Work
+title : About
 type  : index
 tag   : work
 ---

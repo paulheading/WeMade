@@ -2,8 +2,9 @@
 .btn {
 
   &._nav {
+    text-align: right;
     cursor: pointer;
-    
+
     &.--search {
       grid-column: 3;
     }

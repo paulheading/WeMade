@@ -1,8 +1,9 @@
 
 - name : Paul
+  path : paul
   city : London
-  bg   : "red"
-  col  : "black"
+  bg   : red
+  col  : black
   message :
     - bold   : Paul
     - book   : makes
@@ -12,9 +13,10 @@
     - boldUl : noodles!
 
 - name : WeMade
+  path : about
   city : Everywhere
-  bg   : "green"
-  col  : "black"
+  bg   : green
+  col  : black
   message :
     - bold   : WeMade
     - book   : a
@@ -25,9 +27,10 @@
     - book   : "&#169;&#8482;"
 
 - name : Chloe
+  path : paul
   city : Toronto
-  bg   : "blue"
-  col  : "black"
+  bg   : blue
+  col  : black
   message :
     - bold     : Chloe
     - book     : makes

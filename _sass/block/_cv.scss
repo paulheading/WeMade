@@ -22,6 +22,7 @@
     }
 
     &-content {
+      align-content: flex-start;
       grid-row-gap: 2px;
       column-count: 1;
       display: grid;

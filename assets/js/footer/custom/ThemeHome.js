@@ -2,26 +2,23 @@
 const ThemeHome = () => {
 	let tl 		  = gsap.timeline({paused:true,repeat:-1,defaults:{ease:"none"}}),
 			speed		= 5,
-			drag 		= '-' + speed * 80,
-			header 	= '.block._header',
-			hero 		= '.area._hero',
-			see 		= '.wrap._see',
-			city 		= '.block._city',
-			time 		= '.block._time',
-			mrqwrap = '.block._marquee-group',
-			mods 		= [$('.area._hero'),time,mrqwrap];
+			drag 		= "-" + speed * 80,
+			header 	= ".block._header",
+			hero 		= ".area._hero",
+			see 		= ".wrap._see",
+			city 		= ".block._city",
+			time 		= ".block._time",
+			mrqwrap = ".block._marquee-group",
+			mods 		= [$(".area._hero"),time,mrqwrap];
 
-	Shuffle(loop);
+	Shuffle(Staff);
 
-	$(loop).each(function(i,val) {
-		let name 	 	 = val.name,
-				local    = val.city,
-				message  = val.message,
-				modifyer = '--' + name.toLowerCase(),
-	 			lnk 	 	 = `<a href="/${name.toLowerCase()}" class="lnk _see">See ${name}</a>`,
+	$(Staff).each(function(i,val) {
+		let modifyer = '--' + val.name.toLowerCase(),
+	 			lnk 	 	 = `<a href="/${val.path}" class="lnk _see">See ${val.name}</a>`,
 				content  = '';
 
-		$(message).each(function(i,val) {
+		$(val.message).each(function(i,val) {
 			if (val.book) {
 				content += `<div class="book">${val.book}</div>`;
 			} else if (val.italic) {
@@ -37,11 +34,15 @@ const ThemeHome = () => {
 			}
 		});
 
+		if ($(body).hasClass('type-home')) {
+			tl
+			.set(hero,{backgroundColor:val.bg})
+			.set(header,{color:val.col});
+		}
+
 		tl
-		.set(hero,{backgroundColor:val.bg})
-		.set(header,{color:val.col})
 		.set(see,{text:lnk})
-		.set(city,{text:local})
+		.set(city,{text:val.city})
 		.call(GetTime,[val.city])
 		.set(mrqwrap,{
 			text: content + content + content + content + content + content + content + content + content + content,

@@ -1,6 +1,7 @@
 
 {% assign loop   = site.work | reverse %}
 {% assign filter = page.name.first | downcase %}
+{% assign i = 0 %}
 
 {%- for item in loop -%}
 
@@ -9,39 +10,45 @@
 
   {%- if check contains filter -%}
 
-  <div class="block _cv-row-content">
+  {% assign i = i | plus: 1 %}
 
-    <div class="block _cv-content --date">
+    {%- if i <= 3 -%}
 
-      {{ item.date | date: "%b %y" }}
+      <div class="block _cv-row-content">
 
-      &ndash;
+        <div class="block _cv-content --date">
 
-      {%- if item.end -%}
+          {{ item.date | date: "%b %y" }}
 
-        <span> {{ item.end | date: "%b %y" }}</span>
+          &ndash;
 
-        {%- else -%}
+          {%- if item.end -%}
 
-        <span> Now</span>
+            <span> {{ item.end | date: "%b %y" }}</span>
 
-      {%- endif -%}
+            {%- else -%}
 
-    </div>
+            <span> Now</span>
 
-    <a href="{{ url }}" class="lnk _cv-content --title">
+          {%- endif -%}
 
-      {{ item.title }}
+        </div>
 
-    </a>
+        <a href="{{ url }}" class="lnk _cv-content --title">
 
-    <div class="block _cv-content --type">
+          {{ item.title }}
 
-      {{ item.format | capitalize }}
+        </a>
 
-    </div>
+        <div class="block _cv-content --type">
 
-  </div>
+          {{ item.format | capitalize }}
+
+        </div>
+
+      </div>
+
+    {%- endif -%}
 
   {%- endif -%}
 

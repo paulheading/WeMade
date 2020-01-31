@@ -17,6 +17,14 @@ exclude :
   - gulp
   - gulpfile.js
 
+setup :
+
+  mobile   : true
+  overlays : true
+  width    : 1200
+  page     : 560
+  legacy   : false
+
 collections :
   paul      :
     title   : Paul

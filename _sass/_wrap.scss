@@ -26,10 +26,15 @@
 
   &._paginate {
     @extend %wrap_grid;
-    text-align: center;
+    grid-template-columns: 1fr 50px 1fr;
+    grid-column-gap: $gridPad;
     justify-content: center;
-    grid-auto-flow: column;
-    grid-column-gap: $blockHeight;
+    text-align: center;
+  }
+
+  &._readmore {
+    @extend %wrap_grid;
+    justify-content: center;
   }
 
   &._header {

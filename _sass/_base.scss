@@ -1,5 +1,6 @@
 
 body {
+  background-color: $email;
 
   &.type-home {
 
@@ -42,7 +43,7 @@ p {
 }
 
 blockquote {
-  background-color: darken($email,5%);
+  background-color: darken($email,4%);
   padding: 20px;
   margin: 0;
 

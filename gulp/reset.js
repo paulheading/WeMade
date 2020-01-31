@@ -10,7 +10,7 @@ exports.all = (done) => {
   return del([
     dbox,
     jsRoot + '*',
-    '!' + jsRoot + 'footer'
-    ], { force: true });
+    '!' + jsRoot + 'header',
+    '!' + jsRoot + 'footer'], { force : true });
   done();
 }

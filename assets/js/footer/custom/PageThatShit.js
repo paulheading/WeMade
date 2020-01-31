@@ -1,7 +1,6 @@
 
 const PageThatShit = () => {
-  let source  = {{ site.work | jsonify }},
-      loop    = source.reverse(),
+  let loop    = Work.reverse(),
       total   = loop.length,
       path    = window.location.pathname,
       prevBtn = '.lnk._paginate-prev',

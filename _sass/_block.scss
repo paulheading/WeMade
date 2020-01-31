@@ -76,7 +76,11 @@
   &._paginate {
     @extend %grid_hero;
     padding-bottom: $blockHeight * 2;
-    background-color: $email;
+  }
+
+  &._readmore {
+    @extend %grid_hero;
+    padding-bottom: $blockHeight * 2;
   }
 
   &._header {
@@ -92,7 +96,6 @@
     @media#{$min768} {
       padding-bottom: $blockHeight;
       padding-top: $blockHeight;
-      background-color: $email;
     }
   }
 
@@ -150,8 +153,9 @@
     &-list {
 
       &-row {
+        grid-template-columns: 17fr 23fr 60fr;
+        grid-column-gap: $gridPad * 0.5;
         display: grid;
-        grid-template-columns: 17% 23% 60%;
 
         &.--hide {
           display: none;

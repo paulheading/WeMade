@@ -7,8 +7,8 @@ const gulp   = require('gulp'),
       Util   = require('./gulp/util.js'),
       jsRoot = 'assets/js/';
 
+gulp.task('concat:vendor', Concat.vendor);
 gulp.task('concat:custom', Concat.custom);
-gulp.task('concat:data',   Concat.data);
 
 gulp.task('minify', Util.minify);
 gulp.task('tidy',   Util.tidy);
@@ -24,9 +24,9 @@ gulp.task('watch',function(done) {
 })
 
 gulp.task('default',gulp.series([
-  'reset',
+  // 'reset',
+  'concat:vendor',
   'concat:custom',
-  'concat:data',
   'minify',
   'tidy',
   'bust'

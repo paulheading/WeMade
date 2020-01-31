@@ -40,7 +40,7 @@ $formGap : $blockHeightSml * 0.23;
   }
 
   &_cv {
-    grid-template-columns: $gridPad minmax(240px,720px) $gridPad;
+    grid-template-columns: $gridPad minmax(240px,768px) $gridPad;
     justify-content: center;
     display: grid;
   }
@@ -52,7 +52,7 @@ $formGap : $blockHeightSml * 0.23;
   }
 
   &_email {
-    grid-template-columns: 30px minmax(260px,520px) 30px;
+    grid-template-columns: ($gridPad * 0.75) minmax(260px,520px) ($gridPad * 0.75);
     justify-content: center;
     display: grid;
   }

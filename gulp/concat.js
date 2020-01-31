@@ -7,26 +7,22 @@ const gulp   = require('gulp'),
       insert = require('gulp-insert'),
       jsRoot = 'assets/js/';
 
-exports.custom = (done) => {
+exports.vendor = (done) => {
   return gulp
-    .src([
-      jsRoot + 'footer/vendor/*',
-      jsRoot + 'footer/custom/Let.js',
-      jsRoot + 'footer/custom/*'
-    ])
-    .pipe(concat(jsRoot + 'concat/footer.custom.js'))
+    .src(jsRoot + 'footer/vendor/*')
+    .pipe(concat(jsRoot + 'footer.vendor.js'))
     .pipe(gulp.dest('.'));
   done();
 }
 
-exports.data = (done) => {
+exports.custom = (done) => {
   return gulp
     .src([
-      jsRoot + 'footer/data/Let.js',
-      jsRoot + 'footer/data/Shuffle.js',
-      jsRoot + 'footer/data/*'
+      jsRoot + 'footer/custom/Settings.js',
+      jsRoot + 'footer/custom/*',
+      jsRoot + 'footer/custom/ThemeHome.js'
     ])
-    .pipe(concat(jsRoot + 'footer.data.js'))
+    .pipe(concat(jsRoot + 'concat/footer.custom.js'))
     .pipe(gulp.dest('.'));
   done();
 }
