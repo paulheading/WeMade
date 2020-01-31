@@ -2,7 +2,7 @@ source "https://rubygems.org"
 
 gem "jekyll", "~> 3.8.3"
 
-gem "futuro", "~> 0.4.2"
+gem "futuro", "~> 0.4.3"
 
 # gem "futuro", :path => "../futuro"
 
